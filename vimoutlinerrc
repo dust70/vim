@@ -1,0 +1,24 @@
+"Common Plugins
+" This variable holds name of all VO modules you want to load. Do NOT use ru
+" directly in this file, because you will get into many strange surprises. If
+" you do not want to load any VO modules leave it blank (default). This
+" variable can be freely modified in ~/.vimoutlinerrc.
+let g:vo_modules_load = "checkbox:hoist"
+
+"User Preferences ***************************************************
+let maplocalleader = ",,"		" this is prepended to VO key mappings
+
+setlocal ignorecase			" searches ignore case
+setlocal smartcase			" searches use smart case
+setlocal wrapmargin=5
+setlocal tw=78
+setlocal tabstop=4			" tabstop and shiftwidth must match
+setlocal shiftwidth=4			" values from 2 to 8 work well
+setlocal background=dark		" for dark backgrounds
+setlocal nowrap
+
+"Gentoo-specific Configuration **************************************
+"Search path for vimoutliner plugins
+setlocal runtimepath+=$VIM/vimfiles/vimoutliner
+
+" vim: filetype=vim textwidth=80 foldmethod=marker
