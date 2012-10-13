@@ -86,3 +86,7 @@
 	path = bundle/Tagbar
 	url = git://github.com/majutsushi/tagbar.git
 	ignore = all
+[submodule "UnImpaired"]
+	path = bundle/UnImpaired
+	url = git://github.com/tpope/vim-unimpaired.git
+	ignore = all
