@@ -38,3 +38,7 @@
 	path = bundle/GitV
 	url = git://github.com/gregsexton/gitv.git
 	ignore = all
+[submodule "GnuPG"]
+	path = bundle/GnuPG
+	url = git://gitorious.org/vim-gnupg/vim-gnupg.git
+	ignore = all
