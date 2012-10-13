@@ -62,3 +62,7 @@
 	path = bundle/PHP-Dictionary
 	url = git://github.com/vim-scripts/PHP-dictionary.git
 	ignore = all
+[submodule "SecureModelines"]
+	path = bundle/SecureModelines
+	url = git://github.com/ciaranm/securemodelines.git
+	ignore = all
