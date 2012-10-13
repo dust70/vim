@@ -30,3 +30,7 @@
 	path = bundle/FuGITive
 	url = git://github.com/tpope/vim-fugitive.git
 	ignore = all
+[submodule "GitRebaseHelper"]
+	path = bundle/GitRebaseHelper
+	url = git://github.com/pix/git-rebase-helper.git
+	ignore = all
