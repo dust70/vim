@@ -94,3 +94,7 @@
 	path = bundle/VimPager
 	url = git://github.com/rkitover/vimpager.git
 	ignore = all
+[submodule "YankRing"]
+	path = bundle/YankRing
+	url = git://github.com/vim-scripts/YankRing.vim.git
+	ignore = all
