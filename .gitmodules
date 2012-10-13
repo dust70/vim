@@ -26,3 +26,7 @@
 	path = bundle/EnhancedCommentify
 	url = git://github.com/hrp/EnhancedCommentify.git
 	ignore = all
+[submodule "FuGITive"]
+	path = bundle/FuGITive
+	url = git://github.com/tpope/vim-fugitive.git
+	ignore = all
