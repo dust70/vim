@@ -1,0 +1,12 @@
+.netrwhist
+colors/vo_dark.vim
+colors/vo_light.vim
+cscope
+doc/tags
+doc/vo_readme.txt.gz
+ftdetect/vo_base.vim
+ftplugin/vo_base.vim
+ftplugin/vo_checkbox.vim
+ftplugin/vo_hoist.vim
+syntax/vo_base.vim
+tags
