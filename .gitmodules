@@ -74,3 +74,7 @@
 	path = bundle/ShowMarks
 	url = git://github.com/vim-scripts/ShowMarks.git
 	ignore = all
+[submodule "Supertab"]
+	path = bundle/Supertab
+	url = git://github.com/ervandew/supertab.git
+	ignore = all
