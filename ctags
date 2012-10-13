@@ -1,0 +1,67 @@
+--regex-sh=/^[[:blank:]]*[^#].*alias[[:blank:]]+([[:alnum:]]+)[[:blank:]]*=(.+)$/\1/a,alias/
+--regex-sh=/^[[:blank:]]*[^#].*(export[[:blank:]]*)?([^ \t#=]*)=/\2/v,variables/
+--regex-sh=/^[[:blank:]]*[^#].*(unset|set|setopt|unsetopt)[[:blank:]]+([^ \t#=]*)$/\2/o,options/
+
+--regex-vim=/^[[:blank:]]*set[[:blank:]]+([[:alnum:]]+)[[:blank:]]*=(.*)$/\1/s,settings/
+
+--langmap=c:+.nqc
+
+--langmap=perl:+.pod
+--regex-perl=/^=head1[[:space:]]*(.+)/\1/o,pod/
+--regex-perl=/^=head2[[:space:]]*(.+)$/. \1/o,pod/
+--regex-perl=/^=head3[[:space:]]*(.+)$/.. \1/o,pod/
+--regex-perl=/^=head4[[:space:]]*(.+)$/... \1/o,pod/
+--regex-perl=/^=for[[:space:]]+([^:]+):(.*)$/*\1:\2/o,pod/
+--regex-perl=/^__(DATA|END)__$/__\1__/l,labels/
+
+--regex-make=/^([^:# \t]+)[ \t]*:/\1/t,targets/
+
+--langdef=latex
+--langmap=latex:.tex
+
+--regex-latex=/^\\part[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/Part \2/s,section/
+--regex-latex=/^\\part[[:space:]]*\*[[:space:]]*\{([^}]+)\}/Part \1/s,section/
+
+--regex-latex=/^\\chapter[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/Chap \2/s,section/
+--regex-latex=/^\\chapter[[:space:]]*\*[[:space:]]*\{([^}]+)\}/Chap \1/s,section/
+
+--regex-latex=/^\\section[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/. \2/s,section/
+--regex-latex=/^\\section[[:space:]]*\*[[:space:]]*\{([^}]+)\}/. \1/s,section/
+
+--regex-latex=/^\\subsection[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/.. \2/s,section/
+--regex-latex=/^\\subsection[[:space:]]*\*[[:space:]]*\{([^}]+)\}/.. \1/s,section/
+
+--regex-latex=/^\\subsubsection[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/... \2/s,section/
+--regex-latex=/^\\subsubsection[[:space:]]*\*[[:space:]]*\{([^}]+)\}/... \1/s,section/
+
+--regex-latex=/^\\includegraphics[[:space:]]*(\[[^]]*\])?[[:space:]]*(\[[^]]*\])?[[:space:]]*\{[[:space:]]*([^}]+)[[:space:]]*\}/\3/g,graphics/
+--regex-latex=/^\\lstinputlisting[[:space:]]*(\[[^]]*\])?[[:space:]]*(\[[^]]*\])?[[:space:]]*\{[[:space:]]*([^}]+)[[:space:]]*\}/\3/i,listings/
+
+--regex-latex=/\\label[[:space:]]*\{([^}]+)\}/\1/l,label/
+--regex-latex=/\\pageref[[:space:]]*\{([^}]+)\}/\1/p,pageref/
+--regex-latex=/\\bibitem[[:space:]]*\[([^]]*)\]\{([^}]+)\}/\1 \2/b,bibitem/
+
+--langdef=bibtex
+--langmap=bibtex:.bib
+
+--regex-bibtex=/@string\{([^ "#%')(,=}{]+)/\1/s,BibTeX-Strings/i
+--regex-bibtex=/@(article|book|booklet|inbook|incollection|inproceedings|manual|masterthesis|misc|phdthesis|proceedings|techreport|unpublished)\{([^,]+),/\2 [\1]/e,BibTeX-Entries/i
+--regex-bibtex=/[[:space:]]*author[[:space:]]*=[[:space:]]*("([^"]+)"|\{([^\}]+)\})[[:space:]]*,?[[:space:]]*$/\2\3/a,BibTeX-Authors/i
+--regex-bibtex=/[[:space:]]*title[[:space:]]*=[[:space:]]*["\{](\{[:word:]+\}.+|.+)(["}][[:space:]]*,[[:space:]]*$|$)/\1/t,BibTeX-Titles/i
+
+--langdef=sshconfig
+
+--regex-sshconfig=/^[[:blank:]]*Host[[:blank:]](.*)$/\1/h,Host/
+
+--regex-java=/\/\/TODO(.*)/todo\1/
+
+--regex-javascript=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/,object/
+--regex-javascript=/([A-Za-z0-9._$()]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/,function/
+--regex-javascript=/function[ \t]+([A-Za-z0-9._$]+)[ \t]*\(([^)])\)/\1/,function/
+--regex-javascript=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/,array/
+--regex-javascript=/([^= ]+)[ \t]*=[ \t]*[^"]'[^']*/\1/,string/
+--regex-javascript=/([^= ]+)[ \t]*=[ \t]*[^']"[^"]*/\1/,string/
+
+--regex-PHP=/abstract\s+class\s+([^ ]+)/\1/c/
+--regex-PHP=/interface\s+([^ ]+)/\1/c/
+--regex-PHP=/(public\s+|static\s+|abstract\s+|protected\s+|private\s+)function\s+\&?\s*([^ (]+)/\2/f/
