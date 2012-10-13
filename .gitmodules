@@ -6,3 +6,7 @@
 	path = bundle/AutoClose
 	url = git://github.com/Townk/vim-autoclose.git
 	ignore = all
+[submodule "Calendar"]
+	path = bundle/Calendar
+	url = git://github.com/mattn/calendar-vim.git
+	ignore = all
