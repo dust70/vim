@@ -34,3 +34,7 @@
 	path = bundle/GitRebaseHelper
 	url = git://github.com/pix/git-rebase-helper.git
 	ignore = all
+[submodule "GitV"]
+	path = bundle/GitV
+	url = git://github.com/gregsexton/gitv.git
+	ignore = all
