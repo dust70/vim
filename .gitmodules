@@ -1,0 +1,4 @@
+[submodule "Align"]
+	path = bundle/Align
+	url = git://github.com/tsaleh/vim-align.git
+	ignore = all
