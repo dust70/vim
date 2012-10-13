@@ -58,3 +58,7 @@
 	path = bundle/PDV
 	url = git://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
 	ignore = all
+[submodule "PHP-Dictionary"]
+	path = bundle/PHP-Dictionary
+	url = git://github.com/vim-scripts/PHP-dictionary.git
+	ignore = all
