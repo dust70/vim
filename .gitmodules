@@ -18,3 +18,7 @@
 	path = bundle/ColorSchemes
 	url = git://github.com/flazz/vim-colorschemes.git
 	ignore = all
+[submodule "DBExt"]
+	path = bundle/DBExt
+	url = git://github.com/vim-scripts/dbext.vim.git
+	ignore = all
