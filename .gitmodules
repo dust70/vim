@@ -82,3 +82,7 @@
 	path = bundle/Snipmate
 	url = git://github.com/msanders/snipmate.vim.git
 	ignore = all
+[submodule "Tagbar"]
+	path = bundle/Tagbar
+	url = git://github.com/majutsushi/tagbar.git
+	ignore = all
