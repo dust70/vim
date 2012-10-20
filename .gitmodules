@@ -42,6 +42,10 @@
 	path = bundle/GnuPG
 	url = git://gitorious.org/vim-gnupg/vim-gnupg.git
 	ignore = all
+[submodule "GoogleVim"]
+	path = bundle/GoogleVim
+	url = git://github.com/vim-scripts/google.vim.git
+	ignore = all
 [submodule "LaTeX"]
 	path = bundle/LaTeX
 	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
