@@ -90,6 +90,10 @@
 	path = bundle/Snipmate
 	url = git://github.com/msanders/snipmate.vim.git
 	ignore = all
+[submodule "Syntastic"]
+	path = bundle/Syntastic
+	url = git://github.com/scrooloose/syntastic.git
+	ignore = all
 [submodule "Tagbar"]
 	path = bundle/Tagbar
 	url = git://github.com/majutsushi/tagbar.git
