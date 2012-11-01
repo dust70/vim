@@ -10,10 +10,6 @@
 	path = bundle/Calendar
 	url = git://github.com/mattn/calendar-vim.git
 	ignore = all
-[submodule "CloseTag"]
-	path = bundle/CloseTag
-	url = git://github.com/vim-scripts/closetag.vim.git
-	ignore = all
 [submodule "ColorSchemes"]
 	path = bundle/ColorSchemes
 	url = git://github.com/flazz/vim-colorschemes.git
