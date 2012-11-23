@@ -66,6 +66,10 @@
 	path = bundle/PHP-Dictionary
 	url = git://github.com/vim-scripts/PHP-dictionary.git
 	ignore = all
+[submodule "PythonMode"]
+	path = bundle/PythonMode
+	url = git://github.com/klen/python-mode.git
+	ignore = all
 [submodule "RagTag"]
 	path = bundle/RagTag
 	url = git://github.com/tpope/vim-ragtag.git
