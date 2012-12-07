@@ -758,7 +758,7 @@ set viminfo='5,/25,:100,h,s1000
 " effect on systems where file name case is generally ignored. Does not apply
 " when the shell is used to expand wildcards, which happens when there are
 " special characters.
-if ! has('win32')
+if exists('&wildignorecase')
     set wildignorecase
 endif
 "}}}
@@ -798,7 +798,7 @@ set wildmenu
 "	"list:longest"	When more than one match, list all matches and
 "			complete till longest common string.
 " When there is only a single match, it is fully completed in all cases.
-set wildmode=full,longest:full
+set wildmode="list:longest"
 "}}}
 
 " {{{ winheight
@@ -938,6 +938,18 @@ if has("autocmd")
     augroup END
     "}}}
 
+    " {{{ loadFoldMethod
+    augroup loadFoldMethod
+        autocmd!
+        autocmd FileType c setlocal foldmethod=syntax
+        autocmd FileType javascript setlocal foldmethod=syntax
+        autocmd FileType php setlocal foldmethod=syntax
+        autocmd FileType python setlocal foldmethod=syntax
+        autocmd FileType ruby setlocal foldmethod=syntax
+        autocmd FileType sql setlocal foldmethod=syntax
+    augroup END
+    "}}}
+
     " {{{ extraWhitespace
     augroup extraWhitespace
         autocmd!
@@ -1032,6 +1044,10 @@ let g:EnhCommentifyPretty='Yes'
 " result in the whole block commented in unit, not line by line.
 let g:EnhCommentifyMultiPartBlocks='Yes'
 
+" Respect the indent of a line. The comment leader is inserted correctly
+" indented, not at the beginning of the line.
+let g:EnhCommentifyRespectIndent='Yes'
+
 " With this option set, the script tries to figure out which filetype to use
 " for every block by using the synID of the block. This improves handling of
 " embedded languages eg. CSS in HTML, Perl in VimL... But be aware, that this
@@ -1101,7 +1117,7 @@ let g:Tex_DefaultTargetFormat='pdf'
 "       ----------------------
 " To change the default format for viewing files, set the
 " g:Tex_DefaultTargetFormat [|ls_a_dw|] variable.
-let g:Tex_ViewRule_pdf='evince'
+let g:Tex_ViewRule_pdf='zathura'
 "}}}
 "}}}
 
