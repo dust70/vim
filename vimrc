@@ -1169,6 +1169,10 @@ let g:tagbar_autoshowtag = 1
 "}}}
 "}}}
 
+" {{{ Tagbar-PHP-CTags
+let g:tagbar_phpctags_bin="~/.vim/PHP-CTags/phpctags"
+"}}}
+
 " {{{ YankRing
 " {{{ yankring_max_history 
 " Controls how many elements to save in the yankring.
