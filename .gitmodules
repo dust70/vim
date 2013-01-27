@@ -126,6 +126,10 @@
 	path = bundle/VCSCommand
 	url = git://repo.or.cz/vcscommand.git
 	ignore = all
+[submodule "VimPanel"]
+	path = bundle/VimPanel
+	url = git://github.com/mihaifm/vimpanel.git
+	ignore = all
 [submodule "VimPager"]
 	path = bundle/VimPager
 	url = git://github.com/rkitover/vimpager.git
