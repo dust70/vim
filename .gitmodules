@@ -82,6 +82,10 @@
 	path = bundle/RagTag
 	url = git://github.com/tpope/vim-ragtag.git
 	ignore = all
+[submodule "Screen"]
+	path = bundle/Screen
+	url = git://github.com/ervandew/screen.git
+	ignore = all
 [submodule "SecureModelines"]
 	path = bundle/SecureModelines
 	url = git://github.com/ciaranm/securemodelines.git
