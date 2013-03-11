@@ -1143,6 +1143,29 @@ let g:NERDTreeWinSize=50
 "}}}
 "}}}
 
+" {{{ Syntastic
+" {{{ syntastic_auto_jump
+" Enable this option if you want the cursor to jump to the first detected error
+" when saving or opening a file:
+let g:syntastic_auto_jump = 1
+"}}}
+
+" {{{ syntastic_auto_loc_list
+" Use this option to tell syntastic to automatically open and/or close the
+" |location-list| (see |syntastic-error-window|).
+"
+" When set to 0 the error window will not be opened or closed automatically. >
+"     let g:syntastic_auto_loc_list=0
+" When set to 1 the error window will be automatically opened when errors are
+" detected, and closed when none are detected.
+"     let g:syntastic_auto_loc_list=1
+" When set to 2 the error window will be automatically closed when no errors are
+" detected, but not opened automatically.
+"     let g:syntastic_auto_loc_list=2
+let g:syntastic_auto_loc_list = 1
+"}}}
+"}}}
+
 " {{{ TagBar
 " {{{ toggle display
 nnoremap <silent> <C-w><C-t> :TagbarToggle<CR>
