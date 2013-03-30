@@ -1143,6 +1143,12 @@ let g:NERDTreeWinSize=50
 "}}}
 "}}}
 
+" {{{ PDV
+inoremap <C-P> <ESC>:set nopaste<CR>:call PhpDocSingle()<CR>:set paste<CR>i
+nnoremap <C-P> <ESC>:set nopaste<CR>:call PhpDocSingle()<CR>:set paste<CR>
+vnoremap <C-P> <ESC>:set nopaste<CR>:call PhpDocRange()<CR>:set paste<CR>
+"}}}
+
 " {{{ Syntastic
 " {{{ syntastic_auto_jump
 " Enable this option if you want the cursor to jump to the first detected error
