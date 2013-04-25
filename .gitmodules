@@ -6,6 +6,10 @@
 	path = bundle/AutoClose
 	url = git://github.com/Townk/vim-autoclose.git
 	ignore = all
+[submodule "AutoCloseTag"]
+	path = bundle/AutoCloseTag
+	url = git://github.com/vim-scripts/HTML-AutoCloseTag.git
+	ignore = all
 [submodule "Bash-Support"]
 	path = bundle/Bash-Support
 	url = git://github.com/vim-scripts/bash-support.vim.git
