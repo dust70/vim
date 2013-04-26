@@ -94,6 +94,10 @@
 	path = bundle/PHP-Dictionary
 	url = git://github.com/vim-scripts/PHP-dictionary.git
 	ignore = all
+[submodule "Project"]
+	path = bundle/Project
+	url = git://github.com/amiorin/vim-project.git
+	ignore = all
 [submodule "PythonMode"]
 	path = bundle/PythonMode
 	url = git://github.com/klen/python-mode.git
