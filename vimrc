@@ -37,6 +37,8 @@ endif
 " compiled without the |+eval| feature it will output "unknown".
 if has("gui_running") && ! empty(globpath(&runtimepath, 'colors/vydark.vim'))
     colorscheme vydark
+elseif ! empty(globpath(&runtimepath, 'colors/detailed.vim'))
+    colorscheme detailed
 else
     colorscheme evening
 endif
