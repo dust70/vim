@@ -30,6 +30,10 @@
 	path = bundle/DBExt
 	url = git://github.com/vim-scripts/dbext.vim.git
 	ignore = all
+[submodule "Detailed"]
+	path = bundle/Detailed
+	url = git://github.com/rking/vim-detailed.git
+	ignore = all
 [submodule "EnhancedCommentify"]
 	path = bundle/EnhancedCommentify
 	url = git://github.com/hrp/EnhancedCommentify.git
