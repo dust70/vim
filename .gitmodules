@@ -146,6 +146,10 @@
 	path = bundle/TBone
 	url = git://github.com/tpope/vim-tbone.git
 	ignore = all
+[submodule "TimeKeeper"]
+	path = bundle/TimeKeeper
+	url = git://github.com/PAntoine/TimeKeeper.git
+	ignore = all
 [submodule "UnImpaired"]
 	path = bundle/UnImpaired
 	url = git://github.com/tpope/vim-unimpaired.git
