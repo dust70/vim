@@ -70,6 +70,10 @@
 	path = bundle/NerdTree
 	url = git://github.com/scrooloose/nerdtree.git
 	ignore = all
+[submodule "Outliner"]
+	path = bundle/Outliner
+	url = git://github.com/vimoutliner/vimoutliner.git
+	ignore = all
 [submodule "PathOGen"]
 	path = bundle/PathOGen
 	url = git://github.com/tpope/vim-pathogen.git
