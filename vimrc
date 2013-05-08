@@ -1151,6 +1151,18 @@ nnoremap <C-P> <ESC>:set nopaste<CR>:call PhpDocSingle()<CR>:set paste<CR>
 vnoremap <C-P> <ESC>:set nopaste<CR>:call PhpDocRange()<CR>:set paste<CR>
 "}}}
 
+" {{{ Supertab
+" {{{ SuperTabMappingForward/SuperTabMappingBackward
+" These two variables allow you to set the keys used to kick off the current
+" completion. By default this is <tab> and <s-tab>. To change to something like
+" <c-space> and <s-c-space>, you can add the following to your |vimrc|.
+if has("gui_running")
+    let g:SuperTabMappingForward = '<c-space>'
+    let g:SuperTabMappingBackward = '<s-c-space>'
+endif
+"}}}
+"}}}
+
 " {{{ Syntastic
 " {{{ syntastic_auto_jump
 " Enable this option if you want the cursor to jump to the first detected error
