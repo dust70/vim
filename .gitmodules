@@ -110,6 +110,10 @@
 	path = bundle/PHP-Dictionary
 	url = git://github.com/vim-scripts/PHP-dictionary.git
 	ignore = all
+[submodule "PHPDoc"]
+	path = bundle/PHPDoc
+	url = git://github.com/stephpy/vim-phpdoc.git
+	ignore = all
 [submodule "Project"]
 	path = bundle/Project
 	url = git://github.com/amiorin/vim-project.git
