@@ -1151,6 +1151,18 @@ nnoremap <C-P> <ESC>:set nopaste<CR>:call PhpDocSingle()<CR>:set paste<CR>
 vnoremap <C-P> <ESC>:set nopaste<CR>:call PhpDocRange()<CR>:set paste<CR>
 "}}}
 
+" {{{ Session
+" {{{ session_command_aliases
+" The names of the commands defined by the session plug-in start with the action
+" they perform, followed by the string 'Session'. Some people prefer it the
+" other way around because they find it easier to remember and you can type
+" ':Session<Tab>' to get completion of all available commands (actually this
+" works with the other style as well if you type ':*Session<Tab>' but I
+" digress).
+let g:session_command_aliases = 1
+"}}}
+" }}}
+
 " {{{ Supertab
 " {{{ SuperTabMappingForward/SuperTabMappingBackward
 " These two variables allow you to set the keys used to kick off the current
