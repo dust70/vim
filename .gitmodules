@@ -126,13 +126,17 @@
 	path = bundle/ShowMarks
 	url = git://github.com/vim-scripts/ShowMarks.git
 	ignore = all
-[submodule "Supertab"]
-	path = bundle/Supertab
-	url = git://github.com/ervandew/supertab.git
-	ignore = all
 [submodule "Snipmate"]
 	path = bundle/Snipmate
 	url = git://github.com/msanders/snipmate.vim.git
+	ignore = all
+[submodule "Startify"]
+	path = bundle/Startify
+	url = git://github.com/vim-scripts/vim-startify.git
+	ignore = all
+[submodule "Supertab"]
+	path = bundle/Supertab
+	url = git://github.com/ervandew/supertab.git
 	ignore = all
 [submodule "Surround"]
 	path = bundle/Surround
