@@ -22,6 +22,10 @@
 	path = bundle/CSV
 	url = git://github.com/chrisbra/csv.vim.git
 	ignore = all
+[submodule "Conque"]
+	path = bundle/Conque
+	url = git://github.com/vim-scripts/Conque-Shell.git
+	ignore = all
 [submodule "DBExt"]
 	path = bundle/DBExt
 	url = git://github.com/vim-scripts/dbext.vim.git
