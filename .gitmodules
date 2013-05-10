@@ -6,6 +6,10 @@
 	path = bundle/AutoClose
 	url = git://github.com/Townk/vim-autoclose.git
 	ignore = all
+[submodule "AutoPairs"]
+	path = bundle/AutoPairs
+	url = git://github.com/jiangmiao/auto-pairs.git
+	ignore = all
 [submodule "Bash-Support"]
 	path = bundle/Bash-Support
 	url = git://github.com/vim-scripts/bash-support.vim.git
