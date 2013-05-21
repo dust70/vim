@@ -966,7 +966,7 @@ if has("autocmd")
     " don't load certain plugins depending on filetype
     augroup pluginConf
         autocmd!
-        autocmd Filetype mail let g:loaded_AutoClose = 1
+        autocmd FileType mail let g:loaded_AutoClose = 1
     augroup END
     "}}}
 endif
@@ -1026,7 +1026,7 @@ iabbrev 'e é
 "}}}
 
 " {{{ global options for plugins
-" {{{ calendar
+" {{{ Calendar
 " if you want to keep focus when goto next or prev calendar, add the following
 " to your .vimrc:
 let g:calendar_focus_today=1
@@ -1161,19 +1161,16 @@ vnoremap <C-P> <ESC>:set nopaste<CR>:call PhpDocRange()<CR>:set paste<CR>
 " digress).
 let g:session_command_aliases = 1
 "}}}
-" }}}
 
-" {{{ Supertab
-" {{{ SuperTabMappingForward/SuperTabMappingBackward
-" These two variables allow you to set the keys used to kick off the current
-" completion. By default this is <tab> and <s-tab>. To change to something like
-" <c-space> and <s-c-space>, you can add the following to your |vimrc|.
-if has("gui_running")
-    let g:SuperTabMappingForward = '<c-space>'
-    let g:SuperTabMappingBackward = '<s-c-space>'
-endif
-"}}}
-"}}}
+" {{{ session_autosave
+" By default this option is set to 'prompt'. When you've opened a session and
+" you quit Vim, the session plug-in will ask whether you want to save the
+" changes to your session. Set this option to 'yes' to always automatically save
+" open sessions when you quit Vim. To completely disable automatic saving you
+" can set this option to 'no'.
+let g:session_autosave = 'yes'
+" }}}
+" }}}
 
 " {{{ Syntastic
 " {{{ syntastic_auto_jump
