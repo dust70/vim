@@ -142,6 +142,10 @@
 	path = bundle/ShowMarks
 	url = git://github.com/vim-scripts/ShowMarks.git
 	ignore = all
+[submodule "Smarty"]
+	path = bundle/Smarty
+	url = git://github.com/vim-scripts/smarty-syntax.git
+	ignore = all
 [submodule "Snipmate"]
 	path = bundle/Snipmate
 	url = git://github.com/msanders/snipmate.vim.git
