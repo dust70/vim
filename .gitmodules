@@ -86,6 +86,10 @@
 	path = bundle/NerdTree
 	url = git://github.com/scrooloose/nerdtree.git
 	ignore = all
+[submodule "Neocomplcache"]
+	path = bundle/Neocomplcache
+	url = git://github.com/Shougo/neocomplcache.vim.git
+	ignore = all
 [submodule "Outliner"]
 	path = bundle/Outliner
 	url = git://github.com/vimoutliner/vimoutliner.git
