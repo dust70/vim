@@ -186,6 +186,10 @@
 	path = bundle/Templator
 	url = git://github.com/tomtom/templator_vim.git
 	ignore = all
+[submodule "Thesaurus"]
+	path = bundle/Thesaurus
+	url = git://github.com/beloglazov/vim-online-thesaurus.git
+	ignore = all
 [submodule "TimeKeeper"]
 	path = bundle/TimeKeeper
 	url = git://github.com/PAntoine/TimeKeeper.git
