@@ -198,6 +198,10 @@
 	path = bundle/TimeKeeper
 	url = git://github.com/PAntoine/TimeKeeper.git
 	ignore = all
+[submodule "TLib"]
+	path = bundle/TLib
+	url = git://github.com/tomtom/tlib_vim.git
+	ignore = all
 [submodule "TSkeleton"]
 	path = bundle/TSkeleton
 	url = git://github.com/tomtom/tskeleton_vim.git
