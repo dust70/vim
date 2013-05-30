@@ -98,6 +98,10 @@
 	path = bundle/Neocomplcache
 	url = git://github.com/Shougo/neocomplcache.vim.git
 	ignore = all
+[submodule "Obsession"]
+	path = bundle/Obsession
+	url = git://github.com/tpope/vim-obsession.git
+	ignore = all
 [submodule "Outliner"]
 	path = bundle/Outliner
 	url = git://github.com/vimoutliner/vimoutliner.git
