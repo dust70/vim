@@ -22,13 +22,17 @@
 	path = bundle/ColorSchemes
 	url = git://github.com/flazz/vim-colorschemes.git
 	ignore = all
+[submodule "Conque"]
+	path = bundle/Conque
+	url = git://github.com/vim-scripts/Conque-Shell.git
+	ignore = all
 [submodule "CSV"]
 	path = bundle/CSV
 	url = git://github.com/chrisbra/csv.vim.git
 	ignore = all
-[submodule "Conque"]
-	path = bundle/Conque
-	url = git://github.com/vim-scripts/Conque-Shell.git
+[submodule "CtrlP"]
+	path = bundle/CtrlP
+	url = git://github.com/dust70/ctrlp.vim.git
 	ignore = all
 [submodule "DBExt"]
 	path = bundle/DBExt
