@@ -86,10 +86,6 @@
 	path = bundle/LaTeX
 	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
 	ignore = all
-[submodule "MiniBufExpl"]
-	path = bundle/MiniBufExpl
-	url = git://github.com/fholgado/minibufexpl.vim.git
-	ignore = all
 [submodule "NerdTree"]
 	path = bundle/NerdTree
 	url = git://github.com/scrooloose/nerdtree.git
