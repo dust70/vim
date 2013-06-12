@@ -10,5 +10,4 @@ ftplugin/vo_base.vim
 ftplugin/vo_checkbox.vim
 ftplugin/vo_hoist.vim
 syntax/vo_base.vim
-tags
 view
