@@ -22,6 +22,10 @@
 	path = bundle/ColorSchemes
 	url = git://github.com/flazz/vim-colorschemes.git
 	ignore = all
+[submodule "ColorV"]
+	path = bundle/ColorV
+	url = git://github.com/Rykka/colorv.vim.git
+	ignore = all
 [submodule "Conque"]
 	path = bundle/Conque
 	url = git://github.com/vim-scripts/Conque-Shell.git
