@@ -194,6 +194,10 @@
 	path = bundle/Tagbar-PHP-CTags
 	url = git://github.com/techlivezheng/tagbar-phpctags.git
 	ignore = all
+[submodule "TaskList"]
+	path = bundle/TaskList
+	url = git://github.com/vim-scripts/TaskList.vim.git
+	ignore = all
 [submodule "TBone"]
 	path = bundle/TBone
 	url = git://github.com/tpope/vim-tbone.git
