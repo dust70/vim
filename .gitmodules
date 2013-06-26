@@ -134,10 +134,6 @@
 	path = bundle/Supertab
 	url = git://github.com/ervandew/supertab.git
 	ignore = all
-[submodule "Surround"]
-	path = bundle/Surround
-	url = git://github.com/tpope/vim-surround.git
-	ignore = all
 [submodule "Syntastic"]
 	path = bundle/Syntastic
 	url = git://github.com/scrooloose/syntastic.git
