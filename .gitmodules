@@ -110,10 +110,6 @@
 	path = bundle/PHPDoc
 	url = git://github.com/stephpy/vim-phpdoc.git
 	ignore = all
-[submodule "RagTag"]
-	path = bundle/RagTag
-	url = git://github.com/tpope/vim-ragtag.git
-	ignore = all
 [submodule "Screen"]
 	path = bundle/Screen
 	url = git://github.com/ervandew/screen.git
