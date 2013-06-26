@@ -31,7 +31,7 @@ setlocal formatoptions=qrocbj
 " otherwise spaces are included in the file name. See |option-backslash| about
 " using backslashes. This has nothing to do with the |Dictionary| variable
 " type.
-setlocal dictionary-=${HOME}/.vim/dictionary/php.dict  dictionary+=${HOME}/.vim/dictionary/php.vim
+setlocal dictionary-=${HOME}/.vim/bundle/PHP-Dictionary/PHP.dict dictionary+=${HOME}/.vim/bundle/PHP-Dictionary/PHP.dict
 " }}}
 
 " {{{ complete
