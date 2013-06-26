@@ -58,10 +58,6 @@
 	path = bundle/GitRebaseHelper
 	url = git://github.com/pix/git-rebase-helper.git
 	ignore = all
-[submodule "GitSupport"]
-	path = bundle/GitSupport
-	url = git://github.com/vim-scripts/Git-Support.git
-	ignore = all
 [submodule "GitTimeLapse"]
 	path = bundle/GitTimeLapse
 	url = http://www.tidraso.co.uk/repository/vim-plugin/
