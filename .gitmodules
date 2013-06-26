@@ -2,10 +2,6 @@
 	path = bundle/Align
 	url = git://github.com/tsaleh/vim-align.git
 	ignore = all
-[submodule "AutoClose"]
-	path = bundle/AutoClose
-	url = git://github.com/Townk/vim-autoclose.git
-	ignore = all
 [submodule "AutoPairs"]
 	path = bundle/AutoPairs
 	url = git://github.com/jiangmiao/auto-pairs.git
