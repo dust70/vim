@@ -166,10 +166,6 @@
 	path = bundle/UnImpaired
 	url = git://github.com/tpope/vim-unimpaired.git
 	ignore = all
-[submodule "VCSCommand"]
-	path = bundle/VCSCommand
-	url = git://repo.or.cz/vcscommand.git
-	ignore = all
 [submodule "VimPanel"]
 	path = bundle/VimPanel
 	url = git://github.com/mihaifm/vimpanel.git
