@@ -150,10 +150,6 @@
 	path = bundle/TaskList
 	url = git://github.com/vim-scripts/TaskList.vim.git
 	ignore = all
-[submodule "TBone"]
-	path = bundle/TBone
-	url = git://github.com/tpope/vim-tbone.git
-	ignore = all
 [submodule "Templator"]
 	path = bundle/Templator
 	url = git://github.com/tomtom/templator_vim.git
