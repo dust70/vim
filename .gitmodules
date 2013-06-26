@@ -10,10 +10,6 @@
 	path = bundle/Bash-Support
 	url = git://github.com/vim-scripts/bash-support.vim.git
 	ignore = all
-[submodule "Calc"]
-	path = bundle/Calc
-	url = git://github.com/gregsexton/VimCalc.git
-	ignore = all
 [submodule "Calendar"]
 	path = bundle/Calendar
 	url = git://github.com/mattn/calendar-vim.git
