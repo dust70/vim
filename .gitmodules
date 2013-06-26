@@ -154,10 +154,6 @@
 	path = bundle/Thesaurus
 	url = git://github.com/beloglazov/vim-online-thesaurus.git
 	ignore = all
-[submodule "TimeKeeper"]
-	path = bundle/TimeKeeper
-	url = git://github.com/PAntoine/TimeKeeper.git
-	ignore = all
 [submodule "TLib"]
 	path = bundle/TLib
 	url = git://github.com/tomtom/tlib_vim.git
