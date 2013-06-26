@@ -94,10 +94,6 @@
 	path = bundle/PathOGen
 	url = git://github.com/tpope/vim-pathogen.git
 	ignore = all
-[submodule "PDV"]
-	path = bundle/PDV
-	url = git://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
-	ignore = all
 [submodule "PHP-Complete"]
 	path = bundle/PHP-Complete
 	url = git://github.com/shawncplus/phpcomplete.vim.git
