@@ -679,6 +679,12 @@ set softtabstop=4
 set spelllang=de_20,de_de,de,en_us,en_gb,en
 "}}}
 
+" {{{ spell
+" When on spell checking will be done. See |spell|. The languages are specified
+" with 'spelllang'.
+noremap ,s :set spell!<CR>
+"}}}
+
 " {{{ highlight for spell checking
 highlight SpellBad term=standout ctermfg=Red term=underline cterm=underline
 highlight SpellCap term=underline cterm=underline
