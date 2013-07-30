@@ -110,6 +110,10 @@
 	path = bundle/PHP-Dictionary
 	url = git://github.com/vim-scripts/PHP-dictionary.git
 	ignore = all
+[submodule "PHP-Getter-Setter"]
+	path = bundle/PHP-Getter-Setter
+	url = git://github.com/docteurklein/php-getter-setter.vim.git
+	ignore = all
 [submodule "PHPDoc"]
 	path = bundle/PHPDoc
 	url = git://github.com/stephpy/vim-phpdoc.git
