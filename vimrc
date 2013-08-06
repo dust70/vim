@@ -1225,6 +1225,33 @@ let g:tagbar_foldlevel = 2
 " open the folds manually.
 let g:tagbar_autoshowtag = 1
 "}}}
+
+" {{{ tagbar_type_sql
+let g:tagbar_type_sql = {
+    \ 'replace' : 1,
+    \ 'ctagstype' : 'sql',
+    \ 'kinds' : [
+        \ 'P:packages',
+        \ 'd:prototypes',
+        \ 'c:cursors',
+        \ 'f:functions',
+        \ 'F:record fields:1:0',
+        \ 'L:block label',
+        \ 'p:procedures',
+        \ 's:subtypes',
+        \ 't:tables',
+        \ 'T:triggers',
+        \ 'v:variables',
+        \ 'i:indexes',
+        \ 'e:events',
+        \ 'U:publications',
+        \ 'R:services',
+        \ 'D:domains',
+        \ 'V:views',
+        \ 'n:synonyms',
+    \ ],
+\ }
+"}}}
 "}}}
 
 " {{{ Tagbar-PHP-CTags
