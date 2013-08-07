@@ -1157,6 +1157,15 @@ nnoremap <C-P> <ESC>:set nopaste<CR>:call PhpDocSingle()<CR>:set paste<CR>
 vnoremap <C-P> <ESC>:set nopaste<CR>:call PhpDocRange()<CR>:set paste<CR>
 "}}}
 
+" {{{ PHP-Getter-Setter
+" {{{ no_plugin_maps
+" Setting this variable will disable all key mappings defined by any of your
+" plugins (if the plugin writer adhered to the standard convention documented in
+" the scripting section of the VIM manual) including this one.
+let g:no_plugin_maps = 0
+"}}}
+"}}}
+
 " {{{ Session
 " {{{ session_command_aliases
 " The names of the commands defined by the session plug-in start with the action
