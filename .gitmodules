@@ -26,6 +26,10 @@
 	path = bundle/Conque
 	url = git://github.com/vim-scripts/Conque-Shell.git
 	ignore = all
+[submodule "CSS-Syntax"]
+	path = bundle/CSS-Syntax
+	url = git://github.com/ChrisYip/Better-CSS-Syntax-for-Vim.git
+	ignore = all
 [submodule "CSV"]
 	path = bundle/CSV
 	url = git://github.com/chrisbra/csv.vim.git
