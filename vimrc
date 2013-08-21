@@ -338,7 +338,7 @@ endif
 
 " {{{ guitablabel
 " When nonempty describes the text to use in a label of the GUI tab pages line.
-" When empty and when the result is empty Vim will use a default label. 
+" When empty and when the result is empty Vim will use a default label.
 if has('gui_running')
     function! GuiTabLabel()
         " Append the tab number
@@ -975,7 +975,14 @@ if has("autocmd")
         autocmd FileType mail let g:loaded_AutoClose = 1
     augroup END
     "}}}
+
+    " {{{ specFile
+    augroup specFile
+        autocmd
+        augroup BufReadCmd *.doc,*.docx,*.gif,*.jpg,*.JPG,*.odt,*.pdf,*.png,*.ppt,*.xls,*.xlsx :call netrw#NetrwBrowseX(expand("<amatch>"),0)|enew!
+    augroup END
 endif
+"}}}
 "}}}
 
 " {{{ mapping
@@ -1268,7 +1275,7 @@ let g:tagbar_phpctags_bin="~/.vim/PHP-CTags/phpctags"
 "}}}
 
 " {{{ YankRing
-" {{{ yankring_max_history 
+" {{{ yankring_max_history
 " Controls how many elements to save in the yankring.
 let g:yankring_max_history = 25
 "}}}
