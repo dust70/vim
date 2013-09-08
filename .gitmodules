@@ -1,195 +1,147 @@
 [submodule "Align"]
 	path = bundle/Align
-	url = git://github.com/tsaleh/vim-align.git
-	ignore = all
+	url = git://github.com/dust70/Align.git
 [submodule "AutoPairs"]
 	path = bundle/AutoPairs
-	url = git://github.com/jiangmiao/auto-pairs.git
-	ignore = all
-[submodule "Bash-Support"]
-	path = bundle/Bash-Support
-	url = git://github.com/vim-scripts/bash-support.vim.git
-	ignore = all
+	url = git://github.com/dust70/AutoPairs.git
+[submodule "BashSupport"]
+	path = bundle/BashSupport
+	url = git://github.com/dut70/BashSupport.git
 [submodule "Calendar"]
 	path = bundle/Calendar
-	url = git://github.com/mattn/calendar-vim.git
-	ignore = all
+	url = git://github.com/dust70/Calendar.git
 [submodule "ColorSchemes"]
 	path = bundle/ColorSchemes
-	url = git://github.com/flazz/vim-colorschemes.git
-	ignore = all
+	url = git://github.com/dust70/Colorschemes.git
 [submodule "ColorV"]
 	path = bundle/ColorV
-	url = git://github.com/Rykka/colorv.vim.git
-	ignore = all
+	url = git://github.com/dust70/ColorV.git
 [submodule "Conque"]
 	path = bundle/Conque
-	url = git://github.com/vim-scripts/Conque-Shell.git
-	ignore = all
+	url = git://github.com/dust70/Conque.git
 [submodule "CSS3Syntax"]
 	path = bundle/CSS3Syntax
 	url = git://github.com/dust70/CSS3Syntax.git
-[submodule "CSS-Syntax"]
-	path = bundle/CSS-Syntax
-	url = git://github.com/ChrisYip/Better-CSS-Syntax-for-Vim.git
-	ignore = all
+[submodule "CSSSyntax"]
+	path = bundle/CSSSyntax
+	url = git://github.com/dust70/CSSSyntax
 [submodule "CSV"]
 	path = bundle/CSV
-	url = git://github.com/chrisbra/csv.vim.git
-	ignore = all
+	url = git://github.com/dust70/CSV.git
 [submodule "CtrlP"]
 	path = bundle/CtrlP
-	url = git://github.com/dust70/ctrlp.vim.git
-	ignore = all
-[submodule "CtrlP-Funky"]
-	path = bundle/CtrlP-Funky
-	url = git://github.com/tacahiroy/ctrlp-funky.git
-	ignore = all
+	url = git://github.com/dust70/CtrlP.git
+[submodule "CtrlPFunky"]
+	path = bundle/CtrlPFunky
+	url = git://github.com/dust70/CtrlPFunky.git
 [submodule "DBExt"]
 	path = bundle/DBExt
-	url = git://github.com/vim-scripts/dbext.vim.git
-	ignore = all
+	url = git://github.com/dust70/DBExt.git
 [submodule "Detailed"]
 	path = bundle/Detailed
-	url = git://github.com/rking/vim-detailed.git
-	ignore = all
+	url = git://github.com/dust70/Detailed.git
 [submodule "EnhancedCommentify"]
 	path = bundle/EnhancedCommentify
-	url = git://github.com/hrp/EnhancedCommentify.git
-	ignore = all
+	url = git://github.com/dust70/EnhancedCommentify.git
 [submodule "Eunuch"]
 	path = bundle/Eunuch
-	url = git://github.com/tpope/vim-eunuch.git
-	ignore = all
+	url = git://github.com/dust70/Eunuch.git
 [submodule "FuGITive"]
 	path = bundle/FuGITive
-	url = git://github.com/tpope/vim-fugitive.git
-	ignore = all
+	url = git://github.com/dust70/FuGITive.git
 [submodule "GitRebaseHelper"]
 	path = bundle/GitRebaseHelper
-	url = git://github.com/pix/git-rebase-helper.git
-	ignore = all
+	url = git://github.com/dust70/GitRebaseHelper.git
 [submodule "GnuPG"]
 	path = bundle/GnuPG
-	url = git://gitorious.org/vim-gnupg/vim-gnupg.git
-	ignore = all
+	url = git://github.com/dust70/GnuPG.git
 [submodule "GoogleVim"]
 	path = bundle/GoogleVim
-	url = git://github.com/vim-scripts/google.vim.git
-	ignore = all
+	url = git://github.com/dust70/GoogleVim.git
 [submodule "HTML5"]
 	path = bundle/HTML5
-	url = git://github.com/othree/html5.vim.git
-	ignore = all
+	url = git://github.com/dust70/HTML5.git
 [submodule "LaTeX"]
 	path = bundle/LaTeX
-	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
-	ignore = all
-[submodule "NerdTree"]
-	path = bundle/NerdTree
-	url = git://github.com/scrooloose/nerdtree.git
-	ignore = all
+	url = git://git.code.sf.net/p/vim-latex/vim-latex
 [submodule "Neocomplcache"]
 	path = bundle/Neocomplcache
-	url = git://github.com/Shougo/neocomplcache.vim.git
-	ignore = all
+	url = git://github.com/dust70/Neocomplcache.git
+[submodule "NerdTree"]
+	path = bundle/NerdTree
+	url = git://github.com/dust70/NerdTree
 [submodule "Obsession"]
 	path = bundle/Obsession
-	url = git://github.com/tpope/vim-obsession.git
-	ignore = all
+	url = git://github.com/dust70/Obsession.git
 [submodule "Outliner"]
 	path = bundle/Outliner
-	url = git://github.com/vimoutliner/vimoutliner.git
-	ignore = all
+	url = git://github.com/dust70/Outliner.git
 [submodule "PathOGen"]
 	path = bundle/PathOGen
-	url = git://github.com/tpope/vim-pathogen.git
-	ignore = all
-[submodule "PHP-Annotations-Syntax"]
-	path = bundle/PHP-Annotations-Syntax
-	url = git://github.com/vim-scripts/php-annotations-syntax.git
-	ignore = all
-[submodule "PHP-Complete"]
-	path = bundle/PHP-Complete
-	url = git://github.com/shawncplus/phpcomplete.vim.git
-	ignore = all
-[submodule "PHP-CTags"]
-	path = PHP-CTags
-	url = git://github.com/techlivezheng/phpctags.git
-	ignore = all
-[submodule "PHP-Dictionary"]
-	path = bundle/PHP-Dictionary
-	url = git://github.com/vim-scripts/PHP-dictionary.git
-	ignore = all
-[submodule "PHP-Getter-Setter"]
-	path = bundle/PHP-Getter-Setter
-	url = git://github.com/docteurklein/php-getter-setter.vim.git
-	ignore = all
+	url = git://github.com/dust70/PathOGen.git
+[submodule "PHPAnnotationsSyntax"]
+	path = bundle/PHPAnnotationsSyntax
+	url = git://github.com/dust70/PHPAnnotationsSyntax.git
+[submodule "PHPComplete"]
+	path = bundle/PHPComplete
+	url = git://github.com/dust70/PHPComplete.git
+[submodule "PHPCTags"]
+	path = PHPCTags
+	url = git://github.com/dust70/PHPCTags.git
+[submodule "PHPDictionary"]
+	path = bundle/PHPDictionary
+	url = git://github.com/dust70/PHPDictionary.git
+[submodule "PHPGetterSetter"]
+	path = bundle/PHPGetterSetter
+	url = git://github.com/dust70/PHPGetterSetter.git
 [submodule "PHPDoc"]
 	path = bundle/PHPDoc
-	url = git://github.com/stephpy/vim-phpdoc.git
-	ignore = all
+	url = git://github.com/dust70/PHPDoc.git
 [submodule "SecureModelines"]
 	path = bundle/SecureModelines
-	url = git://github.com/ciaranm/securemodelines.git
-	ignore = all
+	url = git://github.com/dust70/SecureModelines.git
 [submodule "ShowMarks"]
 	path = bundle/ShowMarks
-	url = git://github.com/vim-scripts/ShowMarks.git
-	ignore = all
+	url = git://github.com/dust70/ShowMarks.git
 [submodule "Smarty"]
 	path = bundle/Smarty
-	url = git://github.com/vim-scripts/smarty-syntax.git
-	ignore = all
+	url = git://github.com/dust70/Smarty.git
 [submodule "Snipmate"]
 	path = bundle/Snipmate
-	url = git://github.com/msanders/snipmate.vim.git
-	ignore = all
+	url = git://github.com/dust70/Snipmate.git
 [submodule "Startify"]
 	path = bundle/Startify
-	url = git://github.com/vim-scripts/vim-startify.git
-	ignore = all
+	url = git://github.com/dust70/Startify.git
 [submodule "Supertab"]
 	path = bundle/Supertab
-	url = git://github.com/ervandew/supertab.git
-	ignore = all
+	url = git://github.com/dust70/Supertab.git
 [submodule "Syntastic"]
 	path = bundle/Syntastic
-	url = git://github.com/scrooloose/syntastic.git
-	ignore = all
+	url = git://github.com/dust70/Syntastic.git
 [submodule "Tagbar"]
 	path = bundle/Tagbar
-	url = git://github.com/majutsushi/tagbar.git
-	ignore = all
-[submodule "Tagbar-PHP-CTags"]
-	path = bundle/Tagbar-PHP-CTags
-	url = git://github.com/techlivezheng/tagbar-phpctags.git
-	ignore = all
+	url = git://github.com/dust70/Tagbar.git
+[submodule "TagbarPHPCTags"]
+	path = bundle/TagbarPHPCTags
+	url = git://github.com/dust70/TagbarPHPCTags.git
 [submodule "TaskList"]
 	path = bundle/TaskList
-	url = git://github.com/vim-scripts/TaskList.vim.git
-	ignore = all
+	url = git://github.com/dust70/TaskList.git
 [submodule "Thesaurus"]
 	path = bundle/Thesaurus
-	url = git://github.com/beloglazov/vim-online-thesaurus.git
-	ignore = all
+	url = git://github.com/dust70/Thesaurus.git
 [submodule "TLib"]
 	path = bundle/TLib
-	url = git://github.com/tomtom/tlib_vim.git
-	ignore = all
+	url = git://github.com/dust70/TLib.git
 [submodule "TSkeleton"]
 	path = bundle/TSkeleton
-	url = git://github.com/tomtom/tskeleton_vim.git
-	ignore = all
+	url = git://github.com/dust70/TSkeleton.git
 [submodule "UnImpaired"]
 	path = bundle/UnImpaired
-	url = git://github.com/tpope/vim-unimpaired.git
-	ignore = all
-[submodule "VimPager"]
-	path = bundle/VimPager
-	url = git://github.com/rkitover/vimpager.git
-	ignore = all
+	url = git://github.com/dust70/UnImpaired.git
+[submodule "Pager"]
+	path = bundle/Pager
+	url = git://github.com/dust70/VimPager.git
 [submodule "YankRing"]
 	path = bundle/YankRing
-	url = git://github.com/vim-scripts/YankRing.vim.git
-	ignore = all
+	url = git://github.com/dust70/YankRing.git
