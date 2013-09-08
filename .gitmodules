@@ -38,6 +38,10 @@
 	path = bundle/CtrlP
 	url = git://github.com/dust70/ctrlp.vim.git
 	ignore = all
+[submodule "CtrlP-Funky"]
+	path = bundle/CtrlP-Funky
+	url = git://github.com/tacahiroy/ctrlp-funky.git
+	ignore = all
 [submodule "DBExt"]
 	path = bundle/DBExt
 	url = git://github.com/vim-scripts/dbext.vim.git
