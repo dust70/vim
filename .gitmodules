@@ -6,7 +6,7 @@
 	url = git://github.com/dust70/AutoPairs.git
 [submodule "BashSupport"]
 	path = bundle/BashSupport
-	url = git://github.com/dut70/BashSupport.git
+	url = git://github.com/dust70/BashSupport.git
 [submodule "Calendar"]
 	path = bundle/Calendar
 	url = git://github.com/dust70/Calendar.git
@@ -141,7 +141,7 @@
 	url = git://github.com/dust70/UnImpaired.git
 [submodule "Pager"]
 	path = bundle/Pager
-	url = git://github.com/dust70/VimPager.git
+	url = git://github.com/dust70/Pager.git
 [submodule "YankRing"]
 	path = bundle/YankRing
 	url = git://github.com/dust70/YankRing.git
