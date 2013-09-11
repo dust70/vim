@@ -100,6 +100,9 @@
 [submodule "SecureModelines"]
 	path = bundle/SecureModelines
 	url = git://github.com/dust70/SecureModelines.git
+[submodule "RagTag"]
+	path = bundle/RagTag
+	url = git://github.com/dust70/RagTag.git
 [submodule "ShowMarks"]
 	path = bundle/ShowMarks
 	url = git://github.com/dust70/ShowMarks.git
