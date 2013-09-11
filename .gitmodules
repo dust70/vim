@@ -16,6 +16,9 @@
 [submodule "ColorV"]
 	path = bundle/ColorV
 	url = git://github.com/dust70/ColorV.git
+[submodule "Commander"]
+	path = bundle/Commander
+	url = git://github.com/dust70/Commander.git
 [submodule "Conque"]
 	path = bundle/Conque
 	url = git://github.com/dust70/Conque.git
