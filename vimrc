@@ -977,12 +977,12 @@ if has("autocmd")
     "}}}
 
     " {{{ specFile
-    augroup specFile
-        autocmd
-        augroup BufReadCmd *.doc,*.docx,*.gif,*.jpg,*.JPG,*.odt,*.pdf,*.png,*.ppt,*.xls,*.xlsx :call netrw#NetrwBrowseX(expand("<amatch>"),0)|enew!
-    augroup END
+    "augroup specFile
+        "autocmd
+        "augroup BufReadCmd *.doc,*.docx,*.gif,*.jpg,*.JPG,*.odt,*.pdf,*.png,*.ppt,*.xls,*.xlsx :call netrw#NetrwBrowseX(expand("<amatch>"),0)|enew!
+    "augroup END
+    "}}}
 endif
-"}}}
 "}}}
 
 " {{{ mapping
@@ -1271,7 +1271,7 @@ let g:tagbar_type_sql = {
 "}}}
 
 " {{{ Tagbar-PHP-CTags
-let g:tagbar_phpctags_bin="~/.vim/PHP-CTags/phpctags"
+let g:tagbar_phpctags_bin="~/.vim/PHPCTags/phpctags"
 "}}}
 
 " {{{ YankRing
