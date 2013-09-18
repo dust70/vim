@@ -16,7 +16,10 @@ setlocal textwidth=79
 " the "+=" and "-=" feature of ":set" |add-option-flags|.
 " NOTE: This option is set to the Vi default value when 'compatible' is set
 " and to the Vim default value when 'compatible' is reset.
-setlocal formatoptions=qrocbj
+setlocal formatoptions=croqnb1
+if v:version > 703
+    setlocal formatoptions+=j
+endif
 "}}}
 
 " {{{ dictionary
@@ -31,7 +34,7 @@ setlocal formatoptions=qrocbj
 " otherwise spaces are included in the file name. See |option-backslash| about
 " using backslashes. This has nothing to do with the |Dictionary| variable
 " type.
-setlocal dictionary-=${HOME}/.vim/bundle/PHP-Dictionary/PHP.dict dictionary+=${HOME}/.vim/bundle/PHP-Dictionary/PHP.dict
+setlocal dictionary-=${HOME}/.vim/bundle/PHPDictionary/PHP.dict dictionary+=${HOME}/.vim/bundle/PHPDictionary/PHP.dict
 " }}}
 
 " {{{ complete
