@@ -1051,18 +1051,6 @@ let g:calendar_monday=1
 "}}}
 
 " {{{ EnhancedCommentify
-" Add a whitespace between comment strings and code. Mainly for readability.
-" Comments without this space may still be decommented.
-let g:EnhCommentifyPretty='Yes'
-
-" When using a language with multipart-comments commenting a visual block will
-" result in the whole block commented in unit, not line by line.
-let g:EnhCommentifyMultiPartBlocks='Yes'
-
-" Respect the indent of a line. The comment leader is inserted correctly
-" indented, not at the beginning of the line.
-let g:EnhCommentifyRespectIndent='Yes'
-
 " With this option set, the script tries to figure out which filetype to use
 " for every block by using the synID of the block. This improves handling of
 " embedded languages eg. CSS in HTML, Perl in VimL... But be aware, that this
