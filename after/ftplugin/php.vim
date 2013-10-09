@@ -60,4 +60,6 @@ setlocal complete-=k complete+=k
 "setlocal tags-=${HOME}/.vim/tags/php/* tags+=${HOME}/.vim/tags/php/*
 "}}}
 
+" {{{ mappings
 nnoremap ,c <ESC>:set paste<CR>:exe PhpDoc()<CR>:set nopaste<CR>i
+"}}}
