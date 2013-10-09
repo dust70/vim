@@ -1038,6 +1038,37 @@ endif
 iabbrev 'e é
 "}}}
 
+" {{{ syntax
+" {{{ Java
+" All identifiers in java.lang.* are always visible in all classes. To highlight
+" them use
+let g:java_highlight_java_lang_ids = 1
+
+" }}}
+
+" {{{ PHP
+" {{{ SQL Query
+" If you like SQL syntax highlighting inside Strings
+let g:php_sql_query = 1
+"}}}
+
+" {{{ HTML syntax
+" Enable HTML syntax highlighting inside strings
+let g:php_htmlInStrings = 1
+"}}}
+
+" {{{ short Tags
+" Disable short tags
+let g:php_noShortTags = 1
+"}}}
+
+" {{{ folding
+" Enable folding for classes and functions
+let g:php_folding = 1
+"}}}
+"}}}
+"}}}
+
 " {{{ global options for plugins
 " {{{ Calendar
 " if you want to keep focus when goto next or prev calendar, add the following
