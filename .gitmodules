@@ -109,9 +109,6 @@
 [submodule "ShowMarks"]
 	path = bundle/ShowMarks
 	url = git://github.com/dust70/ShowMarks.git
-[submodule "Smarty"]
-	path = bundle/Smarty
-	url = git://github.com/dust70/Smarty.git
 [submodule "Snipmate"]
 	path = bundle/Snipmate
 	url = git://github.com/dust70/Snipmate.git
