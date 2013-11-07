@@ -1070,6 +1070,14 @@ let g:php_folding = 1
 "}}}
 
 " {{{ global options for plugins
+" {{{ Bufexplrorer disabled
+let g:bufexplorer_version=1
+" }}}
+
+" {{{ MiniBufExpl disabled
+let g:loaded_minibufexplorer=1
+" }}}
+
 " {{{ Calendar
 " if you want to keep focus when goto next or prev calendar, add the following
 " to your .vimrc:
