@@ -904,6 +904,16 @@ function! FormatFile()
 endfunction
 nnoremap <silent> ,m :call FormatFile()<CR>
 "}}}
+
+" {{{ ConvertToUnix
+function! ConvertToUnix()
+    execute "normal update"
+    execute "normal edit ++ff=dos"
+    execute "normal setlocal ff=unix"
+    execute "write"
+endfunction
+nnoremap <silent> ,c :call ConvertToUnix()<CR>
+"}}}
 "}}}
 
 " {{{ autocommands
