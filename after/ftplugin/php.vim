@@ -5,7 +5,7 @@
 " 'wrapmargin' may be used. See also 'formatoptions' and |ins-textwidth|. When
 " 'formatexpr' is set it will be used to break the line.
 " NOTE: This option is set to 0 when 'compatible' is set.
-setlocal textwidth=79
+setlocal textwidth=80
 " }}}
 
 " {{{ formatoptions
@@ -63,3 +63,5 @@ setlocal complete-=k complete+=k
 " {{{ mappings
 nnoremap ,c <ESC>:set paste<CR>:exe PhpDoc()<CR>:set nopaste<CR>i
 "}}}
+
+" vim: filetype=vim textwidth=80 foldmethod=marker
