@@ -1062,6 +1062,11 @@ let g:java_highlight_java_lang_ids = 1
 let g:php_sql_query = 1
 "}}}
 
+" {{{ Baselib
+" For highlighting the Baselib methods
+let g:php_sql_query = 1
+" }}}
+
 " {{{ HTML syntax
 " Enable HTML syntax highlighting inside strings
 let g:php_htmlInStrings = 1
@@ -1072,9 +1077,14 @@ let g:php_htmlInStrings = 1
 let g:php_noShortTags = 1
 "}}}
 
+" {{{ parent Error
+" For highlighting parent error ] or )
+let g:php_parent_error_close = 1
+" }}}
+
 " {{{ folding
 " Enable folding for classes and functions
-let g:php_folding = 1
+let g:php_folding = 2
 "}}}
 "}}}
 "}}}
@@ -1261,7 +1271,23 @@ nnoremap <silent> <C-w><C-t> :TagbarToggle<CR>
 
 " {{{ tagbar_width
 " Width of the Tagbar window in characters.
-let g:tagbar_width = 30
+let g:tagbar_width = 45
+"}}}
+
+" {{{ tagbar_autofocus
+" If you set this option the cursor will move to the Tagbar window when it is
+" opened.
+let g:tagbar_autofocus = 1
+" }}}
+
+" {{{ tagbar_show_linenumbers
+" Whether line numbers should be shown in the Tagbar window.
+" Possible values are:
+"   0: Don't show any line numbers.
+"   1: Show absolute line numbers.
+"   2: Show relative line numbers.
+"  -1: Use the global line number settings.
+let g:tagbar_show_linenumbers = -1
 "}}}
 
 " {{{ tagbar_foldlevel
