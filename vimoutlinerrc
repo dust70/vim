@@ -7,8 +7,6 @@ let g:vo_modules_load = "checkbox:hoist"
 "}}}
 
 " {{{ User Preferences ***************************************************
-let maplocalleader = ",,"
-
 " {{{ VIMOutliner local settings
 setlocal background=dark
 setlocal ignorecase
@@ -17,8 +15,8 @@ setlocal shiftwidth=4
 setlocal smartcase
 setlocal spell
 setlocal tabstop=4
-setlocal tw=78
-setlocal wrapmargin=5
+setlocal tw=80
+setlocal wrapmargin=3
 "}}}
 
 " {{{ local mappings
