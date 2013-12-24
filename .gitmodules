@@ -1,9 +1,6 @@
 [submodule "PHPCTags"]
 	path = PHPCTags
 	url = git://github.com/dust70/PHPCTags.git
-[submodule "PHPDictionary"]
-	path = bundle/PHPDictionary
-	url = git://github.com/dust70/PHPDictionary.git
 [submodule "PHPGetterSetter"]
 	path = bundle/PHPGetterSetter
 	url = git://github.com/dust70/PHPGetterSetter.git
