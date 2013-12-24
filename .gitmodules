@@ -1,9 +1,6 @@
 [submodule "PHPCTags"]
 	path = PHPCTags
 	url = git://github.com/dust70/PHPCTags.git
-[submodule "PHPGetterSetter"]
-	path = bundle/PHPGetterSetter
-	url = git://github.com/dust70/PHPGetterSetter.git
 [submodule "SecureModelines"]
 	path = bundle/SecureModelines
 	url = git://github.com/dust70/SecureModelines.git
