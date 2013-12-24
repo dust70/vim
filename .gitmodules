@@ -163,3 +163,7 @@
 	path = bundle/Calendar
 	url = git://github.com/mattn/calendar-vim.git
 	branch = master
+[submodule "Changes"]
+	path = bundle/Changes
+	url = git://github.com/chrisbra/changesPlugin.git
+	branch = master
