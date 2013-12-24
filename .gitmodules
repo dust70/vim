@@ -151,3 +151,7 @@
 [submodule "YankRing"]
 	path = bundle/YankRing
 	url = git://github.com/dust70/YankRing.git
+[submodule "Airline"]
+	path = bundle/Airline
+	url = git://github.com/bling/vim-airline.git
+	branch = master
