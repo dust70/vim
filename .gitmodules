@@ -214,3 +214,7 @@
 	path = bundle/Syntastic
 	url = git://github.com/scrooloose/syntastic.git
 	branch = master
+[submodule "Tagbar"]
+	path = bundle/Tagbar
+	url = git://github.com/majutsushi/tagbar.git
+	branch = master
