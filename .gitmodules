@@ -170,3 +170,7 @@
 	path = bundle/CSupport
 	url = git://github.com/vim-scripts/c.vim.git
 	branch = master
+[submodule "CSV"]
+	path = bundle/CSV
+	url = git://github.com/chrisbra/csv.vim.git
+	branch = master
