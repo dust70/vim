@@ -205,3 +205,7 @@
 	path = bundle/PerlSupport
 	url = git://github.com/vim-scripts/perl-support.vim.git
 	branch = master
+[submodule "PHPAnnotationsSyntax"]
+	path = bundle/PHPAnnotationsSyntax
+	url = git://github.com/vim-scripts/php-annotations-syntax.git
+	branch = master
