@@ -1,6 +1,3 @@
-[submodule "ColorSchemes"]
-	path = bundle/ColorSchemes
-	url = git://github.com/dust70/Colorschemes.git
 [submodule "ColorV"]
 	path = bundle/ColorV
 	url = git://github.com/dust70/ColorV.git
