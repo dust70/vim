@@ -207,3 +207,7 @@
 	path = bundle/PHPComplete
 	url = git://github.com/shawncplus/phpcomplete.vim.git
 	branch = master
+[submodule "PHPDictionary"]
+	path = bundle/PHPDictionary
+	url = git://github.com/nishigori/vim-php-dictionary.git
+	branch = master
