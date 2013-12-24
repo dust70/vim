@@ -1,6 +1,3 @@
-[submodule "CSSSyntax"]
-	path = bundle/CSSSyntax
-	url = git://github.com/dust70/CSSSyntax
 [submodule "CSV"]
 	path = bundle/CSV
 	url = git://github.com/dust70/CSV.git
