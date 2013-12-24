@@ -169,3 +169,7 @@
 	path = bundle/CSS3Syntax
 	url = git://github.com/hail2u/vim-css3-syntax.git
 	branch = master
+[submodule "CSupport"]
+	path = bundle/CSupport
+	url = git://github.com/vim-scripts/c.vim.git
+	branch = master
