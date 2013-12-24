@@ -212,3 +212,7 @@
 	path = bundle/Supertab
 	url = git://github.com/ervandew/supertab.git
 	branch = master
+[submodule "Surround"]
+	path = bundle/Surround
+	url = git://github.com/tpope/vim-surround.git
+	branch = master
