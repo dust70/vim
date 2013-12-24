@@ -195,3 +195,7 @@
 	path = bundle/Outliner
 	url = git://github.com/vimoutliner/vimoutliner.git
 	branch = master
+[submodule "Pager"]
+	path = bundle/Pager
+	url = git://github.com/rkitover/vimpager.git
+	branch = master
