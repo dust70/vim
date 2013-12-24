@@ -1,6 +1,3 @@
-[submodule "Outliner"]
-	path = bundle/Outliner
-	url = git://github.com/dust70/Outliner.git
 [submodule "PathOGen"]
 	path = bundle/PathOGen
 	url = git://github.com/dust70/PathOGen.git
