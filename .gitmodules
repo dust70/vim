@@ -1,6 +1,3 @@
-[submodule "GoogleVim"]
-	path = bundle/GoogleVim
-	url = git://github.com/dust70/GoogleVim.git
 [submodule "HTML5"]
 	path = bundle/HTML5
 	url = git://github.com/dust70/HTML5.git
