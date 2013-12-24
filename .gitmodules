@@ -1,6 +1,3 @@
-[submodule "PHPComplete"]
-	path = bundle/PHPComplete
-	url = git://github.com/dust70/PHPComplete.git
 [submodule "PHPCTags"]
 	path = PHPCTags
 	url = git://github.com/dust70/PHPCTags.git
