@@ -186,3 +186,7 @@
 	path = bundle/FuGITive
 	url = git://github.com/tpope/vim-pathogen.git
 	branch = master
+[submodule "GitRebaseHelper"]
+	path = bundle/GitRebaseHelper
+	url = git://github.com/pix/git-rebase-helper.git
+	branch = master
