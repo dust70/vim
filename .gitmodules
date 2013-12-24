@@ -1,6 +1,3 @@
-[submodule "CSV"]
-	path = bundle/CSV
-	url = git://github.com/dust70/CSV.git
 [submodule "CtrlP"]
 	path = bundle/CtrlP
 	url = git://github.com/dust70/CtrlP.git
