@@ -1,6 +1,3 @@
-[submodule "DBExt"]
-	path = bundle/DBExt
-	url = git://github.com/dust70/DBExt.git
 [submodule "Detailed"]
 	path = bundle/Detailed
 	url = git://github.com/dust70/Detailed.git
