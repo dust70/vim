@@ -1,6 +1,3 @@
-[submodule "CSS3Syntax"]
-	path = bundle/CSS3Syntax
-	url = git://github.com/dust70/CSS3Syntax.git
 [submodule "CSSSyntax"]
 	path = bundle/CSSSyntax
 	url = git://github.com/dust70/CSSSyntax
