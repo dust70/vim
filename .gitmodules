@@ -1,6 +1,3 @@
-[submodule "HTML5"]
-	path = bundle/HTML5
-	url = git://github.com/dust70/HTML5.git
 [submodule "LaTeX"]
 	path = bundle/LaTeX
 	url = git://git.code.sf.net/p/vim-latex/vim-latex
