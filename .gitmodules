@@ -1,6 +1,3 @@
-[submodule "Eunuch"]
-	path = bundle/Eunuch
-	url = git://github.com/dust70/Eunuch.git
 [submodule "FuGITive"]
 	path = bundle/FuGITive
 	url = git://github.com/dust70/FuGITive.git
