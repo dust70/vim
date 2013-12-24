@@ -213,3 +213,7 @@
 	path = bundle/Unite
 	url = git://github.com/Shougo/unite.vim.git
 	branch = master
+[submodule "YankRing"]
+	path = bundle/YankRing
+	url = git://github.com/vim-scripts/YankRing.vim.git
+	branch = master
