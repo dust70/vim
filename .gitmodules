@@ -206,3 +206,7 @@
 	path = bundle/PHPDoc
 	url = git://github.com/tobyS/pdv.git
 	branch = master
+[submodule "RagTag"]
+	path = bundle/RagTag
+	url = git://github.com/tpope/vim-ragtag.git
+	branch = master
