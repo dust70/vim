@@ -1,6 +1,3 @@
-[submodule "Align"]
-	path = bundle/Align
-	url = git://github.com/dust70/Align.git
 [submodule "AutoPairs"]
 	path = bundle/AutoPairs
 	url = git://github.com/dust70/AutoPairs.git
