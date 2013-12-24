@@ -152,3 +152,7 @@
 	path = bundle/Airline
 	url = git://github.com/bling/vim-airline.git
 	branch = master
+[submodule "Align"]
+	path = bundle/Align
+	url = git://github.com/vim-scripts/Align.git
+	branch = master
