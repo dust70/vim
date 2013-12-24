@@ -169,3 +169,7 @@
 	path = bundle/ColorSchemes
 	url = git://github.com/flazz/vim-colorschemes
 	branch = master
+[submodule "ColorV"]
+	path = bundle/ColorV
+	url = git://github.com/Rykka/colorv.vim.git
+	branch = master
