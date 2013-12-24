@@ -1,9 +1,6 @@
 [submodule "PHPCTags"]
 	path = PHPCTags
 	url = git://github.com/dust70/PHPCTags.git
-[submodule "TSkeleton"]
-	path = bundle/TSkeleton
-	url = git://github.com/dust70/TSkeleton.git
 [submodule "UnImpaired"]
 	path = bundle/UnImpaired
 	url = git://github.com/dust70/UnImpaired.git
