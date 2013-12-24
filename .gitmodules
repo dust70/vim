@@ -1,6 +1,3 @@
-[submodule "LaTeX"]
-	path = bundle/LaTeX
-	url = git://git.code.sf.net/p/vim-latex/vim-latex
 [submodule "Neocomplcache"]
 	path = bundle/Neocomplcache
 	url = git://github.com/dust70/Neocomplcache.git
