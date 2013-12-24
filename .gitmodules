@@ -159,3 +159,7 @@
 	path = bundle/BufExplorer
 	url = git://github.com/jlanzarotta/bufexplorer.git
 	branch = master
+[submodule "Calendar"]
+	path = bundle/Calendar
+	url = git://github.com/mattn/calendar-vim.git
+	branch = master
