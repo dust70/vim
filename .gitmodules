@@ -188,3 +188,7 @@
 	path = bundle/GnuPG
 	url = git://github.com/jamessan/vim-gnupg.git
 	branch = master
+[submodule "GoogleVim"]
+	path = bundle/GoogleVim
+	url = git://github.com/vim-scripts/google.vim.git
+	branch = master
