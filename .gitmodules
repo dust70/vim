@@ -180,3 +180,7 @@
 	path = bundle/CtrlPModified
 	url = git://github.com/jasoncodes/ctrlp-modified.vim.git
 	branch = master
+[submodule "CtrlPSSH"]
+	path = bundle/CtrlPSSH
+	url = git://github.com/tacahiroy/ctrlp-ssh.git
+	branch = master
