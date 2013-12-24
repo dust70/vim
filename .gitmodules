@@ -194,3 +194,7 @@
 	path = bundle/Obsession
 	url = git://github.com/tpope/vim-obsession.git
 	branch = master
+[submodule "Outliner"]
+	path = bundle/Outliner
+	url = git://github.com/vimoutliner/vimoutliner.git
+	branch = master
