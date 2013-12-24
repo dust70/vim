@@ -215,3 +215,7 @@
 	path = bundle/Tagbar
 	url = git://github.com/majutsushi/tagbar.git
 	branch = master
+[submodule "TagbarPHPCTags"]
+	path = bundle/TagbarPHPCTags
+	url = git://github.com/vim-php/tagbar-phpctags.vim.git
+	branch = master
