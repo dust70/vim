@@ -64,9 +64,6 @@
 [submodule "UnImpaired"]
 	path = bundle/UnImpaired
 	url = git://github.com/dust70/UnImpaired.git
-[submodule "Pager"]
-	path = bundle/Pager
-	url = git://github.com/dust70/Pager.git
 [submodule "YankRing"]
 	path = bundle/YankRing
 	url = git://github.com/dust70/YankRing.git
