@@ -187,3 +187,7 @@
 	path = bundle/GitRebaseHelper
 	url = git://github.com/pix/git-rebase-helper.git
 	branch = master
+[submodule "GnuPG"]
+	path = bundle/GnuPG
+	url = git://github.com/jamessan/vim-gnupg.git
+	branch = master
