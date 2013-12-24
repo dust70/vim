@@ -1,6 +1,3 @@
-[submodule "AutoPairs"]
-	path = bundle/AutoPairs
-	url = git://github.com/dust70/AutoPairs.git
 [submodule "BashSupport"]
 	path = bundle/BashSupport
 	url = git://github.com/dust70/BashSupport.git
