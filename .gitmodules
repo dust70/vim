@@ -1,6 +1,3 @@
-[submodule "GnuPG"]
-	path = bundle/GnuPG
-	url = git://github.com/dust70/GnuPG.git
 [submodule "GoogleVim"]
 	path = bundle/GoogleVim
 	url = git://github.com/dust70/GoogleVim.git
