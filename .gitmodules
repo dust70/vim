@@ -1,6 +1,3 @@
-[submodule "EnhancedCommentify"]
-	path = bundle/EnhancedCommentify
-	url = git://github.com/dust70/EnhancedCommentify.git
 [submodule "Eunuch"]
 	path = bundle/Eunuch
 	url = git://github.com/dust70/Eunuch.git
