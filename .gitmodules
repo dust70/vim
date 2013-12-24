@@ -1,9 +1,6 @@
 [submodule "PHPCTags"]
 	path = PHPCTags
 	url = git://github.com/dust70/PHPCTags.git
-[submodule "Snipmate"]
-	path = bundle/Snipmate
-	url = git://github.com/dust70/Snipmate.git
 [submodule "Startify"]
 	path = bundle/Startify
 	url = git://github.com/dust70/Startify.git
