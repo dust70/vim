@@ -1,6 +1,3 @@
-[submodule "BashSupport"]
-	path = bundle/BashSupport
-	url = git://github.com/dust70/BashSupport.git
 [submodule "Calendar"]
 	path = bundle/Calendar
 	url = git://github.com/dust70/Calendar.git
