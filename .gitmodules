@@ -204,3 +204,7 @@
 	path = bundle/PathOGen
 	url = git://github.com/tpope/vim-pathogen.git
 	branch = master
+[submodule "PerlSupport"]
+	path = bundle/PerlSupport
+	url = git://github.com/vim-scripts/perl-support.vim.git
+	branch = master
