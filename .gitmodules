@@ -1,6 +1,3 @@
-[submodule "Calendar"]
-	path = bundle/Calendar
-	url = git://github.com/dust70/Calendar.git
 [submodule "ColorSchemes"]
 	path = bundle/ColorSchemes
 	url = git://github.com/dust70/Colorschemes.git
