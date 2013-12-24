@@ -199,3 +199,7 @@
 	path = bundle/Pager
 	url = git://github.com/rkitover/vimpager.git
 	branch = master
+[submodule "Pastie"]
+	path = bundle/Pastie
+	url = git://github.com/tpope/vim-pastie.git
+	branch = master
