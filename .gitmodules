@@ -208,3 +208,7 @@
 	path = bundle/TaskWarrior
 	url = git://github.com/farseer90718/vim-taskwarrior.git
 	branch = master
+[submodule "UnImpaired"]
+	path = bundle/UnImpaired
+	url = git://github.com/tpope/vim-unimpaired.git
+	branch = master
