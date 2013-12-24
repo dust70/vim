@@ -167,3 +167,7 @@
 	path = bundle/ColorV
 	url = git://github.com/Rykka/colorv.vim.git
 	branch = master
+[submodule "Conque"]
+	path = bundle/Conque
+	url = git://github.com/Rykka/colorv.vim.git
+	branch = master
