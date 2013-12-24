@@ -209,3 +209,7 @@
 	path = bundle/ShowMarks
 	url = git://github.com/vim-scripts/ShowMarks.git
 	branch = master
+[submodule "Snipmate"]
+	path = bundle/Snipmate
+	url = git://github.com/msanders/snipmate.vim.git
+	branch = master
