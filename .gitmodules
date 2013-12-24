@@ -211,3 +211,7 @@
 	path = bundle/Startify
 	url = git://github.com/mhinz/vim-startify.git
 	branch = master
+[submodule "Supertab"]
+	path = bundle/Supertab
+	url = git://github.com/ervandew/supertab.git
+	branch = master
