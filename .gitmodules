@@ -172,3 +172,7 @@
 	path = bundle/CtrlP
 	url = git://github.com/kien/ctrlp.vim.git
 	branch = master
+[submodule "CtrlPFunky"]
+	path = bundle/CtrlPFunky
+	url = git://github.com/tacahiroy/ctrlp-funky.git
+	branch = master
