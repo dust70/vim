@@ -1,9 +1,6 @@
 [submodule "PHPCTags"]
 	path = PHPCTags
 	url = git://github.com/dust70/PHPCTags.git
-[submodule "Supertab"]
-	path = bundle/Supertab
-	url = git://github.com/dust70/Supertab.git
 [submodule "Surround"]
 	path = bundle/Surround
 	url = git://github.com/dust70/Surround.git
