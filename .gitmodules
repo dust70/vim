@@ -1,6 +1,3 @@
-[submodule "GitRebaseHelper"]
-	path = bundle/GitRebaseHelper
-	url = git://github.com/dust70/GitRebaseHelper.git
 [submodule "GnuPG"]
 	path = bundle/GnuPG
 	url = git://github.com/dust70/GnuPG.git
