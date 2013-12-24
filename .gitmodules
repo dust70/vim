@@ -171,3 +171,7 @@
 	path = bundle/CSV
 	url = git://github.com/chrisbra/csv.vim.git
 	branch = master
+[submodule "CtrlP"]
+	path = bundle/CtrlP
+	url = git://github.com/kien/ctrlp.vim.git
+	branch = master
