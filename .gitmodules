@@ -208,3 +208,7 @@
 	path = bundle/SecureModelines
 	url = git://github.com/ciaranm/securemodelines.git
 	branch = master
+[submodule "ShowMarks"]
+	path = bundle/ShowMarks
+	url = git://github.com/vim-scripts/ShowMarks.git
+	branch = master
