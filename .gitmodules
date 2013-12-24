@@ -214,3 +214,7 @@
 	path = bundle/YankRing
 	url = git://github.com/vim-scripts/YankRing.vim.git
 	branch = master
+[submodule "PHPCTags"]
+	path = PHPCTags
+	url = git://github.com/vim-php/phpctags.git
+	branch = master
