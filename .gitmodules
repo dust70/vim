@@ -1,6 +1,3 @@
-[submodule "Neocomplcache"]
-	path = bundle/Neocomplcache
-	url = git://github.com/dust70/Neocomplcache.git
 [submodule "NerdTree"]
 	path = bundle/NerdTree
 	url = git://github.com/dust70/NerdTree
