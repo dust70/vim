@@ -1,9 +1,6 @@
 [submodule "PHPCTags"]
 	path = PHPCTags
 	url = git://github.com/dust70/PHPCTags.git
-[submodule "Syntastic"]
-	path = bundle/Syntastic
-	url = git://github.com/dust70/Syntastic.git
 [submodule "Tagbar"]
 	path = bundle/Tagbar
 	url = git://github.com/dust70/Tagbar.git
