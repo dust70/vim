@@ -4,9 +4,6 @@
 [submodule "PHPGetterSetter"]
 	path = bundle/PHPGetterSetter
 	url = git://github.com/dust70/PHPGetterSetter.git
-[submodule "PHPDoc"]
-	path = bundle/PHPDoc
-	url = git://github.com/dust70/PHPDoc.git
 [submodule "SecureModelines"]
 	path = bundle/SecureModelines
 	url = git://github.com/dust70/SecureModelines.git
