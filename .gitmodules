@@ -1,6 +1,3 @@
-[submodule "Detailed"]
-	path = bundle/Detailed
-	url = git://github.com/dust70/Detailed.git
 [submodule "EnhancedCommentify"]
 	path = bundle/EnhancedCommentify
 	url = git://github.com/dust70/EnhancedCommentify.git
