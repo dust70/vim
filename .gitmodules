@@ -168,3 +168,7 @@
 	path = bundle/Conque
 	url = git://github.com/Rykka/colorv.vim.git
 	branch = master
+[submodule "CSS3Syntax"]
+	path = bundle/CSS3Syntax
+	url = git://github.com/hail2u/vim-css3-syntax.git
+	branch = master
