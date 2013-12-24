@@ -206,3 +206,7 @@
 	path = bundle/PHPAnnotationsSyntax
 	url = git://github.com/vim-scripts/php-annotations-syntax.git
 	branch = master
+[submodule "PHPComplete"]
+	path = bundle/PHPComplete
+	url = git://github.com/shawncplus/phpcomplete.vim.git
+	branch = master
