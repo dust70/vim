@@ -1,9 +1,6 @@
 [submodule "PHPCTags"]
 	path = PHPCTags
 	url = git://github.com/dust70/PHPCTags.git
-[submodule "TaskList"]
-	path = bundle/TaskList
-	url = git://github.com/dust70/TaskList.git
 [submodule "Thesaurus"]
 	path = bundle/Thesaurus
 	url = git://github.com/dust70/Thesaurus.git
