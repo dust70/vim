@@ -207,3 +207,7 @@
 	path = bundle/RagTag
 	url = git://github.com/tpope/vim-ragtag.git
 	branch = master
+[submodule "SecureModelines"]
+	path = bundle/SecureModelines
+	url = git://github.com/ciaranm/securemodelines.git
+	branch = master
