@@ -1,6 +1,3 @@
-[submodule "Obsession"]
-	path = bundle/Obsession
-	url = git://github.com/dust70/Obsession.git
 [submodule "Outliner"]
 	path = bundle/Outliner
 	url = git://github.com/dust70/Outliner.git
