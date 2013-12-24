@@ -1,6 +1,3 @@
-[submodule "CtrlP"]
-	path = bundle/CtrlP
-	url = git://github.com/dust70/CtrlP.git
 [submodule "CtrlPFunky"]
 	path = bundle/CtrlPFunky
 	url = git://github.com/dust70/CtrlPFunky.git
