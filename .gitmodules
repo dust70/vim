@@ -191,3 +191,7 @@
 	path = bundle/LaTeX
 	url = git://git.code.sf.net/p/vim-latex/vim-latex
 	branch = master
+[submodule "Neocomplcache"]
+	path = bundle/Neocomplcache
+	url = git://github.com/Shougo/neocomplcache.vim.git
+	branch = master
