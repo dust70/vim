@@ -153,3 +153,7 @@
 	path = bundle/Align
 	url = git://github.com/vim-scripts/Align.git
 	branch = master
+[submodule "AutoPairs"]
+	path = bundle/AutoPairs
+	url = git://github.com/jiangmiao/auto-pairs.git
+	branch = master
