@@ -1,6 +1,3 @@
-[submodule "PHPCTags"]
-	path = PHPCTags
-	url = git://github.com/dust70/PHPCTags.git
 [submodule "Airline"]
 	path = bundle/Airline
 	url = git://github.com/bling/vim-airline.git
