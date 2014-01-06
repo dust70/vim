@@ -170,6 +170,10 @@
 	path = bundle/ShowMarks
 	url = git://github.com/vim-scripts/ShowMarks.git
 	branch = master
+[submodule "Signify"]
+	path = bundle/Signify
+	url = git://github.com/mhinz/vim-signify.git
+	branch = master
 [submodule "Snipmate"]
 	path = bundle/Snipmate
 	url = git://github.com/msanders/snipmate.vim.git
