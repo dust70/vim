@@ -110,18 +110,62 @@ endif
 set backspace=indent,eol,start
 "}}}
 
-" {{{ backup
-" Make a backup before overwriting a file. Leave it around after the file has
-" been successfully written. If you do not want to keep the backup file, but
-" you do want a backup while the file is being written, reset this option and
-" set the 'writebackup' option (this is the default). If you do not want a
-" backup file at all reset both options (use this if your file system is
-" almost full). See the |backup-table| for more explanations.
-" When the 'backupskip' pattern matches, a backup is not made anyway. When
-" 'patchmode' is set, the backup may be renamed to become the oldest version
-" of a file.
-" NOTE: This option is reset when 'compatible' is set.
-set nobackup
+" {{{ backupdir
+" List of directories for the backup file, separated with commas.
+" - The backup file will be created in the first directory in the list where
+"   this is possible. The directory must exist, Vim will not create it for you.
+" - Empty means that no backup file will be created ( 'patchmode' is
+"   impossible!). Writing may fail because of this.
+" - A directory "." means to put the backup file in the same directory as the
+"   edited file.
+" - A directory starting with "./" (or ".\" for MS-DOS et al.) means to put the
+"   backup file relative to where the edited file is. The leading "." is
+"   replaced with the path name of the edited file. ("." inside a directory name
+"   has no special meaning).
+" - Spaces after the comma are ignored, other spaces are considered part of the
+"   directory name. To have a space at the start of a directory name, precede it
+"   with a backslash.
+" - To include a comma in a directory name precede it with a backslash.
+" - A directory name may end in an '/'.
+" - Environment variables are expanded |:set_env|.
+" - Careful with '\' characters, type one before a space, type two to get one in
+"   the option (see |option-backslash|), for example:
+"   :set bdir=c:\\tmp,\ dir\\,with\\,commas,\\\ dir\ with\ spaces
+" - For backwards compatibility with Vim version 3.0 a '>' at the start of the
+"   option is removed.
+" See also 'backup' and 'writebackup' options.
+" If you want to hide your backup files on Unix, consider this value:
+"   :set backupdir=./.backup,~/.backup,.,/tmp
+" You must create a ".backup" directory in each directory and in your home
+" directory for this to work properly. The use of |:set+=| and |:set-=| is
+" preferred when adding or removing directories from the list. This avoids
+" problems when a future version uses another default.
+" This option cannot be set from a |modeline| or in the |sandbox|, for security
+" reasons.
+set backupdir+='~/.vim_backup'
+" }}}
+
+" {{{ backupskip
+" A list of file patterns. When one of the patterns matches with the name of the
+" file which is written, no backup file is created. Both the specified file name
+" and the full path name of the file are used. The pattern is used like with
+" |:autocmd|, see |autocmd-patterns|. Watch out for special characters, see
+" |option-backslash|. When $TMPDIR, $TMP or $TEMP is not defined, it is not used
+" for the default value. "/tmp/*" is only used for Unix.
+"
+" WARNING: Not having a backup file means that when Vim fails to write your
+"          buffer correctly and then, for whatever reason, Vim exits, you lose
+"          both the original file and what you were writing. Only disable
+"          backups if you don't care about losing the file.
+"
+" Note that environment variables are not expanded. If you want to use $HOME you
+" must expand it explicitly, e.g.:
+"     :let backupskip = escape(expand('$HOME'), '\') . '/tmp/*'
+"
+" Note that the default also makes sure that "crontab -e" works (when a backup
+" would be made by renaming the original file crontab won't see the newly
+" created file). Also see 'backupcopy' and |crontab|.
+set backupskip+=''
 "}}}
 
 " {{{ browsedir
@@ -1007,7 +1051,7 @@ nnoremap <silent> P gP
 nnoremap <silent> gp p
 nnoremap <silent> gP P
 
-" cycle through buffers, gont use tabs (dont like them)
+" cycle through buffers, don't use tabs (don't like them)
 nnoremap <silent> ,b0 :confirm blast<CR>
 nnoremap <silent> ,bn :confirm bnext<CR>
 nnoremap <silent> ,bp :confirm bprevious<CR>
@@ -1090,6 +1134,15 @@ let g:php_folding = 2
 "}}}
 
 " {{{ global options for plugins
+" {{{ ActivityLog
+" {{{ activity_log_location
+if !isdirectory("~/.vim_ativity")
+    call mkdir("~/.vim_ativity", "p")
+endif
+let g:activity_log_location = '~/.vim_ativity'
+"}}}
+"}}}
+
 " {{{ Bufexplrorer disabled
 let g:bufexplorer_version=1
 " }}}
