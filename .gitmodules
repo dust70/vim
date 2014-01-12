@@ -18,10 +18,6 @@
 	path = bundle/BashSupport
 	url = git://github.com/vim-scripts/bash-support.vim.git
 	branch = master
-[submodule "BufExplorer"]
-	path = bundle/BufExplorer
-	url = git://github.com/jlanzarotta/bufexplorer.git
-	branch = master
 [submodule "Calendar"]
 	path = bundle/Calendar
 	url = git://github.com/mattn/calendar-vim.git
