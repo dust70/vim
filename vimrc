@@ -676,9 +676,7 @@ set showmatch
 "   1: only if there are at least two tab pages
 "   2: always
 " This is both for the GUI and non-GUI implementation of the tab pages line.
-if has('gui_running')
-    set showtabline=2
-endif
+set showtabline=2
 "}}}
 
 " {{{ smartindent
@@ -1051,10 +1049,15 @@ nnoremap <silent> P gP
 nnoremap <silent> gp p
 nnoremap <silent> gP P
 
-" cycle through buffers, don't use tabs (don't like them)
-nnoremap <silent> ,b0 :confirm blast<CR>
+" buffers
+nnoremap <silent> ,bl :confirm buffers<CR>
 nnoremap <silent> ,bn :confirm bnext<CR>
 nnoremap <silent> ,bp :confirm bprevious<CR>
+
+" tabs
+nnoremap <silent> ,tl :confirm tabs<CR>
+nnoremap <silent> ,tn :confirm tabnext<CR>
+nnoremap <silent> ,tp :confirm tabprevious<CR>
 
 " close buffers
 nnoremap <silent> ,bq :confirm bdelete<CR>
