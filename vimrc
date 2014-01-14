@@ -1146,6 +1146,13 @@ let g:activity_log_location = '~/.vim_ativity'
 "}}}
 "}}}
 
+" {{{ Airline
+" {{{ tabline
+" enable/disable enhanced tabline.
+let g:airline#extensions#tabline#enabled = 0
+"}}}
+"}}}
+
 " {{{ Bufexplrorer disabled
 let g:bufexplorer_version=1
 " }}}
@@ -1391,6 +1398,11 @@ let g:tagbar_type_sql = {
 
 " {{{ Tagbar-PHP-CTags
 let g:tagbar_phpctags_bin="~/.vim/PHPCTags/phpctags"
+"}}}
+
+" {{{ Taskwarrior
+let g:task_default_prompt = ['due', 'wait', 'project', 'priority', 'description', 'tag', 'depends']
+let g:task_info_size = 25
 "}}}
 
 " {{{ YankRing
