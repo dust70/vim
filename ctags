@@ -7,8 +7,6 @@
 --regex-sh=/^[[:blank:]]*[^#].*(export[[:blank:]]*)?([^ \t#=]*)=/\2/v,variables/
 --regex-sh=/^[[:blank:]]*[^#].*(unset|set|setopt|unsetopt)[[:blank:]]+([^ \t#=]*)$/\2/o,options/
 
---regex-vim=/^[[:blank:]]*set[[:blank:]]+([[:alnum:]]+)[[:blank:]]*=(.*)$/\1/s,settings/
-
 --langmap=perl:+.pod
 --regex-perl=/^=head1[[:space:]]*(.+)/\1/o,pod/
 --regex-perl=/^=head2[[:space:]]*(.+)$/. \1/o,pod/
