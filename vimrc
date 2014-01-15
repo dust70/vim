@@ -1139,10 +1139,7 @@ let g:php_folding = 2
 " {{{ global options for plugins
 " {{{ ActivityLog
 " {{{ activity_log_location
-if !isdirectory("~/.vim_ativity")
-    call mkdir("~/.vim_ativity", "p")
-endif
-let g:activity_log_location = '~/.vim_ativity'
+let g:activity_log_location = '~/.vim_activity'
 "}}}
 "}}}
 
