@@ -1,4 +1,4 @@
-" replace german umlauts
+" {{{ replace german umlauts
 imap ä ä
 imap Ä Ä
 imap ü ü
@@ -6,7 +6,9 @@ imap Ü Ü
 imap ö ö
 imap Ö Ö
 imap ß ß
+"}}}
 
+" {{{ softtabstop
 " Number of spaces that a <Tab> counts for while performing editing operations,
 " like inserting a <Tab> or using <BS>. It "feels" like <Tab>s are being
 " inserted, while in fact a mix of spaces and <Tab>s is used. This is useful to
@@ -19,11 +21,15 @@ imap ß ß
 " minimized by using <Tab>s.
 " The 'L' flag in 'cpoptions' changes how tabs are used when 'list' is set.
 setlocal softtabstop=2
+"}}}
 
+" {{{ shiftwidth
 " Number of spaces to use for each step of (auto)indent. Used for |'cindent'|,
 " |>>|, |<<|, etc.
 setlocal shiftwidth=2
+"}}}
 
+" {{{ textwidth
 " Maximum width of text that is being inserted. A longer line will be broken
 " after white space to get this width. A zero value disables this. 'textwidth'
 " is set to 0 when the 'paste' option is set. When 'textwidth' is zero,
@@ -31,3 +37,12 @@ setlocal shiftwidth=2
 " 'formatexpr' is set it will be used to break the line.
 " NOTE: This option is set to 0 when 'compatible' is set.
 setlocal textwidth=115
+"}}}
+
+" {{{ diffopt
+" Option settings for diff mode. It can consist of the following items. All
+" are optional. Items must be separated by a comma.
+setlocal diffopt+=iwhite
+"}}}
+
+" vim: filetype=vim textwidth=80 foldmethod=marker
