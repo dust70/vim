@@ -327,16 +327,16 @@ set foldcolumn=2
 " This option is set by commands like zm, zM and zR.
 " See fold-foldlevel.
 set foldlevel=0
-nnoremap ,1 :set foldlevel=0<CR>
-nnoremap ,2 :set foldlevel=1<CR>
-nnoremap ,3 :set foldlevel=2<CR>
-nnoremap ,4 :set foldlevel=3<CR>
-nnoremap ,5 :set foldlevel=4<CR>
-nnoremap ,6 :set foldlevel=5<CR>
-nnoremap ,7 :set foldlevel=6<CR>
-nnoremap ,8 :set foldlevel=7<CR>
-nnoremap ,9 :set foldlevel=8<CR>
-nnoremap ,0 :set foldlevel=9<CR>
+nnoremap <silent> ,1 :setlocal foldlevel=0<CR>
+nnoremap <silent> ,2 :setlocal foldlevel=1<CR>
+nnoremap <silent> ,3 :setlocal foldlevel=2<CR>
+nnoremap <silent> ,4 :setlocal foldlevel=3<CR>
+nnoremap <silent> ,5 :setlocal foldlevel=4<CR>
+nnoremap <silent> ,6 :setlocal foldlevel=5<CR>
+nnoremap <silent> ,7 :setlocal foldlevel=6<CR>
+nnoremap <silent> ,8 :setlocal foldlevel=7<CR>
+nnoremap <silent> ,9 :setlocal foldlevel=8<CR>
+nnoremap <silent> ,0 :setlocal foldlevel=9<CR>
 "}}}
 
 " {{{ foldlevelstart
