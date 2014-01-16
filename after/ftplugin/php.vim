@@ -64,4 +64,10 @@ setlocal complete-=k complete+=k
 nnoremap ,c <ESC>:set paste<CR>:exe PhpDoc()<CR>:set nopaste<CR>i
 "}}}
 
+" {{{ diffopt
+" Option settings for diff mode. It can consist of the following items. All
+" are optional. Items must be separated by a comma.
+setlocal diffopt+=iwhite
+"}}}
+
 " vim: filetype=vim textwidth=80 foldmethod=marker
