@@ -1,10 +1,13 @@
+" {{{ foldenable
 " When off, all folds are open. This option can be used to quickly switch
 " between showing all text unfolded and viewing the text with folds (including
 " manually opened or closed folds). It can be toggled with the |zi| command.
 " The 'foldcolumn' will remain blank when 'foldenable' is off.
 " This option is set by commands that create a new fold or close a fold.
 setlocal nofoldenable
+"}}}
 
+" {{{ backup
 " Make a backup before overwriting a file. Leave it around after the file has
 " been successfully written. If you do not want to keep the backup file, but you
 " do want a backup while the file is being written, reset this option and set
@@ -15,7 +18,9 @@ setlocal nofoldenable
 " 'patchmode' is set, the backup may be renamed to become the oldest version of
 " a file.
 setlocal nobackup
+"}}}
 
+" {{{ swapfile
 " Use a swapfile for the buffer. This option can be reset when a swapfile is not
 " wanted for a specific buffer. For example, with confidential information that
 " even root must not be able to access. Careful: All text will be in memory:
@@ -29,7 +34,9 @@ setlocal nobackup
 " This option is used together with 'bufhidden' and 'buftype' to specify special
 " kinds of buffers. See |special-buffers|.
 setlocal noswapfile
+"}}}
 
+" {{{ autoindent
 " Copy indent from current line when starting a new line (typing <CR> in Insert
 " mode or when using the "o" or "O" command). If you do not type anything on the
 " new line except <BS> or CTRL-D and then type <Esc>, CTRL-O or <CR>, the indent
@@ -44,7 +51,9 @@ setlocal noswapfile
 " cursor position when moving up or down is after the deleted indent; Vi puts
 " the cursor somewhere in the deleted indent}.
 setlocal noautoindent
+"}}}
 
+" {{{ cindent
 " Enables automatic C program indenting See 'cinkeys' to set the keys that
 " trigger reindenting in insert mode and 'cinoptions' to set your preferred
 " indent style.
@@ -56,13 +65,18 @@ setlocal noautoindent
 " 'indentexpr'.
 " This option is not used when 'paste' is set.
 setlocal nocindent
+"}}}
 
+" {{{ shiftwidth
 " Number of spaces to use for each step of (auto)indent. Used for |'cindent'|,
 " |>>|, |<<|, etc.
 setlocal shiftwidth=2
+"}}}
 
+" {{{ spell
 " Spellcheking will be done
 setlocal spell
+"}}}
 
 imap ä ä
 imap Ä Ä
