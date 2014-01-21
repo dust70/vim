@@ -1,6 +1,6 @@
 " {{{ PathOGen
 " Needed on some linux distributions
-let g:pathToPathOGen = split(&runtimepath, ",")[0] . "/bundle/PathOGen/autoload/pathogen.vim"
+let g:pathToPathOGen=split(&runtimepath, ",")[0] . "/bundle/PathOGen/autoload/pathogen.vim"
 if filereadable(pathToPathOGen)
     filetype off
     syntax off
@@ -108,64 +108,6 @@ endif
 "	start	allow backspacing over the start of insert; CTRL-W and CTRL-U
 "		stop once at the start of insert.
 set backspace=indent,eol,start
-"}}}
-
-" {{{ backupdir
-" List of directories for the backup file, separated with commas.
-" - The backup file will be created in the first directory in the list where
-"   this is possible. The directory must exist, Vim will not create it for you.
-" - Empty means that no backup file will be created ( 'patchmode' is
-"   impossible!). Writing may fail because of this.
-" - A directory "." means to put the backup file in the same directory as the
-"   edited file.
-" - A directory starting with "./" (or ".\" for MS-DOS et al.) means to put the
-"   backup file relative to where the edited file is. The leading "." is
-"   replaced with the path name of the edited file. ("." inside a directory name
-"   has no special meaning).
-" - Spaces after the comma are ignored, other spaces are considered part of the
-"   directory name. To have a space at the start of a directory name, precede it
-"   with a backslash.
-" - To include a comma in a directory name precede it with a backslash.
-" - A directory name may end in an '/'.
-" - Environment variables are expanded |:set_env|.
-" - Careful with '\' characters, type one before a space, type two to get one in
-"   the option (see |option-backslash|), for example:
-"   :set bdir=c:\\tmp,\ dir\\,with\\,commas,\\\ dir\ with\ spaces
-" - For backwards compatibility with Vim version 3.0 a '>' at the start of the
-"   option is removed.
-" See also 'backup' and 'writebackup' options.
-" If you want to hide your backup files on Unix, consider this value:
-"   :set backupdir=./.backup,~/.backup,.,/tmp
-" You must create a ".backup" directory in each directory and in your home
-" directory for this to work properly. The use of |:set+=| and |:set-=| is
-" preferred when adding or removing directories from the list. This avoids
-" problems when a future version uses another default.
-" This option cannot be set from a |modeline| or in the |sandbox|, for security
-" reasons.
-set backupdir+='~/.vim_backup'
-" }}}
-
-" {{{ backupskip
-" A list of file patterns. When one of the patterns matches with the name of the
-" file which is written, no backup file is created. Both the specified file name
-" and the full path name of the file are used. The pattern is used like with
-" |:autocmd|, see |autocmd-patterns|. Watch out for special characters, see
-" |option-backslash|. When $TMPDIR, $TMP or $TEMP is not defined, it is not used
-" for the default value. "/tmp/*" is only used for Unix.
-"
-" WARNING: Not having a backup file means that when Vim fails to write your
-"          buffer correctly and then, for whatever reason, Vim exits, you lose
-"          both the original file and what you were writing. Only disable
-"          backups if you don't care about losing the file.
-"
-" Note that environment variables are not expanded. If you want to use $HOME you
-" must expand it explicitly, e.g.:
-"     :let backupskip = escape(expand('$HOME'), '\') . '/tmp/*'
-"
-" Note that the default also makes sure that "crontab -e" works (when a backup
-" would be made by renaming the original file crontab won't see the newly
-" created file). Also see 'backupcopy' and |crontab|.
-set backupskip+=''
 "}}}
 
 " {{{ browsedir
@@ -386,21 +328,21 @@ endif
 if has('gui_running')
     function! GuiTabLabel()
         " Append the tab number
-        let label = v:lnum . ': '
-        let bufnrlist = tabpagebuflist(v:lnum)
+        let label=v:lnum . ': '
+        let bufnrlist=tabpagebuflist(v:lnum)
 
         " Append the buffer name
-        let name = bufname(bufnrlist[tabpagewinnr(v:lnum) - 1])
+        let name=bufname(bufnrlist[tabpagewinnr(v:lnum) - 1])
         if name == ''
             " give a name to no-name documents
             if &buftype=='quickfix'
-                let name = '[Quickfix List]'
+                let name='[Quickfix List]'
             else
-                let name = '[No Name]'
+                let name='[No Name]'
             endif
         else
             " get only the file name
-            let name = fnamemodify(name,":t")
+            let name=fnamemodify(name,":t")
         endif
 
         let label .= name
@@ -800,7 +742,7 @@ set undolevels=1000
 " value of that parameter. If a particular character is left out, then the
 " default value is used for that parameter. The following is a list of the
 " identifying characters and the effect of their value.
-set viminfo='5,/25,:100,h,s1000
+set viminfo='5,/25,:100,h,s1000,n~/.vim/info
 "}}}
 
 " {{{ wildignorecase
@@ -1024,7 +966,7 @@ if has("autocmd")
     " don't load certain plugins depending on filetype
     augroup pluginConf
         autocmd!
-        autocmd FileType mail let g:loaded_AutoClose = 1
+        autocmd FileType mail let g:loaded_AutoClose=1
     augroup END
     "}}}
 
@@ -1099,39 +1041,39 @@ iabbrev 'e é
 " {{{ Java
 " All identifiers in java.lang.* are always visible in all classes. To highlight
 " them use
-let g:java_highlight_java_lang_ids = 1
+let g:java_highlight_java_lang_ids=1
 
 " }}}
 
 " {{{ PHP
 " {{{ SQL Query
 " If you like SQL syntax highlighting inside Strings
-let g:php_sql_query = 1
+let g:php_sql_query=1
 "}}}
 
 " {{{ Baselib
 " For highlighting the Baselib methods
-let g:php_sql_query = 1
+let g:php_sql_query=1
 " }}}
 
 " {{{ HTML syntax
 " Enable HTML syntax highlighting inside strings
-let g:php_htmlInStrings = 1
+let g:php_htmlInStrings=1
 "}}}
 
 " {{{ short Tags
 " Disable short tags
-let g:php_noShortTags = 1
+let g:php_noShortTags=1
 "}}}
 
 " {{{ parent Error
 " For highlighting parent error ] or )
-let g:php_parent_error_close = 1
+let g:php_parent_error_close=1
 " }}}
 
 " {{{ folding
 " Enable folding for classes and functions
-let g:php_folding = 2
+let g:php_folding=2
 "}}}
 "}}}
 "}}}
@@ -1139,14 +1081,14 @@ let g:php_folding = 2
 " {{{ global options for plugins
 " {{{ ActivityLog
 " {{{ activity_log_location
-let g:activity_log_location = '~/.vim_activity'
+let g:activity_log_location=expand("~/.vim/activity/%Y-%m-%d")
 "}}}
 "}}}
 
 " {{{ Airline
 " {{{ tabline
 " enable/disable enhanced tabline.
-let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#tabline#enabled=0
 "}}}
 "}}}
 
@@ -1169,6 +1111,18 @@ let g:calendar_focus_today=1
 let g:calendar_monday=1
 "}}}
 
+" {{{ ColorV
+" {{{ colorv_cache_file
+" The copied_history_list's cache file position.
+let g:colorv_cache_file=expand("~/.vim/colorv_cache")
+"}}}
+
+" {{{ colorv_cache_fav
+" The fav_scheme_list's cache file position.
+let g:colorv_cache_fav=expand("~/.vim/colorv_fav")
+"}}}
+"}}}
+
 " {{{ EnhancedCommentify
 " With this option set, the script tries to figure out which filetype to use
 " for every block by using the synID of the block. This improves handling of
@@ -1188,9 +1142,9 @@ let g:EnhCommentifyUseSyntax='Yes'
 " to choose context or tex. If no keywords are found, it defaults to plaintex.
 " You can change the default by defining the variable g:tex_flavor to the
 " format (not the file type) you use most. Use one of these:
-"	let g:tex_flavor = "plain"
-"	let g:tex_flavor = "context"
-"	let g:tex_flavor = "latex"
+"	let g:tex_flavor="plain"
+"	let g:tex_flavor="context"
+"	let g:tex_flavor="latex"
 " Currently no other formats are recognized.
 let g:tex_flavor="latex"
 "}}}
@@ -1222,7 +1176,7 @@ let g:Tex_DefaultTargetFormat='pdf'
 "
 " Latex-Suite appends file.format to the above settings while calling the
 " external programs. For example, with
-"   let g:Tex_ViewRule_dvi = 'yap -1'
+"   let g:Tex_ViewRule_dvi='yap -1'
 " yap is called as
 "   !start yap -1 file.dvi
 " from within Vim. (The initial start is used on Windows platforms is to make
@@ -1243,6 +1197,35 @@ let g:Tex_ViewRule_pdf='zathura'
 "}}}
 "}}}
 
+" {{{ MRU
+" {{{ MRU_File
+" The list of recently edited file names is stored in the file specified by the
+" MRU_File variable. The default setting for this variable is
+" $HOME/.vim_mru_files for Unix-like systems and $USERPROFILE/_vim_mru_files for
+" MS-Windows systems. You can change this variable to point to a file by adding
+" the following line to the .vimrc file:
+let g:MRU_File=expand("~/.vim/mru")
+"}}}
+
+" {{{ MRU_Max_Entries
+" By default, the plugin will remember the names of the last 100 used files.
+" As you edit more files, old file names will be removed from the MRU list.
+" You can set the 'MRU_Max_Entries' variable to remember more file names. For
+" example, to remember 1000 most recently used file names, you can use
+let g:MRU_Max_Entries=1000
+"}}}
+
+" {{{ MRU_Exclude_Files
+" By default, all the edited file names will be added to the MRU list. If you
+" want to exclude file names matching a list of patterns, you can set the
+" MRU_Exclude_Files variable to a list of Vim regular expressions. By default,
+" this variable is set to an empty string. For example, to not include files
+" in the temporary (/tmp, /var/tmp and d:\temp) directories, you can set the
+" MRU_Exclude_Files variable to
+let g:MRU_Exclude_Files='^/tmp/.*\|^/var/tmp/.*'
+"}}}
+"}}}
+
 " {{{ NERDTree
 " {{{ toggle display
 nnoremap <silent> <C-w><C-n> :NERDTreeToggle<CR>
@@ -1253,7 +1236,7 @@ let g:NERDTreeChDirMode=2
 "}}}
 
 " {{{ NERDTreeBookmarksFile
-let g:NERDTreeBookmarksFile=expand("${HOME}/.vim-bookmarks")
+let g:NERDTreeBookmarksFile=expand("~/.vim/bookmarks")
 "}}}
 
 " {{{ NERDTreeQuitOnOpen
@@ -1276,7 +1259,7 @@ vnoremap <C-P> <ESC>:set nopaste<CR>:call PhpDocRange()<CR>:set paste<CR>
 " Setting this variable will disable all key mappings defined by any of your
 " plugins (if the plugin writer adhered to the standard convention documented in
 " the scripting section of the VIM manual) including this one.
-let g:no_plugin_maps = 0
+let g:no_plugin_maps=0
 "}}}
 "}}}
 
@@ -1288,7 +1271,7 @@ let g:no_plugin_maps = 0
 " ':Session<Tab>' to get completion of all available commands (actually this
 " works with the other style as well if you type ':*Session<Tab>' but I
 " digress).
-let g:session_command_aliases = 1
+let g:session_command_aliases=1
 "}}}
 
 " {{{ session_autosave
@@ -1297,7 +1280,7 @@ let g:session_command_aliases = 1
 " changes to your session. Set this option to 'yes' to always automatically save
 " open sessions when you quit Vim. To completely disable automatic saving you
 " can set this option to 'no'.
-let g:session_autosave = 'yes'
+let g:session_autosave='yes'
 " }}}
 " }}}
 
@@ -1305,7 +1288,7 @@ let g:session_autosave = 'yes'
 " {{{ syntastic_auto_jump
 " Enable this option if you want the cursor to jump to the first detected error
 " when saving or opening a file:
-let g:syntastic_auto_jump = 1
+let g:syntastic_auto_jump=1
 "}}}
 
 " {{{ syntastic_auto_loc_list
@@ -1320,7 +1303,7 @@ let g:syntastic_auto_jump = 1
 " When set to 2 the error window will be automatically closed when no errors are
 " detected, but not opened automatically.
 "     let g:syntastic_auto_loc_list=2
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list=1
 "}}}
 "}}}
 
@@ -1331,13 +1314,13 @@ nnoremap <silent> <C-w><C-t> :TagbarToggle<CR>
 
 " {{{ tagbar_width
 " Width of the Tagbar window in characters.
-let g:tagbar_width = 45
+let g:tagbar_width=45
 "}}}
 
 " {{{ tagbar_autofocus
 " If you set this option the cursor will move to the Tagbar window when it is
 " opened.
-let g:tagbar_autofocus = 1
+let g:tagbar_autofocus=1
 " }}}
 
 " {{{ tagbar_show_linenumbers
@@ -1347,13 +1330,13 @@ let g:tagbar_autofocus = 1
 "   1: Show absolute line numbers.
 "   2: Show relative line numbers.
 "  -1: Use the global line number settings.
-let g:tagbar_show_linenumbers = -1
+let g:tagbar_show_linenumbers=-1
 "}}}
 
 " {{{ tagbar_foldlevel
 " The initial foldlevel for folds in the Tagbar window. Folds with a level
 " higher than this number will be closed.
-let g:tagbar_foldlevel = 2
+let g:tagbar_foldlevel=2
 "}}}
 
 " {{{ tagbar_autoshowtag
@@ -1362,11 +1345,11 @@ let g:tagbar_foldlevel = 2
 " be highlighted. If it is not set then the folds won't be opened and the parent
 " tag will be highlighted instead. You can use the |:TagbarShowTag| command to
 " open the folds manually.
-let g:tagbar_autoshowtag = 1
+let g:tagbar_autoshowtag=1
 "}}}
 
 " {{{ tagbar_type_sql
-let g:tagbar_type_sql = {
+let g:tagbar_type_sql={
     \ 'replace' : 1,
     \ 'ctagstype' : 'sql',
     \ 'kinds' : [
@@ -1394,24 +1377,33 @@ let g:tagbar_type_sql = {
 "}}}
 
 " {{{ Tagbar-PHP-CTags
-let g:tagbar_phpctags_bin="~/.vim/PHPCTags/phpctags"
+let g:tagbar_phpctags_bin=expand("~/.vim/PHPCTags/phpctags")
 "}}}
 
 " {{{ Taskwarrior
-let g:task_default_prompt = ['due', 'wait', 'project', 'priority', 'description', 'tag', 'depends']
-let g:task_info_size = 25
+let g:task_default_prompt=['due', 'wait', 'project', 'priority', 'description', 'tag', 'depends']
+let g:task_info_size=25
 "}}}
 
 " {{{ YankRing
 " {{{ yankring_max_history
 " Controls how many elements to save in the yankring.
-let g:yankring_max_history = 25
+let g:yankring_max_history=25
 "}}}
+
+" {{{ yankring_history_dir
+" The YankRing stores the text in a file. This global variable allows you to
+" customize where the file(s) will be stored. This can be a comma separated
+" list, which is useful if your .vimrc is shared across different machines. If
+" multipe directories are specified, the first valid directory will be used. You
+" can put the following in your |vimrc|
+let g:yankring_history_dir=expand("~/.vim")
+" }}}
 
 " {{{ yankring_history_file
 " The history filename prefix can be controlled by setting this variable. You
 " can put the following in your |vimrc|.
-let g:yankring_history_file = '.vim_history'
+let g:yankring_history_file='history'
 "}}}
 "}}}
 "}}}
