@@ -14,10 +14,6 @@
 	path = bundle/AutoPairs
 	url = git://github.com/jiangmiao/auto-pairs.git
 	branch = master
-[submodule "BashSupport"]
-	path = bundle/BashSupport
-	url = git://github.com/vim-scripts/bash-support.vim.git
-	branch = master
 [submodule "Calendar"]
 	path = bundle/Calendar
 	url = git://github.com/mattn/calendar-vim.git
