@@ -197,6 +197,14 @@ endif
 set complete+=k
 "}}}
 
+" {{{ cursorcolumn
+" Highlight the screen column of the cursor with CursorColumn |hl-CursorColumn|.
+" Useful to align text. Will make screen redrawing slower.
+" If you only want the highlighting in the current window you can use these
+" autocommands
+set cursorcolumn
+" }}}
+
 " {{{ cursorline
 " Highlight the screen line of the cursor with CursorLine |hl-CursorLine|.
 " Useful to easily spot the cursor. Will make screen redrawing slower.
@@ -1285,12 +1293,6 @@ let g:session_autosave='yes'
 " }}}
 
 " {{{ Syntastic
-" {{{ syntastic_auto_jump
-" Enable this option if you want the cursor to jump to the first detected error
-" when saving or opening a file:
-let g:syntastic_auto_jump=1
-"}}}
-
 " {{{ syntastic_auto_loc_list
 " Use this option to tell syntastic to automatically open and/or close the
 " |location-list| (see |syntastic-error-window|).
