@@ -978,6 +978,13 @@ if has("autocmd")
     augroup END
     "}}}
 
+    " {{{
+    augroup PHTML
+        autocmd!
+        au BufRead,BufNewFile *.phtml set filetype=php.html
+    augroup END
+    " }}}
+
     " {{{ specFile
     "augroup specFile
         "autocmd
