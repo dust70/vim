@@ -70,10 +70,6 @@
 	path = bundle/EnhancedCommentify
 	url = git://github.com/vim-scripts/EnhCommentify.vim.git
 	branch = master
-[submodule "Eunuch"]
-	path = bundle/Eunuch
-	url = git://github.com/tpope/vim-eunuch.git
-	branch = master
 [submodule "FuGITive"]
 	path = bundle/FuGITive
 	url = git://github.com/tpope/vim-pathogen.git
