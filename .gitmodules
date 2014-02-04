@@ -146,10 +146,6 @@
 	path = bundle/Snipmate
 	url = git://github.com/msanders/snipmate.vim.git
 	branch = master
-[submodule "Startify"]
-	path = bundle/Startify
-	url = git://github.com/mhinz/vim-startify.git
-	branch = master
 [submodule "Supertab"]
 	path = bundle/Supertab
 	url = git://github.com/ervandew/supertab.git
