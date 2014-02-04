@@ -166,10 +166,6 @@
 	path = bundle/TagbarPHPCTags
 	url = git://github.com/vim-php/tagbar-phpctags.vim.git
 	branch = master
-[submodule "TaskWarrior"]
-	path = bundle/TaskWarrior
-	url = git://github.com/farseer90718/vim-taskwarrior.git
-	branch = master
 [submodule "UnImpaired"]
 	path = bundle/UnImpaired
 	url = git://github.com/tpope/vim-unimpaired.git
