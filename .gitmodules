@@ -32,7 +32,7 @@
 	branch = master
 [submodule "Conque"]
 	path = bundle/Conque
-	url = git://github.com/Rykka/colorv.vim.git
+	url = git://github.com/nicoraffo/conque.git
 	branch = master
 [submodule "CSS3Syntax"]
 	path = bundle/CSS3Syntax
