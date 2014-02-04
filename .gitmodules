@@ -170,10 +170,6 @@
 	path = bundle/UnImpaired
 	url = git://github.com/tpope/vim-unimpaired.git
 	branch = master
-[submodule "Unite"]
-	path = bundle/Unite
-	url = git://github.com/Shougo/unite.vim.git
-	branch = master
 [submodule "YankRing"]
 	path = bundle/YankRing
 	url = git://github.com/vim-scripts/YankRing.vim.git
