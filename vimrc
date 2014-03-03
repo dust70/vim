@@ -898,13 +898,12 @@ nnoremap <silent> ,m :call FormatFile()<CR>
 "}}}
 
 " {{{ ConvertToUnix
-function! ConvertToUnix()
-    execute "normal update"
-    execute "normal edit ++ff=dos"
-    execute "normal setlocal ff=unix"
+function! DosToUnix()
+    execute "update"
+    execute "edit ++ff=dos"
+    execute "setlocal ff=unix"
     execute "write"
 endfunction
-nnoremap <silent> ,c :call ConvertToUnix()<CR>
 "}}}
 "}}}
 
