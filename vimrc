@@ -1313,6 +1313,15 @@ let g:session_autosave='yes'
 "     let g:syntastic_auto_loc_list=2
 let g:syntastic_auto_loc_list=1
 "}}}
+" {{{ Syntax Checker
+" {{{ HTML
+" {{{ Tidy
+let g:syntastic_html_tidy_ignore_errors=[
+            \ "escaping malformed URI reference"
+            \ ]
+"}}}
+"}}}
+"}}}
 "}}}
 
 " {{{ TagBar
