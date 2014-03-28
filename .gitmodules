@@ -90,6 +90,10 @@
 	path = bundle/LaTeX
 	url = git://git.code.sf.net/p/vim-latex/vim-latex
 	branch = master
+[submodule "MatchTag"]
+	path = bundle/MatchTag
+	url = git://github.com/gregsexton/MatchTag.git
+	branch = master
 [submodule "MRU"]
 	path = bundle/MRU
 	url = git://github.com/yegappan/mru.git
