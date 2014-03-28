@@ -44,7 +44,7 @@ setlocal shiftwidth=4
 " 'wrapmargin' may be used. See also 'formatoptions' and |ins-textwidth|. When
 " 'formatexpr' is set it will be used to break the line.
 " NOTE: This option is set to 0 when 'compatible' is set.
-setlocal textwidth=115
+setlocal textwidth=120
 "}}}
 
 " {{{ matchpairs
@@ -59,25 +59,6 @@ setlocal matchpairs+=<:>
 " Option settings for diff mode. It can consist of the following items. All
 " are optional. Items must be separated by a comma.
 setlocal diffopt+=iwhite
-"}}}
-
-" {{{ HTML-Tidy
-command! Tidy :call Tidy()
-function! Tidy()
-  let filename=expand("%:p") " escapes for bash
-  let filename=substitute(filename, " ", "\\\\ ", "g")
-  let filename=substitute(filename, "(", "\\\\(", "g")
-  let filename=substitute(filename, ")", "\\\\)", "g")
-  let filename=substitute(filename, "[", "\\\\[", "g")
-  let filename=substitute(filename, "]", "\\\\]", "g")
-  let filename=substitute(filename, "&", "\\\\&", "g")
-  let filename=substitute(filename, "!", "\\\\!", "g")
-  let filename=substitute(filename, ",", "\\\\,", "g")
-  let filename=substitute(filename, "'", "?", "g")
-  let filename2=substitute(filename, ".*", "&.tidy.htm", "")
-  let filename3=substitute(filename, ".*", "&.errors.tidy.txt", "")
-  execute "!tidy "."-f ".filename3." ".filename." > ".filename2.""
-endfunction
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
