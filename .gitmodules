@@ -10,10 +10,6 @@
 	path = bundle/Align
 	url = git://github.com/vim-scripts/Align.git
 	branch = master
-[submodule "AutoCloseTag"]
-	path = bundle/AutoCloseTag
-	url = https://github.com/vim-scripts/HTML-AutoCloseTag.git
-	branch = master
 [submodule "AutoPairs"]
 	path = bundle/AutoPairs
 	url = git://github.com/jiangmiao/auto-pairs.git
