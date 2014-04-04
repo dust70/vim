@@ -2,10 +2,6 @@
 	path = bundle/NeoBundle
 	url = https://github.com/Shougo/neobundle.vim.git
 	branch = master
-[submodule "CloseTag"]
-	path = bundle/CloseTag
-	url = git://github.com/vim-scripts/closetag.vim.git
-	branch = master
 [submodule "CtrlP"]
 	path = bundle/CtrlP
 	url = git://github.com/kien/ctrlp.vim.git
