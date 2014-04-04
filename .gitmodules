@@ -2,10 +2,6 @@
 	path = bundle/NeoBundle
 	url = https://github.com/Shougo/neobundle.vim.git
 	branch = master
-[submodule "MatchTag"]
-	path = bundle/MatchTag
-	url = git://github.com/gregsexton/MatchTag.git
-	branch = master
 [submodule "Pager"]
 	path = bundle/Pager
 	url = git://github.com/rkitover/vimpager.git
