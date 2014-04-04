@@ -1,7 +1,3 @@
-[submodule "Abolish"]
-	path = bundle/Abolish
-	url = https://github.com/tpope/vim-abolish.git
-	branch = master
 [submodule "ActivityLog"]
 	path = bundle/ActivityLog
 	url = git://github.com/AD7six/vim-activity-log.git
