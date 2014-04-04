@@ -2,10 +2,6 @@
 	path = bundle/NeoBundle
 	url = https://github.com/Shougo/neobundle.vim.git
 	branch = master
-[submodule "Airline"]
-	path = bundle/Airline
-	url = git://github.com/bling/vim-airline.git
-	branch = master
 [submodule "Align"]
 	path = bundle/Align
 	url = git://github.com/vim-scripts/Align.git
