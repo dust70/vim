@@ -30,10 +30,6 @@
 	path = bundle/Conque
 	url = git://github.com/nicoraffo/conque.git
 	branch = master
-[submodule "CSS3Syntax"]
-	path = bundle/CSS3Syntax
-	url = git://github.com/hail2u/vim-css3-syntax.git
-	branch = master
 [submodule "CSV"]
 	path = bundle/CSV
 	url = git://github.com/chrisbra/csv.vim.git
