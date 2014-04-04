@@ -2,10 +2,6 @@
 	path = bundle/NeoBundle
 	url = https://github.com/Shougo/neobundle.vim.git
 	branch = master
-[submodule "AutoPairs"]
-	path = bundle/AutoPairs
-	url = git://github.com/jiangmiao/auto-pairs.git
-	branch = master
 [submodule "Calendar"]
 	path = bundle/Calendar
 	url = git://github.com/mattn/calendar-vim.git
