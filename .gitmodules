@@ -2,10 +2,6 @@
 	path = bundle/NeoBundle
 	url = https://github.com/Shougo/neobundle.vim.git
 	branch = master
-[submodule "CtrlPFunky"]
-	path = bundle/CtrlPFunky
-	url = git://github.com/tacahiroy/ctrlp-funky.git
-	branch = master
 [submodule "CtrlPModified"]
 	path = bundle/CtrlPModified
 	url = git://github.com/jasoncodes/ctrlp-modified.vim.git
