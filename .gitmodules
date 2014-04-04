@@ -62,10 +62,6 @@
 	path = bundle/PathOGen
 	url = git://github.com/tpope/vim-pathogen.git
 	branch = master
-[submodule "PHPAnnotationsSyntax"]
-	path = bundle/PHPAnnotationsSyntax
-	url = git://github.com/vim-scripts/php-annotations-syntax.git
-	branch = master
 [submodule "PHPComplete"]
 	path = bundle/PHPComplete
 	url = git://github.com/shawncplus/phpcomplete.vim.git
