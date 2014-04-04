@@ -54,10 +54,6 @@
 	path = bundle/MatchTag
 	url = git://github.com/gregsexton/MatchTag.git
 	branch = master
-[submodule "Neocomplcache"]
-	path = bundle/Neocomplcache
-	url = git://github.com/Shougo/neocomplcache.vim.git
-	branch = master
 [submodule "NerdTree"]
 	path = bundle/NerdTree
 	url = git://github.com/scrooloose/nerdtree.git
