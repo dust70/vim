@@ -2,10 +2,6 @@
 	path = bundle/NeoBundle
 	url = https://github.com/Shougo/neobundle.vim.git
 	branch = master
-[submodule "CtrlPSSH"]
-	path = bundle/CtrlPSSH
-	url = git://github.com/tacahiroy/ctrlp-ssh.git
-	branch = master
 [submodule "Detailed"]
 	path = bundle/Detailed
 	url = git://github.com/vim-scripts/detailed.git
