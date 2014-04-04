@@ -2,10 +2,6 @@
 	path = bundle/NeoBundle
 	url = https://github.com/Shougo/neobundle.vim.git
 	branch = master
-[submodule "Surround"]
-	path = bundle/Surround
-	url = git://github.com/tpope/vim-surround.git
-	branch = master
 [submodule "Syntastic"]
 	path = bundle/Syntastic
 	url = git://github.com/scrooloose/syntastic.git
