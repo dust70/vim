@@ -2,10 +2,6 @@
 	path = bundle/NeoBundle
 	url = https://github.com/Shougo/neobundle.vim.git
 	branch = master
-[submodule "Syntastic"]
-	path = bundle/Syntastic
-	url = git://github.com/scrooloose/syntastic.git
-	branch = master
 [submodule "Tagbar"]
 	path = bundle/Tagbar
 	url = git://github.com/majutsushi/tagbar.git
