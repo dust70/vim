@@ -98,10 +98,6 @@
 	path = bundle/TagbarPHPCTags
 	url = git://github.com/vim-php/tagbar-phpctags.vim.git
 	branch = master
-[submodule "UnImpaired"]
-	path = bundle/UnImpaired
-	url = git://github.com/tpope/vim-unimpaired.git
-	branch = master
 [submodule "YankRing"]
 	path = bundle/YankRing
 	url = git://github.com/vim-scripts/YankRing.vim.git
