@@ -30,10 +30,6 @@
 	path = bundle/Conque
 	url = git://github.com/nicoraffo/conque.git
 	branch = master
-[submodule "CSV"]
-	path = bundle/CSV
-	url = git://github.com/chrisbra/csv.vim.git
-	branch = master
 [submodule "CtrlP"]
 	path = bundle/CtrlP
 	url = git://github.com/kien/ctrlp.vim.git
