@@ -54,10 +54,6 @@
 	path = bundle/MatchTag
 	url = git://github.com/gregsexton/MatchTag.git
 	branch = master
-[submodule "NerdTree"]
-	path = bundle/NerdTree
-	url = git://github.com/scrooloose/nerdtree.git
-	branch = master
 [submodule "Pager"]
 	path = bundle/Pager
 	url = git://github.com/rkitover/vimpager.git
