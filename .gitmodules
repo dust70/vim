@@ -42,10 +42,6 @@
 	path = bundle/EnhancedCommentify
 	url = git://github.com/vim-scripts/EnhCommentify.vim.git
 	branch = master
-[submodule "FuGITive"]
-	path = bundle/FuGITive
-	url = git://github.com/tpope/vim-pathogen.git
-	branch = master
 [submodule "GitRebaseHelper"]
 	path = bundle/GitRebaseHelper
 	url = git://github.com/pix/git-rebase-helper.git
