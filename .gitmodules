@@ -1,7 +1,3 @@
-[submodule "ActivityLog"]
-	path = bundle/ActivityLog
-	url = git://github.com/AD7six/vim-activity-log.git
-	branch = master
 [submodule "Airline"]
 	path = bundle/Airline
 	url = git://github.com/bling/vim-airline.git
