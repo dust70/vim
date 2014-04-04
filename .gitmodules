@@ -2,10 +2,6 @@
 	path = bundle/NeoBundle
 	url = https://github.com/Shougo/neobundle.vim.git
 	branch = master
-[submodule "GitRebaseHelper"]
-	path = bundle/GitRebaseHelper
-	url = git://github.com/pix/git-rebase-helper.git
-	branch = master
 [submodule "LaTeX"]
 	path = bundle/LaTeX
 	url = git://git.code.sf.net/p/vim-latex/vim-latex
