@@ -34,10 +34,6 @@
 	path = bundle/CtrlPSSH
 	url = git://github.com/tacahiroy/ctrlp-ssh.git
 	branch = master
-[submodule "DBExt"]
-	path = bundle/DBExt
-	url = git://github.com/vim-scripts/dbext.vim.git
-	branch = master
 [submodule "Detailed"]
 	path = bundle/Detailed
 	url = git://github.com/vim-scripts/detailed.git
