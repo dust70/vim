@@ -2,10 +2,6 @@
 	path = bundle/NeoBundle
 	url = https://github.com/Shougo/neobundle.vim.git
 	branch = master
-[submodule "LaTeX"]
-	path = bundle/LaTeX
-	url = git://git.code.sf.net/p/vim-latex/vim-latex
-	branch = master
 [submodule "MatchTag"]
 	path = bundle/MatchTag
 	url = git://github.com/gregsexton/MatchTag.git
