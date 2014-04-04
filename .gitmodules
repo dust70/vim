@@ -2,10 +2,6 @@
 	path = bundle/NeoBundle
 	url = https://github.com/Shougo/neobundle.vim.git
 	branch = master
-[submodule "Calendar"]
-	path = bundle/Calendar
-	url = git://github.com/mattn/calendar-vim.git
-	branch = master
 [submodule "CloseTag"]
 	path = bundle/CloseTag
 	url = git://github.com/vim-scripts/closetag.vim.git
