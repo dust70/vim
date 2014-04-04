@@ -1,3 +1,7 @@
+[submodule "NeoBundle"]
+	path = bundle/NeoBundle
+	url = https://github.com/Shougo/neobundle.vim.git
+	branch = master
 [submodule "Airline"]
 	path = bundle/Airline
 	url = git://github.com/bling/vim-airline.git
