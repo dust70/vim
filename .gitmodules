@@ -18,10 +18,6 @@
 	path = bundle/CloseTag
 	url = git://github.com/vim-scripts/closetag.vim.git
 	branch = master
-[submodule "ColorSchemes"]
-	path = bundle/ColorSchemes
-	url = git://github.com/flazz/vim-colorschemes
-	branch = master
 [submodule "ColorV"]
 	path = bundle/ColorV
 	url = git://github.com/Rykka/colorv.vim.git
