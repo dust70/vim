@@ -2,10 +2,6 @@
 	path = bundle/NeoBundle
 	url = https://github.com/Shougo/neobundle.vim.git
 	branch = master
-[submodule "Detailed"]
-	path = bundle/Detailed
-	url = git://github.com/vim-scripts/detailed.git
-	branch = master
 [submodule "EnhancedCommentify"]
 	path = bundle/EnhancedCommentify
 	url = git://github.com/vim-scripts/EnhCommentify.vim.git
