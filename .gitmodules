@@ -6,10 +6,6 @@
 	path = bundle/Pager
 	url = git://github.com/rkitover/vimpager.git
 	branch = master
-[submodule "PHPDictionary"]
-	path = bundle/PHPDictionary
-	url = git://github.com/nishigori/vim-php-dictionary.git
-	branch = master
 [submodule "PHPDoc"]
 	path = bundle/PHPDoc
 	url = git://github.com/tobyS/pdv.git
