@@ -46,10 +46,6 @@
 	path = bundle/GitRebaseHelper
 	url = git://github.com/pix/git-rebase-helper.git
 	branch = master
-[submodule "GnuPG"]
-	path = bundle/GnuPG
-	url = git://github.com/jamessan/vim-gnupg.git
-	branch = master
 [submodule "HTML5"]
 	path = bundle/HTML5
 	url = git://github.com/othree/html5.vim.git
