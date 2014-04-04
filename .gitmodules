@@ -2,7 +2,3 @@
 	path = bundle/NeoBundle
 	url = https://github.com/Shougo/neobundle.vim.git
 	branch = master
-[submodule "YankRing"]
-	path = bundle/YankRing
-	url = git://github.com/vim-scripts/YankRing.vim.git
-	branch = master
