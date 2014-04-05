@@ -34,7 +34,8 @@ endif
 " otherwise spaces are included in the file name. See |option-backslash| about
 " using backslashes. This has nothing to do with the |Dictionary| variable
 " type.
-setlocal dictionary-=${HOME}/.vim/bundle/PHPDictionary/PHP.dict dictionary+=${HOME}/.vim/bundle/PHPDictionary/PHP.dict
+setlocal dictionary-=${HOME}/.vim/bundle/PHPDictionary/PHP.dict
+            \ dictionary+=${HOME}/.vim/bundle/PHPDictionary/PHP.dict
 " }}}
 
 " {{{ complete
