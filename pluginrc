@@ -1,0 +1,416 @@
+" {{{ NeoBundle
+" {{{ g:neobundle#install_max_processes
+" The max number of processes used for neobundle/install source asynchronous
+" update.
+let g:neobundle#install_max_processes=1
+"}}}
+
+let g:bundlePath=split(&runtimepath, ',')[0] . '/bundle'
+let g:pathToNeoBundle=expand(bundlePath).'/NeoBundle'
+if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
+    " {{{ initialize
+    if has('vim_starting')
+        set nocompatible
+        let &runtimepath.=','.expand(pathToNeoBundle)
+    endif
+    "}}}
+
+    " {{{ bundle path and call NeoBundle
+    call neobundle#rc(expand(bundlePath))
+    "}}}
+
+    " {{{ Bundles
+    NeoBundleFetch 'Shougo/neobundle.vim', {
+                \ 'directory' : 'NeoBundle',
+                \ 'name'      : 'NeoBundle',
+                \ }
+
+    NeoBundle 'bling/vim-airline', {
+                \ 'directory' : 'Airline',
+                \ 'name'      : 'Airline',
+                \ }
+    NeoBundle 'vim-scripts/Align', {
+                \ 'directory' : 'Align',
+                \ 'name'      : 'Align',
+                \ }
+    NeoBundle 'jiangmiao/auto-pairs', {
+                \ 'directory' : 'AutoPairs',
+                \ 'name'      : 'AutoPairs',
+                \ }
+    NeoBundle 'mattn/calendar-vim', {
+                \ 'directory' : 'Calendar',
+                \ 'name'      : 'Calendar',
+                \ }
+    NeoBundle 'vim-scripts/closetag.vim', {
+                \ 'directory' : 'CloseTag',
+                \ 'name'      : 'CloseTag',
+                \ }
+    NeoBundle 'flazz/vim-colorschemes', {
+                \ 'directory' : 'Colorschemes',
+                \ 'name'      : 'Colorschemes',
+                \ }
+    NeoBundle 'tacahiroy/ctrlp-funky', {
+                \ 'directory' : 'CtrlPFunky',
+                \ 'name'      : 'CtrlPFunky',
+                \ }
+    NeoBundle 'jasoncodes/ctrlp-modified.vim', {
+                \ 'directory' : 'CtrlPModified',
+                \ 'name'      : 'CtrlPModified',
+                \ }
+    NeoBundle 'kien/ctrlp.vim', {
+                \ 'directory' : 'CtrlP',
+                \ 'name'      : 'CtrlP',
+                \ }
+    NeoBundle 'tacahiroy/ctrlp-ssh', {
+                \ 'directory' : 'CtrlPSSH',
+                \ 'name'      : 'CtrlPSSH',
+                \ }
+    NeoBundle 'rking/vim-detailed', {
+                \ 'directory' : 'Detailed',
+                \ 'name'      : 'Detailed',
+                \ }
+    NeoBundle 'vim-scripts/EnhCommentify.vim', {
+                \ 'directory' : 'EnhancedCommentify',
+                \ 'name'      : 'EnhancedCommentify',
+                \ }
+    NeoBundle 'pix/git-rebase-helper', {
+                \ 'directory' : 'GitRebaseHelper',
+                \ 'name'      : 'GitRebaseHelper',
+                \ }
+    NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex', {
+                \ 'directory' : 'LaTeX',
+                \ 'name'      : 'Latex',
+                \ }
+    NeoBundle 'gregsexton/MatchTag', {
+                \ 'directory' : 'MatchTag',
+                \ 'name'      : 'MatchTag',
+                \ }
+    NeoBundle 'Shougo/neocompletecache', {
+                \ 'directory' : 'NeoComplete',
+                \ 'name'      : 'NeoComplete',
+                \ 'disabled'  : has('lua'),
+                \ }
+    NeoBundle 'Shougo/neocomplete', {
+                \ 'directory'   : 'NeoComplete',
+                \ 'name'        : 'NeoComplete',
+                \ 'disabled'    : !has('lua'),
+                \ 'vim_version' : '7.3.885',
+                \ }
+    NeoBundle 'Shougo/neosnippet', {
+                \ 'directory' : 'NeoSnippet',
+                \ 'name'      : 'NeoSnippet',
+                \ }
+    NeoBundle 'Shougo/neosnippet-snippets', {
+                \ 'directory' : 'NeoSnippet-Snippets',
+                \ 'name'      : 'NeoSnippet-Snippets',
+                \ }
+    NeoBundle 'rkitover/vimpager', {
+                \ 'directory' : 'Pager',
+                \ 'name'      : 'Pager',
+                \ }
+    NeoBundle 'shawncplus/phpcomplete.vim', {
+                \ 'directory' : 'PHP-Complete',
+                \ 'name'      : 'PHP-Complete',
+                \ }
+    NeoBundle 'vim-php/tagbar-phpctags.vim', {
+                \ 'directory' : 'PHP-CTags',
+                \ 'name'      : 'PHP-CTags',
+                \ 'build'     : {
+                \     'cygwin'  : 'make',
+                \     'mac'     : 'make',
+                \     'unix'    : 'make',
+                \     'windows' : 'make',
+                \     },
+                \ }
+    NeoBundle 'nishigori/vim-php-dictionary', {
+                \ 'directory' : 'PHP-Dictionary',
+                \ 'name'      : 'PHP-Dictionary',
+                \ }
+    NeoBundle 'tobyS/pdv', {
+                \ 'directory' : 'PHP-Doc',
+                \ 'name'      : 'PHP-Doc',
+                \ }
+    NeoBundle 'QafooLabs/php-refactoring-browser', {
+                \ 'directory' : 'PHP-Refactoring-Browser',
+                \ 'name'      : 'PHP-Refactoring-Browser',
+                \ 'build'     : {
+                \     'cygwin'  : '',
+                \     'mac'     : 'curl -sS https : //getcomposer.org/installer | php && php composer.phar install',
+                \     'unix'    : 'curl -sS https : //getcomposer.org/installer | php && php composer.phar install',
+                \     'windows' : '',
+                \ },
+                \ }
+    NeoBundle 'vim-php/vim-php-refactoring', {
+                \ 'directory' : 'PHP-Refactoring',
+                \ 'name'      : 'PHP-Refactoring',
+                \ 'depends'   : 'QafooLabs/php-refactoring-browser',
+                \ }
+    NeoBundle 'ciaranm/securemodelines', {
+                \ 'directory' : 'SecureModelines',
+                \ 'name'      : 'SecureModelines',
+                \ }
+    NeoBundle 'vim-scripts/ShowMarks', {
+                \ 'directory' : 'ShowMarks',
+                \ 'name'      : 'ShowMarks',
+                \ }
+    NeoBundle 'honza/vim-snippets', {
+                \ 'directory' : 'Snippets',
+                \ 'name'      : 'Snippets',
+                \ }
+    NeoBundle 'ervandew/supertab', {
+                \ 'directory' : 'Supertab',
+                \ 'name'      : 'Supertab',
+                \ }
+    NeoBundle 'tpope/vim-surround', {
+                \ 'directory' : 'Surround',
+                \ 'name'      : 'Surround',
+                \ }
+    NeoBundle 'scrooloose/syntastic', {
+                \ 'directory' : 'Syntastic',
+                \ 'name'      : 'Syntastic',
+                \ }
+    NeoBundle 'majutsushi/tagbar', {
+                \ 'directory' : 'Tagbar',
+                \ 'name'      : 'Tagbar',
+                \ }
+    NeoBundle 'vim-php/tagbar-phpctags.vim', {
+                \ 'directory' : 'Tagbar-PHP-CTags',
+                \ 'name'      : 'Tagbar-PHP-CTags',
+                \ 'depends'   : 'vim-php/tagbar-phpctags.vim',
+                \ }
+    NeoBundle 'vim-scripts/YankRing.vim', {
+                \ 'directory' : 'YankRing',
+                \ 'name'      : 'YankRing',
+                \ }
+    "}}}
+
+    " {{{ NeoBundleCheck
+    " Check plugins installation. If plugins are not installed, it will execute
+    " :NeoBundleInstall automatically. This command also check
+    " enabledocumentation directories and will execute |:NeoBundleDocs|
+    " automaticallyally.
+    NeoBundleCheck
+    "}}}
+endif
+unlet pathToNeoBundle
+unlet bundlePath
+"}}}
+
+" {{{ Airline
+" {{{ tabline
+" enable/disable enhanced tabline.
+let g:airline#extensions#tabline#enabled=0
+"}}}
+"}}}
+
+" {{{ Bufexplrorer disabled
+let g:bufexplorer_version=1
+" }}}
+
+" {{{ MiniBufExpl disabled
+let g:loaded_minibufexplorer=1
+" }}}
+
+" {{{ Calendar
+" if you want to keep focus when goto next or prev calendar, add the following
+" to your .vimrc:
+let g:calendar_focus_today=1
+
+" if you want the week to start with monday, add below to your .vimrc:
+"   let g:calendar_monday=1
+" (You don't have to to change g:calendar_wruler!)
+let g:calendar_monday=1
+"}}}
+
+" {{{ EnhancedCommentify
+" With this option set, the script tries to figure out which filetype to use
+" for every block by using the synID of the block. This improves handling of
+" embedded languages eg. CSS in HTML, Perl in VimL... But be aware, that this
+" feature currently relies on a special form of the names of the syntax items.
+" So it might not work with every syntax file (see EnhComm-Bugs). It also
+" calls synID only once for every block! So the first line is significant. Be
+" aware, that "cross" commenting might cause problems.
+let g:EnhCommentifyUseSyntax='Yes'
+"}}}
+
+" {{{ Latex
+" If the first line of a *.tex file has the form
+"	%&<format>
+" then this determined the file type: plaintex (for plain TeX), context (for
+" ConTeXt), or tex (for LaTeX). Otherwise, the file is searched for keywords
+" to choose context or tex. If no keywords are found, it defaults to plaintex.
+" You can change the default by defining the variable g:tex_flavor to the
+" format (not the file type) you use most. Use one of these:
+"	let g:tex_flavor="plain"
+"	let g:tex_flavor="context"
+"	let g:tex_flavor="latex"
+" Currently no other formats are recognized.
+let g:tex_flavor='latex'
+"}}}
+
+"{{{ Latex-Suite
+" {{{ Tex_DefaultTargetFormat
+" Use this setting to choose the default target format. For example, setting
+" this to pdf makes Latex-Suite compile a pdf file when you press \ll and fire
+" up the pdf viewer on pressing \lv. Make sure that a rules for compiling and
+" viewing have been defined for this target format as described here [|ls_a_dx|]
+" and here [|ls_a_dF|].
+let g:Tex_DefaultTargetFormat='pdf'
+"}}}
+
+" {{{ ViewRule
+" Here <format> refers to a format such as dvi, ps, etc. This variable defines
+" the program which will be called to display a file of that format.
+"
+" By default, Latex-Suite defines viewer programs for viewing DVI, PS and PDF
+" formats as follows:
+"                       Windows       Unix~
+" g:Tex_ViewRule_dvi    'yap -1'      'xdvi'
+" g:Tex_ViewRule_ps     'gsview32'    'ghostview'
+" g:Tex_ViewRule_pdf    'AcroRd32'    'xpdf'
+"
+" For Macintosh systems, these strings are left empty by default. This lets the
+" system pick the program for each format. If you define these variables for
+" Mac, the system choice will be over-ridden.
+"
+" Latex-Suite appends file.format to the above settings while calling the
+" external programs. For example, with
+"   let g:Tex_ViewRule_dvi='yap -1'
+" yap is called as
+"   !start yap -1 file.dvi
+" from within Vim. (The initial start is used on Windows platforms is to make
+" yap start as a separate process.) If you find the way Latex-Suite constructs
+" the command line too restrictive, you can use the Tex_ViewRuleComplete_format
+" [|ls_a_dG|] setting for more complete control on how the command line is
+" constructed while calling the external program for viewing.
+"
+" NOTE: For windows, you will need to set the $PATH variable to include the
+"       paths to yap, AcroRd32, gsview32 and any other programs. See your system
+"       documentation for how to do this.
+"
+" NOTE: Default Viewing Format
+"       ----------------------
+" To change the default format for viewing files, set the
+" g:Tex_DefaultTargetFormat [|ls_a_dw|] variable.
+let g:Tex_ViewRule_pdf='zathura'
+"}}}
+"}}}
+
+" {{{ Syntastic
+" {{{ syntastic_auto_loc_list
+" Use this option to tell syntastic to automatically open and/or close the
+" |location-list| (see |syntastic-error-window|).
+"
+" When set to 0 the error window will not be opened or closed automatically. >
+"     let g:syntastic_auto_loc_list=0
+" When set to 1 the error window will be automatically opened when errors are
+" detected, and closed when none are detected.
+"     let g:syntastic_auto_loc_list=1
+" When set to 2 the error window will be automatically closed when no errors are
+" detected, but not opened automatically.
+"     let g:syntastic_auto_loc_list=2
+let g:syntastic_auto_loc_list=1
+"}}}
+" {{{ Syntax Checker
+" {{{ HTML
+" {{{ Tidy
+let g:syntastic_html_tidy_ignore_errors=[
+            \ "escaping malformed URI reference"
+            \ ]
+"}}}
+"}}}
+"}}}
+"}}}
+
+" {{{ TagBar
+" {{{ toggle display
+nnoremap <silent> <C-w><C-t> :TagbarToggle<CR>
+"}}}
+
+" {{{ tagbar_width
+" Width of the Tagbar window in characters.
+let g:tagbar_width=60
+"}}}
+
+" {{{ tagbar_autofocus
+" If you set this option the cursor will move to the Tagbar window when it is
+" opened.
+let g:tagbar_autofocus=1
+" }}}
+
+" {{{ tagbar_show_linenumbers
+" Whether line numbers should be shown in the Tagbar window.
+" Possible values are:
+"   0: Don't show any line numbers.
+"   1: Show absolute line numbers.
+"   2: Show relative line numbers.
+"  -1: Use the global line number settings.
+let g:tagbar_show_linenumbers=-1
+"}}}
+
+" {{{ tagbar_foldlevel
+" The initial foldlevel for folds in the Tagbar window. Folds with a level
+" higher than this number will be closed.
+let g:tagbar_foldlevel=2
+"}}}
+
+" {{{ tagbar_autoshowtag
+" If this variable is set and the current tag is inside of a closed fold then
+" the folds will be opened as much as needed for the tag to be visible so it can
+" be highlighted. If it is not set then the folds won't be opened and the parent
+" tag will be highlighted instead. You can use the |:TagbarShowTag| command to
+" open the folds manually.
+let g:tagbar_autoshowtag=1
+"}}}
+
+" {{{ tagbar_type_sql
+let g:tagbar_type_sql={
+    \ 'replace' : 1,
+    \ 'ctagstype' : 'sql',
+    \ 'kinds' : [
+        \ 'P:packages',
+        \ 'd:prototypes',
+        \ 'c:cursors',
+        \ 'f:functions',
+        \ 'F:record fields:1:0',
+        \ 'L:block label',
+        \ 'p:procedures',
+        \ 's:subtypes',
+        \ 't:tables',
+        \ 'T:triggers',
+        \ 'v:variables',
+        \ 'i:indexes',
+        \ 'e:events',
+        \ 'U:publications',
+        \ 'R:services',
+        \ 'D:domains',
+        \ 'V:views',
+        \ 'n:synonyms',
+    \ ],
+\ }
+"}}}
+"}}}
+
+" {{{ YankRing
+" {{{ yankring_max_history
+" Controls how many elements to save in the yankring.
+let g:yankring_max_history=25
+"}}}
+
+" {{{ yankring_history_dir
+" The YankRing stores the text in a file. This global variable allows you to
+" customize where the file(s) will be stored. This can be a comma separated
+" list, which is useful if your .vimrc is shared across different machines. If
+" multipe directories are specified, the first valid directory will be used. You
+" can put the following in your |vimrc|
+let g:yankring_history_dir=expand("~/.vim")
+" }}}
+
+" {{{ yankring_history_file
+" The history filename prefix can be controlled by setting this variable. You
+" can put the following in your |vimrc|.
+let g:yankring_history_file='history'
+"}}}
+"}}}
+
+" vim: filetype=vim textwidth=80 foldmethod=marker
