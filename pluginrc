@@ -49,21 +49,24 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Colorschemes',
                 \ 'name'      : 'Colorschemes',
                 \ }
-    NeoBundle 'tacahiroy/ctrlp-funky', {
-                \ 'directory' : 'CtrlPFunky',
-                \ 'name'      : 'CtrlPFunky',
-                \ }
-    NeoBundle 'jasoncodes/ctrlp-modified.vim', {
-                \ 'directory' : 'CtrlPModified',
-                \ 'name'      : 'CtrlPModified',
-                \ }
     NeoBundle 'kien/ctrlp.vim', {
                 \ 'directory' : 'CtrlP',
                 \ 'name'      : 'CtrlP',
                 \ }
+    NeoBundle 'tacahiroy/ctrlp-funky', {
+                \ 'directory' : 'CtrlP-Funky',
+                \ 'name'      : 'CtrlP-Funky',
+                \ 'depends'   : 'kien/ctrlp.vim',
+                \ }
+    NeoBundle 'jasoncodes/ctrlp-modified.vim', {
+                \ 'directory' : 'CtrlP-Modified',
+                \ 'name'      : 'CtrlP-Modified',
+                \ 'depends'   : 'kien/ctrlp.vim',
+                \ }
     NeoBundle 'tacahiroy/ctrlp-ssh', {
-                \ 'directory' : 'CtrlPSSH',
-                \ 'name'      : 'CtrlPSSH',
+                \ 'directory' : 'CtrlP-SSH',
+                \ 'name'      : 'CtrlP-SSH',
+                \ 'depends'   : 'kien/ctrlp.vim',
                 \ }
     NeoBundle 'rking/vim-detailed', {
                 \ 'directory' : 'Detailed',
