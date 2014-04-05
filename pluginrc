@@ -56,17 +56,14 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'tacahiroy/ctrlp-funky', {
                 \ 'directory' : 'CtrlP-Funky',
                 \ 'name'      : 'CtrlP-Funky',
-                \ 'depends'   : 'kien/ctrlp.vim',
                 \ }
     NeoBundle 'jasoncodes/ctrlp-modified.vim', {
                 \ 'directory' : 'CtrlP-Modified',
                 \ 'name'      : 'CtrlP-Modified',
-                \ 'depends'   : 'kien/ctrlp.vim',
                 \ }
     NeoBundle 'tacahiroy/ctrlp-ssh', {
                 \ 'directory' : 'CtrlP-SSH',
                 \ 'name'      : 'CtrlP-SSH',
-                \ 'depends'   : 'kien/ctrlp.vim',
                 \ }
     NeoBundle 'rking/vim-detailed', {
                 \ 'directory' : 'Detailed',
@@ -82,7 +79,7 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ }
     NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex', {
                 \ 'directory' : 'LaTeX',
-                \ 'name'      : 'Latex',
+                \ 'name'      : 'LaTeX',
                 \ }
     NeoBundle 'gregsexton/MatchTag', {
                 \ 'directory' : 'MatchTag',
@@ -141,12 +138,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \     'mac'     : 'curl -sS https : //getcomposer.org/installer | php && php composer.phar install',
                 \     'unix'    : 'curl -sS https : //getcomposer.org/installer | php && php composer.phar install',
                 \     'windows' : '',
-                \ },
+                \     },
                 \ }
     NeoBundle 'vim-php/vim-php-refactoring', {
                 \ 'directory' : 'PHP-Refactoring',
                 \ 'name'      : 'PHP-Refactoring',
-                \ 'depends'   : 'QafooLabs/php-refactoring-browser',
                 \ }
     NeoBundle 'ciaranm/securemodelines', {
                 \ 'directory' : 'SecureModelines',
@@ -175,11 +171,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'majutsushi/tagbar', {
                 \ 'directory' : 'Tagbar',
                 \ 'name'      : 'Tagbar',
-                \ }
-    NeoBundle 'vim-php/tagbar-phpctags.vim', {
-                \ 'directory' : 'Tagbar-PHP-CTags',
-                \ 'name'      : 'Tagbar-PHP-CTags',
-                \ 'depends'   : 'vim-php/tagbar-phpctags.vim',
                 \ }
     NeoBundle 'vim-scripts/YankRing.vim', {
                 \ 'directory' : 'YankRing',
@@ -236,7 +227,7 @@ let g:calendar_monday=1
 let g:EnhCommentifyUseSyntax='Yes'
 "}}}
 
-" {{{ Latex
+" {{{ LaTeX
 " If the first line of a *.tex file has the form
 "	%&<format>
 " then this determined the file type: plaintex (for plain TeX), context (for
@@ -251,10 +242,10 @@ let g:EnhCommentifyUseSyntax='Yes'
 let g:tex_flavor='latex'
 "}}}
 
-"{{{ Latex-Suite
+"{{{ LaTeX-Suite
 " {{{ Tex_DefaultTargetFormat
 " Use this setting to choose the default target format. For example, setting
-" this to pdf makes Latex-Suite compile a pdf file when you press \ll and fire
+" this to pdf makes LaTeX-Suite compile a pdf file when you press \ll and fire
 " up the pdf viewer on pressing \lv. Make sure that a rules for compiling and
 " viewing have been defined for this target format as described here [|ls_a_dx|]
 " and here [|ls_a_dF|].
@@ -265,7 +256,7 @@ let g:Tex_DefaultTargetFormat='pdf'
 " Here <format> refers to a format such as dvi, ps, etc. This variable defines
 " the program which will be called to display a file of that format.
 "
-" By default, Latex-Suite defines viewer programs for viewing DVI, PS and PDF
+" By default, LaTeX-Suite defines viewer programs for viewing DVI, PS and PDF
 " formats as follows:
 "                       Windows       Unix~
 " g:Tex_ViewRule_dvi    'yap -1'      'xdvi'
@@ -276,13 +267,13 @@ let g:Tex_DefaultTargetFormat='pdf'
 " system pick the program for each format. If you define these variables for
 " Mac, the system choice will be over-ridden.
 "
-" Latex-Suite appends file.format to the above settings while calling the
+" LaTeX-Suite appends file.format to the above settings while calling the
 " external programs. For example, with
 "   let g:Tex_ViewRule_dvi='yap -1'
 " yap is called as
 "   !start yap -1 file.dvi
 " from within Vim. (The initial start is used on Windows platforms is to make
-" yap start as a separate process.) If you find the way Latex-Suite constructs
+" yap start as a separate process.) If you find the way LaTeX-Suite constructs
 " the command line too restrictive, you can use the Tex_ViewRuleComplete_format
 " [|ls_a_dG|] setting for more complete control on how the command line is
 " constructed while calling the external program for viewing.
