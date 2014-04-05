@@ -61,4 +61,9 @@ setlocal matchpairs+=<:>
 setlocal diffopt+=iwhite
 "}}}
 
+" {{{ foldmethod
+" The kind of folding used for the current window.
+setlocal foldmethod=indent
+" }}}
+
 " vim: filetype=vim textwidth=80 foldmethod=marker
