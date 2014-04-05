@@ -70,4 +70,9 @@ nnoremap ,c <ESC>:set paste<CR>:exe PhpDoc()<CR>:set nopaste<CR>i
 setlocal diffopt+=iwhite
 "}}}
 
+" {{{ foldmethod
+" The kind of folding used for the current window.
+setlocal foldmethod=syntax
+" }}}
+
 " vim: filetype=vim textwidth=80 foldmethod=marker
