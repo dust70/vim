@@ -955,7 +955,6 @@ if has("autocmd")
         autocmd!
         autocmd FileType c setlocal foldmethod=syntax
         autocmd FileType javascript setlocal foldmethod=syntax
-        autocmd FileType php setlocal foldmethod=syntax
         autocmd FileType python setlocal foldmethod=syntax
         autocmd FileType ruby setlocal foldmethod=syntax
         autocmd FileType sql setlocal foldmethod=syntax
