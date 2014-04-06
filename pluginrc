@@ -89,16 +89,16 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'MatchTag',
                 \ 'name'      : 'MatchTag',
                 \ }
-    NeoBundle 'Shougo/neocompletecache', {
-                \ 'directory' : 'NeoComplete',
-                \ 'name'      : 'NeoComplete',
-                \ 'disabled'  : has('lua'),
-                \ }
     NeoBundle 'Shougo/neocomplete', {
                 \ 'directory'   : 'NeoComplete',
                 \ 'name'        : 'NeoComplete',
                 \ 'disabled'    : !has('lua'),
                 \ 'vim_version' : '7.3.885',
+                \ }
+    NeoBundle 'Shougo/neocomplcache', {
+                \ 'directory' : 'NeoCompleteCache',
+                \ 'name'      : 'NeoCompleteCache',
+                \ 'disabled'  : has('lua'),
                 \ }
     NeoBundle 'Shougo/neosnippet', {
                 \ 'directory' : 'NeoSnippet',
