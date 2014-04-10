@@ -371,29 +371,98 @@ let g:tagbar_autoshowtag=1
 
 " {{{ tagbar_type_sql
 let g:tagbar_type_sql={
-    \ 'replace' : 1,
-    \ 'ctagstype' : 'sql',
-    \ 'kinds' : [
-        \ 'P:packages',
-        \ 'd:prototypes',
-        \ 'c:cursors',
-        \ 'f:functions',
-        \ 'F:record fields:1:0',
-        \ 'L:block label',
-        \ 'p:procedures',
-        \ 's:subtypes',
-        \ 't:tables',
-        \ 'T:triggers',
-        \ 'v:variables',
-        \ 'i:indexes',
-        \ 'e:events',
-        \ 'U:publications',
-        \ 'R:services',
-        \ 'D:domains',
-        \ 'V:views',
-        \ 'n:synonyms',
-    \ ],
-\ }
+            \    'replace'   : 1,
+            \    'ctagstype' : 'sql',
+            \    'sort'      : 0,
+            \    'kinds'     : [
+            \        'P:Packages',
+            \        'd:Prototypes',
+            \        'c:Cursors',
+            \        'f:Functions',
+            \        'F:Record fields:1:0',
+            \        'L:Block label',
+            \        'p:Procedures',
+            \        's:Subtypes',
+            \        't:Tables',
+            \        'T:Triggers',
+            \        'v:Variables',
+            \        'i:Indexes',
+            \        'e:Events',
+            \        'U:Publications',
+            \        'R:Services',
+            \        'D:Domains',
+            \        'V:Views',
+            \        'n:Synonyms',
+            \    ],
+            \}
+"}}}
+
+" {{{ tagbar_type_tex
+let g:tagbar_type_tex={
+            \    'ctagstype' : 'latex',
+            \    'sort'      : 0,
+            \    'kinds'     : [
+            \        's:Sections',
+            \        'g:Graphics:0:0',
+            \        'l:Labels',
+            \        'r:Refs:1:0',
+            \        'p:Pagerefs:1:0'
+            \    ],
+            \}
+"}}}
+
+" {{{ tagbar_type_sh
+let g:tagbar_type_sh={
+            \    'ctagstype' : 'sh',
+            \    'sort'      : 0,
+            \    'kinds'     : [
+            \        'f:Functions',
+            \        'a:Alias',
+            \        'v:Variable',
+            \        'o:Options',
+            \    ],
+            \}
+"}}}
+
+" {{{ tagbar_type_sshconfig
+let g:tagbar_type_sshconfig={
+            \    'ctagstype' : 'sshconfig',
+            \    'sort'      : 0,
+            \    'kinds'     : [
+            \        'h:Host',
+            \    ],
+            \}
+"}}}
+
+" {{{ tagbar_type_html
+let g:tagbar_type_html={
+            \    'ctagstype' : 'html',
+            \    'sort'      : 0,
+            \    'kinds'     : [
+            \        'a:named Anchor',
+            \        'f:Javascript function'
+            \    ],
+            \}
+"}}}
+
+" {{{ tagbar_type_javascript
+let g:tagbar_type_javascript={
+            \    'ctagstype' : 'Javascript',
+            \    'sort'      : 0,
+            \    'kinds'     : [
+            \        'f:Functions',
+            \        'c:Classes',
+            \        'm:Methods',
+            \        'p:Properties',
+            \        'v:Global:variables',
+            \        'r:Object',
+            \        'r:Function',
+            \        'r:Function',
+            \        'r:Array',
+            \        'r:String',
+            \        'r:String',
+            \    ],
+            \}
 "}}}
 "}}}
 
