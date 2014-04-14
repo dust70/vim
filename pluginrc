@@ -139,8 +139,8 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name'      : 'PHP-Refactoring-Browser',
                 \ 'build'     : {
                 \     'cygwin'  : '',
-                \     'mac'     : 'curl -sS https : //getcomposer.org/installer | php && php composer.phar install',
-                \     'unix'    : 'curl -sS https : //getcomposer.org/installer | php && php composer.phar install',
+                \     'mac'     : 'curl -sS https://getcomposer.org/installer | php && php composer.phar install',
+                \     'unix'    : 'curl -sS https://getcomposer.org/installer | php && php composer.phar install',
                 \     'windows' : '',
                 \     },
                 \ }
