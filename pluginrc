@@ -298,7 +298,7 @@ let g:Tex_ViewRule_pdf='zathura'
 " {{{ SuperTabDefaultCompletionType
 " Used to set the default completion type. There is no need to escape this value
 " as that will be done for you when the type is set.
-let g:SuperTabDefaultCompletionType="context"
+"let g:SuperTabDefaultCompletionType="context"
 "}}}
 "}}}
 
