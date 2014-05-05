@@ -466,6 +466,18 @@ let g:tagbar_type_javascript={
 "}}}
 "}}}
 
+" {{{ TagBar PHP-CTags
+" {{{ tagbar_phpctags_bin
+" Location of phpctags.
+let g:tagbar_phpctags_bin='~/.vim/bundle/PHP-CTags/bin/phpctags'
+"}}}
+
+" {{{ tagbar_phpctags_memory_limit
+" The amount of memory that phpctags can use can be configured.
+let g:tagbar_phpctags_memory_limit = '1G'
+"}}}
+"}}}
+
 " {{{ YankRing
 " {{{ yankring_max_history
 " Controls how many elements to save in the yankring.
