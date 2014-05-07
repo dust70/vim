@@ -77,10 +77,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'FuGITive',
                 \ 'name'      : 'FuGITive',
                 \ }
-    NeoBundle 'pix/git-rebase-helper', {
-                \ 'directory' : 'GitRebaseHelper',
-                \ 'name'      : 'GitRebaseHelper',
-                \ }
     NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex', {
                 \ 'directory' : 'LaTeX',
                 \ 'name'      : 'LaTeX',
