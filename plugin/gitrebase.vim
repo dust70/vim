@@ -27,14 +27,14 @@ function! s:RebaseAction(name)
 endf
 
 function! s:InitGitRebase()
-    nmap <silent><buffer> L :call <SID>RebaseLog()<CR>
-    nmap <silent><buffer> P :call <SID>RebaseAction('pick')<CR>
-    nmap <silent><buffer> e :call <SID>RebaseAction('edit')<CR>
-    nmap <silent><buffer> f :call <SID>RebaseAction('fixup')<CR>
-    nmap <silent><buffer> s :call <SID>RebaseAction('squash')<CR>
-    nmap <silent><buffer> r :call <SID>RebaseAction('reword')<CR>
+    nmap <silent><buffer> L     :call <SID>RebaseLog()<CR>
+    nmap <silent><buffer> C-P   :call <SID>RebaseAction('pick')<CR>
+    nmap <silent><buffer> e     :call <SID>RebaseAction('edit')<CR>
+    nmap <silent><buffer> f     :call <SID>RebaseAction('fixup')<CR>
+    nmap <silent><buffer> s     :call <SID>RebaseAction('squash')<CR>
+    nmap <silent><buffer> r     :call <SID>RebaseAction('reword')<CR>
 
-    nmap <script><silent><buffer> ? :call <SID>showHelp()<CR>
+    nmap <script><silent><buffer> H :call <SID>showHelp()<CR>
 endf
 
 fun! s:showHelp()
