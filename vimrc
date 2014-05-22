@@ -940,7 +940,7 @@ if has("autocmd")
         " The following to have Vim jump to the last position when reopening a
         " file
         autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <=line("$")
-                    \| exe "normal g'\"" | endif
+                    \| execute "normal g'\"" | endif
     augroup END
     "}}}
 
@@ -948,7 +948,7 @@ if has("autocmd")
     augroup loadDictionary
         autocmd!
         " automatically load dictionaries for known syntaxes
-        autocmd FileType * exe("setlocal dictionary+=" . $VIMRUNTIME . "/syntax/" . &filetype . ".vim")
+        autocmd FileType * execute "setlocal dictionary+=" . $VIMRUNTIME . "/syntax/" . &filetype . ".vim"
     augroup END
     "}}}
 
@@ -1002,9 +1002,10 @@ if has("autocmd")
     "}}}
 
     " {{{
-    augroup PHTML
+    augroup filetypes
         autocmd!
-        au BufRead,BufNewFile *.phtml set filetype=php.html
+        autocmd! BufRead,BufNewFile *.phtml     setlocal filetype=php.html
+        autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
     augroup END
     " }}}
 endif
