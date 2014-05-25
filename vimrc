@@ -171,7 +171,7 @@ endif
 "	:set columns=9999
 " Minimum value is 12, maximum value is 10000.
 if has("gui_running")
-    set columns=165
+    set columns=185
 endif
 "}}}
 
@@ -473,7 +473,7 @@ set linebreak
 " is unable to change the physical number of lines of the display, the display
 " may be messed up.
 if has("gui_running")
-    set lines=38
+    set lines=55
 endif
 "}}}
 
