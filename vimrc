@@ -1,17 +1,44 @@
+" {{{ configuration files
 " {{{ global options for plugins
-let g:pathToPluginrc=split(&runtimepath, ",")[0] . "/pluginrc"
-if filereadable(pathToPluginrc)
-    execute "source " . pathToPluginrc
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/pluginrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
 endif
-unlet pathToPluginrc
 "}}}
 
 " {{{ global options for syntax
-let g:pathToSyntaxrc=split(&runtimepath, ",")[0] . "/syntaxrc"
-if filereadable(pathToSyntaxrc)
-    execute "source " . pathToSyntaxrc
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/syntaxrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
 endif
-unlet pathToSyntaxrc
+"}}}
+
+" {{{ global options for autocommands
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/autocommandrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+unlet pathToRc
+"}}}
+
+" {{{ macros
+" {{{ Existing plugin
+let g:pathToMacro=split(&runtimepath, ",")[0] . "/macros/editexisting.vim"
+if filereadable(pathToMacro)
+    execute "source " . pathToMacro
+endif
+"}}}
+
+ {{{ MatchIt plugin
+let g:pathToMacro=split(&runtimepath, ",")[0] . "/macros/matchit.vim"
+if filereadable(pathToMacro)
+    execute "source " . pathToMacro
+endif
+"}}}
+
+"unlet pathToMacro
 "}}}
 
 " {{{ syntax
@@ -930,85 +957,6 @@ function! DosToUnix()
     execute "write"
 endfunction
 "}}}
-"}}}
-
-" {{{ autocommands
-if has("autocmd")
-    " {{{ doJump
-    augroup doJump
-        autocmd!
-        " The following to have Vim jump to the last position when reopening a
-        " file
-        autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <=line("$")
-                    \| execute "normal g'\"" | endif
-    augroup END
-    "}}}
-
-    " {{{ loadDictionary
-    augroup loadDictionary
-        autocmd!
-        " automatically load dictionaries for known syntaxes
-        autocmd FileType * execute "setlocal dictionary+=" . $VIMRUNTIME . "/syntax/" . &filetype . ".vim"
-    augroup END
-    "}}}
-
-    " {{{ loadOmniFunc
-    augroup loadOmniFunc
-        autocmd!
-        " This option specifies a function to be used for Insert mode omni
-        " completion with CTRL-X CTRL-O. |i_CTRL-X_CTRL-O|
-        " See |complete-functions| for an explanation of how the function is
-        " invoked and what it should return.
-        autocmd FileType * setlocal omnifunc=syntaxcomplete#Complete
-        autocmd FileType c setlocal omnifunc=ccomplete#Complete
-        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-        autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-        autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-        autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-        autocmd FileType sql setlocal omnifunc=sqlcomplete#Complete
-        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-    augroup END
-    "}}}
-
-    " {{{ loadFoldMethod
-    augroup loadFoldMethod
-        autocmd!
-        autocmd FileType c setlocal foldmethod=syntax
-        autocmd FileType javascript setlocal foldmethod=syntax
-        autocmd FileType python setlocal foldmethod=syntax
-        autocmd FileType ruby setlocal foldmethod=syntax
-        autocmd FileType sql setlocal foldmethod=syntax
-    augroup END
-    "}}}
-
-    " {{{ extraWhitespace
-    augroup extraWhitespace
-        autocmd!
-        autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-        autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-        autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-        autocmd BufWinLeave * call clearmatches()
-    augroup END
-    "}}}
-
-    " {{{ pluginConf
-    " don't load certain plugins depending on filetype
-    augroup pluginConf
-        autocmd!
-        autocmd FileType mail let g:loaded_AutoClose=1
-    augroup END
-    "}}}
-
-    " {{{
-    augroup filetypes
-        autocmd!
-        autocmd! BufRead,BufNewFile *.phtml     setlocal filetype=php.html
-        autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
-    augroup END
-    " }}}
-endif
 "}}}
 
 " {{{ mapping
