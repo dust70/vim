@@ -31,14 +31,14 @@ if filereadable(pathToMacro)
 endif
 "}}}
 
- {{{ MatchIt plugin
+" {{{ MatchIt plugin
 let g:pathToMacro=split(&runtimepath, ",")[0] . "/macros/matchit.vim"
 if filereadable(pathToMacro)
     execute "source " . pathToMacro
 endif
 "}}}
 
-"unlet pathToMacro
+unlet pathToMacro
 "}}}
 
 " {{{ syntax
