@@ -144,6 +144,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'PHP-Refactoring',
                 \ 'name'      : 'PHP-Refactoring',
                 \ }
+    NeoBundle 'rodjek/vim-puppet', {
+                \ 'directory' : 'Puppet',
+                \ 'name'      : 'Puppet',
+                \ }
     NeoBundle 'ciaranm/securemodelines', {
                 \ 'directory' : 'SecureModelines',
                 \ 'name'      : 'SecureModelines',
