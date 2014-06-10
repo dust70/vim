@@ -294,6 +294,70 @@ let g:Tex_ViewRule_pdf='zathura'
 "}}}
 "}}}
 
+" {{{ NetRW
+" {{{ netrw_browse_split
+" when browsing, <cr> will open the file by:
+"    0: re-using the same window
+"    1: horizontally splitting the window first
+"    2: vertically splitting the window first
+"    3: open file in new tab
+"    4: act like "P" (ie. open previous window) Note that |g:netrw_preview| may
+"       be used to get vertical splitting instead of horizontal splitting.
+let g:netrw_browse_split = 3
+" }}}
+
+" {{{ netrw_liststyle
+" Set the default listing style:
+"   0: thin listing (one file per line)
+"   1: long listing (one file per line with time stamp information and file
+"      size)
+"   2: wide listing (multiple files in columns)
+"   3: tree style listing
+let g:netrw_liststyle = 3
+"}}}
+
+" {{{ netrw_list_hide
+" comma separated pattern list for hiding files Patterns are regular
+" expressions.
+let g:netrw_list_hide= '.*\.swp$'
+"}}}
+
+" {{{ netrw_maxfilenamelen
+" 32 by default, selected so as to make long listings fit on 80 column displays.
+" If your screen is wider, and you have file or directory names longer than 32
+" bytes, you may set this option to keep listings columnar.
+let g:netrw_maxfilenamelen = 80
+"}}}
+
+" {{{ netrw_special_syntax
+" If true, then certain files will be shown in special syntax in the browser:
+"   netrwBak     : *.bak
+"   netrwCompress: *.gz *.bz2 *.Z *.zip
+"   netrwData    : *.dat
+"   netrwHdr     : *.h
+"   netrwLib     : *.a *.so *.lib *.dll
+"   netrwMakefile: [mM]akefile *.mak
+"   netrwObj     : *.o *.obj
+"   netrwTags    : tags ANmenu ANtags
+"   netrwTilde   : *
+"   netrwTmp     : tmp* *tmp
+"
+" These syntax highlighting groups are linked to Folded or DiffChange by default
+" (see |hl-Folded| and |hl-DiffChange|), but one may put lines like
+"   hi link netrwCompress Visual
+" into one's <.vimrc> to use one's own preferences.
+let g:netrw_special_syntax = 1
+"}}}
+
+" {{{ netrw_timefmt
+" specify format string to vim's strftime().
+" The default, "%c", is "the preferred date and time representation for the
+" current locale" according to my manpage entry for strftime(); however, not all
+" are satisfied with it.
+let g:netrw_timefmt = "%Y-%m-%d"
+"}}}
+"}}}
+
 " {{{ Supertab
 " {{{ SuperTabDefaultCompletionType
 " Used to set the default completion type. There is no need to escape this value
