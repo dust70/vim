@@ -618,6 +618,13 @@ set path+=.,~/,~/repositories/**
 set sessionoptions-=folds,help,options sessionoptions+=localoptions,resize
 "}}}
 
+" {{{ shiftround
+" Round indent to multiple of 'shiftwidth'. Applies to > and < commands. CTRL-T
+" and CTRL-D in Insert mode always round the indent to a multiple of
+" 'shiftwidth' (this is Vi compatible).
+set shiftround
+"}}}
+
 " {{{ shiftwidth
 " Number of spaces to use for each step of (auto)indent. Used for |'cindent'|,
 " |>>|, |<<|, etc.
