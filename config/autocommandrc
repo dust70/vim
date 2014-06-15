@@ -67,7 +67,7 @@ if has("autocmd")
     augroup END
     "}}}
 
-    " {{{
+    " {{{ filetype specific autocommands
     augroup filetypes
         autocmd!
         autocmd! BufRead,BufNewFile *.phtml     setlocal filetype=php.html
