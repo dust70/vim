@@ -49,6 +49,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Colorschemes',
                 \ 'name'      : 'Colorschemes',
                 \ }
+    NeoBundle 'http://conque.googlecode.com/svn/trunk/', {
+                \ 'directory' : 'Conque',
+                \ 'name'      : 'Conque',
+                \ }
     NeoBundle 'kien/ctrlp.vim', {
                 \ 'directory' : 'CtrlP',
                 \ 'name'      : 'CtrlP',
@@ -60,6 +64,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'jasoncodes/ctrlp-modified.vim', {
                 \ 'directory' : 'CtrlP-Modified',
                 \ 'name'      : 'CtrlP-Modified',
+                \ }
+    NeoBundle 'yegappan/mru', {
+                \ 'directory' : 'CtrlP-MRU',
+                \ 'name'      : 'CtrlP-MRU',
                 \ }
     NeoBundle 'tacahiroy/ctrlp-ssh', {
                 \ 'directory' : 'CtrlP-SSH',
@@ -76,6 +84,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'tpope/vim-fugitive', {
                 \ 'directory' : 'FuGITive',
                 \ 'name'      : 'FuGITive',
+                \ }
+    NeoBundle 'sjl/gundo.vim.git', {
+                \ 'directory' : 'Gundo',
+                \ 'name'      : 'Gundo',
                 \ }
     NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex', {
                 \ 'directory' : 'LaTeX',
@@ -144,9 +156,17 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'PHP-Refactoring',
                 \ 'name'      : 'PHP-Refactoring',
                 \ }
+    NeoBundle "jmcomets/vim-pony", {
+                \ 'directory' : 'Pony',
+                \ 'name'      : 'Pony'
+                \ }
     NeoBundle 'rodjek/vim-puppet', {
                 \ 'directory' : 'Puppet',
                 \ 'name'      : 'Puppet',
+                \ }
+    NeoBundle 'kien/rainbow_parentheses.vim', {
+                \ 'directory' : 'Rainbow_Parentheses',
+                \ 'name'      : 'Rainbow_Parentheses',
                 \ }
     NeoBundle 'ciaranm/securemodelines', {
                 \ 'directory' : 'SecureModelines',
@@ -194,13 +214,6 @@ unlet pathToNeoBundle
 unlet bundlePath
 "}}}
 
-" {{{ Airline
-" {{{ tabline
-" enable/disable enhanced tabline.
-let g:airline#extensions#tabline#enabled=0
-"}}}
-"}}}
-
 " {{{ Bufexplrorer disabled
 let g:bufexplorer_version=1
 " }}}
@@ -208,6 +221,13 @@ let g:bufexplorer_version=1
 " {{{ MiniBufExpl disabled
 let g:loaded_minibufexplorer=1
 " }}}
+
+" {{{ Airline
+" {{{ tabline
+" enable/disable enhanced tabline.
+let g:airline#extensions#tabline#enabled=0
+"}}}
+"}}}
 
 " {{{ Calendar
 " if you want to keep focus when goto next or prev calendar, add the following
@@ -220,6 +240,38 @@ let g:calendar_focus_today=1
 let g:calendar_monday=1
 "}}}
 
+" {{{ CtrlP
+" {{{ ctrlp_map
+" Use this option to change the mapping to invoke CtrlP in Normal mode.
+" yankring overrides this so remap
+let g:ctrlp_map = '<c-p>'
+nnoremap <C-P> :CtrlP<CR>
+"}}}
+
+" {{{ ctrlp_tabpage_position
+" Where to put the new tab page when opening one.
+let g:ctrlp_tabpage_position = 'al'
+" }}}
+
+" {{{ ctrlp_open_new_file
+" Use this option to specify how the newly created file is to be opened when
+" pressing <c-y>
+let g:ctrlp_open_new_file = 't'
+"}}}
+
+" {{{ ctrlp_abbrev
+" Define input abbreviations that can be expanded (either internally or visibly)
+" in the prompt
+"let g:ctrlp_abbrev = {
+"            \ }
+"}}}
+
+" {{{ ctrlp_mruf_exclude
+" Files you don't want CtrlP to remember. Use regexp to specify the patterns.
+let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*'
+"}}}
+"}}}
+
 " {{{ EnhancedCommentify
 " With this option set, the script tries to figure out which filetype to use
 " for every block by using the synID of the block. This improves handling of
@@ -229,6 +281,20 @@ let g:calendar_monday=1
 " calls synID only once for every block! So the first line is significant. Be
 " aware, that "cross" commenting might cause problems.
 let g:EnhCommentifyUseSyntax='Yes'
+"}}}
+
+" {{{ GUndo
+" {{{ gundo_preview_bottom
+" Force the preview window below current windows instead of below the graph.
+" This gives the preview window more space to show the unified diff.
+let g:gundo_preview_bottom=1
+"}}}
+
+" {{{ gundo_right
+" Set this to 1 to make the Gundo graph (and preview) open on the right side
+" instead of the left.
+let g:gundo_right=1
+"}}}
 "}}}
 
 " {{{ LaTeX
@@ -362,7 +428,7 @@ let g:netrw_timefmt = "%Y-%m-%d"
 " {{{ SuperTabDefaultCompletionType
 " Used to set the default completion type. There is no need to escape this value
 " as that will be done for you when the type is set.
-"let g:SuperTabDefaultCompletionType="context"
+let g:SuperTabDefaultCompletionType="context"
 "}}}
 "}}}
 
