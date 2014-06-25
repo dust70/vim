@@ -25,6 +25,19 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name'      : 'NeoBundle',
                 \ }
 
+    NeoBundle 'Shougo/vimproc.vim', {
+                \ 'build' : {
+                \     'windows' : 'vimproc_updcmd',
+                \     'cygwin'  : 'make -f make_cygwin.mak',
+                \     'mac'     : 'make -f make_mac.mak',
+                \     'unix'    : 'make -f make_unix.mak',
+                \     }
+                \ }
+    NeoBundle 'Shougo/vimshell.vim', {
+                \ 'directory' : 'Shell',
+                \ 'name'      : 'Shell',
+                \ }
+
     NeoBundle 'bling/vim-airline', {
                 \ 'directory' : 'Airline',
                 \ 'name'      : 'Airline',
@@ -53,26 +66,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Conque',
                 \ 'name'      : 'Conque',
                 \ }
-    NeoBundle 'kien/ctrlp.vim', {
-                \ 'directory' : 'CtrlP',
-                \ 'name'      : 'CtrlP',
-                \ }
-    NeoBundle 'tacahiroy/ctrlp-funky', {
-                \ 'directory' : 'CtrlP-Funky',
-                \ 'name'      : 'CtrlP-Funky',
-                \ }
-    NeoBundle 'jasoncodes/ctrlp-modified.vim', {
-                \ 'directory' : 'CtrlP-Modified',
-                \ 'name'      : 'CtrlP-Modified',
-                \ }
-    NeoBundle 'yegappan/mru', {
-                \ 'directory' : 'CtrlP-MRU',
-                \ 'name'      : 'CtrlP-MRU',
-                \ }
-    NeoBundle 'tacahiroy/ctrlp-ssh', {
-                \ 'directory' : 'CtrlP-SSH',
-                \ 'name'      : 'CtrlP-SSH',
-                \ }
     NeoBundle 'rking/vim-detailed', {
                 \ 'directory' : 'Detailed',
                 \ 'name'      : 'Detailed',
@@ -93,6 +86,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'LaTeX',
                 \ 'name'      : 'LaTeX',
                 \ }
+    NeoBundle 'vitalk/vim-lesscss', {
+                \ 'directory': 'LessCSS',
+                \ 'name': 'LessCSS',
+                \ }
     NeoBundle 'gregsexton/MatchTag', {
                 \ 'directory' : 'MatchTag',
                 \ 'name'      : 'MatchTag',
@@ -107,6 +104,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'NeoCompleteCache',
                 \ 'name'      : 'NeoCompleteCache',
                 \ 'disabled'  : has('lua'),
+                \ }
+    NeoBundle 'Shougo/neomru.vim', {
+                \ 'directory' : 'NeoMRU',
+                \ 'name'      : 'NeoMRU',
                 \ }
     NeoBundle 'Shougo/neosnippet', {
                 \ 'directory' : 'NeoSnippet',
@@ -172,10 +173,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'SecureModelines',
                 \ 'name'      : 'SecureModelines',
                 \ }
-    NeoBundle 'vim-scripts/ShowMarks', {
-                \ 'directory' : 'ShowMarks',
-                \ 'name'      : 'ShowMarks',
-                \ }
+"    NeoBundle 'vim-scripts/ShowMarks', {
+"                \ 'directory' : 'ShowMarks',
+"                \ 'name'      : 'ShowMarks',
+"                \ }
     NeoBundle 'honza/vim-snippets', {
                 \ 'directory' : 'Snippets',
                 \ 'name'      : 'Snippets',
@@ -196,16 +197,28 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Tagbar',
                 \ 'name'      : 'Tagbar',
                 \ }
-    NeoBundle 'vim-scripts/YankRing.vim', {
-                \ 'directory' : 'YankRing',
-                \ 'name'      : 'YankRing',
+    NeoBundle 'Shougo/unite.vim', {
+                \ 'directory' : 'Unite',
+                \ 'name'      : 'Unite',
+                \ }
+    NeoBundle 'Shougo/unite-session', {
+                \ 'directory' : 'Unit-Session',
+                \ 'name'      : 'Unit-Session',
+                \ }
+    NeoBundle 'Shougo/neossh.vim', {
+                \ 'directory' : 'Unit-SSH',
+                \ 'name'      : 'Unit-SSH',
+                \ }
+    NeoBundle 'Shougo/vimfiler.vim', {
+                \ 'directory' : 'Vimfiler',
+                \ 'name'      : 'Vimfiler',
                 \ }
     "}}}
 
     " {{{ NeoBundleCheck
     " Check plugins installation. If plugins are not installed, it will execute
     " :NeoBundleInstall automatically. This command also check
-    " enabledocumentation directories and will execute |:NeoBundleDocs|
+    " enabledocumentation directories and will execute :NeoBundleDocs
     " automaticallyally.
     NeoBundleCheck
     "}}}
@@ -238,38 +251,6 @@ let g:calendar_focus_today=1
 "   let g:calendar_monday=1
 " (You don't have to to change g:calendar_wruler!)
 let g:calendar_monday=1
-"}}}
-
-" {{{ CtrlP
-" {{{ ctrlp_map
-" Use this option to change the mapping to invoke CtrlP in Normal mode.
-" yankring overrides this so remap
-let g:ctrlp_map = '<c-p>'
-nnoremap <C-P> :CtrlP<CR>
-"}}}
-
-" {{{ ctrlp_tabpage_position
-" Where to put the new tab page when opening one.
-let g:ctrlp_tabpage_position = 'al'
-" }}}
-
-" {{{ ctrlp_open_new_file
-" Use this option to specify how the newly created file is to be opened when
-" pressing <c-y>
-let g:ctrlp_open_new_file = 't'
-"}}}
-
-" {{{ ctrlp_abbrev
-" Define input abbreviations that can be expanded (either internally or visibly)
-" in the prompt
-"let g:ctrlp_abbrev = {
-"            \ }
-"}}}
-
-" {{{ ctrlp_mruf_exclude
-" Files you don't want CtrlP to remember. Use regexp to specify the patterns.
-let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*'
-"}}}
 "}}}
 
 " {{{ EnhancedCommentify
@@ -317,8 +298,8 @@ let g:tex_flavor='latex'
 " Use this setting to choose the default target format. For example, setting
 " this to pdf makes LaTeX-Suite compile a pdf file when you press \ll and fire
 " up the pdf viewer on pressing \lv. Make sure that a rules for compiling and
-" viewing have been defined for this target format as described here [|ls_a_dx|]
-" and here [|ls_a_dF|].
+" viewing have been defined for this target format as described here [ls_a_dx]
+" and here [ls_a_dF].
 let g:Tex_DefaultTargetFormat='pdf'
 "}}}
 
@@ -345,7 +326,7 @@ let g:Tex_DefaultTargetFormat='pdf'
 " from within Vim. (The initial start is used on Windows platforms is to make
 " yap start as a separate process.) If you find the way LaTeX-Suite constructs
 " the command line too restrictive, you can use the Tex_ViewRuleComplete_format
-" [|ls_a_dG|] setting for more complete control on how the command line is
+" [ls_a_dG] setting for more complete control on how the command line is
 " constructed while calling the external program for viewing.
 "
 " NOTE: For windows, you will need to set the $PATH variable to include the
@@ -355,7 +336,7 @@ let g:Tex_DefaultTargetFormat='pdf'
 " NOTE: Default Viewing Format
 "       ----------------------
 " To change the default format for viewing files, set the
-" g:Tex_DefaultTargetFormat [|ls_a_dw|] variable.
+" g:Tex_DefaultTargetFormat [ls_a_dw] variable.
 let g:Tex_ViewRule_pdf='zathura'
 "}}}
 "}}}
@@ -367,7 +348,7 @@ let g:Tex_ViewRule_pdf='zathura'
 "    1: horizontally splitting the window first
 "    2: vertically splitting the window first
 "    3: open file in new tab
-"    4: act like "P" (ie. open previous window) Note that |g:netrw_preview| may
+"    4: act like "P" (ie. open previous window) Note that g:netrw_preview may
 "       be used to get vertical splitting instead of horizontal splitting.
 let g:netrw_browse_split = 3
 " }}}
@@ -409,7 +390,7 @@ let g:netrw_maxfilenamelen = 80
 "   netrwTmp     : tmp* *tmp
 "
 " These syntax highlighting groups are linked to Folded or DiffChange by default
-" (see |hl-Folded| and |hl-DiffChange|), but one may put lines like
+" (see hl-Folded and hl-DiffChange), but one may put lines like
 "   hi link netrwCompress Visual
 " into one's <.vimrc> to use one's own preferences.
 let g:netrw_special_syntax = 1
@@ -435,7 +416,7 @@ let g:SuperTabDefaultCompletionType="context"
 " {{{ Syntastic
 " {{{ syntastic_auto_loc_list
 " Use this option to tell syntastic to automatically open and/or close the
-" |location-list| (see |syntastic-error-window|).
+" location-list (see syntastic-error-window).
 "
 " When set to 0 the error window will not be opened or closed automatically. >
 "     let g:syntastic_auto_loc_list=0
@@ -494,7 +475,7 @@ let g:tagbar_foldlevel=2
 " If this variable is set and the current tag is inside of a closed fold then
 " the folds will be opened as much as needed for the tag to be visible so it can
 " be highlighted. If it is not set then the folds won't be opened and the parent
-" tag will be highlighted instead. You can use the |:TagbarShowTag| command to
+" tag will be highlighted instead. You can use the :TagbarShowTag command to
 " open the folds manually.
 let g:tagbar_autoshowtag=1
 "}}}
@@ -608,25 +589,46 @@ let g:tagbar_phpctags_memory_limit = '1G'
 "}}}
 "}}}
 
-" {{{ YankRing
-" {{{ yankring_max_history
-" Controls how many elements to save in the yankring.
-let g:yankring_max_history=25
+" {{{ Unite
+" {{{ unite_source_history_yank_enable
+" If defined and not 0, unite enables unite-source-history/yank.
+let g:unite_source_history_yank_enable = 1
 "}}}
 
-" {{{ yankring_history_dir
-" The YankRing stores the text in a file. This global variable allows you to
-" customize where the file(s) will be stored. This can be a comma separated
-" list, which is useful if your .vimrc is shared across different machines. If
-" multipe directories are specified, the first valid directory will be used. You
-" can put the following in your |vimrc|
-let g:yankring_history_dir=expand("~/.vim")
-" }}}
+" {{{ mappings
+nnoremap <C-p> :Unite file_rec/async<cr>
+nnoremap <LocalLeader>/ :Unite grep:.<cr>
+nnoremap <LocalLeader>b :Unite -quick-match buffer<cr>
+nnoremap <LocalLeader>s :Unite session<cr>
+nnoremap <LocalLeader>y :Unite history/yank<cr>
+"}}}
+"}}}
 
-" {{{ yankring_history_file
-" The history filename prefix can be controlled by setting this variable. You
-" can put the following in your |vimrc|.
-let g:yankring_history_file='history'
+" {{{ Vimfiler
+" {{{ vimfiler_as_default_explorer
+" If this variable is true, Vim use vimfiler as file manager instead of netrw.
+let g:vimfiler_as_default_explorer = 1
+"}}}
+
+" {{{ vimfiler_edit_action
+" This variable controls vimfiler edit action in |unite|.
+let g:vimfiler_edit_action = 'tabopen'
+"}}}
+
+" {{{ vimfiler_safe_mode_by_default
+" This variable controls vimfiler enter safe mode by default. In safe mode,
+" dangerous command is disabled.
+let vimfiler_safe_mode_by_default = 1
+"}}}
+
+" {{{ vimfiler_enable_auto_cd
+" This variable controls whether vimfiler change Vim current directory using
+" g:unite_kind_openable_lcd_command automatically.
+let g:vimfiler_enable_auto_cd = 1
+"}}}
+
+" {{{ mappings
+nnoremap <LocalLeader>f :VimFilerTab -toggle <cr>
 "}}}
 "}}}
 
