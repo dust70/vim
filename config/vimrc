@@ -25,11 +25,11 @@ unlet pathToRc
 
 " {{{ macros
 " {{{ Existing plugin
-runtime macros/editexisting.vim
+runtime! macros/editexisting.vim
 "}}}
 
 " {{{ MatchIt plugin
-runtime /macros/matchit.vim
+runtime! /macros/matchit.vim
 "}}}
 "}}}
 
@@ -336,7 +336,7 @@ set foldmethod=syntax
 " specified, font names separated with commas.
 " The first valid font is used.
 if has("gui_running")
-    set guifont=Terminus\ 8
+    set guifont=Terminus\ 9
 endif
 "}}}
 
