@@ -26,6 +26,8 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ }
 
     NeoBundle 'Shougo/vimproc.vim', {
+                \ 'directory' : 'VimProc',
+                \ 'name'      : 'VimProc', 
                 \ 'build' : {
                 \     'windows' : 'vimproc_updcmd',
                 \     'cygwin'  : 'make -f make_cygwin.mak',
