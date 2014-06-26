@@ -88,10 +88,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'LaTeX',
                 \ 'name'      : 'LaTeX',
                 \ }
-    NeoBundle 'vitalk/vim-lesscss', {
-                \ 'directory': 'LessCSS',
-                \ 'name': 'LessCSS',
-                \ }
     NeoBundle 'gregsexton/MatchTag', {
                 \ 'directory' : 'MatchTag',
                 \ 'name'      : 'MatchTag',
