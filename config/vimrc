@@ -279,6 +279,17 @@ set diffopt=filler,context:3,vertical,foldcolumn:3
 set encoding=utf-8
 "}}}
 
+" {{{ esckeys
+" Function keys that start with an <Esc> are recognized in Insert mode. When
+" this option is off, the cursor and function keys cannot be used in Insert mode
+" if they start with an <Esc>. The advantage of this is that the single <Esc> is
+" recognized immediately, instead of after one second. Instead of resetting this
+" option, you might want to try changing the values for 'timeoutlen' and
+" 'ttimeoutlen'. Note that when 'esckeys' is off, you can still map anything,
+" but the cursor keys won't work by default.
+set esckeys
+"}}}
+
 " {{{ expandtab
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
 " Spaces are used in indents with the '>' and '<' commands and when
@@ -576,6 +587,20 @@ set pastetoggle=,p
 " the file being searched for has a relative path (not starting with "/", "./"
 " or "../"). The directories in the 'path' option may be relative or absolute.
 set path+=.,~/,~/repositories/**
+"}}}
+
+" {{{ pumheight
+" Determines the maximum number of items to show in the popup menu for Insert
+" mode completion. When zero as much space as available is used.
+set pumheight = 20
+"}}}
+
+" {{{ scrolloff
+" Minimal number of screen lines to keep above and below the cursor. This will
+" make some context visible around where you are working. If you set it to a
+" very large value (999) the cursor line will always be in the middle of the
+" window (except at the start or end of the file or when long lines wrap).
+set scrolloff = 4
 "}}}
 
 " {{{ sessionoptions
