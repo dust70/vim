@@ -20,14 +20,21 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     "}}}
 
     " {{{ Bundles
+    " {{{ Neobundle
     NeoBundleFetch 'Shougo/neobundle.vim', {
                 \ 'directory' : 'NeoBundle',
                 \ 'name'      : 'NeoBundle',
                 \ }
+    "}}}
 
+    " {{{ bundles needed by other bundles
+    NeoBundle 'xolox/vim-misc', {
+                \ 'directory' : 'Misc',
+                \ 'name'      : 'Misc',
+                \ }
     NeoBundle 'Shougo/vimproc.vim', {
                 \ 'directory' : 'VimProc',
-                \ 'name'      : 'VimProc', 
+                \ 'name'      : 'VimProc',
                 \ 'build' : {
                 \     'windows' : 'vimproc_updcmd',
                 \     'cygwin'  : 'make -f make_cygwin.mak',
@@ -39,7 +46,9 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Shell',
                 \ 'name'      : 'Shell',
                 \ }
+    "}}}
 
+    " {{{ Plugins
     NeoBundle 'bling/vim-airline', {
                 \ 'directory' : 'Airline',
                 \ 'name'      : 'Airline',
@@ -72,6 +81,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Detailed',
                 \ 'name'      : 'Detailed',
                 \ }
+    NeoBundle 'xolox/vim-easytags', {
+                \ 'directory' : 'Easytag',
+                \ 'name'      : 'Easytag',
+                \ }
     NeoBundle 'vim-scripts/EnhCommentify.vim', {
                 \ 'directory' : 'EnhancedCommentify',
                 \ 'name'      : 'EnhancedCommentify',
@@ -83,6 +96,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'sjl/gundo.vim.git', {
                 \ 'directory' : 'Gundo',
                 \ 'name'      : 'Gundo',
+                \ }
+    NeoBundle 'davidhalter/jedi-vim', {
+                \ 'directory' : 'Jedi',
+                \ 'name'      : 'Jedi',
                 \ }
     NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex', {
                 \ 'directory' : 'LaTeX',
@@ -212,6 +229,7 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name'      : 'Vimfiler',
                 \ }
     "}}}
+    "}}}
 
     " {{{ NeoBundleCheck
     " Check plugins installation. If plugins are not installed, it will execute
@@ -251,6 +269,17 @@ let g:calendar_focus_today=1
 let g:calendar_monday=1
 "}}}
 
+" {{{ Easytag
+let g:easytags_include_members = 1          " Include struct members
+let g:easytags_dynamic_files = 1            " Reuse project-specific files
+let g:easytags_by_filetype = vimfiles . "/tags" " Use tags per filetype
+let g:easytags_updatetime_warn = 0          " Don't warn about fast updatetime
+let g:easytags_resolve_links = 1            " Resolve symbolic links
+let g:easytags_auto_highlight = 0           " Don't highlight tags
+let g:easytags_suppress_ctags_warning = 1   " Don't warn if no ctags installed
+let g:easytags_events = ['BufWritePost']    " Update on saving
+"}}}
+
 " {{{ EnhancedCommentify
 " With this option set, the script tries to figure out which filetype to use
 " for every block by using the synID of the block. This improves handling of
@@ -260,6 +289,39 @@ let g:calendar_monday=1
 " calls synID only once for every block! So the first line is significant. Be
 " aware, that "cross" commenting might cause problems.
 let g:EnhCommentifyUseSyntax='Yes'
+"}}}
+
+" {{{ FuGITive
+" gd: git diff (as text)
+nnoremap <leader>gd :Gvsplit! diff<cr>
+" gv: visual diff
+nnoremap <leader>gv :Gdiff<cr>
+" gV: (attempt to) close visual diff
+nnoremap <leader>gV <C-w>h:q<cr><C-^>
+" ge: Prompt to edit file
+nnoremap <leader>ge :Gedit<Space>
+" gb: Blame
+nnoremap <leader>gb :Gblame<cr>
+" gm: Prompt to move
+nnoremap <leader>gm :Gmove<Space>
+" gm: Prompt to remove
+nnoremap <leader>gr :Gremove<Space>
+" gm: Prompt to grep
+nnoremap <leader>gg :Ggrep<Space>
+" gl: Show git log
+nnoremap <leader>gl :Glog<cr><cr>:cw<cr>
+" gr: (read) checkout --
+nnoremap <leader>gr :Gread<cr>
+" gx: prompt to eXecute git command
+nnoremap <leader>gx :Git<Space>
+" gc: git commit
+nnoremap <leader>gc :Gcommit<cr>
+" gC: git commit --amend
+nnoremap <leader>gC :Gcommit --amend<cr>
+" gp: git commit --patch
+nnoremap <leader>gp :Gcommit --patch<cr>
+" gs: git status
+nnoremap <leader>gs :Gstatus<cr>
 "}}}
 
 " {{{ GUndo
