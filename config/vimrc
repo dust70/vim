@@ -592,7 +592,7 @@ set path+=.,~/,~/repositories/**
 " {{{ pumheight
 " Determines the maximum number of items to show in the popup menu for Insert
 " mode completion. When zero as much space as available is used.
-set pumheight = 20
+set pumheight=20
 "}}}
 
 " {{{ scrolloff
@@ -600,7 +600,7 @@ set pumheight = 20
 " make some context visible around where you are working. If you set it to a
 " very large value (999) the cursor line will always be in the middle of the
 " window (except at the start or end of the file or when long lines wrap).
-set scrolloff = 4
+set scrolloff=4
 "}}}
 
 " {{{ sessionoptions
