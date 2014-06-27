@@ -243,6 +243,14 @@ unlet pathToNeoBundle
 unlet bundlePath
 "}}}
 
+" {{{ set vimfiles path
+if has("unix")
+    let vimfiles = expand("$HOME/.vim")
+else
+    let vimfiles = expand("$VIMRUNTIME/../vimfiles")
+endif
+"}}}
+
 " {{{ Bufexplrorer disabled
 let g:bufexplorer_version=1
 " }}}
