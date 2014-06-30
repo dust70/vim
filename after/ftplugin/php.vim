@@ -58,7 +58,7 @@ setlocal complete-=k complete+=k
 " files named "tags" below "/lib". The filename itself cannot contain
 " wildcards, it is used as-is. E.g., "/lib/**/tags?" will find files called
 " "tags?".
-setlocal tags-=${HOME}/.vim/tags/php/* tags+=${HOME}/.vim/tags/php/*
+setlocal tags-=vimfiles."/persistent-tags/php/*" tags+=vimfiles."/persistent-tags/php/*
 "}}}
 
 " {{{ mappings

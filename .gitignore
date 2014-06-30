@@ -1,5 +1,6 @@
 .netrwhist
 activity
+backup
 cache
 colors/vo_dark.vim
 colors/vo_light.vim
@@ -15,4 +16,7 @@ history_v2.txt
 info
 mru
 syntax/vo_base.vim
+tags
+tmp
+undo
 view
