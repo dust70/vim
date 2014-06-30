@@ -270,14 +270,15 @@ let g:calendar_monday=1
 "}}}
 
 " {{{ Easytag
-let g:easytags_include_members = 1          " Include struct members
-let g:easytags_dynamic_files = 1            " Reuse project-specific files
-let g:easytags_by_filetype = vimfiles . "/tags" " Use tags per filetype
-let g:easytags_updatetime_warn = 0          " Don't warn about fast updatetime
-let g:easytags_resolve_links = 1            " Resolve symbolic links
-let g:easytags_auto_highlight = 0           " Don't highlight tags
-let g:easytags_suppress_ctags_warning = 1   " Don't warn if no ctags installed
-let g:easytags_events = ['BufWritePost']    " Update on saving
+" TODO: comment this options
+let g:easytags_include_members = 1
+let g:easytags_dynamic_files = 1
+let g:easytags_by_filetype = vimfiles . "/tags"
+let g:easytags_updatetime_warn = 0
+let g:easytags_resolve_links = 1
+let g:easytags_auto_highlight = 0
+let g:easytags_suppress_ctags_warning = 1
+let g:easytags_events = ['BufWritePost']
 "}}}
 
 " {{{ EnhancedCommentify
@@ -688,7 +689,7 @@ let g:vimfiler_enable_auto_cd = 1
 "}}}
 
 " {{{ mappings
-nnoremap <LocalLeader>f :VimFilerTab -toggle <cr>
+nnoremap ,f :VimFilerTab -toggle <cr>
 "}}}
 "}}}
 
