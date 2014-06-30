@@ -755,7 +755,7 @@ set spelllang=de_20,de_de,de,en_us,en_gb,en
 " {{{ spell
 " When on spell checking will be done. See |spell|. The languages are specified
 " with 'spelllang'.
-noremap ,s :set spell!<CR>
+noremap ,S :set spell!<CR>
 "}}}
 
 " {{{ highlight for spell checking
