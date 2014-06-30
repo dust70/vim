@@ -1059,6 +1059,7 @@ nnoremap <silent> ,tp :confirm tabprevious<CR>
 nnoremap <silent> ,bq :confirm bdelete<CR>
 nnoremap <silent> ,bQ :confirm quitall<CR>
 nnoremap <silent> ,bw :write<CR>
+nnoremap <silent> ,bW :wall<CR>
 
 " replace german umlauts
 imap <silent> ä ae
