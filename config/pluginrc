@@ -666,11 +666,11 @@ let g:unite_source_history_yank_enable = 1
 "}}}
 
 " {{{ mappings
-nnoremap <C-p> :Unite file_rec/async<cr>
-nnoremap ,/ :Unite grep:.<cr>
-nnoremap ,b :Unite -quick-match buffer<cr>
-nnoremap ,s :Unite session<cr>
-nnoremap ,y :Unite history/yank<cr>
+nnoremap <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
+nnoremap ,/ :Unite -buffer-name=grep -start-insert grep:.<cr>
+nnoremap ,b :Unite -buffer-name=buffer -start-insert -quick-match buffer<cr>
+nnoremap ,s :Unite -buffer-name=session -start-insert session<cr>
+nnoremap ,y :Unite -buffer-name=history -start-insert history/yank<cr>
 "}}}
 "}}}
 
