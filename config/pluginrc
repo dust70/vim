@@ -526,8 +526,8 @@ nnoremap <silent> <C-w><C-t> :TagbarToggle<CR>
 " {{{ autoopen for specific filetypes
 if has("autocmd")
     augroup AutoOpenTagBar
-        autocmd FileType c,cpp,php,python.vim
-                    \ nested :TagbarOpen
+"        autocmd FileType c,cpp,php,python.vim
+"                    \ nested :TagbarOpen
     augroup END
 endif
 "}}}
