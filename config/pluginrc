@@ -254,7 +254,16 @@ let g:loaded_minibufexplorer=1
 " {{{ Airline
 " {{{ tabline
 " enable/disable enhanced tabline.
-let g:airline#extensions#tabline#enabled=0
+let g:airline#extensions#tabline#enabled=1
+
+" enable/disable displaying buffers with a single tab.
+let g:airline#extensions#tabline#show_buffers=1
+
+" enable/disable displaying tab number in tabs mode.
+let g:airline#extensions#tabline#show_tab_nr=1
+
+" configure whether buffer numbers should be shown.
+let g:airline#extensions#tabline#buffer_nr_show=1
 "}}}
 "}}}
 
@@ -271,14 +280,14 @@ let g:calendar_monday=1
 
 " {{{ Easytag
 " TODO: comment this options
-let g:easytags_include_members = 1
-let g:easytags_dynamic_files = 1
-let g:easytags_by_filetype = vimfiles . "/tags"
-let g:easytags_updatetime_warn = 0
-let g:easytags_resolve_links = 1
-let g:easytags_auto_highlight = 0
-let g:easytags_suppress_ctags_warning = 1
-let g:easytags_events = ['BufWritePost']
+let g:easytags_include_members=1
+let g:easytags_dynamic_files=1
+let g:easytags_by_filetype=vimfiles . "/tags"
+let g:easytags_updatetime_warn=0
+let g:easytags_resolve_links=1
+let g:easytags_auto_highlight=0
+let g:easytags_suppress_ctags_warning=1
+let g:easytags_events=['BufWritePost']
 "}}}
 
 " {{{ EnhancedCommentify
@@ -420,7 +429,7 @@ let g:neosnippet#snippets_directory="~/.vim/bundle/NeoSnippet-Snippets/neosnippe
 "    3: open file in new tab
 "    4: act like "P" (ie. open previous window) Note that g:netrw_preview may
 "       be used to get vertical splitting instead of horizontal splitting.
-let g:netrw_browse_split = 3
+let g:netrw_browse_split=3
 " }}}
 
 " {{{ netrw_liststyle
@@ -430,7 +439,7 @@ let g:netrw_browse_split = 3
 "      size)
 "   2: wide listing (multiple files in columns)
 "   3: tree style listing
-let g:netrw_liststyle = 3
+let g:netrw_liststyle=3
 "}}}
 
 " {{{ netrw_list_hide
@@ -443,7 +452,7 @@ let g:netrw_list_hide= '.*\.swp$'
 " 32 by default, selected so as to make long listings fit on 80 column displays.
 " If your screen is wider, and you have file or directory names longer than 32
 " bytes, you may set this option to keep listings columnar.
-let g:netrw_maxfilenamelen = 80
+let g:netrw_maxfilenamelen=80
 "}}}
 
 " {{{ netrw_special_syntax
@@ -463,7 +472,7 @@ let g:netrw_maxfilenamelen = 80
 " (see hl-Folded and hl-DiffChange), but one may put lines like
 "   hi link netrwCompress Visual
 " into one's <.vimrc> to use one's own preferences.
-let g:netrw_special_syntax = 1
+let g:netrw_special_syntax=1
 "}}}
 
 " {{{ netrw_timefmt
@@ -471,7 +480,7 @@ let g:netrw_special_syntax = 1
 " The default, "%c", is "the preferred date and time representation for the
 " current locale" according to my manpage entry for strftime(); however, not all
 " are satisfied with it.
-let g:netrw_timefmt = "%Y-%m-%d"
+let g:netrw_timefmt="%Y-%m-%d"
 "}}}
 "}}}
 
@@ -655,14 +664,14 @@ let g:tagbar_phpctags_bin='~/.vim/bundle/PHP-CTags/bin/phpctags'
 
 " {{{ tagbar_phpctags_memory_limit
 " The amount of memory that phpctags can use can be configured.
-let g:tagbar_phpctags_memory_limit = '1G'
+let g:tagbar_phpctags_memory_limit='1G'
 "}}}
 "}}}
 
 " {{{ Unite
 " {{{ unite_source_history_yank_enable
 " If defined and not 0, unite enables unite-source-history/yank.
-let g:unite_source_history_yank_enable = 1
+let g:unite_source_history_yank_enable=1
 "}}}
 
 " {{{ mappings
@@ -677,24 +686,24 @@ nnoremap ,y :Unite -buffer-name=history -start-insert history/yank<cr>
 " {{{ Vimfiler
 " {{{ vimfiler_as_default_explorer
 " If this variable is true, Vim use vimfiler as file manager instead of netrw.
-let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_as_default_explorer=1
 "}}}
 
 " {{{ vimfiler_edit_action
 " This variable controls vimfiler edit action in |unite|.
-let g:vimfiler_edit_action = 'tabopen'
+let g:vimfiler_edit_action='tabopen'
 "}}}
 
 " {{{ vimfiler_safe_mode_by_default
 " This variable controls vimfiler enter safe mode by default. In safe mode,
 " dangerous command is disabled.
-"let vimfiler_safe_mode_by_default = 1
+"let vimfiler_safe_mode_by_default=1
 "}}}
 
 " {{{ vimfiler_enable_auto_cd
 " This variable controls whether vimfiler change Vim current directory using
 " g:unite_kind_openable_lcd_command automatically.
-let g:vimfiler_enable_auto_cd = 1
+let g:vimfiler_enable_auto_cd=1
 "}}}
 
 " {{{ mappings
