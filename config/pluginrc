@@ -407,7 +407,7 @@ let g:Tex_ViewRule_pdf='zathura'
 " This variable appoints a path to user-defined snippet files. You can set
 " multiple values in comma-separated string or list. Non existing directories
 " are ignored.
-let g:neosnippet#snippets_directory='expand(vimfiles."/bundle/NeoSnippet-Snippets/neosnippets",expand(vimfiles."/bundle/Snippets/snippets"'
+let g:neosnippet#snippets_directory="~/.vim/bundle/NeoSnippet-Snippets/neosnippets,~/.vim/bundle/Snippets/snippets"
 "}}}
 "}}}
 
