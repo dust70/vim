@@ -519,8 +519,17 @@ let g:syntastic_html_tidy_ignore_errors=[
 "}}}
 
 " {{{ TagBar
-" {{{ toggle display
+" {{{ toggle display/mappings
 nnoremap <silent> <C-w><C-t> :TagbarToggle<CR>
+"}}}
+
+" {{{ autoopen for specific filetypes
+if has("autocmd")
+    augroup AutoOpenTagBar
+        autocmd FileType c,cpp,php,python.vim
+                    \ nested :TagbarOpen
+    augroup END
+endif
 "}}}
 
 " {{{ tagbar_width
