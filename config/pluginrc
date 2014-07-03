@@ -688,7 +688,7 @@ let g:vimfiler_edit_action = 'tabopen'
 " {{{ vimfiler_safe_mode_by_default
 " This variable controls vimfiler enter safe mode by default. In safe mode,
 " dangerous command is disabled.
-let vimfiler_safe_mode_by_default = 1
+"let vimfiler_safe_mode_by_default = 1
 "}}}
 
 " {{{ vimfiler_enable_auto_cd
