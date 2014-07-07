@@ -16,6 +16,12 @@ if !isdirectory(vimfiles . '/tmp') | call mkdir(vimfiles . '/tmp') | endif
 "}}}
 
 " {{{ configuration files
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/highlightrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
 " {{{ global options for plugins
 let g:pathToRc=split(&runtimepath, ",")[0] . "/config/pluginrc"
 if filereadable(pathToRc)
