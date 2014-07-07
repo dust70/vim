@@ -1,0 +1,78 @@
+" {{{ foldlevel
+nnoremap <silent> ,1 :setlocal foldlevel=0<CR>
+nnoremap <silent> ,2 :setlocal foldlevel=1<CR>
+nnoremap <silent> ,3 :setlocal foldlevel=2<CR>
+nnoremap <silent> ,4 :setlocal foldlevel=3<CR>
+nnoremap <silent> ,5 :setlocal foldlevel=4<CR>
+nnoremap <silent> ,6 :setlocal foldlevel=5<CR>
+nnoremap <silent> ,7 :setlocal foldlevel=6<CR>
+nnoremap <silent> ,8 :setlocal foldlevel=7<CR>
+nnoremap <silent> ,9 :setlocal foldlevel=8<CR>
+nnoremap <silent> ,0 :setlocal foldlevel=9<CR>
+"}}}
+
+" {{{ number
+nnoremap <silent> ,n :set nonumber!<CR>:set number?<CR>
+"}}}
+
+" {{{ spell
+noremap ,S :set spell!<CR>
+"}}}
+
+" {{{ format file
+function! FormatFile()
+    execute "normal msHmtgg"
+    execute "normal gg=G"
+    execute "normal 'tzt`s"
+endfunction
+nnoremap <silent> ,m :call FormatFile()<CR>
+"}}}
+
+" {{{ hlsearch
+if &t_Co > 2 || has("gui_running")
+    nnoremap <silent> ,L :set nohlsearch!<CR>:set hlsearch?<CR>
+endif
+"}}}
+
+" {{{ mapping
+" Don't use Ex mode, use Q for formatting
+nnoremap <silent> Q gq
+
+" place the cursor by default after the inserted text
+nnoremap <silent> p gp
+nnoremap <silent> P gP
+
+" the default behaviour should be available too
+nnoremap <silent> gp p
+nnoremap <silent> gP P
+
+" buffers
+nnoremap <silent> ,bl :confirm buffers<CR>
+nnoremap <silent> ,bn :confirm bnext<CR>
+nnoremap <silent> ,bp :confirm bprevious<CR>
+
+" tabs
+nnoremap <silent> ,tl :confirm tabs<CR>
+nnoremap <silent> ,tn :confirm tabnext<CR>
+nnoremap <silent> ,tp :confirm tabprevious<CR>
+
+" close buffers
+nnoremap <silent> ,bq :confirm bdelete<CR>
+nnoremap <silent> ,bQ :confirm quitall<CR>
+nnoremap <silent> ,bw :write<CR>
+nnoremap <silent> ,bW :wall<CR>
+
+" replace german umlauts
+imap <silent> ä ae
+imap <silent> Ä Ae
+imap <silent> ü ue
+imap <silent> Ü Ue
+imap <silent> ö oe
+imap <silent> Ö Oe
+imap <silent> ß ss
+
+" tab navigation like firefox
+nnoremap <C-t> :tabnew<CR>
+"}}}
+
+" vim: filetype=vim textwidth=80 foldmethod=marker
