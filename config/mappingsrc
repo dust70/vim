@@ -72,7 +72,7 @@ imap <silent> Ö Oe
 imap <silent> ß ss
 
 " tab navigation like firefox
-nnoremap <C-t> :tabnew<CR>
+nnoremap ,t :tabnew<CR>
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
