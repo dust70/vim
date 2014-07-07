@@ -507,6 +507,7 @@ let g:SuperTabDefaultCompletionType="context"
 "     let g:syntastic_auto_loc_list=2
 let g:syntastic_auto_loc_list=1
 "}}}
+
 " {{{ Syntax Checker
 " {{{ HTML
 " {{{ Tidy
@@ -514,6 +515,15 @@ let g:syntastic_html_tidy_ignore_errors=[
             \ "escaping malformed URI reference"
             \ ]
 "}}}
+"}}}
+
+" {{{ PHP
+let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+"}}}
+
+" {{{ python
+let g:syntastic_python_checkers=['python', 'flake8', 'pep8', 'pyflakes',
+            \ 'pylint']
 "}}}
 "}}}
 "}}}
