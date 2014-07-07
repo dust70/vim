@@ -61,13 +61,6 @@ runtime! /macros/matchit.vim
 syntax enable
 "}}}
 
-" {{{ highlight
-if has("autocmd")
-    highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-    match ExtraWhitespace /\s\+$\| \+\ze\t/
-endif
-"}}}
-
 " {{{ colorscheme
 " Output the name of the currently active color scheme.
 " This is basically the same as
@@ -756,13 +749,6 @@ set spelllang=de_20,de_de,de,en_us,en_gb,en
 " When on spell checking will be done. See |spell|. The languages are specified
 " with 'spelllang'.
 noremap ,S :set spell!<CR>
-"}}}
-
-" {{{ highlight for spell checking
-highlight SpellBad term=standout ctermfg=Red term=underline cterm=underline
-highlight SpellCap term=underline cterm=underline
-highlight SpellRare term=underline cterm=underline
-highlight SpellLocal term=underline cterm=underline
 "}}}
 
 " {{{ splitbelow
