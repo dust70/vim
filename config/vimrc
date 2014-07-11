@@ -108,6 +108,37 @@ if has("autocmd")
 endif
 "}}}
 
+" {{{ CScope
+if has("cscope")
+    " {{{ cscopetag
+    " If 'cscopetag' is set, the commands ":tag" and CTRL-] as well as "vim -t"
+    " will always use |:cstag| instead of the default :tag behavior.
+    " Effectively, by setting 'cst', you will always search your cscope
+    " databases as well as your tag files. The default is off.
+    set cscopetag
+    "}}}}
+
+    " {{{
+    " If 'cscopeverbose' is not set (the default), messages will not be printed
+    " indicating success or failure when adding a cscope database. Ideally, you
+    " should reset this option in your |.vimrc| before adding any cscope
+    " databases, and after adding them, set it. From then on, when you add more
+    " databases within Vim, you will get a (hopefully) useful message should the
+    " database fail to be added.
+    set nocsverb
+    " }}}
+
+    " {{{ add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    " else add database pointed to by environment
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+    "}}}
+endif
+"}}}
+
 " {{{ global options
 " {{{ autoindent
 " Copy indent from current line when starting a new line (typing <CR> in
