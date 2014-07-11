@@ -76,4 +76,11 @@ setlocal diffopt+=iwhite
 setlocal foldmethod=syntax
 " }}}
 
+" {{{ foldlevelstart
+" Sets 'foldlevel' when starting to edit another buffer in a window. Useful to
+" always start editing with all folds closed (value zero), some folds closed
+" (one) or no folds closed (99).
+set foldlevelstart=2
+"}}}
+
 " vim: filetype=vim textwidth=80 foldmethod=marker
