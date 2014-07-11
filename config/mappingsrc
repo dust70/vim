@@ -34,6 +34,12 @@ if &t_Co > 2 || has("gui_running")
 endif
 "}}}
 
+" {{{ cscope
+if has("cscope")
+    nnoremap <silent> <C-@><C-@> :cscope find s <C-R>=expand("<cword>")<CR><CR>
+endif
+"}}}
+
 " {{{ mapping
 " Don't use Ex mode, use Q for formatting
 nnoremap <silent> Q gq
