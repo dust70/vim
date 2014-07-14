@@ -57,6 +57,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Align',
                 \ 'name'      : 'Align',
                 \ }
+    NeoBundle 'Chiel92/vim-autoformat', {
+                \ 'directory' : 'AutoFormat',
+                \ 'name'      : 'AutoFormat'
+                \ }
     NeoBundle 'jiangmiao/auto-pairs', {
                 \ 'directory' : 'AutoPairs',
                 \ 'name'      : 'AutoPairs',
@@ -241,6 +245,13 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
 endif
 unlet pathToNeoBundle
 unlet bundlePath
+"}}}
+
+" {{{ AutoFormat
+nnoremap <silent> ,bf :Autoformat<CR><CR>
+
+let g:formatprg_php="astyle"
+let g:formatprg_args_php="--style=linux -cdHs4"
 "}}}
 
 " {{{ Bufexplrorer disabled
