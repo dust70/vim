@@ -6,7 +6,7 @@ if has("autocmd")
         " The following to have Vim jump to the last position when reopening a
         " file
         autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <=line("$")
-                    \| execute "normal g'\"" | endif
+                    \ | execute "normal g'\"" | endif
     augroup END
     "}}}
 
@@ -70,10 +70,14 @@ if has("autocmd")
     " {{{ filetype specific autocommands
     augroup filetypes
         autocmd!
-        autocmd! BufRead,BufNewFile *.phtml     setlocal filetype=php.html
+        autocmd! BufRead,BufNewFile *.phtml setlocal filetype=php.html
         autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
+        autocmd! FileType c,cpp,java,php,python,vim
+                    \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
+        autocmd! FileType c,cpp,java,php,python,vim
+                    \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
     augroup END
-    " }}}
+    "}}}
 endif
 "}}}
 

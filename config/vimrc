@@ -1018,11 +1018,27 @@ set wrapmargin=5
 "}}}
 
 " {{{ functions
-"{{{ StripTrailingWhitespace
+" {{{ StripTrailingWhitespace
 function! StripTrailingWhitespace()
-    normal mZ
-    silent %s/\s\+$//e
-    normal `Z
+    if !&binary && &filetype != 'diff'
+        normal mz
+        normal Hmy
+        %s/\s\+$//e
+        normal 'yz<CR>
+        normal `z
+    endif
+endfunction
+"}}}
+
+" {{{ StripDoubleEmptyLines
+function! StripDoubleEmptyLines()
+    if !&binary && &filetype != 'diff'
+        normal mz
+        normal Hmy
+        %s/\(^\s*$\)\{2,\}/\r/e
+        normal 'yz<CR>
+        normal `z
+    endif
 endfunction
 "}}}
 
