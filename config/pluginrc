@@ -101,6 +101,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Gundo',
                 \ 'name'      : 'Gundo',
                 \ }
+    NeoBundle 'othree/html5.vim', {
+                \ 'directory' : 'HTML5',
+                \ 'name'      : 'HTML5',
+                \ }
     NeoBundle 'davidhalter/jedi-vim', {
                 \ 'directory' : 'Jedi',
                 \ 'name'      : 'Jedi',
@@ -359,6 +363,10 @@ nnoremap <leader>gs :Gstatus<cr>
 "}}}
 
 " {{{ GUndo
+" {{{ mappings
+nnoremap <silent> ,u :GundoToogle<CR>
+"}}}
+
 " {{{ gundo_preview_bottom
 " Force the preview window below current windows instead of below the graph.
 " This gives the preview window more space to show the unified diff.
