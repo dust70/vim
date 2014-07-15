@@ -16,7 +16,7 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     "}}}
 
     " {{{ bundle path and call NeoBundle
-    call neobundle#rc(expand(bundlePath))
+    call neobundle#begin(expand(bundlePath))
     "}}}
 
     " {{{ Bundles
@@ -235,12 +235,24 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     "}}}
     "}}}
 
+    call neobundle#end()
+
     " {{{ NeoBundleCheck
     " Check plugins installation. If plugins are not installed, it will execute
     " :NeoBundleInstall automatically. This command also check
     " enabledocumentation directories and will execute :NeoBundleDocs
     " automaticallyally.
     NeoBundleCheck
+    "}}}
+
+    " {{{ UpdateNeobundle()
+    function! UpdateNeobundle()
+        NeoBundleCheck
+        NeoBundleCheckUpdate
+        NeoBundleClean
+        NeoBundleGC
+        NeoBundleDocs
+    endfunction
     "}}}
 endif
 unlet pathToNeoBundle
@@ -299,6 +311,8 @@ let g:easytags_resolve_links=1
 let g:easytags_auto_highlight=0
 let g:easytags_suppress_ctags_warning=1
 let g:easytags_events=['BufWritePost']
+
+UpdateTags
 "}}}
 
 " {{{ EnhancedCommentify
