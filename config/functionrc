@@ -15,7 +15,7 @@ function! StripDoubleEmptyLines()
     if !&binary && &filetype != 'diff'
         normal mz
         normal Hmy
-        %s/\(^\s*$\)\{2,\}/\r/e
+        %s/\(^\s*$\n\)\{2,\}/\r/e
         normal 'yz<CR>
         normal `z
     endif
