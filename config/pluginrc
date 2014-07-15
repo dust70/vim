@@ -259,13 +259,6 @@ unlet pathToNeoBundle
 unlet bundlePath
 "}}}
 
-" {{{ AutoFormat
-nnoremap <silent> ,bf :Autoformat<CR><CR>
-
-let g:formatprg_php="astyle"
-let g:formatprg_args_php="--style=linux -cdHs4"
-"}}}
-
 " {{{ Bufexplrorer disabled
 let g:bufexplorer_version=1
 " }}}
@@ -290,6 +283,13 @@ let g:airline#extensions#tabline#buffer_nr_show=1
 "}}}
 "}}}
 
+" {{{ AutoFormat
+nnoremap <silent> ,bf :Autoformat<CR><CR>
+
+let g:formatprg_php="astyle"
+let g:formatprg_args_php="--style=linux -cdHs4"
+"}}}
+
 " {{{ Calendar
 " if you want to keep focus when goto next or prev calendar, add the following
 " to your .vimrc:
@@ -303,16 +303,15 @@ let g:calendar_monday=1
 
 " {{{ Easytag
 " TODO: comment this options
-let g:easytags_include_members=1
-let g:easytags_dynamic_files=1
-let g:easytags_by_filetype=vimfiles . "/tags"
-let g:easytags_updatetime_warn=0
-let g:easytags_resolve_links=1
 let g:easytags_auto_highlight=0
-let g:easytags_suppress_ctags_warning=1
+let g:easytags_autorecurse=1
+let g:easytags_by_filetype=vimfiles . "/tags"
+let g:easytags_dynamic_files=1
 let g:easytags_events=['BufWritePost']
-
-UpdateTags
+let g:easytags_include_members=1
+let g:easytags_resolve_links=1
+let g:easytags_suppress_ctags_warning=1
+let g:easytags_updatetime_warn=0
 "}}}
 
 " {{{ EnhancedCommentify
@@ -470,7 +469,7 @@ let g:netrw_liststyle=3
 " {{{ netrw_list_hide
 " comma separated pattern list for hiding files Patterns are regular
 " expressions.
-let g:netrw_list_hide= '.*\.swp$'
+let g:netrw_list_hide='.*\.swp$'
 "}}}
 
 " {{{ netrw_maxfilenamelen
