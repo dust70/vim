@@ -1,0 +1,34 @@
+" {{{ StripTrailingWhitespace
+function! StripTrailingWhitespace()
+    if !&binary && &filetype != 'diff'
+        normal mz
+        normal Hmy
+        %s/\s\+$//e
+        normal 'yz<CR>
+        normal `z
+    endif
+endfunction
+"}}}
+
+" {{{ StripDoubleEmptyLines
+function! StripDoubleEmptyLines()
+    if !&binary && &filetype != 'diff'
+        normal mz
+        normal Hmy
+        %s/\(^\s*$\)\{2,\}/\r/e
+        normal 'yz<CR>
+        normal `z
+    endif
+endfunction
+"}}}
+
+" {{{ ConvertToUnix
+function! DosToUnix()
+    execute "update"
+    execute "edit ++ff=dos"
+    execute "setlocal ff=unix"
+    execute "write"
+endfunction
+"}}}
+
+" vim: filetype=vim textwidth=80 foldmethod=marker
