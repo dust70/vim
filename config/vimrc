@@ -15,62 +15,6 @@ if !isdirectory(vimfiles . '/tmp') | call mkdir(vimfiles . '/tmp') | endif
 "}}}
 "}}}
 
-" {{{ configuration files
-" {{{ global keyboard mappings
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/mappingsrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-" {{{ global options for plugins
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/pluginrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-" {{{ global options for plugins
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/functionrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-" {{{ global options for autocommands
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/autocommandrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-" {{{ global color settings
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/highlightrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-" {{{ global options for syntax
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/syntaxrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-unlet pathToRc
-"}}}
-
-" {{{ macros
-" {{{ Existing plugin
-runtime! macros/editexisting.vim
-"}}}
-
-" {{{ MatchIt plugin
-runtime! /macros/matchit.vim
-"}}}
-"}}}
-
 " {{{ syntax
 " Syntax highlighting enables Vim to show parts of the text in another font or
 " color. Those parts can be specific keywords or text matching a pattern. Vim
@@ -115,7 +59,7 @@ if has("autocmd")
 endif
 "}}}
 
-" {{{ CScope
+" {{{ cscope
 if has("cscope")
     " {{{ cscopetag
     " If 'cscopetag' is set, the commands ":tag" and CTRL-] as well as "vim -t"
@@ -125,22 +69,22 @@ if has("cscope")
     set cscopetag
     "}}}}
 
-    " {{{
+    " {{{ cscopeverbose
     " If 'cscopeverbose' is not set (the default), messages will not be printed
     " indicating success or failure when adding a cscope database. Ideally, you
     " should reset this option in your |.vimrc| before adding any cscope
     " databases, and after adding them, set it. From then on, when you add more
     " databases within Vim, you will get a (hopefully) useful message should the
     " database fail to be added.
-    set nocsverb
+    set nocscopeverbose
     " }}}
 
     " {{{ add any database in current directory
     if filereadable("cscope.out")
-        cs add cscope.out
+        cscope add cscope.out
     " else add database pointed to by environment
     elseif $CSCOPE_DB != ""
-        cs add $CSCOPE_DB
+        cscope add $CSCOPE_DB
     endif
     "}}}
 endif
@@ -1027,6 +971,62 @@ set wrapmargin=5
 " {{{ abbreviation
 " this is usefull when your name René is
 iabbrev 'e é
+"}}}
+
+" {{{ configuration files
+" {{{ global keyboard mappings
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/mappingsrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+" {{{ global options for plugins
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/pluginrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+" {{{ global options for plugins
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/functionrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+" {{{ global options for autocommands
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/autocommandrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+" {{{ global color settings
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/highlightrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+" {{{ global options for syntax
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/syntaxrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+unlet pathToRc
+"}}}
+
+" {{{ macros
+" {{{ Existing plugin
+runtime! macros/editexisting.vim
+"}}}
+
+" {{{ MatchIt plugin
+runtime! /macros/matchit.vim
+"}}}
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
