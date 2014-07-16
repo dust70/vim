@@ -364,7 +364,7 @@ nnoremap <leader>gs :Gstatus<cr>
 
 " {{{ GUndo
 " {{{ mappings
-nnoremap <silent> ,u :GundoToogle<CR>
+nnoremap <silent> ,u :GundoToggle<CR>
 "}}}
 
 " {{{ gundo_preview_bottom
