@@ -69,11 +69,11 @@ if has("autocmd")
     " {{{ filetype specific autocommands
     augroup filetypes
         autocmd!
-        autocmd! BufRead,BufNewFile *.phtml setlocal filetype=php.html
+        autocmd! BufRead,BufNewFile *.phtml     setlocal filetype=php.html
         autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
+
         autocmd! FileType c,cpp,java,php,python,vim
-                    \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
-        autocmd! FileType c,cpp,java,php,python,vim
+                    \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace() |
                     \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
     augroup END
     "}}}
