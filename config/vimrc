@@ -14,6 +14,62 @@ if !isdirectory(vimfiles . '/backup') | call mkdir(vimfiles . '/backup') | endif
 if !isdirectory(vimfiles . '/tmp') | call mkdir(vimfiles . '/tmp') | endif
 "}}}
 "}}}
+"
+" {{{ configuration files
+" {{{ global keyboard mappings
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/mappingsrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+" {{{ global options for plugins
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/pluginrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+" {{{ global options for plugins
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/functionrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+" {{{ global options for autocommands
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/autocommandrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+" {{{ global color settings
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/highlightrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+" {{{ global options for syntax
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/syntaxrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+unlet pathToRc
+"}}}
+
+" {{{ macros
+" {{{ Existing plugin
+runtime! macros/editexisting.vim
+"}}}
+
+" {{{ MatchIt plugin
+runtime! /macros/matchit.vim
+"}}}
+"}}}
 
 " {{{ syntax
 " Syntax highlighting enables Vim to show parts of the text in another font or
@@ -971,62 +1027,6 @@ set wrapmargin=5
 " {{{ abbreviation
 " this is usefull when your name René is
 iabbrev 'e é
-"}}}
-
-" {{{ configuration files
-" {{{ global keyboard mappings
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/mappingsrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-" {{{ global options for plugins
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/pluginrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-" {{{ global options for plugins
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/functionrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-" {{{ global options for autocommands
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/autocommandrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-" {{{ global color settings
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/highlightrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-" {{{ global options for syntax
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/syntaxrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-unlet pathToRc
-"}}}
-
-" {{{ macros
-" {{{ Existing plugin
-runtime! macros/editexisting.vim
-"}}}
-
-" {{{ MatchIt plugin
-runtime! /macros/matchit.vim
-"}}}
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
