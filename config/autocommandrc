@@ -72,7 +72,7 @@ if has("autocmd")
         autocmd! BufRead,BufNewFile *.phtml     setlocal filetype=php.html
         autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
 
-        autocmd! FileType c,cpp,java,php,python,vim,xml
+        autocmd! FileType c,cpp,html,java,php,python,sh,vim,xml
                     \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace() |
                     \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
     augroup END
