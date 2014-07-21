@@ -43,8 +43,7 @@ setlocal shiftwidth=4
 " is set to 0 when the 'paste' option is set. When 'textwidth' is zero,
 " 'wrapmargin' may be used. See also 'formatoptions' and |ins-textwidth|. When
 " 'formatexpr' is set it will be used to break the line.
-" NOTE: This option is set to 0 when 'compatible' is set.
-setlocal textwidth=120
+setlocal textwidth=80
 "}}}
 
 " {{{ matchpairs
