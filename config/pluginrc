@@ -211,6 +211,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Surround',
                 \ 'name'      : 'Surround',
                 \ }
+    NeoBundle 'sjl/splice.vim', {
+                \ 'directory' : 'Splice',
+                \ 'name'      : 'Splice',
+                \ }
     NeoBundle 'scrooloose/syntastic', {
                 \ 'directory' : 'Syntastic',
                 \ 'name'      : 'Syntastic',
@@ -218,6 +222,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'majutsushi/tagbar', {
                 \ 'directory' : 'Tagbar',
                 \ 'name'      : 'Tagbar',
+                \ }
+    NeoBundle 'zaiste/tmux.vim', {
+                \ 'directory' : 'TMux-Syntax',
+                \ 'name'      : 'TMux-Syntax',
                 \ }
     NeoBundle 'Shougo/unite.vim', {
                 \ 'directory' : 'Unite',
@@ -619,12 +627,11 @@ nnoremap <silent> <C-w><C-t> :TagbarToggle<CR>
 "}}}
 
 " {{{ autoopen for specific filetypes
-if has("autocmd")
-    augroup AutoOpenTagBar
-"        autocmd FileType c,cpp,php,python.vim
-"                    \ nested :TagbarOpen
-    augroup END
-endif
+"if has("autocmd")
+"    augroup AutoOpenTagBar
+"        autocmd FileType c,cpp,php,python.vim nested :TagbarOpen
+"    augroup END
+"endif
 "}}}
 
 " {{{ tagbar_width
