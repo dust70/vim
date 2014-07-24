@@ -314,7 +314,6 @@ let g:calendar_monday=1
 
 " {{{ Easytag
 " TODO: comment this options
-let g:easytags_auto_highlight=0
 let g:easytags_autorecurse=1
 let g:easytags_by_filetype=vimfiles . "/tags"
 let g:easytags_dynamic_files=1
@@ -322,7 +321,7 @@ let g:easytags_events=['BufWritePost']
 let g:easytags_include_members=1
 let g:easytags_resolve_links=1
 let g:easytags_suppress_ctags_warning=1
-let g:easytags_updatetime_warn=0
+let g:easytags_updatetime_min=60000
 "}}}
 
 " {{{ EnhancedCommentify
