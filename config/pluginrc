@@ -589,15 +589,30 @@ let g:syntastic_auto_loc_list=1
 
 " {{{ Syntax Checker
 " {{{ HTML
+let g:syntastic_html_checkers=[
+            \ 'tidy',
+            \ 'jshint',
+            \ 'validator',
+            \ 'w3'
+            \ ]
+
 " {{{ Tidy
 let g:syntastic_html_tidy_ignore_errors=[
             \ "escaping malformed URI reference"
             \ ]
 "}}}
+
+" {{{ Validator
+let g:syntastic_html_validator_parser="html5"
+"}}}
 "}}}
 
 " {{{ PHP
-let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+let g:syntastic_php_checkers=[
+            \ 'php',
+            \ 'phpcs',
+            \ 'phpmd'
+            \ ]
 "}}}
 
 " {{{ Python
@@ -610,11 +625,11 @@ endif
 
 " python check
 let g:syntastic_python_checkers=[
-            \    'python',
-            \    'flake8',
-            \    'pep8',
-            \    'pyflakes',
-            \    'pylint'
+            \ 'python',
+            \ 'flake8',
+            \ 'pep8',
+            \ 'pyflakes',
+            \ 'pylint'
             \ ]
 "}}}
 "}}}
