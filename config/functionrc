@@ -8,6 +8,7 @@ function! StripTrailingWhitespace()
         normal `z
     endif
 endfunction
+command! StripTrailingWhitespace call StripTrailingWhitespace()
 "}}}
 
 " {{{ StripDoubleEmptyLines
@@ -20,6 +21,7 @@ function! StripDoubleEmptyLines()
         normal `z
     endif
 endfunction
+command! StripDoubleEmptyLines call StripDoubleEmptyLines()
 "}}}
 
 " {{{ ConvertToUnix
@@ -29,6 +31,7 @@ function! DosToUnix()
     execute "setlocal ff=unix"
     execute "write"
 endfunction
+command! DosToUnix call DosToUnix()
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
