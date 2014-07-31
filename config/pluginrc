@@ -81,6 +81,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Conque',
                 \ 'name'      : 'Conque',
                 \ }
+    NeoBundle 'chrisbra/csv.vim', {
+                \ 'directory' : 'CSV',
+                \ 'name'      : 'CSV',
+                \ }
     NeoBundle 'rking/vim-detailed', {
                 \ 'directory' : 'Detailed',
                 \ 'name'      : 'Detailed',
@@ -179,6 +183,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'PHP-Refactoring',
                 \ 'name'      : 'PHP-Refactoring',
                 \ }
+    NeoBundle 'joonty/vim-phpunitqf.git', {
+                \ 'directory' : 'PHP-Unit',
+                \ 'name'      : 'Php-Unit',
+                \ }
     NeoBundle "jmcomets/vim-pony", {
                 \ 'directory' : 'Pony',
                 \ 'name'      : 'Pony'
@@ -195,10 +203,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'SecureModelines',
                 \ 'name'      : 'SecureModelines',
                 \ }
-"    NeoBundle 'vim-scripts/ShowMarks', {
-"                \ 'directory' : 'ShowMarks',
-"                \ 'name'      : 'ShowMarks',
-"                \ }
+    "    NeoBundle 'vim-scripts/ShowMarks', {
+    "                \ 'directory' : 'ShowMarks',
+    "                \ 'name'      : 'ShowMarks',
+    "                \ }
     NeoBundle 'honza/vim-snippets', {
                 \ 'directory' : 'Snippets',
                 \ 'name'      : 'Snippets',
@@ -239,9 +247,17 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Unit-SSH',
                 \ 'name'      : 'Unit-SSH',
                 \ }
+    NeoBundle 'joonty/vdebug', {
+                \ 'directory' : 'VDebug',
+                \ 'name'      : 'VDebug'
+                \ }
     NeoBundle 'Shougo/vimfiler.vim', {
                 \ 'directory' : 'Vimfiler',
                 \ 'name'      : 'Vimfiler',
+                \ }
+    NeoBundle 'jmcantrell/vim-virtualenv', {
+                \ 'directory' : 'Virtualenv',
+                \ 'name'      : 'Virtualenv'
                 \ }
     "}}}
     "}}}
@@ -264,6 +280,7 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
         NeoBundleGC
         NeoBundleDocs
     endfunction
+    command! UpdateNeobundle call UpdateNeobundle()
     "}}}
 endif
 unlet pathToNeoBundle
@@ -310,6 +327,29 @@ let g:calendar_focus_today=1
 "   let g:calendar_monday=1
 " (You don't have to to change g:calendar_wruler!)
 let g:calendar_monday=1
+"}}}
+
+" {{{ ConqueTerm
+" {{{ ConqueTerm_FastMode
+" Disable features which could make Conque run slowly. This includes most
+" terminal colors and some unicode support. Set this to 1 to enable fast mode.
+let g:ConqueTerm_FastMode=1
+"}}}
+
+" {{{ ConqueTerm_InsertOnEnter
+" If set to 1 then you will automatically go into insert mode when you enter the
+" buffer. This diverges from normal Vim behavior. If 0 you will still be in
+" normal mode.
+let g:ConqueTerm_InsertOnEnter=1
+"}}}
+
+" {{{ ConqueTerm_CloseOnEnd
+" If you want your terminal buffer to be closed and permanently deleted when the
+" program running inside of it exits, set this option to 1. Otherwise the buffer
+" will become a simple text buffer after the program exits, and you can edit the
+" program output in insert mode.
+let g:ConqueTerm_CloseOnEnd=1
+"}}}
 "}}}
 
 " {{{ Easytag
@@ -485,17 +525,50 @@ let g:neocomplete#sources#buffer#cache_limit_size=50000000
 "}}}
 
 " {{{ NeoSnippet
-" {{{ key mappings
-inoremap <silent> <C-k> <Plug>(neosnippet_expand_or_jump)
-snoremap <silent> <C-k> <Plug>(neosnippet_expand_or_jump)
-xnoremap <silent> <C-k> <Plug>(neosnippet_expand_target)
+" {{{ key mappings and recommended options
+imap <silent> <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <silent> <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <silent> <C-k> <Plug>(neosnippet_expand_target)
+xmap <silent> <C-l> <Plug>(neosnippet_start_unite_snippet_target)
+
+" For snippet_complete marker.
+if has('conceal')
+    set conceallevel=2
+    set concealcursor=i
+endif
 "}}}
 
 " {{{ neosnippet#snippets_directory
 " This variable appoints a path to user-defined snippet files. You can set
 " multiple values in comma-separated string or list. Non existing directories
 " are ignored.
-let g:neosnippet#snippets_directory="~/.vim/bundle/NeoSnippet-Snippets/neosnippets,~/.vim/bundle/Snippets/snippets"
+let g:neosnippet#snippets_directory="" .
+            \ expand(vimfiles."/snippets").",".
+            \ expand(vimfiles."/bundle/NeoSnippet-Snippets/neosnippets").",".
+            \ expand(vimfiles."/bundle/Snippets/snippets")
+"}}}
+
+" {{{ neosnippet#enable_preview
+" If this variable is not 0, neosnippet will enable the preview window feature
+" in neocomplcache/neocomplete sources.
+let g:neosnippet#enable_preview=1
+"}}}
+
+" {{{ neosnippet#scope_aliases
+" It is a dictionary that associating certain filetypes with other snippet
+" files. The key is filetype, and the value is comma separated snippet filenames
+" excluded extensions. It works like g:snipMate.scope_aliases.
+let g:neosnippet#scope_aliases={
+            \ 'html'   : 'xhtml, html, css, javascript',
+            \ 'php'    : 'php, sql',
+            \ 'python' : 'python',
+            \ }
+"}}}
+
+" {{{ neosnippet#data_directory
+" Specifies directory for neosnippet cache. If the directory doesn't exist the
+" directory will be automatically generated.
+let g:neosnippet#data_directory=expand("~/vim/tmp")
 "}}}
 "}}}
 
@@ -563,11 +636,18 @@ let g:netrw_timefmt="%Y-%m-%d"
 "}}}
 "}}}
 
+" {{{ PHP-Unit
+let g:phpunit_args="--report-useless-tests --verbose"
+let g:phpunit_tmpfile=vimfiles."/tmp/phpunit.out"
+
+nnoremap <silent>,tt :Test<cr>
+"}}}
+
 " {{{ Supertab
 " {{{ SuperTabDefaultCompletionType
 " Used to set the default completion type. There is no need to escape this value
 " as that will be done for you when the type is set.
-let g:SuperTabDefaultCompletionType="context"
+let g:SuperTabDefaultCompletionType=""
 "}}}
 "}}}
 
@@ -772,7 +852,7 @@ let g:tagbar_type_javascript={
 " {{{ TagBar PHP-CTags
 " {{{ tagbar_phpctags_bin
 " Location of phpctags.
-let g:tagbar_phpctags_bin='~/.vim/bundle/PHP-CTags/bin/phpctags'
+let g:tagbar_phpctags_bin=expand(vimfiles."/bundle/PHP-CTags/bin/phpctags")
 "}}}
 
 " {{{ tagbar_phpctags_memory_limit
