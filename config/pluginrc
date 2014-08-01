@@ -239,6 +239,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Unite',
                 \ 'name'      : 'Unite',
                 \ }
+    NeoBundle 'Shougo/unite-build', {
+                \ 'directory' : 'Unite-Build',
+                \ 'name'      : 'Unite-Build',
+                \ }
     NeoBundle 'Shougo/unite-session', {
                 \ 'directory' : 'Unit-Session',
                 \ 'name'      : 'Unit-Session',
@@ -865,6 +869,13 @@ nnoremap ,/ :Unite -buffer-name=grep -start-insert grep:.<cr>
 nnoremap ,b :Unite -buffer-name=buffer -start-insert -quick-match buffer<cr>
 nnoremap ,s :Unite -buffer-name=session -start-insert session<cr>
 nnoremap ,y :Unite -buffer-name=history -start-insert history/yank<cr>
+"}}}
+"}}}
+
+" {{{ Unite-Session
+" {{{ unite_source_session_path
+" Path to save session in.
+let g:unite_source_session_path=vimfiles."/sessions"
 "}}}
 "}}}
 
