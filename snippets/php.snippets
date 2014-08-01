@@ -5,3 +5,7 @@ snippet ce
         }
 snippet ?=
         <?=htmlspecialchars(${1})?>${0}
+snippet pmd
+abbr @SuppressWarnings(PHPMD)
+         * @SuppressWarnings(PHPMD${0:.Foo})
+
