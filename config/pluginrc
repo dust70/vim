@@ -643,14 +643,6 @@ let g:phpunit_tmpfile=vimfiles."/tmp/phpunit.out"
 nnoremap <silent>,tt :Test<cr>
 "}}}
 
-" {{{ Supertab
-" {{{ SuperTabDefaultCompletionType
-" Used to set the default completion type. There is no need to escape this value
-" as that will be done for you when the type is set.
-let g:SuperTabDefaultCompletionType=""
-"}}}
-"}}}
-
 " {{{ Syntastic
 " {{{ syntastic_auto_loc_list
 " Use this option to tell syntastic to automatically open and/or close the
