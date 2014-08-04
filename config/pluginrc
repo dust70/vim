@@ -572,7 +572,7 @@ let g:neosnippet#scope_aliases={
 " {{{ neosnippet#data_directory
 " Specifies directory for neosnippet cache. If the directory doesn't exist the
 " directory will be automatically generated.
-let g:neosnippet#data_directory=expand("~/vim/tmp")
+let g:neosnippet#data_directory=expand(vimfiles."/tmp")
 "}}}
 "}}}
 
