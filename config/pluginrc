@@ -552,12 +552,6 @@ let g:neosnippet#snippets_directory="" .
             \ expand(vimfiles."/bundle/Snippets/snippets")
 "}}}
 
-" {{{ neosnippet#enable_preview
-" If this variable is not 0, neosnippet will enable the preview window feature
-" in neocomplcache/neocomplete sources.
-let g:neosnippet#enable_preview=1
-"}}}
-
 " {{{ neosnippet#scope_aliases
 " It is a dictionary that associating certain filetypes with other snippet
 " files. The key is filetype, and the value is comma separated snippet filenames
