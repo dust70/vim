@@ -634,6 +634,11 @@ let g:netrw_timefmt="%Y-%m-%d"
 "}}}
 "}}}
 
+" {{{ PHP-Refactoring
+let g:php_refactor_command=
+            \ 'php '.vimfiles.'/bundle/PHP-Refactoring-Browser/src/bin/refactor'
+"}}}
+
 " {{{ PHP-Unit
 let g:phpunit_args="--report-useless-tests --verbose"
 let g:phpunit_tmpfile=vimfiles."/tmp/phpunit.out"
