@@ -272,7 +272,7 @@ set complete+=k
 
 " {{{ completeopt
 " A comma separated list of options for Insert mode completion ins-completion.
-set completeopt=menuone,longest,preview
+set completeopt=menuone,longest
 "}}}
 
 " {{{ cursorcolumn
