@@ -61,10 +61,6 @@ setlocal complete-=k complete+=k
 setlocal tags-=vimfiles."/persistent-tags/php/*" tags+=vimfiles."/persistent-tags/php/*
 "}}}
 
-" {{{ mappings
-nnoremap ,c <ESC>:set paste<CR>:exe PhpDoc()<CR>:set nopaste<CR>i
-"}}}
-
 " {{{ diffopt
 " Option settings for diff mode. It can consist of the following items. All
 " are optional. Items must be separated by a comma.
@@ -80,7 +76,7 @@ setlocal foldmethod=syntax
 " Sets 'foldlevel' when starting to edit another buffer in a window. Useful to
 " always start editing with all folds closed (value zero), some folds closed
 " (one) or no folds closed (99).
-set foldlevelstart=2
+setlocal foldlevelstart=1
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
