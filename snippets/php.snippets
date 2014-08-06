@@ -1,11 +1,27 @@
 snippet ce
-        class ${1:`vim_snippets#Filename()`} extends ${2:Foo\Bar\Baz}
+        <?php
+
+        class ${1:`vim_snippets#Filename()`}
+                extends ${2:Foo\Bar\Baz}
         {
                 ${0}
         }
-snippet ?=
-        <?=htmlspecialchars(${1})?>${0}
+snippet ct
+        <?php
+
+        class ${1:`vim_snippets#Filename()`}
+                extends PHPUnit_Framework_TestCase
+        {
+                protected $object = null;
+
+                protected function setUpt() {
+                        ${0}
+                }
+        }
 snippet pmd
-abbr @SuppressWarnings(PHPMD)
          * @SuppressWarnings(PHPMD${0:.Foo})
+snippet ?=
+        <?=${1}?>${0}
+snippet ?=h
+        <?=htmlspecicialchars(${1})?>${0}
 
