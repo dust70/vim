@@ -117,6 +117,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'LaTeX',
                 \ 'name'      : 'LaTeX',
                 \ }
+    NeoBundle 'groenewege/vim-less', {
+                \ 'directory' : 'Less',
+                \ 'name'      : 'Less',
+                \ }
     NeoBundle 'gregsexton/MatchTag', {
                 \ 'directory' : 'MatchTag',
                 \ 'name'      : 'MatchTag',
@@ -650,11 +654,30 @@ let g:phpunit_tmpfile=vimfiles."/tmp/phpunit.out"
 nnoremap <silent>,tt :Test<cr>
 "}}}
 
+" {{{ Project
+let g:project_enable_welcome=0
+let g:project_use_nerdtree=0
+
+call project#rc("~/repositories")
+
+function! ConfigureShoprocket() abort
+    chdir ~/repositories/cbn/shoprocket
+
+    augroup ShopRocket
+        autocmd! FileType css,html,javascript,less,php
+                    \ autocmd! BufWritePost,FileWritePost * execute "!scp -Cpq \ ".expand("%")." vagrant:/var/www/shoproeckt/".expand("%")
+    augroup end
+endfunction
+
+Project  'cbn/shoprocket'
+Callback 'cbn/shoprocket', ConfigureShoprocket
+"}}}
+
 " {{{ Supertab
 " {{{ SuperTabDefaultCompletionType
 " Used to set the default completion type. There is no need to escape this value
 " as that will be done for you when the type is set.
-let g:SuperTabDefaultCompletionType = "<c-o>"
+let g:SuperTabDefaultCompletionType="<c-o>"
 "}}}
 "}}}
 
