@@ -1,3 +1,10 @@
+snippet cl
+        <?php
+
+        class ${1:`vim_snippets#Filename()`}
+        {
+                ${0}
+        }
 snippet ce
         <?php
 
@@ -12,7 +19,7 @@ snippet ct
         class ${1:`vim_snippets#Filename()`}
                 extends PHPUnit_Framework_TestCase
         {
-                protected $object = null;
+                protected $_object = null;
 
                 protected function setUpt() {
                         ${0}
