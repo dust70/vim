@@ -185,11 +185,15 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ }
     NeoBundle 'joonty/vim-phpunitqf.git', {
                 \ 'directory' : 'PHP-Unit',
-                \ 'name'      : 'Php-Unit',
+                \ 'name'      : 'PHP-Unit',
                 \ }
-    NeoBundle "jmcomets/vim-pony", {
+    NeoBundle 'jmcomets/vim-pony', {
                 \ 'directory' : 'Pony',
-                \ 'name'      : 'Pony'
+                \ 'name'      : 'Pony',
+                \ }
+    NeoBundle 'amiorin/vim-project', {
+                \ 'directory' : 'Project',
+                \ 'name'      : 'Project',
                 \ }
     NeoBundle 'rodjek/vim-puppet', {
                 \ 'directory' : 'Puppet',
@@ -203,10 +207,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'SecureModelines',
                 \ 'name'      : 'SecureModelines',
                 \ }
-    "    NeoBundle 'vim-scripts/ShowMarks', {
-    "                \ 'directory' : 'ShowMarks',
-    "                \ 'name'      : 'ShowMarks',
-    "                \ }
+    "NeoBundle 'vim-scripts/ShowMarks', {
+    "            \ 'directory' : 'ShowMarks',
+    "            \ 'name'      : 'ShowMarks',
+    "            \ }
     NeoBundle 'honza/vim-snippets', {
                 \ 'directory' : 'Snippets',
                 \ 'name'      : 'Snippets',
