@@ -59,6 +59,13 @@ if filereadable(pathToRc)
 endif
 "}}}
 
+" {{{ global options for different projects
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/projectrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
 unlet pathToRc
 "}}}
 
