@@ -2,7 +2,7 @@
 " {{{ g:neobundle#install_max_processes
 " The max number of processes used for neobundle/install source asynchronous
 " update.
-let g:neobundle#install_max_processes=1
+let g:neobundle#install_max_processes = 1
 "}}}
 
 let g:bundlePath=split(&runtimepath, ',')[0] . '/bundle'
@@ -195,10 +195,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Pony',
                 \ 'name'      : 'Pony',
                 \ }
-    NeoBundle 'amiorin/vim-project', {
-                \ 'directory' : 'Project',
-                \ 'name'      : 'Project',
-                \ }
     NeoBundle 'rodjek/vim-puppet', {
                 \ 'directory' : 'Puppet',
                 \ 'name'      : 'Puppet',
@@ -211,10 +207,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'SecureModelines',
                 \ 'name'      : 'SecureModelines',
                 \ }
-    "NeoBundle 'vim-scripts/ShowMarks', {
-    "            \ 'directory' : 'ShowMarks',
-    "            \ 'name'      : 'ShowMarks',
-    "            \ }
     NeoBundle 'honza/vim-snippets', {
                 \ 'directory' : 'Snippets',
                 \ 'name'      : 'Snippets',
@@ -300,59 +292,59 @@ unlet bundlePath
 "}}}
 
 " {{{ Bufexplrorer disabled
-let g:bufexplorer_version=1
+let g:bufexplorer_version = 1
 " }}}
 
 " {{{ MiniBufExpl disabled
-let g:loaded_minibufexplorer=1
+let g:loaded_minibufexplorer = 1
 " }}}
 
 " {{{ Airline
 " {{{ tabline
 " enable/disable enhanced tabline.
-let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#enabled = 1
 
 " enable/disable displaying buffers with a single tab.
-let g:airline#extensions#tabline#show_buffers=1
+let g:airline#extensions#tabline#show_buffers = 1
 
 " enable/disable displaying tab number in tabs mode.
-let g:airline#extensions#tabline#show_tab_nr=1
+let g:airline#extensions#tabline#show_tab_nr = 1
 
 " configure whether buffer numbers should be shown.
-let g:airline#extensions#tabline#buffer_nr_show=1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 "}}}
 "}}}
 
 " {{{ AutoFormat
 nnoremap <silent> ,bf :Autoformat<CR><CR>
 
-let g:formatprg_php="astyle"
-let g:formatprg_args_php="--style=linux -cdHs4"
+let g:formatprg_php = "astyle"
+let g:formatprg_args_php = "--style = linux -cdHs4"
 "}}}
 
 " {{{ Calendar
 " if you want to keep focus when goto next or prev calendar, add the following
 " to your .vimrc:
-let g:calendar_focus_today=1
+let g:calendar_focus_today = 1
 
 " if you want the week to start with monday, add below to your .vimrc:
-"   let g:calendar_monday=1
+"   let g:calendar_monday = 1
 " (You don't have to to change g:calendar_wruler!)
-let g:calendar_monday=1
+let g:calendar_monday = 1
 "}}}
 
 " {{{ ConqueTerm
 " {{{ ConqueTerm_FastMode
 " Disable features which could make Conque run slowly. This includes most
 " terminal colors and some unicode support. Set this to 1 to enable fast mode.
-let g:ConqueTerm_FastMode=1
+let g:ConqueTerm_FastMode = 1
 "}}}
 
 " {{{ ConqueTerm_InsertOnEnter
 " If set to 1 then you will automatically go into insert mode when you enter the
 " buffer. This diverges from normal Vim behavior. If 0 you will still be in
 " normal mode.
-let g:ConqueTerm_InsertOnEnter=1
+let g:ConqueTerm_InsertOnEnter = 1
 "}}}
 
 " {{{ ConqueTerm_CloseOnEnd
@@ -360,20 +352,20 @@ let g:ConqueTerm_InsertOnEnter=1
 " program running inside of it exits, set this option to 1. Otherwise the buffer
 " will become a simple text buffer after the program exits, and you can edit the
 " program output in insert mode.
-let g:ConqueTerm_CloseOnEnd=1
+let g:ConqueTerm_CloseOnEnd = 1
 "}}}
 "}}}
 
 " {{{ Easytag
 " TODO: comment this options
-let g:easytags_autorecurse=1
-let g:easytags_by_filetype=vimfiles . "/tags"
-let g:easytags_dynamic_files=1
-let g:easytags_events=['BufWritePost']
-let g:easytags_include_members=1
-let g:easytags_resolve_links=1
-let g:easytags_suppress_ctags_warning=1
-let g:easytags_updatetime_min=60000
+let g:easytags_autorecurse = 1
+let g:easytags_by_filetype = vimfiles . "/tags"
+let g:easytags_dynamic_files = 1
+let g:easytags_events = ['BufWritePost', 'FileWritePost']
+let g:easytags_include_members = 1
+let g:easytags_resolve_links = 1
+let g:easytags_suppress_ctags_warning = 1
+let g:easytags_updatetime_min = 3600000
 "}}}
 
 " {{{ EnhancedCommentify
@@ -384,7 +376,7 @@ let g:easytags_updatetime_min=60000
 " So it might not work with every syntax file (see EnhComm-Bugs). It also
 " calls synID only once for every block! So the first line is significant. Be
 " aware, that "cross" commenting might cause problems.
-let g:EnhCommentifyUseSyntax='Yes'
+let g:EnhCommentifyUseSyntax = 'Yes'
 "}}}
 
 " {{{ FuGITive
@@ -428,13 +420,13 @@ nnoremap <silent> ,u :GundoToggle<CR>
 " {{{ gundo_preview_bottom
 " Force the preview window below current windows instead of below the graph.
 " This gives the preview window more space to show the unified diff.
-let g:gundo_preview_bottom=1
+let g:gundo_preview_bottom = 1
 "}}}
 
 " {{{ gundo_right
 " Set this to 1 to make the Gundo graph (and preview) open on the right side
 " instead of the left.
-let g:gundo_right=1
+let g:gundo_right = 1
 "}}}
 "}}}
 
@@ -447,11 +439,11 @@ let g:gundo_right=1
 " to choose context or tex. If no keywords are found, it defaults to plaintex.
 " You can change the default by defining the variable g:tex_flavor to the
 " format (not the file type) you use most. Use one of these:
-"	let g:tex_flavor="plain"
-"	let g:tex_flavor="context"
-"	let g:tex_flavor="latex"
+"	let g:tex_flavor = "plain"
+"	let g:tex_flavor = "context"
+"	let g:tex_flavor = "latex"
 " Currently no other formats are recognized.
-let g:tex_flavor='latex'
+let g:tex_flavor = 'latex'
 "}}}
 "}}}
 
@@ -462,7 +454,7 @@ let g:tex_flavor='latex'
 " up the pdf viewer on pressing \lv. Make sure that a rules for compiling and
 " viewing have been defined for this target format as described here [ls_a_dx]
 " and here [ls_a_dF].
-let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_DefaultTargetFormat = 'pdf'
 "}}}
 
 " {{{ ViewRule
@@ -482,7 +474,7 @@ let g:Tex_DefaultTargetFormat='pdf'
 "
 " LaTeX-Suite appends file.format to the above settings while calling the
 " external programs. For example, with
-"   let g:Tex_ViewRule_dvi='yap -1'
+"   let g:Tex_ViewRule_dvi = 'yap -1'
 " yap is called as
 "   !start yap -1 file.dvi
 " from within Vim. (The initial start is used on Windows platforms is to make
@@ -499,40 +491,58 @@ let g:Tex_DefaultTargetFormat='pdf'
 "       ----------------------
 " To change the default format for viewing files, set the
 " g:Tex_DefaultTargetFormat [ls_a_dw] variable.
-let g:Tex_ViewRule_pdf='zathura'
+let g:Tex_ViewRule_pdf = 'zathura'
 "}}}
 "}}}
 
 " {{{ NeoComplete
-" {{{ eocomplete#sources
+" {{{ neocomplete#delimiter_patterns
+" This variable appoints a delimiter pattern to smart complete a function. This
+" is appointed in string list every file type.
+" NOTE: This string is not regular expression.
+if !exists('g:neocomplete#delimiter_patterns')
+    let g:neocomplete#delimiter_patterns= {}
+endif
+let g:neocomplete#delimiter_patterns = {
+            \ 'cpp'  : ['::'],
+            \ 'java' : ['.'],
+            \ 'php'  : ['->'],
+            \ 'vim'  : ['#'],
+            \ }
+"}}}
+
+" {{{ neocomplete#sources
 " It is a dictionary to decide use source names. The key is filetype and the
 " value is source names list. If the key is "_", the value will be used for
 " default filetypes. For example, you can disable some sources in C++ filetype.
 " If the value is "_", it will load all sources.
-if !exists('g:neocomplete#sources')
-    let g:neocomplete#sources={}
-endif
-let g:neocomplete#sources._=['buffer']
-let g:neocomplete#sources.cpp=['buffer', 'include']
-let g:neocomplete#sources.php=['buffer', 'include']
+let g:neocomplete#sources = {
+            \ '_' : ['buffer', 'dictionary'],
+            \ }
+let g:neocomplete#sources = {
+            \ '_'    : ['buffer'],
+            \ 'cpp'  : ['buffer', 'dictionary', 'include'],
+            \ 'html' : ['buffer', 'dictionary'],
+            \ 'php'  : ['buffer', 'dictionary', 'include']
+            \ }
 "}}}
 
 " {{{ neocomplete#release_cache_time
 " This variable defines time of automatic released cache by a second unit.
-let g:neocomplete#release_cache_time=3600
+let g:neocomplete#release_cache_time = 3600
 "}}}
 
 " {{{ neocomplete#ignore_composite_filetypes
 " It is a dictionary to ignore composite file type. The dictionary's key is
 " composite filetype and value is filetype.
-let g:neocomplete#ignore_composite_filetypes={
+let g:neocomplete#ignore_composite_filetypes = {
             \ }
 "}}}
 
 " {{{ neocomplete#sources#buffer#cache_limit_size
 " This variable sets file size to make a cache of a file. If open file is bigger
 " than this size, neocomplete does not make a cache.
-let g:neocomplete#sources#buffer#cache_limit_size=50000000
+let g:neocomplete#sources#buffer#cache_limit_size = 50000000
 "}}}
 "}}}
 
@@ -554,7 +564,7 @@ endif
 " This variable appoints a path to user-defined snippet files. You can set
 " multiple values in comma-separated string or list. Non existing directories
 " are ignored.
-let g:neosnippet#snippets_directory="" .
+let g:neosnippet#snippets_directory = "" .
             \ expand(vimfiles."/snippets").",".
             \ expand(vimfiles."/bundle/NeoSnippet-Snippets/neosnippets").",".
             \ expand(vimfiles."/bundle/Snippets/snippets")
@@ -564,7 +574,7 @@ let g:neosnippet#snippets_directory="" .
 " It is a dictionary that associating certain filetypes with other snippet
 " files. The key is filetype, and the value is comma separated snippet filenames
 " excluded extensions. It works like g:snipMate.scope_aliases.
-let g:neosnippet#scope_aliases={
+let g:neosnippet#scope_aliases = {
             \ 'html'   : 'xhtml, html, css, javascript',
             \ 'php'    : 'php, sql',
             \ 'python' : 'python',
@@ -574,7 +584,7 @@ let g:neosnippet#scope_aliases={
 " {{{ neosnippet#data_directory
 " Specifies directory for neosnippet cache. If the directory doesn't exist the
 " directory will be automatically generated.
-let g:neosnippet#data_directory=expand(vimfiles."/tmp")
+let g:neosnippet#data_directory = expand(vimfiles."/tmp")
 "}}}
 "}}}
 
@@ -587,7 +597,7 @@ let g:neosnippet#data_directory=expand(vimfiles."/tmp")
 "    3: open file in new tab
 "    4: act like "P" (ie. open previous window) Note that g:netrw_preview may
 "       be used to get vertical splitting instead of horizontal splitting.
-let g:netrw_browse_split=3
+let g:netrw_browse_split = 3
 " }}}
 
 " {{{ netrw_liststyle
@@ -597,20 +607,20 @@ let g:netrw_browse_split=3
 "      size)
 "   2: wide listing (multiple files in columns)
 "   3: tree style listing
-let g:netrw_liststyle=3
+let g:netrw_liststyle = 3
 "}}}
 
 " {{{ netrw_list_hide
 " comma separated pattern list for hiding files Patterns are regular
 " expressions.
-let g:netrw_list_hide='.*\.swp$'
+let g:netrw_list_hide = '.*\.swp$'
 "}}}
 
 " {{{ netrw_maxfilenamelen
 " 32 by default, selected so as to make long listings fit on 80 column displays.
 " If your screen is wider, and you have file or directory names longer than 32
 " bytes, you may set this option to keep listings columnar.
-let g:netrw_maxfilenamelen=80
+let g:netrw_maxfilenamelen = 80
 "}}}
 
 " {{{ netrw_special_syntax
@@ -630,7 +640,7 @@ let g:netrw_maxfilenamelen=80
 " (see hl-Folded and hl-DiffChange), but one may put lines like
 "   hi link netrwCompress Visual
 " into one's <.vimrc> to use one's own preferences.
-let g:netrw_special_syntax=1
+let g:netrw_special_syntax = 1
 "}}}
 
 " {{{ netrw_timefmt
@@ -638,47 +648,20 @@ let g:netrw_special_syntax=1
 " The default, "%c", is "the preferred date and time representation for the
 " current locale" according to my manpage entry for strftime(); however, not all
 " are satisfied with it.
-let g:netrw_timefmt="%Y-%m-%d"
+let g:netrw_timefmt = "%Y-%m-%d"
 "}}}
 "}}}
 
 " {{{ PHP-Refactoring
-let g:php_refactor_command=
+let g:php_refactor_command =
             \ 'php '.vimfiles.'/bundle/PHP-Refactoring-Browser/src/bin/refactor'
 "}}}
 
 " {{{ PHP-Unit
-let g:phpunit_args="--report-useless-tests --verbose"
-let g:phpunit_tmpfile=vimfiles."/tmp/phpunit.out"
+let g:phpunit_args = "--report-useless-tests --verbose"
+let g:phpunit_tmpfile = vimfiles."/tmp/phpunit.out"
 
 nnoremap <silent>,tt :Test<cr>
-"}}}
-
-" {{{ Project
-let g:project_enable_welcome=0
-let g:project_use_nerdtree=0
-
-call project#rc("~/repositories")
-
-function! ConfigureShoprocket() abort
-    chdir ~/repositories/cbn/shoprocket
-
-    augroup ShopRocket
-        autocmd! FileType css,html,javascript,less,php
-                    \ autocmd! BufWritePost,FileWritePost * execute "!scp -Cpq \ ".expand("%")." vagrant:/var/www/shoproeckt/".expand("%")
-    augroup end
-endfunction
-
-Project  'cbn/shoprocket'
-Callback 'cbn/shoprocket', ConfigureShoprocket
-"}}}
-
-" {{{ Supertab
-" {{{ SuperTabDefaultCompletionType
-" Used to set the default completion type. There is no need to escape this value
-" as that will be done for you when the type is set.
-let g:SuperTabDefaultCompletionType="<c-o>"
-"}}}
 "}}}
 
 " {{{ Syntastic
@@ -687,26 +670,26 @@ let g:SuperTabDefaultCompletionType="<c-o>"
 " location-list (see syntastic-error-window).
 "
 " When set to 0 the error window will not be opened or closed automatically. >
-"     let g:syntastic_auto_loc_list=0
+"     let g:syntastic_auto_loc_list = 0
 " When set to 1 the error window will be automatically opened when errors are
 " detected, and closed when none are detected.
-"     let g:syntastic_auto_loc_list=1
+"     let g:syntastic_auto_loc_list = 1
 " When set to 2 the error window will be automatically closed when no errors are
 " detected, but not opened automatically.
-"     let g:syntastic_auto_loc_list=2
-let g:syntastic_auto_loc_list=1
+"     let g:syntastic_auto_loc_list = 2
+let g:syntastic_auto_loc_list = 1
 "}}}
 
 " {{{ Syntax Checker
 " {{{ HTML
-let g:syntastic_html_checkers=[
+let g:syntastic_html_checkers = [
             \ 'tidy',
             \ 'jshint',
             \ ]
 "}}}
 
 " {{{ PHP
-let g:syntastic_php_checkers=[
+let g:syntastic_php_checkers = [
             \ 'php',
             \ 'phpcs',
             \ 'phpmd'
@@ -716,13 +699,13 @@ let g:syntastic_php_checkers=[
 " {{{ Python
 " prefer version 3 over version 2
 if filereadable('/usr/bin/python3')
-    let g:syntastic_python_python_exe='python3'
+    let g:syntastic_python_python_exe = 'python3'
 else
-    let g:syntastic_python_python_exe='python'
+    let g:syntastic_python_python_exe = 'python'
 endif
 
 " python check
-let g:syntastic_python_checkers=[
+let g:syntastic_python_checkers = [
             \ 'python',
             \ 'flake8',
             \ 'pep8',
@@ -748,13 +731,13 @@ nnoremap <silent> <C-w><C-t> :TagbarToggle<CR>
 
 " {{{ tagbar_width
 " Width of the Tagbar window in characters.
-let g:tagbar_width=60
+let g:tagbar_width = 60
 "}}}
 
 " {{{ tagbar_autofocus
 " If you set this option the cursor will move to the Tagbar window when it is
 " opened.
-let g:tagbar_autofocus=1
+let g:tagbar_autofocus = 1
 " }}}
 
 " {{{ tagbar_show_linenumbers
@@ -764,13 +747,13 @@ let g:tagbar_autofocus=1
 "   1: Show absolute line numbers.
 "   2: Show relative line numbers.
 "  -1: Use the global line number settings.
-let g:tagbar_show_linenumbers=-1
+let g:tagbar_show_linenumbers = -1
 "}}}
 
 " {{{ tagbar_foldlevel
 " The initial foldlevel for folds in the Tagbar window. Folds with a level
 " higher than this number will be closed.
-let g:tagbar_foldlevel=2
+let g:tagbar_foldlevel = 2
 "}}}
 
 " {{{ tagbar_autoshowtag
@@ -779,11 +762,11 @@ let g:tagbar_foldlevel=2
 " be highlighted. If it is not set then the folds won't be opened and the parent
 " tag will be highlighted instead. You can use the :TagbarShowTag command to
 " open the folds manually.
-let g:tagbar_autoshowtag=1
+let g:tagbar_autoshowtag = 1
 "}}}
 
 " {{{ tagbar_type_sql
-let g:tagbar_type_sql={
+let g:tagbar_type_sql = {
             \    'replace'   : 1,
             \    'ctagstype' : 'sql',
             \    'sort'      : 0,
@@ -811,7 +794,7 @@ let g:tagbar_type_sql={
 "}}}
 
 " {{{ tagbar_type_tex
-let g:tagbar_type_tex={
+let g:tagbar_type_tex = {
             \    'ctagstype' : 'latex',
             \    'sort'      : 0,
             \    'kinds'     : [
@@ -825,7 +808,7 @@ let g:tagbar_type_tex={
 "}}}
 
 " {{{ tagbar_type_sh
-let g:tagbar_type_sh={
+let g:tagbar_type_sh = {
             \    'ctagstype' : 'sh',
             \    'sort'      : 0,
             \    'kinds'     : [
@@ -838,7 +821,7 @@ let g:tagbar_type_sh={
 "}}}
 
 " {{{ tagbar_type_sshconfig
-let g:tagbar_type_sshconfig={
+let g:tagbar_type_sshconfig = {
             \    'ctagstype' : 'sshconfig',
             \    'sort'      : 0,
             \    'kinds'     : [
@@ -848,7 +831,7 @@ let g:tagbar_type_sshconfig={
 "}}}
 
 " {{{ tagbar_type_html
-let g:tagbar_type_html={
+let g:tagbar_type_html = {
             \    'ctagstype' : 'html',
             \    'sort'      : 0,
             \    'kinds'     : [
@@ -859,7 +842,7 @@ let g:tagbar_type_html={
 "}}}
 
 " {{{ tagbar_type_javascript
-let g:tagbar_type_javascript={
+let g:tagbar_type_javascript = {
             \    'ctagstype' : 'Javascript',
             \    'sort'      : 0,
             \    'kinds'     : [
@@ -882,19 +865,19 @@ let g:tagbar_type_javascript={
 " {{{ TagBar PHP-CTags
 " {{{ tagbar_phpctags_bin
 " Location of phpctags.
-let g:tagbar_phpctags_bin=expand(vimfiles."/bundle/PHP-CTags/bin/phpctags")
+let g:tagbar_phpctags_bin = expand(vimfiles."/bundle/PHP-CTags/bin/phpctags")
 "}}}
 
 " {{{ tagbar_phpctags_memory_limit
 " The amount of memory that phpctags can use can be configured.
-let g:tagbar_phpctags_memory_limit='1G'
+let g:tagbar_phpctags_memory_limit = '1G'
 "}}}
 "}}}
 
 " {{{ Unite
 " {{{ unite_source_history_yank_enable
 " If defined and not 0, unite enables unite-source-history/yank.
-let g:unite_source_history_yank_enable=1
+let g:unite_source_history_yank_enable = 1
 "}}}
 
 " {{{ mappings
@@ -909,25 +892,19 @@ nnoremap ,y :Unite -buffer-name=history -start-insert history/yank<cr>
 " {{{ Unite-Session
 " {{{ unite_source_session_path
 " Path to save session in.
-let g:unite_source_session_path=vimfiles."/sessions"
+let g:unite_source_session_path = vimfiles."/sessions"
 "}}}
 "}}}
 
 " {{{ Vimfiler
 " {{{ vimfiler_as_default_explorer
 " If this variable is true, Vim use vimfiler as file manager instead of netrw.
-let g:vimfiler_as_default_explorer=1
+let g:vimfiler_as_default_explorer = 1
 "}}}
 
 " {{{ vimfiler_edit_action
 " This variable controls vimfiler edit action in |unite|.
-let g:vimfiler_edit_action='tabopen'
-"}}}
-
-" {{{ vimfiler_safe_mode_by_default
-" This variable controls vimfiler enter safe mode by default. In safe mode,
-" dangerous command is disabled.
-"let vimfiler_safe_mode_by_default=1
+let g:vimfiler_edit_action = 'tabopen'
 "}}}
 
 " {{{ mappings
