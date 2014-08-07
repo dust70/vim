@@ -19,15 +19,26 @@ snippet ct
         class ${1:`vim_snippets#Filename()`}
                 extends PHPUnit_Framework_TestCase
         {
-                protected $_object = null;
+                protected $object = null;
 
                 /**
                  * Sets up the fixture, for example, opens a network connection.
                  * This method is called before a test is executed.
                  */
                 protected function setUp() {
-                        ${0}
+                        parrent::setUp();
+                        $this->object = new ${1:classToTest}
                 }
+
+
+                /**
+                 * Remove the fixture, for example, closes a network connection.
+                 * This method is called after a test is executed.
+                 */
+                 protected function tearDown() {
+                        ${0}
+                        parrent::tearDown();
+                 }
         }
 snippet pmd
          * @SuppressWarnings(PHPMD${0:.Foo})
