@@ -1,0 +1,23 @@
+" {{{ CBN
+" {{{ Shoprocket
+function! ConfigureShoprocket()
+    let g:vdebug_options = {
+                \ "server" : "192.168.56.202",
+                \ }
+
+    chdir ~/repositories/cbn/shoprocket
+
+    augroup ShopRocketScp
+        autocmd! FileType css,html,javascript,less,php
+                    \ autocmd! BufWritePost,FileWritePost * execute "!scp -Cpq \ ".expand("%")." vagrant:/var/www/shoprocket/".expand("%").' &'
+    augroup end
+endfunction
+
+augroup ShopRocket
+    autocmd! BufEnter,BufNewFile,BufRead
+                \ ~/repositories/cbn/shoprocket/** call ConfigureShoprocket()
+augroup END
+"}}}
+"}}}
+
+" vim: filetype=vim textwidth=80 foldmethod=marker
