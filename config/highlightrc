@@ -6,10 +6,17 @@ endif
 "}}}
 
 " {{{ highlight for spell checking
-highlight SpellBad term=standout ctermfg=White ctermbg=Red term=underline cterm=underline
+highlight SpellBad term=standout ctermfg=white ctermbg=red term=underline cterm=underline
 highlight SpellCap term=underline cterm=underline
 highlight SpellRare term=underline cterm=underline
 highlight SpellLocal term=underline cterm=underline
+"}}}
+
+" {{{ nice color for menu
+highlight Pmenu ctermfg=lightgray ctermbg=black
+            \ guifg=lightgray guibg=black
+highlight PmenuSel ctermfg=lightgray ctermbg=darkcyan
+            \ guifg=lightgray guibg=darkcyan gui=bold
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
