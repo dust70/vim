@@ -27,7 +27,7 @@ snippet ct
                  */
                 protected function setUp() {
                         parrent::setUp();
-                        $this->object = new ${1:classToTest}
+                        $this->object = new ${1:ClassToTest}();
                 }
 
 
@@ -36,9 +36,14 @@ snippet ct
                  * This method is called after a test is executed.
                  */
                  protected function tearDown() {
-                        ${0}
-                        parrent::tearDown();
-                 }
+                        try {
+                                ${0}
+                        } catch(Exception $e) {
+                                // TODO: add exception handling
+                        } finally {
+                                parrent::tearDown();
+                        }
+                }
         }
 snippet pmd
          * @SuppressWarnings(PHPMD${0:.Foo})
