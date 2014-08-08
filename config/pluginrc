@@ -309,17 +309,14 @@ let g:airline#extensions#tabline#show_buffers = 1
 
 " enable/disable displaying tab number in tabs mode.
 let g:airline#extensions#tabline#show_tab_nr = 1
-
-" configure whether buffer numbers should be shown.
-let g:airline#extensions#tabline#buffer_nr_show = 1
 "}}}
 "}}}
 
 " {{{ AutoFormat
-nnoremap <silent> ,bf :Autoformat<CR><CR>
+nnoremap <silent> ,bf :Autoformat<cr><cr>
 
 let g:formatprg_php = "astyle"
-let g:formatprg_args_php = "--style = linux -cdHs4"
+let g:formatprg_args_php = "--style=linux -cdHs4"
 "}}}
 
 " {{{ Calendar
@@ -380,41 +377,19 @@ let g:EnhCommentifyUseSyntax = 'Yes'
 "}}}
 
 " {{{ FuGITive
-" gd: git diff (as text)
-nnoremap <leader>gd :Gvsplit! diff<cr>
-" gv: visual diff
-nnoremap <leader>gv :Gdiff<cr>
-" gV: (attempt to) close visual diff
-nnoremap <leader>gV <C-w>h:q<cr><C-^>
-" ge: Prompt to edit file
-nnoremap <leader>ge :Gedit<Space>
-" gb: Blame
-nnoremap <leader>gb :Gblame<cr>
-" gm: Prompt to move
-nnoremap <leader>gm :Gmove<Space>
-" gm: Prompt to remove
-nnoremap <leader>gr :Gremove<Space>
-" gm: Prompt to grep
-nnoremap <leader>gg :Ggrep<Space>
-" gl: Show git log
-nnoremap <leader>gl :Glog<cr><cr>:cw<cr>
-" gr: (read) checkout --
-nnoremap <leader>gr :Gread<cr>
-" gx: prompt to eXecute git command
-nnoremap <leader>gx :Git<Space>
-" gc: git commit
-nnoremap <leader>gc :Gcommit<cr>
-" gC: git commit --amend
-nnoremap <leader>gC :Gcommit --amend<cr>
-" gp: git commit --patch
-nnoremap <leader>gp :Gcommit --patch<cr>
-" gs: git status
-nnoremap <leader>gs :Gstatus<cr>
+nnoremap <silent> ,gc :Gcommit<cr>
+nnoremap <silent> ,gf :Gfetch<cr>
+nnoremap <silent> ,gg :Ggrep<space>
+nnoremap <silent> ,gm :Gmove<space>
+nnoremap <silent> ,gp :Gpush<cr>
+nnoremap <silent> ,gr :Gremove<space>
+nnoremap <silent> ,gs :Gstatus<cr>
+nnoremap <silent> ,gv :Gdiff<cr>
 "}}}
 
 " {{{ GUndo
 " {{{ mappings
-nnoremap <silent> ,u :GundoToggle<CR>
+nnoremap <silent> ,u :GundoToggle<cr>
 "}}}
 
 " {{{ gundo_preview_bottom
@@ -718,7 +693,7 @@ let g:syntastic_python_checkers = [
 
 " {{{ TagBar
 " {{{ toggle display/mappings
-nnoremap <silent> <C-w><C-t> :TagbarToggle<CR>
+nnoremap <silent> <C-w><C-t> :TagbarToggle<cr>
 "}}}
 
 " {{{ autoopen for specific filetypes
@@ -881,11 +856,13 @@ let g:unite_source_history_yank_enable = 1
 "}}}
 
 " {{{ mappings
-nnoremap <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
-nnoremap ,/ :Unite -buffer-name=grep -start-insert grep:.<cr>
-nnoremap ,b :Unite -buffer-name=buffer -start-insert -quick-match buffer<cr>
-nnoremap ,s :Unite -buffer-name=session -start-insert session<cr>
-nnoremap ,y :Unite -buffer-name=history -start-insert history/yank<cr>
+nnoremap <silent> <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
+nnoremap <silent> ,u/ :Unite -buffer-name=grep -start-insert grep:.<cr>
+nnoremap <silent> ,ub :Unite -buffer-name=buffer -quick-match buffer<cr>
+nnoremap <silent> ,uj :Unite -buffer-name=tabs jump<cr>
+nnoremap <silent> ,us :Unite -buffer-name=session session<cr>
+nnoremap <silent> ,ut :Unite -buffer-name=tabs tab<cr>
+nnoremap <silent> ,uy :Unite -buffer-name=history history/yank<cr>
 "}}}
 "}}}
 
