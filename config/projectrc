@@ -7,13 +7,31 @@ function! ConfigureShoprocket()
 
     chdir ~/repositories/cbn/shoprocket
 
-    augroup ShopRocketScp
+    augroup ShopRocket_scp
         autocmd! FileType css,html,javascript,less,php
                     \ autocmd! BufWritePost,FileWritePost * execute "!scp -Cpq \ ".expand("%")." vagrant:/var/www/shoprocket/".expand("%").' &'
     augroup end
 endfunction
 
 augroup ShopRocket
+    autocmd! BufEnter,BufNewFile,BufRead
+                \ ~/repositories/cbn/shoprocket/** call ConfigureShoprocket()
+augroup END
+"}}}
+"}}}
+
+" {{{ Project
+" {{{ Invoicing
+function! ConfigureProjectInvoicing()
+    chdir ~/repositories/projects/invoicing
+
+    augroup ProjectInvoicing_scp
+        autocmd! FileType css,html,javascript,less,python
+                    \ autocmd! BufWritePost,FileWritePost * execute "!scp -Cpq \ ".expand("%")." vagrant:/var/www/invoicing/".expand("%").' &'
+    augroup end
+endfunction
+
+augroup ProjectInvoicing
     autocmd! BufEnter,BufNewFile,BufRead
                 \ ~/repositories/cbn/shoprocket/** call ConfigureShoprocket()
 augroup END
