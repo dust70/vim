@@ -45,13 +45,6 @@ if filereadable(pathToRc)
 endif
 "}}}
 
-" {{{ global color settings
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/highlightrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
 " {{{ global options for syntax
 let g:pathToRc=split(&runtimepath, ",")[0] . "/config/syntaxrc"
 if filereadable(pathToRc)
@@ -1023,6 +1016,29 @@ set wrapmargin=5
 " {{{ abbreviation
 " this is usefull when your name René is
 iabbrev 'e é
+"}}}
+
+" {{{ HighLight
+" {{{ highlight extra whitespace at the end of line
+if has("autocmd")
+    highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+    match ExtraWhitespace /\s\+$\| \+\ze\t/
+endif
+"}}}
+
+" {{{ highlight for spell checking
+highlight SpellBad term=standout ctermfg=white ctermbg=red term=underline cterm=underline
+highlight SpellCap term=underline cterm=underline
+highlight SpellRare term=underline cterm=underline
+highlight SpellLocal term=underline cterm=underline
+"}}}
+
+" {{{ nice color for menu
+highlight Pmenu ctermfg=lightgray ctermbg=black
+            \ guifg=lightgray guibg=black
+highlight PmenuSel ctermfg=lightgray ctermbg=darkcyan
+            \ guifg=lightgray guibg=darkcyan gui=bold
+"}}}
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
