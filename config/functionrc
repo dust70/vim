@@ -34,4 +34,38 @@ endfunction
 command! DosToUnix call DosToUnix()
 "}}}
 
+" {{{ GuiTabLabel
+function! GuiTabLabel()
+    " Append the tab number
+    let label=v:lnum . ': '
+    let bufnrlist=tabpagebuflist(v:lnum)
+
+    " Append the buffer name
+    let name=bufname(bufnrlist[tabpagewinnr(v:lnum) - 1])
+    if name == ''
+        " give a name to no-name documents
+        if &buftype=='quickfix'
+            let name='[Quickfix List]'
+        else
+            let name='[No Name]'
+        endif
+    else
+        " get only the file name
+        let name=fnamemodify(name,":t")
+    endif
+
+    let label .= name
+
+    " Add '+' if one of the buffers in the tab page is modified
+    for bufnr in bufnrlist
+        if getbufvar(bufnr, "&modified")
+            let label .= ' [+]'
+            break
+        endif
+    endfor
+
+    return label
+endfunction
+"}}}
+
 " vim: filetype=vim textwidth=80 foldmethod=marker
