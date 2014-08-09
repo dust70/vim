@@ -90,6 +90,21 @@ runtime! /macros/matchit.vim
 syntax enable
 "}}}
 
+" {{{ colorscheme
+" Output the name of the currently active color scheme.
+" This is basically the same as
+"	:echo g:colors_name
+" In case g:colors_name has not been defined :colo will output "default". When
+" compiled without the |+eval| feature it will output "unknown".
+if has("gui_running") && ! empty(globpath(&runtimepath, 'colors/vydark.vim'))
+    colorscheme vydark
+elseif ! empty(globpath(&runtimepath, 'colors/detailed.vim'))
+    colorscheme detailed
+else
+    colorscheme evening
+endif
+"}}}
+
 " {{{ filetype
 " Vim can detect the type of file that is edited. This is done by checking the
 " file name and sometimes by inspecting the contents of the file for specific
