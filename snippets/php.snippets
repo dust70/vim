@@ -1,11 +1,18 @@
-snippet cl
+snippet class
+abbr cl
+alias cl
+options head
         <?php
 
         class ${1:`vim_snippets#Filename()`}
         {
                 ${0}
         }
-snippet ce
+
+snippet class_extends
+abbr ce
+alias ce classextends
+options head
         <?php
 
         class ${1:`vim_snippets#Filename()`}
@@ -13,7 +20,11 @@ snippet ce
         {
                 ${0}
         }
-snippet ct
+
+snippet class_test
+abbr ct
+alias classtest testclass
+options head
         <?php
 
         class ${1:`vim_snippets#Filename()`}
@@ -30,7 +41,6 @@ snippet ct
                         $this->object = new ${1:ClassToTest}();
                 }
 
-
                 /**
                  * Remove the fixture, for example, closes a network connection.
                  * This method is called after a test is executed.
@@ -45,10 +55,85 @@ snippet ct
                         }
                 }
         }
+
+snippet contruct
+abbr con
+alias __contruct con constructor
+options head
+        function __construct() {${1}} {
+                throw new Exception("Not implemented yet.");
+        }
+
+snippet function
+abbr function
+alias fun
+options head
+        ${1:public} function ${2:#:FunctionName}(${3}) {
+                throw new Exception("Not implemented yet.");
+        }
+
+snippet function_test
+abbr function_test
+alias testfunction functiontest tc
+options head
+        public function test${1:#:FunctionName}() {
+                // arrange
+                ${0:#:code}
+
+                // act
+
+                // assert
+        }
+
 snippet pmd
-         * @SuppressWarnings(PHPMD${0:.Foo})
+options word
+         * @SuppressWarnings(PHPMD.${0:Foo})
+
+snippet dataprovider
+options head
+         * @dataProvider ${0:dataProvider}
+
 snippet ?=
         <?=${1}?>${0}
+
 snippet ?=h
         <?=htmlspecicialchars(${1})?>${0}
+
+snippet try
+options head
+        try {
+                ${0:#:code}
+        } catch (${1:Exception} $e) {
+                $e->getMessage();
+        } finally {
+                ${2:#:code}
+        }
+
+snippet dump
+options word
+        Zend_Debug::dump(${0:#:code})
+
+snippet dump_die
+alias dpp
+options word
+        Zend_Debug::dump(${0:#:code})
+
+snippet foreach
+alias foreachk foreach-hashmap
+options head
+        foreach ($${1:#:variable} as $${2:key}${3: =>} $${4:value}) {
+                ${0:#:code}
+        }
+
+snippet t-
+abbr t-
+        $this->
+
+snippet doc_c
+options head
+        /**
+         * ${2:undocumented class}
+         *
+         * @author René Six <${0:info@renatius.de}>
+         */
 
