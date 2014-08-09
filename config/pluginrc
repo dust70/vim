@@ -22,247 +22,243 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     " {{{ Bundles
     " {{{ Neobundle
     NeoBundleFetch 'Shougo/neobundle.vim', {
-                \ 'directory' : 'NeoBundle',
-                \ 'name'      : 'NeoBundle',
-                \ }
+                \     'directory' : 'NeoBundle',
+                \     'name'      : 'NeoBundle',
+                \}
     "}}}
 
     " {{{ bundles needed by other bundles
     NeoBundle 'xolox/vim-misc', {
-                \ 'directory' : 'Misc',
-                \ 'name'      : 'Misc',
-                \ }
+                \     'directory' : 'Misc',
+                \     'name'      : 'Misc',
+                \}
     NeoBundle 'Shougo/vimproc.vim', {
-                \ 'directory' : 'VimProc',
-                \ 'name'      : 'VimProc',
+                \     'directory' : 'VimProc',
+                \     'name'      : 'VimProc',
                 \ 'build' : {
                 \     'windows' : 'vimproc_updcmd',
                 \     'cygwin'  : 'make -f make_cygwin.mak',
                 \     'mac'     : 'make -f make_mac.mak',
                 \     'unix'    : 'make -f make_unix.mak',
                 \     }
-                \ }
+                \}
     NeoBundle 'Shougo/vimshell.vim', {
-                \ 'directory' : 'Shell',
-                \ 'name'      : 'Shell',
-                \ }
+                \     'directory' : 'Shell',
+                \     'name'      : 'Shell',
+                \}
     "}}}
 
     " {{{ Plugins
     NeoBundle 'bling/vim-airline', {
-                \ 'directory' : 'Airline',
-                \ 'name'      : 'Airline',
-                \ }
+                \     'directory' : 'Airline',
+                \     'name'      : 'Airline',
+                \}
     NeoBundle 'vim-scripts/Align', {
-                \ 'directory' : 'Align',
-                \ 'name'      : 'Align',
-                \ }
+                \     'directory' : 'Align',
+                \     'name'      : 'Align',
+                \}
     NeoBundle 'Chiel92/vim-autoformat', {
-                \ 'directory' : 'AutoFormat',
-                \ 'name'      : 'AutoFormat'
-                \ }
+                \     'directory' : 'AutoFormat',
+                \     'name'      : 'AutoFormat'
+                \}
     NeoBundle 'jiangmiao/auto-pairs', {
-                \ 'directory' : 'AutoPairs',
-                \ 'name'      : 'AutoPairs',
-                \ }
+                \     'directory' : 'AutoPairs',
+                \     'name'      : 'AutoPairs',
+                \}
     NeoBundle 'mattn/calendar-vim', {
-                \ 'directory' : 'Calendar',
-                \ 'name'      : 'Calendar',
-                \ }
+                \     'directory' : 'Calendar',
+                \     'name'      : 'Calendar',
+                \}
     NeoBundle 'vim-scripts/closetag.vim', {
-                \ 'directory' : 'CloseTag',
-                \ 'name'      : 'CloseTag',
-                \ }
+                \     'directory' : 'CloseTag',
+                \     'name'      : 'CloseTag',
+                \}
     NeoBundle 'flazz/vim-colorschemes', {
-                \ 'directory' : 'Colorschemes',
-                \ 'name'      : 'Colorschemes',
-                \ }
+                \     'directory' : 'Colorschemes',
+                \     'name'      : 'Colorschemes',
+                \}
     NeoBundle 'http://conque.googlecode.com/svn/trunk/', {
-                \ 'directory' : 'Conque',
-                \ 'name'      : 'Conque',
-                \ }
+                \     'directory' : 'Conque',
+                \     'name'      : 'Conque',
+                \}
     NeoBundle 'chrisbra/csv.vim', {
-                \ 'directory' : 'CSV',
-                \ 'name'      : 'CSV',
-                \ }
+                \     'directory' : 'CSV',
+                \     'name'      : 'CSV',
+                \}
     NeoBundle 'rking/vim-detailed', {
-                \ 'directory' : 'Detailed',
-                \ 'name'      : 'Detailed',
-                \ }
+                \     'directory' : 'Detailed',
+                \     'name'      : 'Detailed',
+                \}
+    NeoBundle 'tpope/vim-dispatch', {
+                \     'directory' : 'Dispatch',
+                \     'name'      : 'Dispatch',
+                \}
     NeoBundle 'xolox/vim-easytags', {
-                \ 'directory' : 'Easytag',
-                \ 'name'      : 'Easytag',
-                \ }
+                \     'directory' : 'Easytag',
+                \     'name'      : 'Easytag',
+                \}
     NeoBundle 'vim-scripts/EnhCommentify.vim', {
-                \ 'directory' : 'EnhancedCommentify',
-                \ 'name'      : 'EnhancedCommentify',
-                \ }
+                \     'directory' : 'EnhancedCommentify',
+                \     'name'      : 'EnhancedCommentify',
+                \}
     NeoBundle 'tpope/vim-fugitive', {
-                \ 'directory' : 'FuGITive',
-                \ 'name'      : 'FuGITive',
-                \ }
+                \     'directory' : 'FuGITive',
+                \     'name'      : 'FuGITive',
+                \}
     NeoBundle 'sjl/gundo.vim.git', {
-                \ 'directory' : 'Gundo',
-                \ 'name'      : 'Gundo',
-                \ }
+                \     'directory' : 'Gundo',
+                \     'name'      : 'Gundo',
+                \}
     NeoBundle 'othree/html5.vim', {
-                \ 'directory' : 'HTML5',
-                \ 'name'      : 'HTML5',
-                \ }
+                \     'directory' : 'HTML5',
+                \     'name'      : 'HTML5',
+                \}
     NeoBundle 'davidhalter/jedi-vim', {
-                \ 'directory' : 'Jedi',
-                \ 'name'      : 'Jedi',
-                \ }
+                \     'directory' : 'Jedi',
+                \     'name'      : 'Jedi',
+                \}
     NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex', {
-                \ 'directory' : 'LaTeX',
-                \ 'name'      : 'LaTeX',
-                \ }
+                \     'directory' : 'LaTeX',
+                \     'name'      : 'LaTeX',
+                \}
     NeoBundle 'groenewege/vim-less', {
-                \ 'directory' : 'Less',
-                \ 'name'      : 'Less',
-                \ }
+                \     'directory' : 'Less',
+                \     'name'      : 'Less',
+                \}
     NeoBundle 'gregsexton/MatchTag', {
-                \ 'directory' : 'MatchTag',
-                \ 'name'      : 'MatchTag',
-                \ }
+                \     'directory' : 'MatchTag',
+                \     'name'      : 'MatchTag',
+                \}
     NeoBundle 'Shougo/neocomplete', {
-                \ 'directory'   : 'NeoComplete',
-                \ 'name'        : 'NeoComplete',
+                \     'directory'   : 'NeoComplete',
+                \     'name'        : 'NeoComplete',
                 \ 'disabled'    : !has('lua'),
                 \ 'vim_version' : '7.3.885',
-                \ }
+                \}
     NeoBundle 'Shougo/neomru.vim', {
-                \ 'directory' : 'NeoMRU',
-                \ 'name'      : 'NeoMRU',
-                \ }
+                \     'directory' : 'NeoMRU',
+                \     'name'      : 'NeoMRU',
+                \}
     NeoBundle 'Shougo/neosnippet', {
-                \ 'directory' : 'NeoSnippet',
-                \ 'name'      : 'NeoSnippet',
-                \ }
+                \     'directory' : 'NeoSnippet',
+                \     'name'      : 'NeoSnippet',
+                \}
     NeoBundle 'Shougo/neosnippet-snippets', {
-                \ 'directory' : 'NeoSnippet-Snippets',
-                \ 'name'      : 'NeoSnippet-Snippets',
-                \ }
+                \     'directory' : 'NeoSnippet-Snippets',
+                \     'name'      : 'NeoSnippet-Snippets',
+                \}
     NeoBundle 'vimoutliner/vimoutliner', {
-                \ 'directory' : 'Outliner',
-                \ 'name'      : 'Outliner'
-                \ }
+                \     'directory' : 'Outliner',
+                \     'name'      : 'Outliner'
+                \}
     NeoBundle 'rkitover/vimpager', {
-                \ 'directory' : 'Pager',
-                \ 'name'      : 'Pager',
-                \ }
+                \     'directory' : 'Pager',
+                \     'name'      : 'Pager',
+                \}
     NeoBundle 'shawncplus/phpcomplete.vim', {
-                \ 'directory' : 'PHP-Complete',
-                \ 'name'      : 'PHP-Complete',
-                \ }
+                \     'directory' : 'PHP-Complete',
+                \     'name'      : 'PHP-Complete',
+                \}
     NeoBundle 'vim-php/tagbar-phpctags.vim', {
-                \ 'directory' : 'PHP-CTags',
-                \ 'name'      : 'PHP-CTags',
+                \     'directory' : 'PHP-CTags',
+                \     'name'      : 'PHP-CTags',
                 \ 'build'     : {
                 \     'cygwin'  : 'make',
                 \     'mac'     : 'make',
                 \     'unix'    : 'make',
                 \     'windows' : 'make',
                 \     },
-                \ }
+                \}
     NeoBundle 'nishigori/vim-php-dictionary', {
-                \ 'directory' : 'PHP-Dictionary',
-                \ 'name'      : 'PHP-Dictionary',
-                \ }
-    NeoBundle 'tobyS/pdv', {
-                \ 'directory' : 'PHP-Doc',
-                \ 'name'      : 'PHP-Doc',
-                \ }
+                \     'directory' : 'PHP-Dictionary',
+                \     'name'      : 'PHP-Dictionary',
+                \}
     NeoBundle 'QafooLabs/php-refactoring-browser', {
-                \ 'directory' : 'PHP-Refactoring-Browser',
-                \ 'name'      : 'PHP-Refactoring-Browser',
+                \     'directory' : 'PHP-Refactoring-Browser',
+                \     'name'      : 'PHP-Refactoring-Browser',
                 \ 'build'     : {
                 \     'cygwin'  : '',
                 \     'mac'     : 'curl -sS https://getcomposer.org/installer | php && php composer.phar install',
                 \     'unix'    : 'curl -sS https://getcomposer.org/installer | php && php composer.phar install',
                 \     'windows' : '',
                 \     },
-                \ }
+                \}
     NeoBundle 'vim-php/vim-php-refactoring', {
-                \ 'directory' : 'PHP-Refactoring',
-                \ 'name'      : 'PHP-Refactoring',
-                \ }
-    NeoBundle 'joonty/vim-phpunitqf.git', {
-                \ 'directory' : 'PHP-Unit',
-                \ 'name'      : 'PHP-Unit',
-                \ }
+                \     'directory' : 'PHP-Refactoring',
+                \     'name'      : 'PHP-Refactoring',
+                \}
     NeoBundle 'jmcomets/vim-pony', {
-                \ 'directory' : 'Pony',
-                \ 'name'      : 'Pony',
-                \ }
+                \     'directory' : 'Pony',
+                \     'name'      : 'Pony',
+                \}
     NeoBundle 'rodjek/vim-puppet', {
-                \ 'directory' : 'Puppet',
-                \ 'name'      : 'Puppet',
-                \ }
-    NeoBundle 'kien/rainbow_parentheses.vim', {
-                \ 'directory' : 'Rainbow_Parentheses',
-                \ 'name'      : 'Rainbow_Parentheses',
-                \ }
+                \     'directory' : 'Puppet',
+                \     'name'      : 'Puppet',
+                \}
+    NeoBundle 'luochen1990/rainbow', {
+                \     'directory' : 'Rainbow_Parentheses_Improved',
+                \     'name'      : 'Rainbow Parentheses Improved',
+                \}
     NeoBundle 'ciaranm/securemodelines', {
-                \ 'directory' : 'SecureModelines',
-                \ 'name'      : 'SecureModelines',
-                \ }
+                \     'directory' : 'SecureModelines',
+                \     'name'      : 'SecureModelines',
+                \}
     NeoBundle 'honza/vim-snippets', {
-                \ 'directory' : 'Snippets',
-                \ 'name'      : 'Snippets',
-                \ }
+                \     'directory' : 'Snippets',
+                \     'name'      : 'Snippets',
+                \}
     NeoBundle 'ervandew/supertab', {
-                \ 'directory' : 'Supertab',
-                \ 'name'      : 'Supertab',
-                \ }
+                \     'directory' : 'Supertab',
+                \     'name'      : 'Supertab',
+                \}
     NeoBundle 'tpope/vim-surround', {
-                \ 'directory' : 'Surround',
-                \ 'name'      : 'Surround',
-                \ }
+                \     'directory' : 'Surround',
+                \     'name'      : 'Surround',
+                \}
     NeoBundle 'sjl/splice.vim', {
-                \ 'directory' : 'Splice',
-                \ 'name'      : 'Splice',
-                \ }
+                \     'directory' : 'Splice',
+                \     'name'      : 'Splice',
+                \}
     NeoBundle 'scrooloose/syntastic', {
-                \ 'directory' : 'Syntastic',
-                \ 'name'      : 'Syntastic',
-                \ }
+                \     'directory' : 'Syntastic',
+                \     'name'      : 'Syntastic',
+                \}
     NeoBundle 'majutsushi/tagbar', {
-                \ 'directory' : 'Tagbar',
-                \ 'name'      : 'Tagbar',
-                \ }
+                \     'directory' : 'Tagbar',
+                \     'name'      : 'Tagbar',
+                \}
     NeoBundle 'zaiste/tmux.vim', {
-                \ 'directory' : 'TMux-Syntax',
-                \ 'name'      : 'TMux-Syntax',
-                \ }
+                \     'directory' : 'TMux-Syntax',
+                \     'name'      : 'TMux-Syntax',
+                \}
     NeoBundle 'Shougo/unite.vim', {
-                \ 'directory' : 'Unite',
-                \ 'name'      : 'Unite',
-                \ }
+                \     'directory' : 'Unite',
+                \     'name'      : 'Unite',
+                \}
     NeoBundle 'Shougo/unite-build', {
-                \ 'directory' : 'Unite-Build',
-                \ 'name'      : 'Unite-Build',
-                \ }
+                \     'directory' : 'Unite-Build',
+                \     'name'      : 'Unite-Build',
+                \}
     NeoBundle 'Shougo/unite-session', {
-                \ 'directory' : 'Unit-Session',
-                \ 'name'      : 'Unit-Session',
-                \ }
+                \     'directory' : 'Unit-Session',
+                \     'name'      : 'Unit-Session',
+                \}
     NeoBundle 'Shougo/neossh.vim', {
-                \ 'directory' : 'Unit-SSH',
-                \ 'name'      : 'Unit-SSH',
-                \ }
+                \     'directory' : 'Unit-SSH',
+                \     'name'      : 'Unit-SSH',
+                \}
     NeoBundle 'joonty/vdebug', {
-                \ 'directory' : 'VDebug',
-                \ 'name'      : 'VDebug'
-                \ }
+                \     'directory' : 'VDebug',
+                \     'name'      : 'VDebug'
+                \}
     NeoBundle 'Shougo/vimfiler.vim', {
-                \ 'directory' : 'Vimfiler',
-                \ 'name'      : 'Vimfiler',
-                \ }
+                \     'directory' : 'Vimfiler',
+                \     'name'      : 'Vimfiler',
+                \}
     NeoBundle 'jmcantrell/vim-virtualenv', {
-                \ 'directory' : 'Virtualenv',
-                \ 'name'      : 'Virtualenv'
-                \ }
+                \     'directory' : 'Virtualenv',
+                \     'name'      : 'Virtualenv'
+                \}
     "}}}
     "}}}
 
@@ -353,8 +349,23 @@ let g:ConqueTerm_CloseOnEnd = 1
 "}}}
 "}}}
 
+" {{{ Dispatch
+" {{{ dispatch_compilers
+" If you need more control, g:dispatch_compilers can be set to a dictionary with
+" commands for keys and compiler plugins for values. Use an empty value to skip
+" the matched string and try again with the rest of the command.
+let g:dispatch_compilers = {
+            \ 'php'    : './bin/phpunit --verbose',
+            \ 'python' : './env/bin/python manage.py test',
+            \ }
+"}}}
+
+" {{{ key mappings
+nnoremap <silent> ,d :Dispatch<cr>
+"}}}
+"}}}
+
 " {{{ Easytag
-" TODO: comment this options
 let g:easytags_autorecurse = 1
 let g:easytags_by_filetype = vimfiles . "/tags"
 let g:easytags_dynamic_files = 1
@@ -483,7 +494,7 @@ let g:neocomplete#delimiter_patterns = {
             \ 'java' : ['.'],
             \ 'php'  : ['->'],
             \ 'vim'  : ['#'],
-            \ }
+            \}
 "}}}
 
 " {{{ neocomplete#sources
@@ -492,14 +503,11 @@ let g:neocomplete#delimiter_patterns = {
 " default filetypes. For example, you can disable some sources in C++ filetype.
 " If the value is "_", it will load all sources.
 let g:neocomplete#sources = {
-            \ '_' : ['buffer', 'dictionary'],
-            \ }
-let g:neocomplete#sources = {
-            \ '_'    : ['buffer'],
+            \ '_'    : ['buffer', 'dictionary'],
             \ 'cpp'  : ['buffer', 'dictionary', 'include'],
             \ 'html' : ['buffer', 'dictionary'],
             \ 'php'  : ['buffer', 'dictionary', 'include']
-            \ }
+            \}
 "}}}
 
 " {{{ neocomplete#release_cache_time
@@ -511,7 +519,7 @@ let g:neocomplete#release_cache_time = 3600
 " It is a dictionary to ignore composite file type. The dictionary's key is
 " composite filetype and value is filetype.
 let g:neocomplete#ignore_composite_filetypes = {
-            \ }
+            \}
 "}}}
 
 " {{{ neocomplete#sources#buffer#cache_limit_size
@@ -553,7 +561,7 @@ let g:neosnippet#scope_aliases = {
             \ 'html'   : 'xhtml, html, css, javascript',
             \ 'php'    : 'php, sql',
             \ 'python' : 'python',
-            \ }
+            \}
 "}}}
 
 " {{{ neosnippet#data_directory
@@ -563,80 +571,85 @@ let g:neosnippet#data_directory = expand(vimfiles."/tmp")
 "}}}
 "}}}
 
-" {{{ NetRW
-" {{{ netrw_browse_split
-" when browsing, <cr> will open the file by:
-"    0: re-using the same window
-"    1: horizontally splitting the window first
-"    2: vertically splitting the window first
-"    3: open file in new tab
-"    4: act like "P" (ie. open previous window) Note that g:netrw_preview may
-"       be used to get vertical splitting instead of horizontal splitting.
-let g:netrw_browse_split = 3
-" }}}
-
-" {{{ netrw_liststyle
-" Set the default listing style:
-"   0: thin listing (one file per line)
-"   1: long listing (one file per line with time stamp information and file
-"      size)
-"   2: wide listing (multiple files in columns)
-"   3: tree style listing
-let g:netrw_liststyle = 3
-"}}}
-
-" {{{ netrw_list_hide
-" comma separated pattern list for hiding files Patterns are regular
-" expressions.
-let g:netrw_list_hide = '.*\.swp$'
-"}}}
-
-" {{{ netrw_maxfilenamelen
-" 32 by default, selected so as to make long listings fit on 80 column displays.
-" If your screen is wider, and you have file or directory names longer than 32
-" bytes, you may set this option to keep listings columnar.
-let g:netrw_maxfilenamelen = 80
-"}}}
-
-" {{{ netrw_special_syntax
-" If true, then certain files will be shown in special syntax in the browser:
-"   netrwBak     : *.bak
-"   netrwCompress: *.gz *.bz2 *.Z *.zip
-"   netrwData    : *.dat
-"   netrwHdr     : *.h
-"   netrwLib     : *.a *.so *.lib *.dll
-"   netrwMakefile: [mM]akefile *.mak
-"   netrwObj     : *.o *.obj
-"   netrwTags    : tags ANmenu ANtags
-"   netrwTilde   : *
-"   netrwTmp     : tmp* *tmp
-"
-" These syntax highlighting groups are linked to Folded or DiffChange by default
-" (see hl-Folded and hl-DiffChange), but one may put lines like
-"   hi link netrwCompress Visual
-" into one's <.vimrc> to use one's own preferences.
-let g:netrw_special_syntax = 1
-"}}}
-
-" {{{ netrw_timefmt
-" specify format string to vim's strftime().
-" The default, "%c", is "the preferred date and time representation for the
-" current locale" according to my manpage entry for strftime(); however, not all
-" are satisfied with it.
-let g:netrw_timefmt = "%Y-%m-%d"
-"}}}
-"}}}
-
 " {{{ PHP-Refactoring
 let g:php_refactor_command =
             \ 'php '.vimfiles.'/bundle/PHP-Refactoring-Browser/src/bin/refactor'
 "}}}
 
-" {{{ PHP-Unit
-let g:phpunit_args = "--report-useless-tests --verbose"
-let g:phpunit_tmpfile = vimfiles."/tmp/phpunit.out"
+" {{{ Rainbow Parentheses Improved
+" {{{ rainbow_active
+let g:rainbow_active = 1
+"}}}
 
-nnoremap <silent>,tt :Test<cr>
+" {{{ rainbow_conf
+let g:rainbow_conf = {
+            \ 'guifgs'      : ['lightgray', 'lightblue', 'lightgreen',
+            \                  'lightcyan', 'lightred', 'lightmagenta',
+            \                  'lightyellow'],
+            \ 'ctermfgs'    : ['lightgray', 'lightblue', 'lightgreen',
+            \                  'lightcyan', 'lightred', 'lightmagenta',
+            \                  'lightyellow'],
+            \ 'operators'   : '_, _',
+            \ 'parentheses' : [['(', ')'], ['\[', '\]'], ['{', '}']],
+            \ 'separately'  : {
+            \     '*'   : {},
+            \     'php' : {
+            \         'parentheses' : [
+            \             ['(', ')'],
+            \             ['\[', '\]'],
+            \             ['{', '}'],
+            \             ['do', 'while'],
+            \             ['for', 'endfor'],
+            \             ['foreach', 'endforeach'],
+            \             ['if', '_elseif\|else_', 'endif'],
+            \             ['while', 'endwhile']
+            \             ]
+            \         },
+            \     'python' : 0,
+            \     'tex' : {
+            \         'parentheses' : [
+            \             ['(', ')'],
+            \             ['\[', '\]'],
+            \             ['\\begin{.*}', '\\end{.*}']
+            \             ]
+            \         },
+            \     'vim' : {
+            \         'parentheses' : [
+            \             ['(', ')'],
+            \             ['\[', '\]'],
+            \             ['{', '}'],
+            \             ['for', 'endfor'],
+            \             ['fu\w* \s*.*)', 'endfu\w*'],
+            \             ['if', '_elseif\|else_', 'endif'],
+            \             ['while', 'endwhile']
+            \             ]
+            \         },
+            \     }
+            \}
+"}}}
+"}}}
+
+" {{{ SuperTab
+" {{{ SuperTabDefaultCompletionType
+" Used to set the default completion type. There is no need to escape this value
+" as that will be done for you when the type is set.
+let g:SuperTabDefaultCompletionType = 'context'
+"}}}
+
+" {{{ SuperTabClosePreviewOnPopupClose
+" When enabled, supertab will attempt to close vim's completion preview window
+" when the completion popup closes (completion is finished or canceled).
+let g:SuperTabClosePreviewOnPopupClose = 1
+"}}}
+
+" {{{ SuberTab autocommands
+augroup SuperTab
+    autocmd FileType *
+                \ if &omnifunc != '' |
+                \     call SuperTabChain(&omnifunc, "<c-p>") |
+                \ endif
+augroup END
+"}}}
 "}}}
 
 " {{{ Syntastic
