@@ -272,7 +272,7 @@ set complete+=k
 
 " {{{ completeopt
 " A comma separated list of options for Insert mode completion ins-completion.
-set completeopt=menuone,longest
+set completeopt=menuone,longest,preview
 "}}}
 
 " {{{ cursorcolumn
@@ -418,38 +418,6 @@ endif
 " When nonempty describes the text to use in a label of the GUI tab pages line.
 " When empty and when the result is empty Vim will use a default label.
 if has('gui_running')
-    function! GuiTabLabel()
-        " Append the tab number
-        let label=v:lnum . ': '
-        let bufnrlist=tabpagebuflist(v:lnum)
-
-        " Append the buffer name
-        let name=bufname(bufnrlist[tabpagewinnr(v:lnum) - 1])
-        if name == ''
-            " give a name to no-name documents
-            if &buftype=='quickfix'
-                let name='[Quickfix List]'
-            else
-                let name='[No Name]'
-            endif
-        else
-            " get only the file name
-            let name=fnamemodify(name,":t")
-        endif
-
-        let label .= name
-
-        " Add '+' if one of the buffers in the tab page is modified
-        for bufnr in bufnrlist
-            if getbufvar(bufnr, "&modified")
-                let label .= ' [+]'
-                break
-            endif
-        endfor
-
-        return label
-    endfunction
-
     set guitablabel=%{GuiTabLabel()}
 endif
 "}}}
@@ -626,7 +594,7 @@ set numberwidth=5
 " Where {keys} is the value of 'pastetoggle'. The difference is that it will
 " work even when 'paste' is set. 'pastetoggle' works in Insert mode and Normal
 " mode, but not in Command-line mode.
-set pastetoggle=,p
+set pastetoggle=,,p
 "}}}
 
 " {{{ path
