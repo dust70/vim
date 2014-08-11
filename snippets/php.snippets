@@ -27,7 +27,10 @@ alias classtest testclass
 options head
         <?php
 
-        class ${1:`vim_snippets#Filename()`}
+        /**
+         * @author René Six <${1:info@renatius.de}>
+         */
+        class ${2:`vim_snippets#Filename()`}
                 extends PHPUnit_Framework_TestCase
         {
                 protected $object = null;
@@ -36,16 +39,18 @@ options head
                  * Sets up the fixture, for example, opens a network connection.
                  * This method is called before a test is executed.
                  */
-                protected function setUp() {
+                protected function setUp()
+                {
                         parrent::setUp();
-                        $this->object = new ${1:ClassToTest}();
+                        $this->object = new ${3:ClassToTest}();
                 }
 
                 /**
                  * Remove the fixture, for example, closes a network connection.
                  * This method is called after a test is executed.
                  */
-                 protected function tearDown() {
+                 protected function tearDown()
+                 {
                         try {
                                 ${0}
                         } catch(Exception $e) {
@@ -60,28 +65,29 @@ snippet contruct
 abbr con
 alias __contruct con constructor
 options head
-        function __construct() {${1}} {
-                throw new Exception("Not implemented yet.");
+        function __construct() {${1}}
+        {
+                throw new Exception('Not implemented yet.');
         }
 
 snippet function
 abbr function
 alias fun
 options head
-        ${1:public} function ${2:#:FunctionName}(${3}) {
-                throw new Exception("Not implemented yet.");
+        ${1:public} function ${2:#:FunctionName}(${3})
+        {
+                throw new Exception('Not implemented yet.');
         }
 
 snippet function_test
 abbr function_test
-alias testfunction functiontest tc
+alias testfunction functiontest tf
 options head
-        public function test${1:#:FunctionName}() {
+        public function test${0:#:FunctionName}()
+        {
+                $this->fail('Not implemented yet.');
                 // arrange
-                ${0:#:code}
-
                 // act
-
                 // assert
         }
 
@@ -111,12 +117,8 @@ options head
 
 snippet dump
 options word
-        Zend_Debug::dump(${0:#:code})
-
-snippet dump_die
-alias dpp
-options word
-        Zend_Debug::dump(${0:#:code})
+        Zend_Debug::dump(${0:#:code});
+        die();
 
 snippet foreach
 alias foreachk foreach-hashmap
@@ -130,6 +132,8 @@ abbr t-
         $this->
 
 snippet doc_c
+abbr doc
+alias doc docc
 options head
         /**
          * ${2:undocumented class}
