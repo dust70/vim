@@ -68,4 +68,14 @@ function! GuiTabLabel()
 endfunction
 "}}}
 
+function! ConfigureProjectRsync(source, dest)
+    let l:cmd = '!rsync '
+    let l:cmd .= join(g:rsync_options, ' ')
+    let l:cmd .= ' --exclude='
+    let l:cmd .= join(g:rsync_ignore, ' --exclude=')
+    let l:cmd .= ' '.a:source.' '.a:dest.' &'
+
+    autocmd! BufWritePost,FileWritePost * execute l:cmd
+endfunction
+
 " vim: filetype=vim textwidth=80 foldmethod=marker
