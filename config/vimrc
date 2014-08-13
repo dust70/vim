@@ -1009,4 +1009,27 @@ highlight PmenuSel ctermfg=lightgray ctermbg=darkcyan
 "}}}
 "}}}
 
+" {{{ configuration for self writen plugin ins
+let g:rsync_options = [
+            \ '--archive',
+            \ '--chmod=ug=rwX,o=rX',
+            \ '--compress',
+            \ '--cvs-exclude',
+            \ '--delete',
+            \ '--delete-excluded',
+            \ '--quiet',
+            \ '--verbose',
+            \ '--whole-file',
+            \ ]
+let g:rsync_ignore = [
+            \ '.git*',
+            \ 'bin',
+            \ 'build',
+            \ 'cscope.out*',
+            \ 'DS_Store',
+            \ 'tests',
+            \ 'vagrant',
+            \ ]
+"}}}
+
 " vim: filetype=vim textwidth=80 foldmethod=marker
