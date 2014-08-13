@@ -1,15 +1,17 @@
 " {{{ CBN
 " {{{ Shoprocket
 function! ConfigureShoprocket()
+    chdir ~/repositories/cbn/shoprocket
     let g:vdebug_options = {
-                \ "server" : "192.168.56.202",
+                \ 'server' : '192.168.56.202',
                 \ }
 
-    chdir ~/repositories/cbn/shoprocket
-
-    augroup ShopRocket_scp
+    augroup ShopRocket_sync
         autocmd! FileType css,html,javascript,less,php
-                    \ autocmd! BufWritePost,FileWritePost * execute "!scp -Cpq \ ".expand("%")." vagrant:/var/www/shoprocket/".expand("%").' &'
+                    \ call ConfigureProjectRsync(
+                    \   '~/repositories/cbn/shoprocket/',
+                    \   'vagrant:/var/www/shoprocket'
+                    \ )
     augroup end
 endfunction
 
@@ -27,7 +29,7 @@ function! ConfigureProjectInvoicing()
 
     augroup ProjectInvoicing_scp
         autocmd! FileType css,html,javascript,less,python
-                    \ autocmd! BufWritePost,FileWritePost * execute "!scp -Cpq \ ".expand("%")." vagrant:/var/www/invoicing/".expand("%").' &'
+                    \ echo "IMPLEMENT ME!!!!"
     augroup end
 endfunction
 
