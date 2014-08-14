@@ -76,6 +76,7 @@ alias fun
 options head
         ${1:public} function ${2:#:FunctionName}(${3})
         {
+                ${4:#:code}
                 throw new Exception('Not implemented yet.');
         }
 
@@ -83,12 +84,10 @@ snippet function_test
 abbr function_test
 alias testfunction functiontest tf
 options head
-        public function test${0:#:FunctionName}()
+        public function test${1:#:FunctionName}()
         {
+                ${0:#:code}
                 $this->fail('Not implemented yet.');
-                // arrange
-                // act
-                // assert
         }
 
 snippet pmd
@@ -97,7 +96,7 @@ options word
 
 snippet dataprovider
 options head
-         * @dataProvider ${0:dataProvider}
+         @dataProvider dataProvider${0:name}
 
 snippet ?=
         <?=${1}?>${0}
@@ -122,8 +121,8 @@ options word
 snippet foreach
 alias foreachk foreach-hashmap
 options head
-        foreach ($${1:#:variable} as $${2:key}${3: =>} $${4:value}) {
-                ${0:#:code}
+        foreach ($${0:#:variable} as $${1:key}${2: =>} $${3:value}) {
+                ${4:#:code}
         }
 
 snippet t-
@@ -135,8 +134,6 @@ abbr doc
 alias doc docc
 options head
         /**
-         * ${2:undocumented class}
-         *
          * @author René Six <${0:info@renatius.de}>
          */
 
