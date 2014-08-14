@@ -1022,10 +1022,10 @@ let g:rsync_options = [
             \ '--whole-file',
             \ ]
 let g:rsync_ignore = [
-            \ '.git*',
+            \ '".git*"',
             \ 'bin',
             \ 'build',
-            \ 'cscope.out*',
+            \ '"cscope.out*"',
             \ 'DS_Store',
             \ 'tests',
             \ 'vagrant',
