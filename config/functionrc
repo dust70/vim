@@ -75,7 +75,8 @@ function! ConfigureProjectRsync(source, dest)
     let l:cmd .= join(g:rsync_ignore, ' --exclude=')
     let l:cmd .= ' '.a:source.' '.a:dest.' &'
 
-    autocmd! BufWritePost,FileWritePost * execute l:cmd
+    let g:rsync_command = l:cmd
+    autocmd! BufWritePost,FileWritePost * silent execute g:rsync_command
 endfunction
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
