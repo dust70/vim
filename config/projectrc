@@ -2,6 +2,7 @@
 " {{{ Shoprocket
 function! ConfigureShoprocket()
     chdir ~/repositories/cbn/shoprocket
+    set makeprg=./bin/phpunit\ --verbose\ --filter\ %:t:r
     let g:vdebug_options = {
                 \ 'server' : '192.168.56.202',
                 \ }
