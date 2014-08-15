@@ -169,20 +169,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \     'directory' : 'PHP-Dictionary',
                 \     'name'      : 'PHP-Dictionary',
                 \}
-    NeoBundle 'QafooLabs/php-refactoring-browser', {
-                \     'directory' : 'PHP-Refactoring-Browser',
-                \     'name'      : 'PHP-Refactoring-Browser',
-                \ 'build'     : {
-                \     'cygwin'  : '',
-                \     'mac'     : 'curl -sS https://getcomposer.org/installer | php && php composer.phar install',
-                \     'unix'    : 'curl -sS https://getcomposer.org/installer | php && php composer.phar install',
-                \     'windows' : '',
-                \     },
-                \}
-    NeoBundle 'vim-php/vim-php-refactoring', {
-                \     'directory' : 'PHP-Refactoring',
-                \     'name'      : 'PHP-Refactoring',
-                \}
     NeoBundle 'jmcomets/vim-pony', {
                 \     'directory' : 'Pony',
                 \     'name'      : 'Pony',
@@ -346,18 +332,9 @@ let g:ConqueTerm_CloseOnEnd = 1
 "}}}
 
 " {{{ Dispatch
-" {{{ dispatch_compilers
-" If you need more control, g:dispatch_compilers can be set to a dictionary with
-" commands for keys and compiler plugins for values. Use an empty value to skip
-" the matched string and try again with the rest of the command.
-let g:dispatch_compilers = {
-            \ 'php'    : './bin/phpunit --verbose',
-            \ 'python' : './env/bin/python manage.py test',
-            \ }
-"}}}
-
 " {{{ key mappings
-nnoremap <silent> ,d :Dispatch<cr>
+nnoremap <silent> ,dt :Dispatch<cr>
+nnoremap <silent> ,do :Copen<cr>
 "}}}
 "}}}
 
