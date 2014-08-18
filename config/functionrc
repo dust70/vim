@@ -69,10 +69,33 @@ endfunction
 "}}}
 
 function! ConfigureProjectRsync(source, dest)
+    let l:rsync_options = [
+                \ '--archive',
+                \ '--chmod=ug=rwX,o=rX',
+                \ '--compress',
+                \ '--cvs-exclude',
+                \ '--delete',
+                \ '--delete-excluded',
+                \ '--prune-empty-dirs',
+                \ '--quiet',
+                \ '--verbose',
+                \ '--whole-file',
+                \ ]
+    let l:rsync_ignore = [
+                \ '".*swp"',
+                \ '".git*"',
+                \ '"bin"',
+                \ '"build"',
+                \ '"cscope.out*"',
+                \ '"DS_Store"',
+                \ '"tests"',
+                \ '"vagrant"',
+                \ ]
+
     let l:cmd = '!rsync '
-    let l:cmd .= join(g:rsync_options, ' ')
+    let l:cmd .= join(l:rsync_options, ' ')
     let l:cmd .= ' --exclude='
-    let l:cmd .= join(g:rsync_ignore, ' --exclude=')
+    let l:cmd .= join(l:rsync_ignore, ' --exclude=')
     let l:cmd .= ' '.a:source.' '.a:dest.' &'
 
     let g:rsync_command = l:cmd
