@@ -871,7 +871,8 @@ let g:vimfiler_edit_action = 'tabopen'
 "}}}
 
 " {{{ mappings
-nnoremap ,f :VimFilerTab -toggle <cr>
+nnoremap ,vf :VimFilerTab
+            \ -buffer-name=explorer -no-quit -toggle -simple -project -status
 "}}}
 "}}}
 
