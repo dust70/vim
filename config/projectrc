@@ -8,7 +8,7 @@ function! ConfigureShoprocket()
                 \ }
 
     augroup ShopRocket_sync
-        autocmd! FileType css,html,javascript,less,php
+        autocmd! FileType css,html,javascript,less,php,php.html
                     \ call ConfigureProjectRsync(
                     \   '~/repositories/cbn/shoprocket/',
                     \   'vagrant:/var/www/shoprocket'
