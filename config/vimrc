@@ -1017,18 +1017,20 @@ let g:rsync_options = [
             \ '--cvs-exclude',
             \ '--delete',
             \ '--delete-excluded',
+            \ '--prune-empty-dirs',
             \ '--quiet',
             \ '--verbose',
             \ '--whole-file',
             \ ]
 let g:rsync_ignore = [
+            \ '".*swp"',
             \ '".git*"',
-            \ 'bin',
-            \ 'build',
+            \ '"bin"',
+            \ '"build"',
             \ '"cscope.out*"',
-            \ 'DS_Store',
-            \ 'tests',
-            \ 'vagrant',
+            \ '"DS_Store"',
+            \ '"tests"',
+            \ '"vagrant"',
             \ ]
 "}}}
 
