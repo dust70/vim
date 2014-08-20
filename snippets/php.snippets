@@ -2,138 +2,145 @@ snippet class
 abbr cl
 alias cl
 options head
-        <?php
+	<?php
 
-        class ${1:`vim_snippets#Filename()`}
-        {
-                ${0}
-        }
+	/**
+	 * @author René Six <${1:info@renatius.de}>
+	 */
+	class ${2:`vim_snippets#Filename()`}
+	{
+		${0}
+	}
 
 snippet class_extends
 abbr ce
 alias ce classextends
 options head
-        <?php
+	<?php
 
-        class ${1:`vim_snippets#Filename()`}
-                extends ${2:Foo\Bar\Baz}
-        {
-                ${0}
-        }
+	class ${1:`vim_snippets#Filename()`}
+		extends ${2:Foo\Bar\Baz}
+	{
+		${0}
+	}
 
 snippet class_test
 abbr ct
-alias classtest testclass
+alias classtest testclass tc
 options head
-        <?php
+	<?php
 
-        /**
-         * @author René Six <${1:info@renatius.de}>
-         */
-        class ${2:`vim_snippets#Filename()`}
-                extends PHPUnit_Framework_TestCase
-        {
-                protected $object = null;
+	/**
+	 * @author René Six <${1:info@renatius.de}>
+	 */
+	class ${2:`vim_snippets#Filename()`}
+		extends ${3:PHPUnit_Framework_TestCase}
+	{
+		protected $object = null;
 
-                /**
-                 * Sets up the fixture, for example, opens a network connection.
-                 * This method is called before a test is executed.
-                 */
-                protected function setUp()
-                {
-                        parrent::setUp();
-                        $this->object = new ${3:ClassToTest}();
-                }
+		/**
+		 * Sets up the fixture, for example, opens a network connection.
+		 * This method is called before a test is executed.
+		 */
+		protected function setUp()
+		{
+			parrent::setUp();
+			$this->object = new ${3:ClassToTest}();
+		}
 
-                /**
-                 * Remove the fixture, for example, closes a network connection.
-                 * This method is called after a test is executed.
-                 */
-                 protected function tearDown()
-                 {
-                        try {
-                                ${0}
-                        } catch(Exception $e) {
-                                // TODO: add exception handling
-                        } finally {
-                                parrent::tearDown();
-                        }
-                }
-        }
+		/**
+		 * Remove the fixture, for example, closes a network connection.
+		 * This method is called after a test is executed.
+		 */
+		 protected function tearDown()
+		 {
+			try {
+				// TODO: add try body
+			} catch(Exception $e) {
+				// TODO: add exception handling
+			} finally {
+				parrent::tearDown();
+			}
+		}
+	}
 
 snippet contruct
 abbr con
 alias __contruct con constructor
 options head
-        function __construct() {${1}}
-        {
-                throw new Exception('Not implemented yet.');
-        }
+	function __construct() {${1}}
+	{
+		throw new Exception('Not implemented yet.');
+	}
 
 snippet function
 abbr function
 alias fun
 options head
-        ${1:public} function ${2:#:FunctionName}(${3})
-        {
-                ${4:#:code}
-                throw new Exception('Not implemented yet.');
-        }
+	${1:public} function ${2:#:FunctionName}(${3})
+	{
+		${4:#:code}
+		throw new Exception('Not implemented yet.');
+	}
 
 snippet function_test
 abbr function_test
 alias testfunction functiontest tf
 options head
-        public function test${1:#:FunctionName}()
-        {
-                ${0:#:code}
-                $this->fail('Not implemented yet.');
-        }
+	public function test${1:#:FunctionName}()
+	{
+		${0:#:code}
+		$this->fail('Not implemented yet.');
+	}
+
+snippet t-
+abbr t-
+	$this->
+
+snippet const
+options head
+        const ${1:variableName} = ${2};${0}
 
 snippet pmd
 options word
-        @SuppressWarnings(PHPMD.${0:Foo})
+	@SuppressWarnings(PHPMD.${0:Foo})
 
 snippet dataprovider
 options head
-         @dataProvider dataProvider${0:name}
+	 @dataProvider dataProvider${0:name}
 
 snippet ?=
-        <?=${1}?>${0}
+	<?=${1}?>${0}
 
 snippet ?=h
-        <?=htmlspecicialchars(${1})?>${0}
+	<?=htmlspecicialchars(${1})?>${0}
 
 snippet try
 options head
-        try {
-                ${0:#:code}
-        } catch (${1:Exception} $e) {
-                $e->getMessage();
-        } finally {
-                ${2:#:code}
-        }
+	try {
+		${0:#:code}
+	} catch (${1:Exception} $e) {
+		$e->getMessage();
+	} finally {
+		${2:#:code}
+	}
 
 snippet dump
 options word
-        Zend_Debug::dump(${0:#:code});
+	Zend_Debug::dump(${0:#:code});
 
 snippet foreach
 alias foreachk foreach-hashmap
 options head
-        foreach ($${1:#:variable} as $${2:key}${3: =>} $${4:value}) {
-                ${0}
-        }
-
-snippet t-
-abbr t-
-        $this->
+	foreach ($${1:#:variable} as $${2:key}${3: =>} $${4:value}) {
+		${0}
+	}
 
 snippet doc_c
 abbr doc
 alias doc docc
 options head
-        /**
-         * @author René Six <${0:info@renatius.de}>
-         */
+	/**
+	 * @author René Six <${0:info@renatius.de}>
+	 */
 
