@@ -68,6 +68,7 @@ function! GuiTabLabel()
 endfunction
 "}}}
 
+" {{{ ConfigureProjectRsync
 function! ConfigureProjectRsync(source, dest)
     let l:rsync_options = [
                 \ '--archive',
@@ -88,7 +89,9 @@ function! ConfigureProjectRsync(source, dest)
                 \ '"build"',
                 \ '"cscope.out*"',
                 \ '"DS_Store"',
-                \ '"tests"',
+                \ '"env"',
+                \ '"reports"',
+                \ '"tests*"',
                 \ '"vagrant"',
                 \ ]
 
@@ -101,5 +104,6 @@ function! ConfigureProjectRsync(source, dest)
     let g:rsync_command = l:cmd
     autocmd! BufWritePost,FileWritePost * silent execute g:rsync_command
 endfunction
+"}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
