@@ -44,7 +44,7 @@ options head
 		 */
 		protected function setUp()
 		{
-			parrent::setUp();
+			parent::setUp();
 			$this->object = new ${3:ClassToTest}();
 		}
 
@@ -59,16 +59,16 @@ options head
 			} catch(Exception $e) {
 				// TODO: add exception handling
 			} finally {
-				parrent::tearDown();
+				parent::tearDown();
 			}
 		}
 	}
 
-snippet contruct
+snippet construct
 abbr con
-alias __contruct con constructor
+alias __construct con constructor
 options head
-	function __construct() {${1}}
+	function __construct(${1})
 	{
 		throw new Exception('Not implemented yet.');
 	}
@@ -113,7 +113,7 @@ snippet ?=
 	<?=${1}?>${0}
 
 snippet ?=h
-	<?=htmlspecicialchars(${1})?>${0}
+	<?=htmlspecialchars(${1})?>${0}
 
 snippet try
 options head
@@ -129,12 +129,23 @@ snippet dump
 options word
 	Zend_Debug::dump(${0:#:code});
 
+snippet pdump
+options word
+        <?php Zend_Debug::dump(${0:#:code}); ?>
+
 snippet foreach
 alias foreachk foreach-hashmap
 options head
 	foreach ($${1:#:variable} as $${2:key}${3: =>} $${4:value}) {
 		${0}
 	}
+
+snippet pforeach
+alias pforeachk pforeach-hashmap
+options head
+	<?php foreach ($${1:#:variable} as $${2:key}${3: =>} $${4:value}) : ?>
+		${0}
+        <?php endforeach; ?>
 
 snippet doc_c
 abbr doc
