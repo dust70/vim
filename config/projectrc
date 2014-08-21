@@ -7,6 +7,11 @@ function! ConfigureShoprocket()
                 \ 'server' : '192.168.56.202',
                 \ }
 
+    command! ProjectRsync call ConfigureProjectRsync(
+                    \     '~/repositories/cbn/shoprocket/',
+                    \     'vagrant:/var/www/shoprocket'
+                    \ )
+
     augroup ShopRocket_sync
         autocmd! FileType *
                     \ call ConfigureProjectRsync(
@@ -18,7 +23,8 @@ endfunction
 
 augroup ShopRocket
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/shoprocket/** call ConfigureShoprocket()
+                \ ~/repositories/cbn/shoprocket/**
+                \     call ConfigureShoprocket()
 augroup END
 "}}}
 "}}}
@@ -26,17 +32,20 @@ augroup END
 " {{{ Project
 " {{{ Invoicing
 function! ConfigureProjectInvoicing()
+    VirtualEnvActivate invoicing
     chdir ~/repositories/projects/invoicing
+    set makeprg=./manage.py\ test\ --traceback\ --noinput\ --failfast
 
-    augroup ProjectInvoicing_scp
-        autocmd! FileType css,html,javascript,less,python
-                    \ echo "IMPLEMENT ME!!!!"
-    augroup end
+    command! ProjectRsync call ConfigureProjectRsync(
+                    \     '~/repositories/projects/invoicing/',
+                    \     'vagrant:/var/www/invoicing'
+                    \ )
 endfunction
 
 augroup ProjectInvoicing
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/shoprocket/** call ConfigureShoprocket()
+                \ ~/repositories/projects/invoicing/**
+                \     call ConfigureProjectInvoicing()
 augroup END
 "}}}
 "}}}
