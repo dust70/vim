@@ -1,0 +1,58 @@
+snippet class
+options head
+	class ${1:#:name}(${2:object}):
+		"""${3:#:class documentation}"""
+		def __init__(self, ${4}):
+			"""${5:#:__init__ documentation}"""
+			${0}
+
+snippet classtest
+alias ct testclass
+options head
+	class ${1:#:name}(${2:object}):
+		"""
+                ${3:#:class documentation}
+                """
+		def setUp(self):
+			"""
+                        Sets up the fixture, for example, opens a network connection.
+                        This method is called before a test is executed.
+			"""
+                        super(self.__class__, self).setUp()
+
+                def tearDown(self):
+                        """
+                        Remove the fixture, for example, closes a network connection.
+                        This method is called after a test is executed.
+
+                        """
+                        try:
+                                // TODO: implement me
+                        finally:
+                                super(self.__class__, self).tearDown()
+
+snippet def
+options head
+	def ${1:#:name}(${2}):
+		"""${3:#:function documentation}"""
+		${0:TARGET}
+
+snippet deftest
+alias tf
+options head
+	def test_${1:#:name}(self):
+		"""${2:#:function documentation}"""
+		${0:TARGET}
+
+snippet ase
+options head
+	self.assertEqual(${1}, ${2}${3:#:, MSG})${0}
+
+snippet ast
+options head
+	self.asserTrue(${1}${2:#:, MSG})${0}
+
+snippet asf
+options head
+	self.asserFalse(${1}${2:#:, MSG})${0}
+
