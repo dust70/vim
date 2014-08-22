@@ -73,9 +73,12 @@ if has("autocmd")
         autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
 
         " simple filetypes
-        autocmd! FileType c,cpp,html,java,php,python,sh,vim,xml
+        autocmd! FileType c,cpp,html,java,php,sh,vim,xml
                     \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace() |
                     \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
+
+        autocmd! FileType python
+                    \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
 
         " combined filetype
         autocmd! FileType php.html
