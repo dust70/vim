@@ -1,6 +1,11 @@
---recurse=yes
+--exclude=*.css
+--exclude=*.less
 --exclude=.git*
 --exclude=.svn
+--fields=+ilS
+--recurse=yes
+--sort=yes
+--totals=yes
 
 --regex-sh=/^[[:blank:]]*[^#].*alias[[:blank:]]+([[:alnum:]]+)[[:blank:]]*=(.+)$/\1/a,alias/
 --regex-sh=/^[[:blank:]]*[^#].*(export[[:blank:]]*)?([^ \t#=]*)=/\2/v,variables/
