@@ -34,15 +34,20 @@ options head
 snippet def
 options head
 	def ${1:#:name}(${2}):
-		"""${3:#:function documentation}"""
-		${0:TARGET}
+		"""
+                ${3:#:documentation}
+                """
+		${0:code}
 
 snippet deftest
 alias tf
 options head
-	def test_${1:#:name}(self):
-		"""${2:#:function documentation}"""
-		${0:TARGET}
+        @patch(${1:#:mock_class})
+	def test_${2:#:name}(self${3:#:mock}):
+		"""
+                ${4:#:documentation}
+                """
+		${0:code}
 
 snippet ase
 options head
