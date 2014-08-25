@@ -72,7 +72,7 @@ endfunction
 function! ConfigureProjectRsync(source, dest)
     let l:rsync_options = [
                 \ '--archive',
-                \ '--chmod=ug=rwX,o=rX',
+                \ '--chmod="ug=rwX,o=rX"',
                 \ '--compress',
                 \ '--cvs-exclude',
                 \ '--delete',
@@ -83,12 +83,13 @@ function! ConfigureProjectRsync(source, dest)
                 \ '--whole-file',
                 \ ]
     let l:rsync_ignore = [
+                \ '"*.pyc"',
                 \ '".*swp"',
                 \ '".git*"',
+                \ '"DS_Store"',
                 \ '"bin"',
                 \ '"build"',
                 \ '"cscope.out*"',
-                \ '"DS_Store"',
                 \ '"env"',
                 \ '"reports"',
                 \ '"tests*"',
