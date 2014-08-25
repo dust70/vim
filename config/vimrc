@@ -835,6 +835,21 @@ let &undodir=vimfiles . "/undo"
 set undolevels=1000
 "}}}
 
+" {{{ updatecount
+" After typing this many characters the swap file will be written to disk. When
+" zero, no swap file will be created at all (see chapter on recovery
+" |crash-recovery|). 'updatecount' is set to zero by starting Vim with the "-n"
+" option, see |startup|. When editing in readonly mode this option will be
+" initialized to 10000.
+set updatecount=100
+"}}}
+
+" {{{ updatetime
+" If this many milliseconds nothing is typed the swap file will be written to
+" disk (see |crash-recovery|). Also used for the |CursorHold| autocommand event.
+set updatetime=10000
+" }}}
+
 " {{{ viminfo
 " When non-empty, the viminfo file is read upon startup and written when
 " exiting Vim (see |viminfo-file|). The string should be a comma separated
