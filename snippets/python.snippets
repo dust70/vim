@@ -1,9 +1,21 @@
+snippet doc
+options head
+        """
+        ${0:#:documentation}
+        @organization renatius.de
+        @author Rene Six <info@renatius.de>
+        """
+
 snippet class
 options head
 	class ${1:#:name}(${2:object}):
-		"""${3:#:class documentation}"""
+		"""
+                ${3:#:class documentation}
+                @organization renatius.de
+                @author Rene Six <info@renatius.de>
+                """
 		def __init__(self, ${4}):
-			"""${5:#:__init__ documentation}"""
+			"${5:#:__init__ documentation}"
 			${0}
 
 snippet classtest
@@ -12,6 +24,8 @@ options head
 	class ${1:#:name}(${2:object}):
 		"""
                 ${3:#:class documentation}
+                @organization renatius.de
+                @author Rene Six <info@renatius.de>
                 """
 		def setUp(self):
 			"""
@@ -34,9 +48,7 @@ options head
 snippet def
 options head
 	def ${1:#:name}(${2}):
-		"""
-                ${3:#:documentation}
-                """
+		"${3:#:documentation}"
 		${0:code}
 
 snippet deftest
@@ -44,9 +56,7 @@ alias tf
 options head
         @patch(${1:#:mock_class})
 	def test_${2:#:name}(self${3:#:mock}):
-		"""
-                ${4:#:documentation}
-                """
+		"${4:#:documentation}"
 		${0:code}
 
 snippet ase
