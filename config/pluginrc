@@ -77,6 +77,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \    'directory' : 'Colorschemes',
                 \    'name'      : 'Colorschemes',
                 \ }
+    NeoBundle 'tpope/vim-commentary', {
+                \    'directory' : 'Commentary',
+                \    'name'      : 'Commentary'
+                \ }
     NeoBundle 'http://conque.googlecode.com/svn/trunk/', {
                 \    'directory' : 'Conque',
                 \    'name'      : 'Conque',
@@ -96,10 +100,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'xolox/vim-easytags', {
                 \    'directory' : 'EasyTags',
                 \    'name'      : 'EasyTags',
-                \ }
-    NeoBundle 'vim-scripts/EnhCommentify.vim', {
-                \    'directory' : 'EnhancedCommentify',
-                \    'name'      : 'EnhancedCommentify',
                 \ }
     NeoBundle 'tpope/vim-fugitive', {
                 \    'directory' : 'FuGITive',
@@ -438,17 +438,6 @@ let g:easytags_auto_highlight = 0
 " then set this option to true (1):
 let g:easytags_autorecurse = 1
 "}}}
-"}}}
-
-" {{{ EnhancedCommentify
-" With this option set, the script tries to figure out which filetype to use
-" for every block by using the synID of the block. This improves handling of
-" embedded languages eg. CSS in HTML, Perl in VimL... But be aware, that this
-" feature currently relies on a special form of the names of the syntax items.
-" So it might not work with every syntax file (see EnhComm-Bugs). It also
-" calls synID only once for every block! So the first line is significant. Be
-" aware, that "cross" commenting might cause problems.
-let g:EnhCommentifyUseSyntax = 'Yes'
 "}}}
 
 " {{{ FuGITive
