@@ -113,10 +113,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \    'directory' : 'HTML5',
                 \    'name'      : 'HTML5',
                 \ }
-    NeoBundle 'davidhalter/jedi-vim', {
-                \    'directory' : 'Jedi',
-                \    'name'      : 'Jedi',
-                \ }
     NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex', {
                 \    'directory' : 'LaTeX',
                 \    'name'      : 'LaTeX',
