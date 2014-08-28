@@ -185,6 +185,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \    'directory' : 'SecureModelines',
                 \    'name'      : 'SecureModelines',
                 \ }
+    NeoBundle 'tpope/vim-sensible', {
+                \    'directory' : 'Sensible',
+                \    'name'      : 'Sensible',
+                \ }
     NeoBundle 'honza/vim-snippets', {
                 \    'directory' : 'Snippets',
                 \    'name'      : 'Snippets',
