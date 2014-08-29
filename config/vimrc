@@ -1019,7 +1019,7 @@ highlight SpellLocal term=underline cterm=underline
 " {{{ nice color for menu
 highlight Pmenu ctermfg=lightgray ctermbg=black
             \ guifg=lightgray guibg=black
-highlight PmenuSel ctermfg=lightgray ctermbg=darkcyan
+highlight PmenuSel ctermfg=lightcyan ctermbg=darkgrey
             \ guifg=lightgray guibg=darkcyan gui=bold
 "}}}
 "}}}
