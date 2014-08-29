@@ -201,10 +201,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \    'directory' : 'Surround',
                 \    'name'      : 'Surround',
                 \ }
-    NeoBundle 'sjl/splice.vim', {
-                \    'directory' : 'Splice',
-                \    'name'      : 'Splice',
-                \ }
     NeoBundle 'scrooloose/syntastic', {
                 \    'directory' : 'Syntastic',
                 \    'name'      : 'Syntastic',
