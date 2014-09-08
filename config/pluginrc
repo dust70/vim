@@ -53,10 +53,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \    'directory' : 'Airline',
                 \    'name'      : 'Airline',
                 \ }
-    NeoBundle 'vim-scripts/Align', {
-                \    'directory' : 'Align',
-                \    'name'      : 'Align',
-                \ }
     NeoBundle 'Chiel92/vim-autoformat', {
                 \    'directory' : 'AutoFormat',
                 \    'name'      : 'AutoFormat'
@@ -204,6 +200,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'scrooloose/syntastic', {
                 \    'directory' : 'Syntastic',
                 \    'name'      : 'Syntastic',
+                \ }
+    NeoBundle 'godlygeek/tabular', {
+                \    'directory' : 'Tabular',
+                \    'name'      : 'Tabular',
                 \ }
     NeoBundle 'majutsushi/tagbar', {
                 \    'directory' : 'Tagbar',
