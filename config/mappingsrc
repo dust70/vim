@@ -34,51 +34,56 @@ if &t_Co > 2 || has("gui_running")
 endif
 "}}}
 
+" {{{ paste
+nnoremap <silent> ,P :set invpaste<CR>
+"}}}
+
 " {{{ cscope
 if has("cscope")
-    nnoremap <silent> <C-@><C-@> :cscope find s <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <silent> ,cf :cscope find s <C-R>=expand("<cword>")<CR><CR>
 endif
 "}}}
 
-" {{{ mapping
-" Don't use Ex mode, use Q for formatting
+" {{{ don't use Ex mode, use Q for formatting
 nnoremap <silent> Q gq
+"}}}
 
-" place the cursor by default after the inserted text
+" {{{ place the cursor by default after the inserted text
 nnoremap <silent> p gp
 nnoremap <silent> P gP
+"}}}
 
-" the default behaviour should be available too
+" {{{ the default behaviour should be available too
 nnoremap <silent> gp p
 nnoremap <silent> gP P
+"}}}
 
-" buffers
+" {{{ buffers
 nnoremap <silent> ,bl :confirm buffers<CR>
 nnoremap <silent> ,bn :confirm bnext<CR>
 nnoremap <silent> ,bp :confirm bprevious<CR>
+"}}}
 
-" tabs
+" {{{ tabs
+nnoremap <silent> ,t :tabnew<CR>
 nnoremap <silent> ,tl :confirm tabs<CR>
-nnoremap <silent> ,tn :confirm tabnext<CR>
-nnoremap <silent> ,tp :confirm tabprevious<CR>
+"}}}
 
-" close buffers
+" {{{ close buffers
 nnoremap <silent> ,bq :confirm bdelete<CR>
 nnoremap <silent> ,bQ :confirm quitall<CR>
 nnoremap <silent> ,bw :write<CR>
 nnoremap <silent> ,bW :wall<CR>
+"}}}
 
-" replace german umlauts
-imap <silent> ä ae
+" {{{replace german umlauts
 imap <silent> Ä Ae
-imap <silent> ü ue
-imap <silent> Ü Ue
-imap <silent> ö oe
 imap <silent> Ö Oe
+imap <silent> Ü Ue
 imap <silent> ß ss
-
-" tab navigation like firefox
-nnoremap ,t :tabnew<CR>
+imap <silent> ä ae
+imap <silent> ö oe
+imap <silent> ü ue
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
