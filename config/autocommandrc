@@ -74,14 +74,17 @@ if has("autocmd")
 
         " simple filetypes
         autocmd! FileType c,cpp,html,java,php,sh,vim,xml
-                    \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace() |
-                    \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
+                    \ autocmd BufWritePre,FileWritePre * :call DosToUnix() |
+                    \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines() |
+                    \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
 
         autocmd! FileType python
+                    \ autocmd BufWritePre,FileWritePre * :call DosToUnix() |
                     \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
 
         " combined filetype
         autocmd! FileType php.html
+                    \ autocmd BufWritePre,FileWritePre * :call DosToUnix() |
                     \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace() |
                     \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
     augroup END
