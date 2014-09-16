@@ -587,16 +587,6 @@ set number
 set numberwidth=5
 "}}}
 
-" {{{ pastetoggle
-" When non-empty, specifies the key sequence that toggles the 'paste' option.
-" This is like specifying a mapping:
-"	:map {keys} :set invpaste<CR>
-" Where {keys} is the value of 'pastetoggle'. The difference is that it will
-" work even when 'paste' is set. 'pastetoggle' works in Insert mode and Normal
-" mode, but not in Command-line mode.
-set pastetoggle=,,p
-"}}}
-
 " {{{ path
 " This is a list of directories which will be searched when using the |gf|,
 " [f, ]f, ^Wf, |:find|, |:sfind|, |:tabfind| and other commands, provided that
