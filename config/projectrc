@@ -27,6 +27,35 @@ augroup ShopRocket
                 \     call ConfigureShoprocket()
 augroup END
 "}}}
+
+" {{{ Preisvergleich
+function! ConfigurePreisvergleich()
+    chdir ~/repositories/cbn/preisvergleich
+    set makeprg=./bin/phpunit\ --strict\ --stop-on-failure\ --verbose\ --filter\ %:t:r
+    let g:vdebug_options = {
+                \ 'server' : '192.168.56.201',
+                \ }
+
+    command! ProjectRsync call ConfigureProjectRsync(
+                    \     '~/repositories/cbn/preisvergleich/',
+                    \     'vagrant:/var/www/prvg'
+                    \ )
+
+    augroup ShopRocket_sync
+        autocmd! FileType *
+                    \ call ConfigureProjectRsync(
+                    \     '~/repositories/cbn/preisvergleich/',
+                    \     'vagrant:/var/www/prvg'
+                    \ )
+    augroup end
+endfunction
+
+augroup Preisvergleich
+    autocmd! BufEnter,BufNewFile,BufRead
+                \ ~/repositories/cbn/preisvergleich/**
+                \     call ConfigurePreisvergleich()
+augroup END
+"}}}
 "}}}
 
 " {{{ Project
