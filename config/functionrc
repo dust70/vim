@@ -90,7 +90,6 @@ function! ConfigureProjectRsync(source, dest)
                 \ '"build"',
                 \ '"cscope.out*"',
                 \ '"DS_Store"',
-                \ '"env"',
                 \ '"phpunit.*"',
                 \ '"reports"',
                 \ '"tests*"',
