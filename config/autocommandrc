@@ -70,6 +70,7 @@ if has("autocmd")
     augroup filetypes
         autocmd!
         autocmd! BufRead,BufNewFile *.phtml     setlocal filetype=php.html
+        autocmd! BufRead,BufNewFile phpunit.*   setlocal filetype=xml
         autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
 
         " simple filetypes
