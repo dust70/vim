@@ -54,7 +54,6 @@ if has("autocmd")
         autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
         autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
         autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-        autocmd BufWinLeave * call clearmatches()
     augroup END
     "}}}
 
@@ -69,7 +68,8 @@ if has("autocmd")
     " {{{ filetype specific autocommands
     augroup filetypes
         autocmd!
-        autocmd! BufRead,BufNewFile *.phtml     setlocal filetype=php.html
+        autocmd! BufRead,BufNewFile *.phtml     setlocal filetype=php.html.javascript
+        autocmd! BufRead,BufNewFile *.html      setlocal filetype=html.javascript
         autocmd! BufRead,BufNewFile phpunit.*   setlocal filetype=xml
         autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
 
