@@ -79,7 +79,6 @@ function! ConfigureProjectRsync(source, dest)
                 \ '--delete-excluded',
                 \ '--prune-empty-dirs',
                 \ '--quiet',
-                \ '--verbose',
                 \ '--whole-file',
                 \ ]
     let l:rsync_ignore = [
