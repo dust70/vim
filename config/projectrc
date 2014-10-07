@@ -1,33 +1,4 @@
 " {{{ CBN
-" {{{ Shoprocket
-function! ConfigureShoprocket()
-    chdir ~/repositories/cbn/shoprocket
-    set makeprg=./bin/phpunit\ --strict\ --stop-on-failure\ --verbose\ --filter\ %:t:r
-    let g:vdebug_options = {
-                \ 'server' : '192.168.56.202',
-                \ }
-
-    command! ProjectRsync call ConfigureProjectRsync(
-                    \     '~/repositories/cbn/shoprocket/',
-                    \     'vagrant:/var/www/shoprocket'
-                    \ )
-
-    augroup ShopRocket_sync
-        autocmd! FileType *
-                    \ call ConfigureProjectRsync(
-                    \     '~/repositories/cbn/shoprocket/',
-                    \     'vagrant:/var/www/shoprocket'
-                    \ )
-    augroup end
-endfunction
-
-augroup ShopRocket
-    autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/shoprocket/**
-                \     call ConfigureShoprocket()
-augroup END
-"}}}
-
 " {{{ Preisvergleich
 function! ConfigurePreisvergleich()
     chdir ~/repositories/cbn/preisvergleich
@@ -54,6 +25,35 @@ augroup Preisvergleich
     autocmd! BufEnter,BufNewFile,BufRead
                 \ ~/repositories/cbn/preisvergleich/**
                 \     call ConfigurePreisvergleich()
+augroup END
+"}}}
+
+" {{{ Shoprocket
+function! ConfigureShoprocket()
+    chdir ~/repositories/cbn/shoprocket
+    set makeprg=./bin/phpunit\ --strict\ --stop-on-failure\ --verbose\ --filter\ %:t:r
+    let g:vdebug_options = {
+                \ 'server' : '192.168.56.202',
+                \ }
+
+    command! ProjectRsync call ConfigureProjectRsync(
+                    \     '~/repositories/cbn/shoprocket/',
+                    \     'vagrant:/var/www/shoprocket'
+                    \ )
+
+    augroup ShopRocket_sync
+        autocmd! FileType *
+                    \ call ConfigureProjectRsync(
+                    \     '~/repositories/cbn/shoprocket/',
+                    \     'vagrant:/var/www/shoprocket'
+                    \ )
+    augroup end
+endfunction
+
+augroup ShopRocket
+    autocmd! BufEnter,BufNewFile,BufRead
+                \ ~/repositories/cbn/shoprocket/**
+                \     call ConfigureShoprocket()
 augroup END
 "}}}
 
