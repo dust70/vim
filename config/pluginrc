@@ -286,7 +286,7 @@ let g:airline#extensions#tabline#show_tab_nr = 1
 nnoremap <silent> ,bf :Autoformat<cr><cr>
 
 let g:formatprg_php = "astyle"
-let g:formatprg_args_php = "--style=linux -cdHs4"
+let g:formatprg_args_php = "--style=java -cdHs4"
 "}}}
 
 " {{{ Calendar
