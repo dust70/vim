@@ -5,6 +5,7 @@ function! ConfigurePreisvergleich()
     set makeprg=./bin/phpunit\ --strict\ --stop-on-failure\ --verbose\ --filter\ %:t:r
     let g:vdebug_options = {
                 \ 'server' : '192.168.56.201',
+                \ 'port'   : '9000',
                 \ }
 
     command! ProjectRsync call ConfigureProjectRsync(
@@ -34,6 +35,7 @@ function! ConfigureShoprocket()
     set makeprg=./bin/phpunit\ --strict\ --stop-on-failure\ --verbose\ --filter\ %:t:r
     let g:vdebug_options = {
                 \ 'server' : '192.168.56.202',
+                \ 'port'   : '9000',
                 \ }
 
     command! ProjectRsync call ConfigureProjectRsync(
@@ -63,6 +65,7 @@ function! ConfigureSoap()
     set makeprg=./bin/phpunit\ --strict\ --stop-on-failure\ --verbose\ --filter\ %:t:r
     let g:vdebug_options = {
                 \ 'server' : '192.168.56.201',
+                \ 'port'   : '9000',
                 \ }
 
     command! ProjectRsync call ConfigureProjectRsync(
@@ -93,6 +96,8 @@ function! ConfigureProjectInvoicing()
     VirtualEnvActivate invoicing
     chdir ~/repositories/projects/invoicing
     set makeprg=./manage.py\ test\ --traceback\ --noinput\ --failfast
+    let g:vdebug_options = {
+                \ }
 
     command! ProjectRsync call ConfigureProjectRsync(
                     \     '~/repositories/projects/invoicing/',
