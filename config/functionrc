@@ -84,11 +84,12 @@ function! ConfigureProjectRsync(source, dest)
     let l:rsync_ignore = [
                 \ '"*.pyc"',
                 \ '".*swp"',
+                \ '".fstemp.*"',
                 \ '".git*"',
+                \ '"DS_Store"',
                 \ '"bin"',
                 \ '"build"',
                 \ '"cscope.out*"',
-                \ '"DS_Store"',
                 \ '"phpunit.*"',
                 \ '"reports"',
                 \ '"tests*"',
