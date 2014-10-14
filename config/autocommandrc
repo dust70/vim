@@ -82,7 +82,7 @@ if has("autocmd")
                     \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
 
         " combined filetype
-        autocmd! FileType php.html
+        autocmd! FileType html.javascript,php.html,php.html.javascript
                     \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace() |
                     \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
     augroup END
