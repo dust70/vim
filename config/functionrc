@@ -79,7 +79,7 @@ function! ConfigureProjectRsync(source, dest)
                 \ '--delete-excluded',
                 \ '--log-file=sync.log',
                 \ '--prune-empty-dirs',
-                \ '--quiet',
+                \ '--verbose',
                 \ '--whole-file',
                 \ ]
     let l:rsync_ignore = [
@@ -87,13 +87,15 @@ function! ConfigureProjectRsync(source, dest)
                 \ '".*swp"',
                 \ '".fstemp.*"',
                 \ '".git*"',
+                \ '"DS_Store"',
                 \ '"bin"',
                 \ '"build"',
                 \ '"cscope.out*"',
-                \ '"DS_Store"',
+                \ '"debug.log"',
                 \ '"logs"',
                 \ '"phpunit.*"',
                 \ '"reports"',
+                \ '"sync.log"',
                 \ '"tests*"',
                 \ '"vagrant"',
                 \ ]
