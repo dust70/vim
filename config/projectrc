@@ -16,7 +16,7 @@ function! ConfigurePreisvergleich()
                 \ 'path_maps'          : {},
                 \ 'port'               : '9000',
                 \ 'server'             : '192.168.56.1',
-                \ 'timeout'            : 30,
+                \ 'timeout'            : 60,
                 \ 'watch_window_style' : 'expanded',
                 \ }
 
@@ -57,7 +57,7 @@ function! ConfigureShoprocket()
                 \ 'path_maps'          : {},
                 \ 'port'               : '9000',
                 \ 'server'             : '192.168.56.1',
-                \ 'timeout'            : 30,
+                \ 'timeout'            : 60,
                 \ 'watch_window_style' : 'expanded',
                 \ }
 
@@ -98,7 +98,7 @@ function! ConfigureSoap()
                 \ 'path_maps'          : {},
                 \ 'port'               : '9000',
                 \ 'server'             : '192.168.56.1',
-                \ 'timeout'            : 30,
+                \ 'timeout'            : 60,
                 \ 'watch_window_style' : 'expanded',
                 \ }
 
