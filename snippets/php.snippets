@@ -108,6 +108,7 @@ options word
 	@SuppressWarnings(PHPMD.${0:Foo})
 
 snippet dataprovider
+alias dp
 options head
 	 @dataProvider dataProvider${0:name}
 
@@ -156,4 +157,26 @@ options head
 	/**
 	 * @author René Six <${0:info@renatius.de}>
 	 */
+
+snippet assertdispatch
+abbr dispatch
+alias td
+options head
+        $this->dispatch(${1});
+
+        $this->assertModule(${2});
+        $this->assertController(${3});
+        $this->assertAction(${4});
+
+snippet asm
+options head
+        $this->assertModule(${1});
+
+snippet asc
+options head
+        $this->assertController(${1});
+
+snippet asa
+options head
+        $this->assertAction(${1});
 
