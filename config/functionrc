@@ -79,7 +79,7 @@ function! ConfigureProjectRsync(source, dest)
                 \ '--delete-excluded',
                 \ '--log-file=sync.log',
                 \ '--prune-empty-dirs',
-                \ '--verbose',
+                \ '--quiet',
                 \ '--whole-file',
                 \ ]
     let l:rsync_ignore = [
