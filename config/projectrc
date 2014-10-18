@@ -4,31 +4,31 @@ function! ConfigurePreisvergleich()
     chdir ~/repositories/cbn/preisvergleich
     set makeprg=./bin/phpunit\ --strict\ --stop-on-failure\ --verbose\ --filter\ %:t:r
     let g:vdebug_options = {
-                \ 'break_on_open'      : 1,
-                \ 'continuous_mode'    : 0,
-                \ 'debug_file'         : 'debug.log',
-                \ 'debug_file_level'   : 2,
-                \ 'debug_window_level' : 0,
-                \ 'ide_key'            : '',
-                \ 'marker_closed_tree' : '▸',
-                \ 'marker_default'     : '⬦',
-                \ 'on_close'           : 'detach',
-                \ 'path_maps'          : {},
-                \ 'port'               : '9000',
-                \ 'server'             : '192.168.56.1',
-                \ 'timeout'            : 60,
-                \ 'watch_window_style' : 'expanded',
+                \    'break_on_open'      : 1,
+                \    'continuous_mode'    : 0,
+                \    'debug_file'         : 'debug.log',
+                \    'debug_file_level'   : 2,
+                \    'debug_window_level' : 0,
+                \    'ide_key'            : '',
+                \    'marker_closed_tree' : '▸',
+                \    'marker_default'     : '⬦',
+                \    'on_close'           : 'detach',
+                \    'path_maps'          : {},
+                \    'port'               : '9000',
+                \    'server'             : '192.168.56.1',
+                \    'timeout'            : 60,
+                \    'watch_window_style' : 'expanded',
                 \ }
 
     command! ProjectRsync call ConfigureProjectRsync(
-                \     '~/repositories/cbn/preisvergleich/',
-                \     'vagrant:/var/www/prvg'
+                \ '~/repositories/cbn/preisvergleich/',
+                \ 'vagrant:/var/www/prvg'
                 \ )
 
     augroup Preisvergleich_sync
         autocmd! FileType * call ConfigureProjectRsync(
-                \     '~/repositories/cbn/preisvergleich/',
-                \     'vagrant:/var/www/prvg'
+                \ '~/repositories/cbn/preisvergleich/',
+                \ 'vagrant:/var/www/prvg'
                 \ )
     augroup end
 endfunction
@@ -36,7 +36,7 @@ endfunction
 augroup Preisvergleich
     autocmd! BufEnter,BufNewFile,BufRead
                 \ ~/repositories/cbn/preisvergleich/**
-                \     call ConfigurePreisvergleich()
+                \ call ConfigurePreisvergleich()
 augroup END
 "}}}
 
@@ -45,31 +45,31 @@ function! ConfigureShoprocket()
     chdir ~/repositories/cbn/shoprocket
     set makeprg=./bin/phpunit\ --strict\ --stop-on-failure\ --verbose\ --filter\ %:t:r
     let g:vdebug_options = {
-                \ 'break_on_open'      : 1,
-                \ 'continuous_mode'    : 0,
-                \ 'debug_file'         : 'debug.log',
-                \ 'debug_file_level'   : 2,
-                \ 'debug_window_level' : 0,
-                \ 'ide_key'            : '',
-                \ 'marker_closed_tree' : '▸',
-                \ 'marker_default'     : '⬦',
-                \ 'on_close'           : 'detach',
-                \ 'path_maps'          : {},
-                \ 'port'               : '9000',
-                \ 'server'             : '192.168.56.1',
-                \ 'timeout'            : 60,
-                \ 'watch_window_style' : 'expanded',
+                \    'break_on_open'      : 1,
+                \    'continuous_mode'    : 0,
+                \    'debug_file'         : 'debug.log',
+                \    'debug_file_level'   : 2,
+                \    'debug_window_level' : 0,
+                \    'ide_key'            : '',
+                \    'marker_closed_tree' : '▸',
+                \    'marker_default'     : '⬦',
+                \    'on_close'           : 'detach',
+                \    'path_maps'          : {},
+                \    'port'               : '9000',
+                \    'server'             : '192.168.56.1',
+                \    'timeout'            : 60,
+                \    'watch_window_style' : 'expanded',
                 \ }
 
     command! ProjectRsync call ConfigureProjectRsync(
-                \     '~/repositories/cbn/shoprocket/',
-                \     'vagrant:/var/www/shoprocket'
+                \ '~/repositories/cbn/shoprocket/',
+                \ 'vagrant:/var/www/shoprocket'
                 \ )
 
     augroup ShopRocket_sync
         autocmd! FileType * call ConfigureProjectRsync(
-                \     '~/repositories/cbn/shoprocket/',
-                \     'vagrant:/var/www/shoprocket'
+                \ '~/repositories/cbn/shoprocket/',
+                \ 'vagrant:/var/www/shoprocket'
                 \ )
     augroup end
 endfunction
@@ -86,31 +86,31 @@ function! ConfigureSoap()
     chdir ~/repositories/cbn/soap-backend
     set makeprg=./bin/phpunit\ --strict\ --stop-on-failure\ --verbose\ --filter\ %:t:r
     let g:vdebug_options = {
-                \ 'break_on_open'      : 1,
-                \ 'continuous_mode'    : 0,
-                \ 'debug_file'         : 'debug.log',
-                \ 'debug_file_level'   : 2,
-                \ 'debug_window_level' : 0,
-                \ 'ide_key'            : '',
-                \ 'marker_closed_tree' : '▸',
-                \ 'marker_default'     : '⬦',
-                \ 'on_close'           : 'detach',
-                \ 'path_maps'          : {},
-                \ 'port'               : '9000',
-                \ 'server'             : '192.168.56.1',
-                \ 'timeout'            : 60,
-                \ 'watch_window_style' : 'expanded',
+                \    'break_on_open'      : 1,
+                \    'continuous_mode'    : 0,
+                \    'debug_file'         : 'debug.log',
+                \    'debug_file_level'   : 2,
+                \    'debug_window_level' : 0,
+                \    'ide_key'            : '',
+                \    'marker_closed_tree' : '▸',
+                \    'marker_default'     : '⬦',
+                \    'on_close'           : 'detach',
+                \    'path_maps'          : {},
+                \    'port'               : '9000',
+                \    'server'             : '192.168.56.1',
+                \    'timeout'            : 60,
+                \    'watch_window_style' : 'expanded',
                 \ }
 
     command! ProjectRsync call ConfigureProjectRsync(
-                \     '~/repositories/cbn/soap-backend/',
-                \     'vagrant:/var/www/prvg'
+                \ '~/repositories/cbn/soap-backend/',
+                \ 'vagrant:/var/www/prvg'
                 \ )
 
     augroup Soap_sync
         autocmd! FileType * call ConfigureProjectRsync(
-                \     '~/repositories/cbn/soap-backend/',
-                \     'vagrant:/var/www/prvg'
+                \ '~/repositories/cbn/soap-backend/',
+                \ 'vagrant:/var/www/prvg'
                 \ )
     augroup end
 endfunction
@@ -118,7 +118,7 @@ endfunction
 augroup Soap
     autocmd! BufEnter,BufNewFile,BufRead
                 \ ~/repositories/cbn/soap-backend/**
-                \     call ConfigureSoap()
+                \ call ConfigureSoap()
 augroup END
 "}}}
 "}}}
@@ -134,15 +134,15 @@ function! ConfigureProjectInvoicing()
                 \ }
 
     command! ProjectRsync call ConfigureProjectRsync(
-                \     '~/repositories/projects/invoicing/',
-                \     'vagrant:/var/www/invoicing'
+                \ '~/repositories/projects/invoicing/',
+                \ 'vagrant:/var/www/invoicing'
                 \ )
 endfunction
 
 augroup ProjectInvoicing
     autocmd! BufEnter,BufNewFile,BufRead
                 \ ~/repositories/projects/invoicing/**
-                \     call ConfigureProjectInvoicing()
+                \ call ConfigureProjectInvoicing()
 augroup END
 "}}}
 "}}}
