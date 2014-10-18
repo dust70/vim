@@ -3,7 +3,7 @@
 " CTRL-P or CTRL-N are used. It is also used for whole-line completion
 " |i_CTRL-X_CTRL-L|. It indicates the type of completion and the places to
 " scan.
-setlocal complete-=k complete+=k
+setlocal complete-=ki complete+=ki
 "}}}
 
 " {{{ dictionary
@@ -18,8 +18,8 @@ setlocal complete-=k complete+=k
 " otherwise spaces are included in the file name. See |option-backslash| about
 " using backslashes. This has nothing to do with the |Dictionary| variable
 " type.
-setlocal dictionary-=${HOME}/.vim/bundle/PHPDictionary/PHP.dict
-            \ dictionary+=${HOME}/.vim/bundle/PHPDictionary/PHP.dict
+setlocal dictionary-=vimfiles.'bundle/PHP-Dictionary/PHP.dict'
+            \ dictionary^=vimfiles.'bundle/PHP-Dictionary/PHP.dict'
 " }}}
 
 " {{{ diffopt
@@ -75,7 +75,7 @@ setlocal formatoptions=cronb1j
 " wildcards, it is used as-is. E.g., "/lib/**/tags?" will find files called
 " "tags?".
 setlocal tags-=vimfiles.'/persistent-tags/php/*'
-            \ tags+=vimfiles.'/persistent-tags/php/*'
+            \ setlocal tags^=vimfiles.'/persistent-tags/php/*'
 "}}}
 
 " {{{ textwidth
