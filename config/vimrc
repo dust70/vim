@@ -68,7 +68,7 @@ runtime! macros/editexisting.vim
 "}}}
 
 " {{{ MatchIt plugin
-runtime! /macros/matchit.vim
+runtime! macros/matchit.vim
 "}}}
 "}}}
 
@@ -80,7 +80,9 @@ runtime! /macros/matchit.vim
 " calls it syntax highlighting we'll stick with that. Vim supports syntax
 " highlighting on all terminals. But since most ordinary terminals have very
 " limited highlighting possibilities, it works best in the GUI version, gvim.
-syntax enable
+if has('syntax') && !exists('g:syntax_on')
+    syntax enable
+endif
 "}}}
 
 " {{{ colorscheme
@@ -332,6 +334,11 @@ set diffopt=filler,context:3,vertical,foldcolumn:3
 let &dir=vimfiles . "/tmp"
 "}}}
 
+" {{{ display
+" Change the way text is displayed. This is comma separated list of flags.
+set display+=lastline
+"}}}
+
 " {{{ encoding
 " Sets the character encoding used inside Vim. It applies to text in the
 " buffers, registers, Strings in expressions, text stored in the viminfo file,
@@ -524,6 +531,12 @@ if has("gui_running")
 endif
 "}}}
 
+" {{{ listchars
+" Strings to use in 'list' mode and for the |:list| command. It is a comma
+" separated list of string settings.
+set listchars="eol:$,tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+"
+"}}}
+
 " {{{ mousemodel
 " Sets the model to use for the mouse. The name mostly specifies what the
 " right mouse button is used for:
@@ -540,24 +553,6 @@ endif
 "			course, that right clicking outside a selection will
 "			end Visual mode.
 set mousemodel=popup
-"}}}
-
-" {{{ nrformats
-" This defines what bases Vim will consider for numbers when using the CTRL-A
-" and CTRL-X commands for adding to and subtracting from a number
-" respectively; see |CTRL-A| for more info on these commands.
-"	alpha	If included, single alphabetical characters will be
-"		incremented or decremented. This is useful for a list with a
-"		letter index a), b), etc.
-"	octal	If included, numbers that start with a zero will be considered
-"		to be octal. Example: Using CTRL-A on "007" results in "010".
-"	hex	If included, numbers starting with "0x" or "0X" will be
-"		considered to be hexadecimal. Example: Using CTRL-X on "0x100"
-"		results in "0x0ff".
-" Numbers which simply begin with a digit in the range 1-9 are always
-" considered decimal. This also happens for numbers that are not recognized as
-" octal or hex.
-set nrformats=alpha,octal,hex
 "}}}
 
 " {{{ number
@@ -608,6 +603,15 @@ set pumheight=20
 " window (except at the start or end of the file or when long lines wrap).
 set scrolloff=4
 "}}}
+
+" {{{ sidescrolloff
+" The minimal number of columns to scroll horizontally. Used only when the
+" 'wrap' option is off and the cursor is moved off of the screen. When it is
+" zero the cursor will be put in the middle of the screen. When using a slow
+" terminal set it to a large number or 0. When using a fast terminal use a small
+" number or 1. Not used for "zh" and "zl" commands.
+set sidescrolloff=5
+" }}}
 
 " {{{ sessionoptions
 " Changes the effect of the mksession command. It is a comma separated list of
@@ -788,12 +792,35 @@ set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.bak
 set noswapfile
 "}}}
 
+" {{{ tags
+" Filenames for the tag command, separated by spaces or commas. To include a
+" space or comma in a file name, precede it with a backslash (see
+" |option-backslash| about including spaces and backslashes). When a file name
+" starts with "./", the '.' is replaced with the path of the current file. But
+" only when the 'd' flag is not included in 'cpoptions'. Environment variables
+" are expanded |:set_env|.
+setglobal tags-=./tags tags^=./tags;
+"}}}
+
 " {{{ termencoding
 " Encoding used for the terminal. This specifies what character encoding the
 " keyboard produces and the display will understand. For the GUI it only
 " applies to the keyboard ('encoding' is used for the display). Except for the
 " Mac when 'macatsui' is off, then 'termencoding' should be "macroman".
 set termencoding=utf-8
+"}}}
+
+" {{{ ttimeout
+" These two options together determine the behavior when part of a mapped key
+" sequence or keyboard code has been received.
+set ttimeout
+" }}}
+
+" {{{ ttimoutlen
+" The time in milliseconds that is waited for a key code or mapped key sequence
+" to complete. Also used for CTRL-\ CTRL-N and CTRL-\ CTRL-G when part of a
+" command has been typed.
+set ttimeoutlen=100
 "}}}
 
 " {{{ undodir
@@ -848,7 +875,7 @@ set updatetime=10000
 " value of that parameter. If a particular character is left out, then the
 " default value is used for that parameter. The following is a list of the
 " identifying characters and the effect of their value.
-set viminfo='50,/100,:100,<1000,h,s1000
+set viminfo=!,'50,/100,:100,<1000,h,s1000
 "}}}
 
 " {{{ wildignore
