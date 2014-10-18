@@ -20,14 +20,3 @@ tags
 tmp
 undo
 view
-
-# ignore system jedi.vim
-after/ftplugin/python/jedi.vim
-after/syntax/python.vim
-autoload/jedi.vim
-doc/jedi-vim.txt
-ftplugin/python/jedi.vim
-initialize.py
-jedi_vim.py
-jedi_vim.pyc
-plugin/jedi.vim
