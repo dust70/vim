@@ -95,7 +95,4 @@ iabbrev <buffer> grüße Grüße<CR>  René
 iabbrev <buffer> gruesse Grüße<CR>  René
 iabbrev <buffer> lg Liebe Grüße<CR>  René
 
-Calendar
-setlocal nospell
-wincmd l
 0/^$
