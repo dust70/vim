@@ -75,7 +75,9 @@ setlocal formatoptions=cronb1j
 " wildcards, it is used as-is. E.g., "/lib/**/tags?" will find files called
 " "tags?".
 setlocal tags-=vimfiles.'/persistent-tags/php/*'
-            \ setlocal tags^=vimfiles.'/persistent-tags/php/*'
+            \ tags-='./tags'
+            \ tags+=vimfiles.'/persistent-tags/php/*'
+            \ tags^='.tags'
 "}}}
 
 " {{{ textwidth
