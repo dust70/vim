@@ -4,6 +4,7 @@ let g:java_highlight_java_lang_ids=1
 " }}}
 
 " {{{ PHP
+" {{{ syntax
 " {{{ SQL Query
 " If you like SQL syntax highlighting inside Strings
 let g:php_sql_query=1
@@ -32,6 +33,20 @@ let g:php_parent_error_close=1
 " {{{ folding
 " Enable folding for classes and functions
 let g:php_folding=2
+"}}}
+"}}}
+
+" {{{ indention
+" {{{ PHP_default_indenting
+" To add extra indentation to every PHP lines with N being the number of
+" 'shiftwidth' to add
+let g:PHP_default_indenting=1
+"}}}
+
+" {{{ PHP_removeCRwhenUnix
+" To automatically remove '\r' characters when the 'fileformat' is set to Unix
+let g:PHP_removeCRwhenUnix=1
+"}}}
 "}}}
 "}}}
 
