@@ -44,6 +44,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Airline',
                 \ 'name'      : 'Airline',
                 \ }
+    NeoBundle 'Chiel92/vim-autoformat', {
+                \ 'directory' : 'AutoFormat',
+                \ 'name'      : 'AutoFormat',
+                \ }
     NeoBundle 'jiangmiao/auto-pairs', {
                 \ 'directory' : 'AutoPairs',
                 \ 'name'      : 'AutoPairs',
@@ -151,6 +155,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'PHP-Dictionary',
                 \ 'name'      : 'PHP-Dictionary',
                 \ }
+    NeoBundle '2072/PHP-Indenting-for-VIm', {
+                \ 'directory' : 'PHP-Indention',
+                \ 'name'      : 'PHP-Indention',
+                \ }
     NeoBundle 'rkitover/vimpager', {
                 \ 'directory' : 'Pager',
                 \ 'name'      : 'Pager',
@@ -242,6 +250,14 @@ let g:airline#extensions#tabline#show_buffers = 1
 " enable/disable displaying tab number in tabs mode.
 let g:airline#extensions#tabline#show_tab_nr = 1
 "}}}
+"}}}
+
+" {{{ AutoFormat
+" I need a better formatter for PHP scripts, preferable Zend Coding conform
+" let g:formatprg_php = "astyle"
+" let g:formatprg_args_expr_php = '"--mode=cs --style=ansi -pcHs".&shiftwidth'
+
+nnoremap <silent> ,af :Autoformat<cr><cr>
 "}}}
 
 " {{{ Dispatch
@@ -902,4 +918,4 @@ nnoremap <silent> ,uy :Unite -buffer-name=history history/yank<cr>
 "}}}
 "}}}
 
-" " vim: filetype=vim textwidth=80 foldmethod=marker
+" vim: filetype=vim textwidth=80 foldmethod=marker
