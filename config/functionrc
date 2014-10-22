@@ -104,10 +104,10 @@ function! ConfigureProjectRsync(source, dest)
     let l:cmd .= join(l:rsync_options, ' ')
     let l:cmd .= ' --exclude='
     let l:cmd .= join(l:rsync_ignore, ' --exclude=')
-    let l:cmd .= ' ' . a:source . ' ' . a:dest
+    let l:cmd .= ' ' . a:source . ' ' . a:dest . ' &'
 
     let g:rsync_command = l:cmd
-    autocmd! BufWritePost,FileWritePost * silent execute g:rsync_command
+    silent execute g:rsync_command
 endfunction
 "}}}
 
