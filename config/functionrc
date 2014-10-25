@@ -68,8 +68,33 @@ function! GuiTabLabel()
 endfunction
 "}}}
 
-" {{{ ConfigureProjectRsync
-function! ConfigureProjectRsync(source, dest)
+" {{{ ConfigureProject
+function! ConfigureProject(source, dest)
+    let l:source = escape(expand(a:source), ' ')
+    let l:dest = escape(expand(a:dest), ' ')
+
+    execute "chdir " . l:source
+
+    let g:vdebug_options = {
+                \ 'break_on_open'      : 1,
+                \ 'continuous_mode'    : 0,
+                \ 'debug_file'         : 'debug.log',
+                \ 'debug_file_level'   : 2,
+                \ 'debug_window_level' : 0,
+                \ 'ide_key'            : '',
+                \ 'marker_closed_tree' : '▸',
+                \ 'marker_default'     : '⬦',
+                \ 'marker_open_tree'   : '▾',
+                \ 'on_close'           : 'detach',
+                \ 'port'               : '9000',
+                \ 'server'             : '',
+                \ 'timeout'            : 60,
+                \ 'watch_window_style' : 'expanded',
+                \ 'path_maps'          : {
+                \     substitute(l:dest, '.*:', '', 'g') : l:source,
+                \ },
+                \ }
+
     let l:rsync_options = [
                 \ '--archive',
                 \ '--chmod="ug=rwX,o=rX"',
@@ -79,7 +104,7 @@ function! ConfigureProjectRsync(source, dest)
                 \ '--delete-excluded',
                 \ '--log-file=sync.log',
                 \ '--prune-empty-dirs',
-                \ '--quiet',
+                \ '--verbose',
                 \ '--whole-file',
                 \ ]
     let l:rsync_ignore = [
@@ -100,14 +125,23 @@ function! ConfigureProjectRsync(source, dest)
                 \ '"vagrant"',
                 \ ]
 
-    let l:cmd = '!rsync '
-    let l:cmd .= join(l:rsync_options, ' ')
-    let l:cmd .= ' --exclude='
-    let l:cmd .= join(l:rsync_ignore, ' --exclude=')
-    let l:cmd .= ' ' . a:source . ' ' . a:dest . ' &'
+    let g:rsync_command = 'rsync ' . join(l:rsync_options, ' ')
+                \ . ' --exclude=' . join(l:rsync_ignore, ' --exclude=')
+                \ . ' ' . l:source . ' ' . l:dest
 
-    let g:rsync_command = l:cmd
-    silent execute g:rsync_command
+    nnoremap <silent> ,dr :silent execute "Dispatch! " . g:rsync_command<cr>
+
+    autocmd! BufWritePost,FileWritePost *
+                \ silent execute '!' . g:rsync_command . ' >> /dev/null 2>&1 &'
+endfunction
+"}}}
+
+" {{{ ConfigurePhpProject
+function! ConfigurePhpProject()
+    compiler phpunit_local
+    nnoremap <silent> ,dt :Dispatch ./bin/phpunit --strict --stop-on-failure --verbose --filter %:t:r<cr>
+
+    let g:vdebug_options['server'] = '192.168.56.1'
 endfunction
 "}}}
 
