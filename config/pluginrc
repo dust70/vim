@@ -163,6 +163,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Pager',
                 \ 'name'      : 'Pager',
                 \ }
+    NeoBundle 'tpope/vim-projectionist', {
+                \ 'directory' : 'Projectionist',
+                \ 'name'      : 'Projectionist',
+                \ }
     NeoBundle 'rodjek/vim-puppet', {
                 \ 'directory' : 'Puppet',
                 \ 'name'      : 'Puppet',
@@ -254,16 +258,18 @@ let g:airline#extensions#tabline#show_tab_nr = 1
 
 " {{{ AutoFormat
 " I need a better formatter for PHP scripts, preferable Zend Coding conform
-" let g:formatprg_php = "astyle"
-" let g:formatprg_args_expr_php = '"--mode=cs --style=ansi -pcHs".&shiftwidth'
+let g:formatprg_php = "astyle"
+let g:formatprg_args_expr_php = '"--mode=java --style=allman -pcHs" . &shiftwidth'
 
-nnoremap <silent> ,af :Autoformat<cr><cr>
+nmap <silent> ,af :Autoformat<cr><cr>
 "}}}
 
 " {{{ Dispatch
 " {{{ key mappings
-nnoremap <silent> ,dt :Dispatch<cr>
-nnoremap <silent> ,do :Copen<cr>
+nmap <silent> ,dt :Make %:t:r<cr>
+nmap <silent> ,dc :close<cr>
+nmap <silent> ,do :Copen<cr>
+nmap <silent> ,dT :Dispatch<cr>
 "}}}
 "}}}
 
@@ -370,14 +376,14 @@ let g:easytags_autorecurse = 1
 "}}}
 
 " {{{ FuGITive
-nnoremap <silent> ,gc :Gcommit<cr>
-nnoremap <silent> ,gf :Gfetch<cr>
-nnoremap <silent> ,gg :Ggrep<space>
-nnoremap <silent> ,gm :Gmove<space>
-nnoremap <silent> ,gp :Gpush<cr>
-nnoremap <silent> ,gr :Gremove<space>
-nnoremap <silent> ,gs :Gstatus<cr>
-nnoremap <silent> ,gv :Gdiff<cr>
+nmap <silent> ,gc :Gcommit<cr>
+nmap <silent> ,gf :Gfetch<cr>
+nmap <silent> ,gg :Ggrep<space>
+nmap <silent> ,gm :Gmove<space>
+nmap <silent> ,gp :Gpush<cr>
+nmap <silent> ,gr :Gremove<space>
+nmap <silent> ,gs :Gstatus<cr>
+nmap <silent> ,gv :Gdiff<cr>
 "}}}
 
 " {{{ IndentGuides
@@ -661,11 +667,23 @@ let g:syntastic_html_checkers = [
 "}}}
 
 " {{{ PHP
+" {{{ syntastic_<filetype>_<checker>_exec
+if executable('./bin/phpcs')
+    let g:syntastic_php_phpcs_exec = './bin/phpcs'
+endif
+if executable('./bin/phpmd')
+    let g:syntastic_php_phpmd_exec = './bin/phpmd'
+endif
+"}}}
+
+" {{{ syntastic_<filetype>_<checker>_<option>
+let g:syntastic_php_phpcs_args = "--standard=zend -n --tab-width=" . &tabstop
+"}}}
+
 let g:syntastic_php_checkers = [
             \ 'php',
-            \ 'phpcs',
-            \ 'phplint',
             \ 'phpmd',
+            \ 'phpcs',
             \ ]
 "}}}
 
@@ -684,7 +702,7 @@ let g:syntastic_python_checkers = [
 
 " {{{ TagBar
 " {{{ toggle display/mappings
-nnoremap <silent> <C-w><C-t> :TagbarToggle<cr>
+nmap <silent> <C-w><C-t> :TagbarToggle<cr>
 "}}}
 
 " {{{ autoopen for specific filetypes
@@ -907,13 +925,13 @@ let g:unite_source_history_yank_enable = 1
 "}}}
 
 " {{{ mappings
-nnoremap <silent> <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
-nnoremap <silent> ,u/ :Unite -buffer-name=grep -start-insert grep:.<cr>
-nnoremap <silent> ,ub :Unite -buffer-name=buffer -quick-match buffer<cr>
-nnoremap <silent> ,uj :Unite -buffer-name=tabs jump<cr>
-nnoremap <silent> ,us :Unite -buffer-name=session session<cr>
-nnoremap <silent> ,ut :Unite -buffer-name=tabs tab<cr>
-nnoremap <silent> ,uy :Unite -buffer-name=history history/yank<cr>
+nmap <silent> <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
+nmap <silent> ,u/ :Unite -buffer-name=grep -start-insert grep:.<cr>
+nmap <silent> ,ub :Unite -buffer-name=buffer -quick-match buffer<cr>
+nmap <silent> ,uj :Unite -buffer-name=tabs jump<cr>
+nmap <silent> ,us :Unite -buffer-name=session session<cr>
+nmap <silent> ,ut :Unite -buffer-name=tabs tab<cr>
+nmap <silent> ,uy :Unite -buffer-name=history history/yank<cr>
 "}}}
 "}}}
 "}}}
