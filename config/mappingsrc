@@ -86,4 +86,9 @@ imap <silent> ö oe
 imap <silent> ü ue
 "}}}
 
+" {{{ quickfix
+nnoremap <silent> ,qo :cwindow<cr>
+nnoremap <silent> ,qc :close<cr>
+"}}}
+
 " vim: filetype=vim textwidth=80 foldmethod=marker
