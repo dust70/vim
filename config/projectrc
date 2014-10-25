@@ -23,13 +23,13 @@ function! ConfigurePreisvergleich()
                 \ },
                 \ }
 
-    command! ProjectRsync call ConfigureProjectRsync(
+    command! ProjectRsync call ConfigureProject(
                 \ '~/repositories/cbn/preisvergleich/',
                 \ 'vagrant:/var/www/prvg'
                 \ )
 
     augroup Preisvergleich_sync
-        autocmd! FileType * call ConfigureProjectRsync(
+        autocmd! FileType * call ConfigureProject(
                 \ '~/repositories/cbn/preisvergleich/',
                 \ 'vagrant:/var/www/prvg'
                 \ )
@@ -45,39 +45,12 @@ augroup END
 
 " {{{ Shoprocket
 function! ConfigureShoprocket()
-    chdir ~/repositories/cbn/shoprocket
-    set makeprg=./bin/phpunit\ --strict\ --stop-on-failure\ --verbose\ --filter\ %:t:r
-    let g:vdebug_options = {
-                \ 'break_on_open'      : 1,
-                \ 'continuous_mode'    : 0,
-                \ 'debug_file'         : 'debug.log',
-                \ 'debug_file_level'   : 2,
-                \ 'debug_window_level' : 0,
-                \ 'ide_key'            : '',
-                \ 'marker_closed_tree' : '▸',
-                \ 'marker_default'     : '⬦',
-                \ 'marker_open_tree'   : '▾',
-                \ 'on_close'           : 'detach',
-                \ 'port'               : '9000',
-                \ 'server'             : '192.168.56.1',
-                \ 'timeout'            : 60,
-                \ 'watch_window_style' : 'expanded',
-                \ 'path_maps'          : {
-                \     "/var/www/shoprocket" : "/Users/rs/repositories/cbn/shoprocket"
-                \ },
-                \ }
+    call ConfigurePhpProject()
 
-    command! ProjectRsync call ConfigureProjectRsync(
+    call ConfigureProject(
                 \ '~/repositories/cbn/shoprocket/',
                 \ 'vagrant:/var/www/shoprocket'
                 \ )
-
-    augroup ShopRocket_sync
-        autocmd! FileType * call ConfigureProjectRsync(
-                \ '~/repositories/cbn/shoprocket/',
-                \ 'vagrant:/var/www/shoprocket'
-                \ )
-    augroup end
 endfunction
 
 augroup ShopRocket
@@ -111,13 +84,13 @@ function! ConfigureSoap()
                 \ },
                 \ }
 
-    command! ProjectRsync call ConfigureProjectRsync(
+    command! ProjectRsync call ConfigureProject(
                 \ '~/repositories/cbn/soap-backend/',
                 \ 'vagrant:/var/www/prvg'
                 \ )
 
     augroup Soap_sync
-        autocmd! FileType * call ConfigureProjectRsync(
+        autocmd! FileType * call ConfigureProject(
                 \ '~/repositories/cbn/soap-backend/',
                 \ 'vagrant:/var/www/prvg'
                 \ )
@@ -136,13 +109,9 @@ augroup END
 " {{{ Invoicing
 function! ConfigureProjectInvoicing()
     VirtualEnvActivate invoicing
-
-    chdir ~/repositories/projects/invoicing
     set makeprg=./manage.py\ test\ --traceback\ --noinput\ --failfast
-    let g:vdebug_options = {
-                \ }
 
-    command! ProjectRsync call ConfigureProjectRsync(
+    call ConfigureProject(
                 \ '~/repositories/projects/invoicing/',
                 \ 'vagrant:/var/www/invoicing'
                 \ )
