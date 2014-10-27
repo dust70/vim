@@ -74,25 +74,8 @@ function! ConfigureProject(source, dest)
     let l:dest = escape(expand(a:dest), ' ')
 
     execute "chdir " . l:source
-
-    let g:vdebug_options = {
-                \ 'break_on_open'      : 1,
-                \ 'continuous_mode'    : 0,
-                \ 'debug_file'         : 'debug.log',
-                \ 'debug_file_level'   : 2,
-                \ 'debug_window_level' : 0,
-                \ 'ide_key'            : '',
-                \ 'marker_closed_tree' : '▸',
-                \ 'marker_default'     : '⬦',
-                \ 'marker_open_tree'   : '▾',
-                \ 'on_close'           : 'detach',
-                \ 'port'               : '9000',
-                \ 'server'             : '',
-                \ 'timeout'            : 60,
-                \ 'watch_window_style' : 'expanded',
-                \ 'path_maps'          : {
-                \     substitute(l:dest, '.*:', '', 'g') : l:source,
-                \ },
+    let g:vdebug_options['path_maps'] = {
+                \    substitute(l:dest, '.*:', '', 'g') : l:source,
                 \ }
 
     let l:rsync_options = [
