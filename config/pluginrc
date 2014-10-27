@@ -636,7 +636,7 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 augroup SuperTab
     autocmd FileType *
                 \ if &omnifunc != '' |
-                \ call SuperTabChain(&omnifunc, "<c-p>") |
+                \    call SuperTabChain(&omnifunc, "<c-p>") |
                 \ endif
 augroup END
 "}}}
