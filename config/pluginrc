@@ -934,6 +934,25 @@ nmap <silent> ,ut :Unite -buffer-name=tabs tab<cr>
 nmap <silent> ,uy :Unite -buffer-name=history history/yank<cr>
 "}}}
 "}}}
+
+" {{{ VDebug
+let g:vdebug_options = {
+            \ 'break_on_open'      : 1,
+            \ 'continuous_mode'    : 0,
+            \ 'debug_file'         : 'debug.log',
+            \ 'debug_file_level'   : 2,
+            \ 'debug_window_level' : 0,
+            \ 'ide_key'            : '',
+            \ 'marker_closed_tree' : '▸',
+            \ 'marker_default'     : '⬦',
+            \ 'marker_open_tree'   : '▾',
+            \ 'on_close'           : 'detach',
+            \ 'port'               : '9000',
+            \ 'server'             : '',
+            \ 'timeout'            : 60,
+            \ 'watch_window_style' : 'expanded',
+            \ }
+"}}}
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
