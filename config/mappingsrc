@@ -1,22 +1,22 @@
 " {{{ foldlevel
-nnoremap <silent> ,1 :setlocal foldlevel=0<CR>
-nnoremap <silent> ,2 :setlocal foldlevel=1<CR>
-nnoremap <silent> ,3 :setlocal foldlevel=2<CR>
-nnoremap <silent> ,4 :setlocal foldlevel=3<CR>
-nnoremap <silent> ,5 :setlocal foldlevel=4<CR>
-nnoremap <silent> ,6 :setlocal foldlevel=5<CR>
-nnoremap <silent> ,7 :setlocal foldlevel=6<CR>
-nnoremap <silent> ,8 :setlocal foldlevel=7<CR>
-nnoremap <silent> ,9 :setlocal foldlevel=8<CR>
-nnoremap <silent> ,0 :setlocal foldlevel=9<CR>
+nnoremap <silent> ,1 :setlocal foldlevel=0<cr>
+nnoremap <silent> ,2 :setlocal foldlevel=1<cr>
+nnoremap <silent> ,3 :setlocal foldlevel=2<cr>
+nnoremap <silent> ,4 :setlocal foldlevel=3<cr>
+nnoremap <silent> ,5 :setlocal foldlevel=4<cr>
+nnoremap <silent> ,6 :setlocal foldlevel=5<cr>
+nnoremap <silent> ,7 :setlocal foldlevel=6<cr>
+nnoremap <silent> ,8 :setlocal foldlevel=7<cr>
+nnoremap <silent> ,9 :setlocal foldlevel=8<cr>
+nnoremap <silent> ,0 :setlocal foldlevel=9<cr>
 "}}}
 
 " {{{ number
-nnoremap <silent> ,n :set nonumber!<CR>:set number?<CR>
+nnoremap <silent> ,n :set nonumber!<cr>:set number?<cr>
 "}}}
 
 " {{{ spell
-noremap ,S :set spell!<CR>
+noremap ,S :set spell!<cr>
 "}}}
 
 " {{{ format file
@@ -25,22 +25,22 @@ function! FormatFile()
     execute "normal gg=G"
     execute "normal 'tzt`s"
 endfunction
-nnoremap <silent> ,m :call FormatFile()<CR>
+nnoremap <silent> ,m :call FormatFile()<cr>
 "}}}
 
 " {{{ hlsearch
 if &t_Co > 2 || has("gui_running")
-    nnoremap <silent> ,L :set nohlsearch!<CR>:set hlsearch?<CR>
+    nnoremap <silent> ,L :set nohlsearch!<cr>:set hlsearch?<cr>
 endif
 "}}}
 
 " {{{ paste
-nnoremap <silent> ,P :set invpaste<CR>
+nnoremap <silent> ,P :set invpaste<cr>
 "}}}
 
 " {{{ cscope
 if has("cscope")
-    nnoremap <silent> ,cf :cscope find s <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <silent> ,cf :cscope find s <C-R>=expand("<cword>")<cr><cr>
 endif
 "}}}
 
@@ -59,21 +59,21 @@ nnoremap <silent> gP P
 "}}}
 
 " {{{ buffers
-nnoremap <silent> ,bl :confirm buffers<CR>
-nnoremap <silent> ,bn :confirm bnext<CR>
-nnoremap <silent> ,bp :confirm bprevious<CR>
+nnoremap <silent> ,bl :confirm buffers<cr>
+nnoremap <silent> ,bn :confirm bnext<cr>
+nnoremap <silent> ,bp :confirm bprevious<cr>
 "}}}
 
 " {{{ tabs
-nnoremap <silent> ,t :tabnew<CR>
-nnoremap <silent> ,tl :confirm tabs<CR>
+nnoremap <silent> ,t :tabnew<cr>
+nnoremap <silent> ,tl :tabs<cr>
 "}}}
 
 " {{{ close buffers
-nnoremap <silent> ,bq :confirm bdelete<CR>
-nnoremap <silent> ,bQ :confirm quitall<CR>
-nnoremap <silent> ,bw :write<CR>
-nnoremap <silent> ,bW :wall<CR>
+nnoremap <silent> ,bq :confirm bdelete<cr>
+nnoremap <silent> ,bQ :confirm quitall<cr>
+nnoremap <silent> ,bw :write<cr>
+nnoremap <silent> ,bW :wall<cr>
 "}}}
 
 " {{{replace german umlauts
