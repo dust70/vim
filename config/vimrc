@@ -40,7 +40,7 @@ endif
 
 " {{{ global options for autocommands
 let g:pathToRc=split(&runtimepath, ",")[0] . "/config/autocommandrc"
-if filereadable(pathToRc)
+if has("autocmd") && filereadable(pathToRc)
     execute "source " . pathToRc
 endif
 "}}}
@@ -58,15 +58,10 @@ if filereadable(pathToRc)
     execute "source " . pathToRc
 endif
 "}}}
-
 unlet pathToRc
 "}}}
 
 " {{{ macros
-" {{{ Existing plugin
-runtime! macros/editexisting.vim
-"}}}
-
 " {{{ MatchIt plugin
 runtime! macros/matchit.vim
 "}}}
