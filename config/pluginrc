@@ -82,9 +82,17 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'EasyTags',
                 \ 'name'      : 'EasyTags',
                 \ }
+    NeoBundle 'tpope/vim-endwise', {
+                \ 'directory' : 'Endwise',
+                \ 'name'      : 'Endwise',
+                \ }
     NeoBundle 'tpope/vim-fugitive', {
                 \ 'directory' : 'FuGITive',
                 \ 'name'      : 'FuGITive',
+                \ }
+    NeoBundle 'gregsexton/gitv', {
+                \ 'directory' : 'GitV',
+                \ 'name'      : 'GitV',
                 \ }
     NeoBundle 'othree/html5.vim', {
                 \ 'directory' : 'HTML5',
