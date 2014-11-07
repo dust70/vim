@@ -67,6 +67,17 @@ runtime! macros/matchit.vim
 "}}}
 "}}}
 
+" {{{ filetype
+" Vim can detect the type of file that is edited. This is done by checking the
+" file name and sometimes by inspecting the contents of the file for specific
+" text.
+" NOTE: filetype should be loaded _bebore_ syntax to make all ftplugin settings
+"       working.
+if has("autocmd")
+    filetype plugin indent on
+endif
+"}}}
+
 " {{{ syntax
 " Syntax highlighting enables Vim to show parts of the text in another font or
 " color. Those parts can be specific keywords or text matching a pattern. Vim
@@ -92,24 +103,6 @@ elseif ! empty(globpath(&runtimepath, 'colors/detailed.vim'))
     colorscheme detailed
 else
     colorscheme evening
-endif
-"}}}
-
-" {{{ filetype
-" Vim can detect the type of file that is edited. This is done by checking the
-" file name and sometimes by inspecting the contents of the file for specific
-" text.
-"	command				detection	plugin		indent
-"	filetype on			on		unchanged	unchanged
-"	filetype off			off		unchanged	unchanged
-"	filetype plugin on		on		on		unchanged
-"	filetype plugin off		unchanged	off		unchanged
-"	filetype indent on		on		unchanged	on
-"	filetype indent off		unchanged	unchanged	off
-"	filetype plugin indent on	on		on		on
-"	filetype plugin indent off	unchanged	off		off
-if has("autocmd")
-    filetype plugin indent on
 endif
 "}}}
 
