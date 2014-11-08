@@ -106,38 +106,15 @@ else
 endif
 "}}}
 
-" {{{ cscope
-if has("cscope")
-    " {{{ cscopetag
-    " If 'cscopetag' is set, the commands ":tag" and CTRL-] as well as "vim -t"
-    " will always use |:cstag| instead of the default :tag behavior.
-    " Effectively, by setting 'cst', you will always search your cscope
-    " databases as well as your tag files. The default is off.
-    set cscopetag
-    "}}}}
-
-    " {{{ cscopeverbose
-    " If 'cscopeverbose' is not set (the default), messages will not be printed
-    " indicating success or failure when adding a cscope database. Ideally, you
-    " should reset this option in your |.vimrc| before adding any cscope
-    " databases, and after adding them, set it. From then on, when you add more
-    " databases within Vim, you will get a (hopefully) useful message should the
-    " database fail to be added.
-    set nocscopeverbose
-    " }}}
-
-    " {{{ add any database in current directory
-    if filereadable("cscope.out")
-        cscope add cscope.out
-        " else add database pointed to by environment
-    elseif $CSCOPE_DB != ""
-        cscope add $CSCOPE_DB
-    endif
-    "}}}
-endif
+" {{{ options
+" {{{ antialias
+" This option only has an effect in the GUI version of Vim on Mac OS X v10.2 or
+" later. When on, Vim will use smooth ("antialiased") fonts, which can be easier
+" to read at certain sizes on certain displays. Setting this option can
+" sometimes cause problems if 'guifont' is set to its default (empty string).
+set antialias
 "}}}
 
-" {{{ global options
 " {{{ autoindent
 " Copy indent from current line when starting a new line (typing <CR> in
 " Insert mode or when using the "o" or "O" command). If you do not type
@@ -173,11 +150,6 @@ if &t_Co > 2 || has("gui_running")
 endif
 "}}}
 
-" {{{ backupdir
-" List of directories for the backup file, separated with commas.
-let &backupdir=vimfiles . "/backup"
-"}}}
-
 " {{{ backspace
 " Influences the working of <BS>, <Del>, CTRL-W and CTRL-U in Insert mode.
 " This is a list of items, separated by commas. Each item allows a way to
@@ -188,6 +160,21 @@ let &backupdir=vimfiles . "/backup"
 "	start	allow backspacing over the start of insert; CTRL-W and CTRL-U
 "		stop once at the start of insert.
 set backspace=indent,eol,start
+"}}}
+
+" {{{ backup
+" Make a backup before overwriting a file. Leave it around after the file has
+" been successfully written. If you do not want to keep the backup file, but you
+" do want a backup while the file is being written, reset this option and set
+" the 'writebackup' option (this is the default). If you do not want a backup
+" file at all reset both options (use this if your file system is almost full).
+" See the |backup-table| for more explanations.
+set backup
+"}}}
+
+" {{{ backupdir
+" List of directories for the backup file, separated with commas.
+let &backupdir=vimfiles . "/backup"
 "}}}
 
 " {{{ browsedir
@@ -257,12 +244,51 @@ endif
 " CTRL-P or CTRL-N are used. It is also used for whole-line completion
 " |i_CTRL-X_CTRL-L|. It indicates the type of completion and the places to
 " scan.
-set complete+=k
+set complete-=tikd complete+=tikd
 "}}}
 
 " {{{ completeopt
 " A comma separated list of options for Insert mode completion ins-completion.
-set completeopt=menu,longest,preview
+set completeopt=menuone,longest,preview
+"}}}
+
+" {{{ confirm
+" When 'confirm' is on, certain operations that would normally fail because of
+" unsaved changes to a buffer, e.g. ":q" and ":e", instead raise a |dialog|
+" asking if you wish to save the current file(s). You can still use a ! to
+" unconditionally |abandon| a buffer.
+set confirm
+"}}}
+
+" {{{ cscope
+if has("cscope")
+    " {{{ cscopetag
+    " If 'cscopetag' is set, the commands ":tag" and CTRL-] as well as "vim -t"
+    " will always use |:cstag| instead of the default :tag behavior.
+    " Effectively, by setting 'cst', you will always search your cscope
+    " databases as well as your tag files. The default is off.
+    set cscopetag
+    "}}}}
+
+    " {{{ cscopeverbose
+    " If 'cscopeverbose' is not set (the default), messages will not be printed
+    " indicating success or failure when adding a cscope database. Ideally, you
+    " should reset this option in your |.vimrc| before adding any cscope
+    " databases, and after adding them, set it. From then on, when you add more
+    " databases within Vim, you will get a (hopefully) useful message should the
+    " database fail to be added.
+    set nocscopeverbose
+    " }}}
+
+    " {{{ add any database in current directory
+    if filereadable("cscope.out")
+        cscope add cscope.out
+        " else add database pointed to by environment
+    elseif $CSCOPE_DB != ""
+        cscope add $CSCOPE_DB
+    endif
+    "}}}
+endif
 "}}}
 
 " {{{ cursorcolumn
@@ -386,6 +412,13 @@ set foldlevelstart=0
 set foldmethod=syntax
 "}}}
 
+" {{{ foldnestmax
+" Sets the maximum nesting of folds for the "indent" and "syntax" methods. This
+" avoids that too many folds will be created. Using more than 20 doesn't work,
+" because the internal limit is 20.
+set foldnestmax=10
+"}}}
+
 " {{{ guifont
 " This is a list of fonts which will be used for the GUI version of Vim. In
 " its simplest form the value is just one font name. When the font cannot be
@@ -402,10 +435,7 @@ endif
 " of letters which describes what components and options of the GUI should be
 " used.
 if has("gui_running")
-    set guioptions+=g
-    set guioptions-=L
-    set guioptions-=r
-    set guioptions-=T
+    set guioptions-=LrT guioptions+=g
 endif
 "}}}
 
@@ -453,15 +483,6 @@ set helplang=en,de
 if &t_Co > 2 || has("gui_running")
     set nohlsearch
 endif
-"}}}
-
-" {{{ history
-" A history of ":" commands, and a history of previous search patterns are
-" remembered. This option decides how many entries may be stored in each of
-" these histories (see |cmdline-editing|).
-" NOTE: This option is set to the Vi default value when 'compatible' is set
-" and to the Vim default value when 'compatible' is reset.
-set history=100
 "}}}
 
 " {{{ incsearch
@@ -540,7 +561,9 @@ set listchars="eol:$,tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+"
 "			acted upon, i.e. no cursor move. This implies of
 "			course, that right clicking outside a selection will
 "			end Visual mode.
-set mousemodel=popup
+if has('gui_running')
+    set mousemodel=popup
+endif
 "}}}
 
 " {{{ number
@@ -566,7 +589,6 @@ set number
 " the Vim default of 4 there is room for a line number up to 999. When the
 " buffer has 1000 lines five columns will be used. The minimum value is 1, the
 " maximum value is 10.
-" NOTE: 'numberwidth' is reset to 8 when 'compatible' is set.
 set numberwidth=5
 "}}}
 
@@ -575,13 +597,18 @@ set numberwidth=5
 " [f, ]f, ^Wf, |:find|, |:sfind|, |:tabfind| and other commands, provided that
 " the file being searched for has a relative path (not starting with "/", "./"
 " or "../"). The directories in the 'path' option may be relative or absolute.
-set path+=.,~/,~/repositories/**
+set path+=.,~,~/repositories/**
+"}}}
+
+" {{{ previewheight
+" Default height for a preview window.
+set previewheight=11
 "}}}
 
 " {{{ pumheight
 " Determines the maximum number of items to show in the popup menu for Insert
 " mode completion. When zero as much space as available is used.
-set pumheight=20
+set pumheight=11
 "}}}
 
 " {{{ scrolloff
@@ -589,7 +616,7 @@ set pumheight=20
 " make some context visible around where you are working. If you set it to a
 " very large value (999) the cursor line will always be in the middle of the
 " window (except at the start or end of the file or when long lines wrap).
-set scrolloff=4
+set scrolloff=3
 "}}}
 
 " {{{ sidescrolloff
@@ -603,41 +630,7 @@ set sidescrolloff=5
 
 " {{{ sessionoptions
 " Changes the effect of the mksession command. It is a comma separated list of
-" words. Each word enables saving and restoring something:
-"	word	save and restore
-"	blank	empty windows
-"	buffers	hidden and unloaded buffers, not just those in windows
-"	curdir	the current directory
-"	folds	manually created folds, opened/closed folds and local fold
-"		options
-"	globals	global variables that start with an uppercase letter and
-"		contain at least one lowercase letter. Only String and
-"		Number types are stored.
-"	help	the help window
-"	localoptions
-"		options and mappings local to a window or buffer (not global
-"		values for local options)
-"	options	all options and mappings (also global values for local
-"		options)
-"	resize	size of the Vim window: 'lines' and 'columns'
-"	sesdir	the directory in which the session file is located will become
-"		the current directory (useful with projects accessed over a
-"		network from different systems)
-"	slash	backslashes in file names replaced with forward slashes
-"	tabpages
-"		all tab pages; without this only the current tab page is
-"		restored, so that you can make a session for each tab page
-"		separately
-"	unix	with Unix end-of-line format (single <NL>), even when on
-"		Windows or DOS
-"	winpos	position of the whole Vim window
-"	winsize	window sizes
-
-" Don't include both "curdir" and "sesdir".
-" When neither "curdir" nor "sesdir" is included, file names are stored with
-" absolute paths. "slash" and "unix" are useful on Windows when sharing
-" session files with Unix. The Unix version of Vim cannot source dos format
-" scripts, but the Windows version of Vim can source unix format scripts.
+" words.
 set sessionoptions-=folds,help,options sessionoptions+=localoptions,resize
 "}}}
 
@@ -654,20 +647,16 @@ set shiftround
 set shiftwidth=4
 "}}}
 
+" {{{ shortmess
+" This option helps to avoid all the |hit-enter| prompts caused by file
+" messages, for example with CTRL-G, and to avoid some other messages.
+set shortmess+=a
+" }}}
+
 " {{{ showmatch
 " When a bracket is inserted, briefly jump to the matching one. The jump is
 " only done if the match can be seen on the screen. The time to show the match
 " can be set with 'matchtime'.
-" A Beep is given if there is no match (no matter if the match can be seen or
-" not). This option is reset when the 'paste' option is set. When the 'm' flag
-" is not included in 'cpoptions', typing a character will immediately move the
-" cursor back to where it belongs.
-" See the "sm" field in 'guicursor' for setting the cursor shape and blinking
-" when showing the match.
-" The 'matchpairs' option can be used to specify the characters to show
-" matches for. 'rightleft' and 'revins' are used to look for opposite matches.
-" Also see the matchparen plugin for highlighting the match when moving around
-" |pi_paren.txt|.
 set showmatch
 "}}}
 
@@ -720,7 +709,14 @@ set softtabstop=4
 " name. You can use more than one region by listing them: "en_us,en_ca"
 " supports both US and Canadian English, but not words specific for Australia,
 " New Zealand or Great Britain.
-set spelllang=de_20,de_de,de,en_us,en_gb,en
+if has("spell")
+    set spelllang=de_20,de_de,de,en_us,en_gb,en
+endif
+"}}}
+
+" {{{ spellsuggest
+" Methods used for spelling suggestions.
+set spellsuggest=best,10
 "}}}
 
 " {{{ splitbelow
@@ -731,24 +727,6 @@ set splitbelow
 " {{{ splitright
 " When on, splitting a window will put the new window right of the current one.
 set splitright
-"}}}
-
-" {{{ startofline
-" When "on" the commands listed below move the cursor to the first non-blank of
-" the line. When off the cursor is kept in the same column (if possible). This
-" applies to the commands: CTRL-D, CTRL-U, CTRL-B, CTRL-F, "G", "H", "M", "L",
-" gg, and to the commands "d", "<<" and ">>" with a linewise operator, with "%"
-" with a count and to buffer changing commands (CTRL-^, :bnext, :bNext, etc.).
-" Also for an Ex command that only has a line number, e.g., ":25" or ":+".
-" In case of buffer changing commands the cursor is placed at the column where
-" it was the last time the buffer was edited.
-set nostartofline
-"}}}
-
-" {{{ statusline
-" When nonempty, this option determines the content of the status line. Also
-" see |status-line|.
-set statusline=\ file:\ %F\ %y%m%r%w%q%=(%c,%l\ %P)\ "
 "}}}
 
 " {{{ suffixes
@@ -778,6 +756,17 @@ set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.bak
 " a swap file is immediately created.
 " Also see |swap-file| and |'swapsync'|.
 set noswapfile
+"}}}
+
+" {{{ switchbuf
+" This option controls the behavior when switching between buffers.
+set switchbuf+=usetab
+"}}}
+
+" {{{ tabpagemax
+" Maximum number of tab pages to be opened by the |-p| command line argument or
+" the ":tab all" command.
+set tabpagemax=20
 "}}}
 
 " {{{ tags
@@ -864,35 +853,10 @@ set titlestring=VIm:\ %.25t\ %a%r%m
 let &undodir=vimfiles . "/undo"
 "}}}
 
-" {{{ undolevels
-" Maximum number of changes that can be undone. Since undo information is kept
-" in memory, higher numbers will cause more memory to be used (nevertheless, a
-" single change can use an unlimited amount of memory). Set to 0 for Vi
-" compatibility: One level of undo and "u" undoes itself:
-"	set ul=0
-" But you can also get Vi compatibility by including the 'u' flag in
-" 'cpoptions', and still be able to use CTRL-R to repeat undo. Also see
-" |undo-two-ways|.
-" Set to a negative number for no undo at all:
-"	set ul=-1
-" This helps when you run out of memory for a single change.
-set undolevels=1000
+" {{{ visualbell
+" Use visual bell instead of beeping.
+set visualbell
 "}}}
-
-" {{{ updatecount
-" After typing this many characters the swap file will be written to disk. When
-" zero, no swap file will be created at all (see chapter on recovery
-" |crash-recovery|). 'updatecount' is set to zero by starting Vim with the "-n"
-" option, see |startup|. When editing in readonly mode this option will be
-" initialized to 10000.
-set updatecount=100
-"}}}
-
-" {{{ updatetime
-" If this many milliseconds nothing is typed the swap file will be written to
-" disk (see |crash-recovery|). Also used for the |CursorHold| autocommand event.
-set updatetime=10000
-" }}}
 
 " {{{ viminfo
 " When non-empty, the viminfo file is read upon startup and written when
@@ -944,21 +908,6 @@ set wildmenu
 " do for each consecutive use of 'wildchar'. The first part specifies the
 " behavior for the first use of 'wildchar', The second part for the second
 " use, etc.
-" These are the possible values for each part:
-"	""		Complete only the first match.
-"	"full"		Complete the next full match. After the last match,
-"			the original string is used and then the first match
-"			again.
-"	"longest"	Complete till longest common string. If this doesn't
-"			result in a longer string, use the next part.
-"	"longest:full"	Like "longest", but also start 'wildmenu' if it is
-"			enabled.
-"	"list"		When more than one match, list all matches.
-"	"list:full"	When more than one match, list all matches and
-"			complete first match.
-"	"list:longest"	When more than one match, list all matches and
-"			complete till longest common string.
-" When there is only a single match, it is fully completed in all cases.
 set wildmode="list:longest"
 "}}}
 
