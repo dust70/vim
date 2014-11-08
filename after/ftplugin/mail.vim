@@ -20,36 +20,12 @@ setlocal nofoldenable
 setlocal nobackup
 "}}}
 
-" {{{ swapfile
-" Use a swapfile for the buffer. This option can be reset when a swapfile is not
-" wanted for a specific buffer. For example, with confidential information that
-" even root must not be able to access. Careful: All text will be in memory:
-"   - Don't use this for big files.
-"   - Recovery will be impossible!
-" A swapfile will only be present when |'updatecount'| is non-zero and
-" 'swapfile' is set.
-" When 'swapfile' is reset, the swap file for the current buffer is immediately
-" deleted. When 'swapfile' is set, and 'updatecount' is non-zero, a swap file is
-" immediately created. Also see |swap-file| and |'swapsync'|.
-" This option is used together with 'bufhidden' and 'buftype' to specify special
-" kinds of buffers. See |special-buffers|.
-setlocal noswapfile
-"}}}
-
 " {{{ autoindent
 " Copy indent from current line when starting a new line (typing <CR> in Insert
 " mode or when using the "o" or "O" command). If you do not type anything on the
 " new line except <BS> or CTRL-D and then type <Esc>, CTRL-O or <CR>, the indent
 " is deleted again. Moving the cursor to another line has the same effect,
 " unless the 'I' flag is included in 'cpoptions'.
-" When autoindent is on, formatting (with the "gq" command or when you reach
-" 'textwidth' in Insert mode) uses the indentation of the first line.
-" When 'smartindent' or 'cindent' is on the indent is changed in a different
-" way.
-" The 'autoindent' option is reset when the 'paste' option is set. {small
-" difference from Vi: After the indent is deleted when typing <Esc> or <CR>, the
-" cursor position when moving up or down is after the deleted indent; Vi puts
-" the cursor somewhere in the deleted indent}.
 setlocal noautoindent
 "}}}
 
@@ -96,3 +72,5 @@ iabbrev <buffer> gruesse Grüße<CR>  René
 iabbrev <buffer> lg Liebe Grüße<CR>  René
 
 0/^$
+
+" vim: filetype=vim textwidth=80 foldmethod=marker
