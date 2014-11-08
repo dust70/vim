@@ -1,48 +1,78 @@
-" {{{ autoindent
-" Copy indent from current line when starting a new line (typing <CR> in
-" Insert mode or when using the "o" or "O" command). If you do not type
-" anything on the new line except <BS> or CTRL-D and then type <Esc>, CTRL-O
-" or <CR>, the indent is deleted again. Moving the cursor to another line has
-" the same effect, unless the 'I' flag is included in 'cpoptions'.
-setlocal autoindent
+" {{{ complete
+" This option specifies how keyword completion |ins-completion| works when
+" CTRL-P or CTRL-N are used. It is also used for whole-line completion
+" |i_CTRL-X_CTRL-L|. It indicates the type of completion and the places to
+" scan.
+setlocal complete-=tikd complete+=tikd
+"}}}
+
+" {{{ diffopt
+" Option settings for diff mode. It can consist of the following items. All
+" are optional. Items must be separated by a comma.
+setlocal diffopt+=iwhite
+"}}}
+
+" {{{ endofline
+" When writing a file and this option is off and the 'binary' option is on, no
+" <EOL> will be written for the last line in the file. This option is
+" automatically set when starting to edit a new file, unless the file does not
+" have an <EOL> for the last line in the file, in which case it is reset.
+" Normally you don't have to set or reset this option. When 'binary' is off the
+" value is not used when writing the file. When 'binary' is on it is used to
+" remember the presence of a <EOL> for the last line in the file, so that when
+" you write the file the situation from the original file can be kept. But you
+" can change it if you want to.
+setlocal endofline
+"}}}
+
+" {{{ foldlevelstart
+" Sets 'foldlevel' when starting to edit another buffer in a window. Useful to
+" always start editing with all folds closed (value zero), some folds closed
+" (one) or no folds closed (99).
+setlocal foldlevelstart=1
+"}}}
+
+" {{{ foldmethod
+" The kind of folding used for the current window.
+setlocal foldmethod=syntax
 " }}}
 
-" {{{ expandtab
-" In Insert mode: Use the appropriate number of spaces to insert a <Tab>. Spaces
-" are used in indents with the '>' and '<' commands and when 'autoindent' is on.
-" To insert a real tab when 'expandtab' is on, use CTRL-V<Tab>. See also
-" |:retab| and |ins-expandtab|.
-setlocal expandtab
+" {{{ formatoptions
+" This is a sequence of letters which describes how automatic formatting is to
+" be done. See |fo-table|. When the 'paste' option is on, no formatting is
+" done (like 'formatoptions' is empty). Commas can be inserted for
+" readability. To avoid problems with flags that are added in the future, use
+" the "+=" and "-=" feature of ":set" |add-option-flags|.
+setlocal formatoptions=cronb1j
 "}}}
 
-" {{{ shiftwidth
-" Number of spaces to use for each step of (auto)indent. Used for |'cindent'|,
-" |>>|, |<<|, etc.
-" When zero the 'ts' value will be used. Use the |shiftwidth()| function to get
-" the effective shiftwidth value.
-setlocal shiftwidth=4
+" {{{ suffixesadd
+" Comma separated list of suffixes, which are used when searching for a file for
+" the "gf", "[I", etc. commands.
+set suffixesadd+=.php
 "}}}
 
-" {{{ softtabstop
-" Number of spaces that a <Tab> counts for while performing editing operations,
-" like inserting a <Tab> or using <BS>.  It "feels" like <Tab>s are being
-" inserted, while in fact a mix of spaces and <Tab>s is used.  This is useful to
-" keep the 'ts' setting at its standard value of 8, while being able to edit
-" like it is set to 'sts'.  However, commands like "x" still work on the actual
-" characters.
-setlocal softtabstop=4
-"}}}
-
-" {{{ tabstop
-" Number of spaces that a <Tab> in the file counts for.
-setlocal tabstop=4
+" {{{ tags
+" Filenames for the tag command, separated by spaces or commas. To include a
+" space or comma in a file name, precede it with a backslash (see
+" |option-backslash| about including spaces and backslashes). When a file name
+" starts with "./", the '.' is replaced with the path of the current file. But
+" only when the 'd' flag is not included in 'cpoptions'. Environment variables
+" are expanded |:set_env|. Also see |tags-option|.
+" "*", "**" and other wildcards can be used to search for tags files in a
+" directory tree. See |file-searching|. E.g., "/lib/**/tags" will find all
+" files named "tags" below "/lib". The filename itself cannot contain
+" wildcards, it is used as-is. E.g., "/lib/**/tags?" will find files called
+" "tags?".
+setlocal tags-='./tags' tags^='.tags'
 "}}}
 
 " {{{ textwidth
 " Maximum width of text that is being inserted. A longer line will be broken
 " after white space to get this width. A zero value disables this. 'textwidth'
 " is set to 0 when the 'paste' option is set. When 'textwidth' is zero,
-" 'wrapmargin' may be used. See also 'formatoptions' and |ins-textwidth|.
+" 'wrapmargin' may be used. See also 'formatoptions' and |ins-textwidth|. When
+" 'formatexpr' is set it will be used to break the line.
 setlocal textwidth=80
 "}}}
 
@@ -50,11 +80,6 @@ setlocal textwidth=80
 iabbrev true True
 iabbrev fale False
 iabbrev none None
-" }}}
-
-" {{{ foldmethod
-" The kind of folding used for the current window.
-setlocal foldmethod=indent
 " }}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
