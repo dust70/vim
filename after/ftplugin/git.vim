@@ -1,3 +1,4 @@
+" {{{ foldenable
 " When off, all folds are open. This option can be used to quickly switch
 " between showing all text unfolded and viewing the text with folds (including
 " manually opened or closed folds). It can be toggled with the |zi| command.
@@ -5,3 +6,6 @@
 " This option is set by commands that create a new fold or close a fold. See
 " |folding|.
 set nofoldenable
+"}}}
+
+" vim: filetype=vim textwidth=80 foldmethod=marker
