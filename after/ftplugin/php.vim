@@ -3,7 +3,7 @@
 " CTRL-P or CTRL-N are used. It is also used for whole-line completion
 " |i_CTRL-X_CTRL-L|. It indicates the type of completion and the places to
 " scan.
-setlocal complete-=ki complete+=ki
+setlocal complete-=tikd complete+=tikd
 "}}}
 
 " {{{ dictionary
@@ -60,6 +60,12 @@ setlocal foldmethod=syntax
 " readability. To avoid problems with flags that are added in the future, use
 " the "+=" and "-=" feature of ":set" |add-option-flags|.
 setlocal formatoptions=cronb1j
+"}}}
+
+" {{{ suffixesadd
+" Comma separated list of suffixes, which are used when searching for a file for
+" the "gf", "[I", etc. commands.
+set suffixesadd+=.php
 "}}}
 
 " {{{ tags
