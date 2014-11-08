@@ -3,26 +3,7 @@
 " CTRL-P or CTRL-N are used. It is also used for whole-line completion
 " |i_CTRL-X_CTRL-L|. It indicates the type of completion and the places to
 " scan.
-setlocal complete-=ki complete+=ki
-"}}}
-
-" {{{ diffopt
-" Option settings for diff mode. It can consist of the following items. All
-" are optional. Items must be separated by a comma.
-setlocal diffopt+=iwhite
-"}}}
-
-" {{{ endofline
-" When writing a file and this option is off and the 'binary' option is on, no
-" <EOL> will be written for the last line in the file. This option is
-" automatically set when starting to edit a new file, unless the file does not
-" have an <EOL> for the last line in the file, in which case it is reset.
-" Normally you don't have to set or reset this option. When 'binary' is off the
-" value is not used when writing the file. When 'binary' is on it is used to
-" remember the presence of a <EOL> for the last line in the file, so that when
-" you write the file the situation from the original file can be kept. But you
-" can change it if you want to.
-setlocal endofline
+setlocal complete-=tikd complete+=tikd
 "}}}
 
 " {{{ foldlevelstart
