@@ -94,6 +94,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'GitV',
                 \ 'name'      : 'GitV',
                 \ }
+    NeoBundle 'jamessan/vim-gnupg', {
+                \ 'directory' : 'GnuPG',
+                \ 'name'      : 'GnuPG',
+                \ }
     NeoBundle 'othree/html5.vim', {
                 \ 'directory' : 'HTML5',
                 \ 'name'      : 'HTML5',
