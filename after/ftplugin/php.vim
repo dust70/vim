@@ -1,11 +1,3 @@
-" {{{ complete
-" This option specifies how keyword completion |ins-completion| works when
-" CTRL-P or CTRL-N are used. It is also used for whole-line completion
-" |i_CTRL-X_CTRL-L|. It indicates the type of completion and the places to
-" scan.
-setlocal complete-=tikd complete+=tikd
-"}}}
-
 " {{{ dictionary
 " List of file names, separated by commas, that are used to lookup words for
 " keyword completion commands |i_CTRL-X_CTRL-K|. Each file should contain a
