@@ -480,12 +480,23 @@ let g:Tex_ViewRule_pdf = 'zathura'
 "}}}
 
 " {{{ NeoComplete
+" {{{ neocomplete#enable_at_startup
+" neocomplete gets started automatically when Vim starts if this value is 1.
+let g:neocomplete#enable_at_startup = 1
+" }}}
+
+" {{{ neocomplete#enable_smart_case
+" When a capital letter is included in input, neocomplete does not ignore the
+" upper- and lowercase.
+let g:neocomplete#enable_smart_case = 1
+" }}}
+
 " {{{ neocomplete#delimiter_patterns
 " This variable appoints a delimiter pattern to smart complete a function. This
 " is appointed in string list every file type.
 " NOTE: This string is not regular expression.
 if !exists('g:neocomplete#delimiter_patterns')
-    let g:neocomplete#delimiter_patterns= {}
+    let g:neocomplete#delimiter_patterns = {}
 endif
 let g:neocomplete#delimiter_patterns = {
             \ 'cpp'  : ['::'],
@@ -524,6 +535,20 @@ let g:neocomplete#ignore_composite_filetypes = {
 " This variable sets file size to make a cache of a file. If open file is bigger
 " than this size, neocomplete does not make a cache.
 let g:neocomplete#sources#buffer#cache_limit_size = 50000000
+"}}}
+
+" {{{ neocomplete#sources#dictionary#dictionaries
+" It is a dictionary to connect a dictionary file with file type. The
+" dictionary's key is filetype and comma-separated multiple value is a path to a
+" dictionary file. If the variable is unset or has an empty key, the native
+" 'dictionary' option will be inherited. When you set "text" key, you will
+" appoint dictionary files in text mode. If the key is "_", it is loaded in
+" every filetype.
+" NOTE: Global 'dictionary' file is not loaded automatically.
+let g:neocomplete#sources#dictionary#dictionaries = {
+            \ 'default'  : '',
+            \ 'vimshell' : vimfiles . '/tmp/vimshell',
+            \ }
 "}}}
 "}}}
 
