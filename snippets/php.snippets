@@ -36,7 +36,7 @@ options head
 	class ${2:`vim_snippets#Filename()`}
 		extends ${3:PHPUnit_Framework_TestCase}
 	{
-		protected $object = null;
+		protected $_object = null;
 
 		/**
 		 * Sets up the fixture, for example, opens a network connection.
@@ -45,7 +45,7 @@ options head
 		protected function setUp()
 		{
 			parent::setUp();
-			$this->object = new ${3:ClassToTest}();
+			$this->_object = new ${3:ClassToTest}();
 		}
 
 		/**
