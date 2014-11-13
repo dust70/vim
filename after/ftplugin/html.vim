@@ -1,3 +1,9 @@
+" {{{ load files
+if filereadable(vimfiles . "/after/ftplugin/programming.vim")
+    execute "source " . vimfiles . "/after/ftplugin/programming.vim"
+endif
+"}}}
+
 " {{{ matchpairs
 " Characters that form pairs. The |%| command jumps from one to the other.
 " Currently only single byte character pairs are allowed, and they must be
