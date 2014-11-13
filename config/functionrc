@@ -122,7 +122,7 @@ endfunction
 " {{{ ConfigurePhpProject
 function! ConfigurePhpProject()
     compiler phpunit_local
-    nnoremap <silent> ,dt :Dispatch ./bin/phpunit --strict --stop-on-failure --verbose --filter %:t:r<cr>
+    nnoremap <silent> ,dt :Dispatch ./bin/phpunit --strict --verbose --filter %:t:r<cr>
 
     let g:vdebug_options['server'] = '192.168.56.1'
 endfunction
