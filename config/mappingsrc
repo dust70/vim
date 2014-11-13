@@ -64,16 +64,18 @@ nnoremap <silent> ,bn :confirm bnext<cr>
 nnoremap <silent> ,bp :confirm bprevious<cr>
 "}}}
 
-" {{{ tabs
-nnoremap <silent> ,t :tabnew<cr>
-nnoremap <silent> ,tl :tabs<cr>
-"}}}
-
-" {{{ close buffers
+" {{{ write/close buffers
 nnoremap <silent> ,bq :confirm bdelete<cr>
 nnoremap <silent> ,bQ :confirm quitall<cr>
 nnoremap <silent> ,bw :write<cr>
 nnoremap <silent> ,bW :wall<cr>
+"}}}
+
+" {{{ tabs
+nnoremap <silent> ,t :tabnew<cr>
+nnoremap <silent> ,t<left> :tabmove -1<cr>
+nnoremap <silent> ,t<right> :tabmove +1<cr>
+nnoremap <silent> ,tl :tabs<cr>
 "}}}
 
 " {{{replace german umlauts
