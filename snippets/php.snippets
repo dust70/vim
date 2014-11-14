@@ -93,6 +93,17 @@ options head
 		$this->fail('Not implemented yet.');
 	}
 
+snippet function_dataprovider
+abbr function_dataprovider
+alias function_dataProvider dataprovider_function  df
+options head
+	public function dataProviderFor${1:#:FunctionName}()
+	{
+                return array(
+                        array(),
+                );
+	}
+
 snippet t-
 abbr t-
 alias this
@@ -110,7 +121,7 @@ options word
 snippet dataprovider
 alias dp
 options head
-	 @dataProvider dataProvider${0:name}
+	 @dataProvider dataProviderFor${0:name}
 
 snippet ?=
 	<?=${1}?>${0}
