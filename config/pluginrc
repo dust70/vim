@@ -24,8 +24,8 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundleFetch 'Shougo/neobundle.vim', {
                 \ 'depends'   : [
                 \    ['Shougo/vimproc.vim', {
-                \        'directory' : 'VimProc',
-                \        'name'      : 'VimProc',
+                \        'directory' : 'Proc',
+                \        'name'      : 'Proc',
                 \        'build' : {
                 \            'windows' : 'vimproc_updcmd',
                 \            'cygwin'  : 'make -f make_cygwin.mak',
@@ -40,6 +40,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     "}}}
 
     " {{{ Plugins
+    NeoBundle 'tpope/vim-abolish', {
+                \ 'directory' : 'Abolish',
+                \ 'name'      : 'Abolish',
+                \ }
     NeoBundle 'bling/vim-airline', {
                 \ 'directory' : 'Airline',
                 \ 'name'      : 'Airline',
@@ -75,8 +79,8 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'xolox/vim-easytags', {
                 \ 'depends'   : [
                 \    ['xolox/vim-misc.git', {
-                \        'directory' : 'Vim-Misc',
-                \        'name'      : 'Vim-Misc'
+                \        'directory' : 'Misc',
+                \        'name'      : 'Misc'
                 \    }],
                 \ ],
                 \ 'directory' : 'EasyTags',
@@ -85,6 +89,16 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'tpope/vim-endwise', {
                 \ 'directory' : 'Endwise',
                 \ 'name'      : 'Endwise',
+                \ }
+    NeoBundle 'Shougo/vimfiler.vim', {
+                \ 'depends'   : [
+                \    ['Shougo/tabpagebuffer.vim', {
+                \        'directory' : 'TabpageBuffer',
+                \        'name'      : 'TabpageBuffer',
+                \    }]
+                \ ],
+                \ 'directory' : 'Filer',
+                \ 'name'      : 'Filer',
                 \ }
     NeoBundle 'tpope/vim-fugitive', {
                 \ 'directory' : 'FuGITive',
@@ -107,8 +121,8 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name'      : 'IndentGuides',
                 \ }
     NeoBundle 'davidhalter/jedi-vim', {
-                \ 'directory' : 'JediVim',
-                \ 'name'      : 'JediVim',
+                \ 'directory' : 'Jedi',
+                \ 'name'      : 'Jedi',
                 \ 'disabled'  : !has('python'),
                 \ }
     NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex', {
@@ -191,6 +205,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'SecureModelines',
                 \ 'name'      : 'SecureModelines',
                 \ }
+    NeoBundle 'Shougo/unite-session', {
+                \ 'directory' : 'Session',
+                \ 'name'      : 'Session',
+                \ }
     NeoBundle 'ervandew/supertab', {
                 \ 'directory' : 'Supertab',
                 \ 'name'      : 'Supertab',
@@ -216,6 +234,12 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name'      : 'TMux-Syntax',
                 \ }
     NeoBundle 'Shougo/unite.vim', {
+                \ 'depends'   : [
+                \    ['Shougo/tabpagebuffer.vim', {
+                \        'directory' : 'TabpageBuffer',
+                \        'name'      : 'TabpageBuffer',
+                \    }]
+                \ ],
                 \ 'directory' : 'Unite',
                 \ 'name'      : 'Unite',
                 \ }
@@ -384,6 +408,20 @@ let g:easytags_auto_highlight = 0
 " have it recursively scan everything below the directory of the current file
 " then set this option to true (1):
 let g:easytags_autorecurse = 1
+"}}}
+"}}}
+
+" {{{ Filer
+" {{{ vimfiler_as_default_explorer
+" If this variable is true, Vim use vimfiler as file manager instead of netrw.
+let g:vimfiler_as_default_explorer = 1
+"}}}
+
+" {{{ vimfiler_data_directory
+" Specifies directories for configurations internally used in vimfiler itself or
+" its sources. If the directory doesn't exist the directory will be
+" automatically generated.
+let g:vimfiler_data_directory = vimfiles . "/tmp/vimfiles"
 "}}}
 "}}}
 
