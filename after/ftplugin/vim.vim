@@ -4,6 +4,19 @@ if filereadable(vimfiles . "/after/ftplugin/programming.vim")
 endif
 "}}}
 
+" {{{ foldlevel
+" Sets the fold level: Folds with a higher level will be closed. Setting this
+" option to zero will close all folds. Higher numbers will close fewer folds.
+setlocal foldlevel=0
+"}}}
+
+" {{{ foldlevelstart
+" Sets 'foldlevel' when starting to edit another buffer in a window. Useful to
+" always start editing with all folds closed (value zero), some folds closed
+" (one) or no folds closed (99).
+setlocal foldlevelstart=0
+"}}}
+
 " {{{ foldmethod
 " Folding via syntax is used for this filetype.
 setlocal foldmethod=marker
