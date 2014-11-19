@@ -84,7 +84,6 @@ function! ConfigureProject(source, dest)
                 \ '--compress',
                 \ '--cvs-exclude',
                 \ '--delete',
-                \ '--delete-excluded',
                 \ '--log-file=sync.log',
                 \ '--prune-empty-dirs',
                 \ '--verbose',
