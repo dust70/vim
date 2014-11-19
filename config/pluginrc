@@ -421,7 +421,7 @@ let g:vimfiler_as_default_explorer = 1
 " Specifies directories for configurations internally used in vimfiler itself or
 " its sources. If the directory doesn't exist the directory will be
 " automatically generated.
-let g:vimfiler_data_directory = vimfiles . "/tmp/vimfiles"
+let g:vimfiler_data_directory = vimfiles . "/tmp/files"
 "}}}
 "}}}
 
