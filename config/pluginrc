@@ -423,6 +423,28 @@ let g:vimfiler_as_default_explorer = 1
 " automatically generated.
 let g:vimfiler_data_directory = vimfiles . "/tmp/files"
 "}}}
+
+" {{{ vimfiler#custom#profile()
+" Set {profile-name} specialized {option-name} to {value}.
+call vimfiler#custom#profile('default', 'context', {
+            \ 'buffer-name' : 'VimFiler',
+            \ 'explorer'    : 1,
+            \ 'safe'        : 0,
+            \ 'sort_type'   : 'filename',
+            \ 'status'      : 1,
+            \ })
+" }}}
+
+" {{{ mappings
+nmap <silent> ,fo :VimFiler<cr>
+nmap <silent> ,ft :VimFiler -tab<cr>
+
+nmap <silent> ,fe :Unite -buffer-name=execute vimfiler/execute<cr>
+nmap <silent> ,fh :Unite -buffer-name=history vimfiler/history<cr>
+nmap <silent> ,fm :Unite -buffer-name=mask vimfiler/mask<cr>
+nmap <silent> ,fp :Unite -buffer-name=popd vimfiler/popd<cr>
+nmap <silent> ,fs :Unite -buffer-name=sort vimfiler/sort<cr>
+"}}}
 "}}}
 
 " {{{ FuGITive
@@ -1001,8 +1023,8 @@ let g:unite_source_history_yank_enable = 1
 
 " {{{ mappings
 nmap <silent> <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
-nmap <silent> ,u/ :Unite -buffer-name=grep -start-insert grep:.<cr>
 nmap <silent> ,ub :Unite -buffer-name=buffer -quick-match buffer<cr>
+nmap <silent> ,ug :Unite -buffer-name=grep -start-insert grep:.<cr>
 nmap <silent> ,uj :Unite -buffer-name=tabs jump<cr>
 nmap <silent> ,us :Unite -buffer-name=session session<cr>
 nmap <silent> ,ut :Unite -buffer-name=tabs tab<cr>
