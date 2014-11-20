@@ -11,4 +11,4 @@ if executable("./bin/phpunit")
 else
     CompilerSet makeprg=phpunit\ --strict\ --verbose
 endif
-CompilerSet errorformat=%E%n)\ %.%#,%Z%f:%l,%C%m,%C,%-G%.%#
+"CompilerSet errorformat=%E%n)\ %.%#,%Z%f:%l,%C%m,%C,%-G%.%#
