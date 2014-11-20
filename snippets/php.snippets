@@ -192,3 +192,13 @@ snippet asa
 options head
         $this->assertAction(${1});
 
+snippet skip
+alias skiptest skipTest
+options head
+        $this->markTestSkipped(${1});
+
+snippet incomplete
+alias incompletetest
+options head
+        $this->markTestIncomplete(${1});
+
