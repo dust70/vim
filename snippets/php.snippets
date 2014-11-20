@@ -37,6 +37,7 @@ options head
 		extends ${3:PHPUnit_Framework_TestCase}
 	{
 		protected $_object = null;
+		protected $_Pimple = null;
 
 		/**
 		 * Sets up the fixture, for example, opens a network connection.
@@ -45,6 +46,7 @@ options head
 		protected function setUp()
 		{
 			parent::setUp();
+                        $this_pimple = new Pimple();
 			$this->_object = new ${3:ClassToTest}();
 		}
 
