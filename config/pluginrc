@@ -163,10 +163,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'NeoSnippet',
                 \ 'name'      : 'NeoSnippet',
                 \ }
-    NeoBundle 'b3niup/numbers.vim', {
-                \ 'directory' : 'Numbers',
-                \ 'name'      : 'Numbers',
-                \ }
     NeoBundle 'vim-php/tagbar-phpctags.vim', {
                 \ 'directory' : 'PHPCTags',
                 \ 'name'      : 'PHPCTags',
