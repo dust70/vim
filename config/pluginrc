@@ -163,9 +163,13 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'NeoSnippet',
                 \ 'name'      : 'NeoSnippet',
                 \ }
+    NeoBundle 'b3niup/numbers.vim', {
+                \ 'directory' : 'Numbers',
+                \ 'name'      : 'Numbers',
+                \ }
     NeoBundle 'vim-php/tagbar-phpctags.vim', {
-                \ 'directory' : 'PHP-CTags',
-                \ 'name'      : 'PHP-CTags',
+                \ 'directory' : 'PHPCTags',
+                \ 'name'      : 'PHPCTags',
                 \ 'build'     : {
                 \    'cygwin'  : 'make',
                 \    'mac'     : 'make',
@@ -174,16 +178,24 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ },
                 \ }
     NeoBundle 'shawncplus/phpcomplete.vim', {
-                \ 'directory' : 'PHP-Complete',
-                \ 'name'      : 'PHP-Complete',
+                \ 'directory' : 'PHPComplete',
+                \ 'name'      : 'PHPComplete',
                 \ }
     NeoBundle 'nishigori/vim-php-dictionary', {
-                \ 'directory' : 'PHP-Dictionary',
-                \ 'name'      : 'PHP-Dictionary',
+                \ 'directory' : 'PHPDictionary',
+                \ 'name'      : 'PHPDictionary',
                 \ }
     NeoBundle '2072/PHP-Indenting-for-VIm', {
-                \ 'directory' : 'PHP-Indention',
-                \ 'name'      : 'PHP-Indention',
+                \ 'directory' : 'PHPIndention',
+                \ 'name'      : 'PHPIndention',
+                \ }
+    NeoBundle 'alvan/vim-php-manual', {
+                \ 'directory' : 'PHPManual',
+                \ 'name'      : 'PHPManual',
+                \ }
+    NeoBundle 'adoy/vim-php-refactoring-toolbox', {
+                \ 'directory' : 'PHPRefactoring',
+                \ 'name'      : 'PHPRefactoring',
                 \ }
     NeoBundle 'rkitover/vimpager', {
                 \ 'directory' : 'Pager',
@@ -540,11 +552,6 @@ let g:Tex_ViewRule_pdf = 'zathura'
 "}}}
 
 " {{{ NeoComplete
-" {{{ neocomplete#enable_at_startup
-" neocomplete gets started automatically when Vim starts if this value is 1.
-let g:neocomplete#enable_at_startup = 1
-" }}}
-
 " {{{ neocomplete#enable_smart_case
 " When a capital letter is included in input, neocomplete does not ignore the
 " upper- and lowercase.
@@ -707,7 +714,7 @@ let g:rainbow_conf = {
 "}}}
 "}}}
 
-" {{{ PHP-Complete
+" {{{ PHPComplete
 " {{{ phpcomplete_parse_docblock_comments
 " When enabled the preview window's content will include information extracted
 " from docblock comments of the completions. Enabling this option will add
@@ -1003,10 +1010,10 @@ let g:tagbar_type_tex = {
 "}}}
 "}}}
 
-" {{{ TagBar PHP-CTags
+" {{{ TagBar PHPCTags
 " {{{ tagbar_phpctags_bin
 " Location of phpctags.
-let g:tagbar_phpctags_bin = expand(vimfiles."/bundle/PHP-CTags/bin/phpctags")
+let g:tagbar_phpctags_bin = expand(vimfiles."/bundle/PHPCTags/bin/phpctags")
 "}}}
 
 " {{{ tagbar_phpctags_memory_limit
