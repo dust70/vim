@@ -74,9 +74,9 @@ nnoremap <silent> ,bW :wall<cr>
 " {{{ tabs
 nnoremap <silent> ,t :tabnew<cr>
 nnoremap <silent> ,t$ :tabmove<cr>
-nnoremap <silent> ,t0 :tabmove 0<cr>
 nnoremap <silent> ,t<left> :tabmove -1<cr>
 nnoremap <silent> ,t<right> :tabmove +1<cr>
+nnoremap <silent> ,t^ :tabmove 0<cr>
 nnoremap <silent> ,tl :tabs<cr>
 "}}}
 
