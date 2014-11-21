@@ -16,9 +16,9 @@ endif
 " otherwise spaces are included in the file name. See |option-backslash| about
 " using backslashes. This has nothing to do with the |Dictionary| variable
 " type.
-setlocal dictionary-=vimfiles.'bundle/PHP-Dictionary/PHP.dict'
-            \ dictionary^=vimfiles.'bundle/PHP-Dictionary/PHP.dict'
-" }}}
+execute 'setlocal dictionary-= ' . vimfiles . '/bundle/PHP-Dictionary/PHP.dict '
+            \ 'dictionary^=' . vimfiles . '/bundle/PHP-Dictionary/PHP.dict'
+"}}}
 
 " {{{ suffixesadd
 " Comma separated list of suffixes, which are used when searching for a file for
@@ -38,10 +38,10 @@ set suffixesadd+=.php
 " files named "tags" below "/lib". The filename itself cannot contain
 " wildcards, it is used as-is. E.g., "/lib/**/tags?" will find files called
 " "tags?".
-setlocal tags-=vimfiles.'/persistent-tags/php/*'
-            \ tags-='./tags'
-            \ tags+=vimfiles.'/persistent-tags/php/*'
-            \ tags^='.tags'
+execute 'setlocal tags-=' . vimfiles . '/persistent-tags/php/* '
+            \ 'tags-=./tags '
+            \ 'tags+=' . vimfiles . '/persistent-tags/php/* '
+            \ 'tags^=.tags'
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
