@@ -81,7 +81,6 @@ function! ConfigureProject(source, dest)
     let l:rsync_options = [
                 \ '--archive',
                 \ '--chmod="ug=rwX,o=rX"',
-                \ '--compress',
                 \ '--cvs-exclude',
                 \ '--delete',
                 \ '--log-file=sync.log',
@@ -128,9 +127,10 @@ endfunction
 "}}}
 
 " {{{ LoadCTagsFile
-function! LoadCTagsFile(file)
-    execute 'silent setlocal tags-=' . l:file
-    execute 'silent setlocal tags+=' . l:file
+function! LoadCTagsFile(type, file)
+    autocmd! FileType a:type
+                \ execute 'silent setlocal tags-=' . a:file
+                \ execute 'silent setlocal tags+=' . a:file
 endfunction
 "}}}
 
