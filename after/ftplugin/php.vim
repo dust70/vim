@@ -1,6 +1,6 @@
 " {{{ load files
-if filereadable(vimfiles . "/after/ftplugin/programming.vim")
-    execute "source " . vimfiles . "/after/ftplugin/programming.vim"
+if filereadable(g:vimfiles . "/after/ftplugin/programming.vim")
+    execute "source " . g:vimfiles . "/after/ftplugin/programming.vim"
 endif
 "}}}
 
@@ -16,8 +16,8 @@ endif
 " otherwise spaces are included in the file name. See |option-backslash| about
 " using backslashes. This has nothing to do with the |Dictionary| variable
 " type.
-execute 'setlocal dictionary-= ' . vimfiles . '/bundle/PHPDictionary/PHP.dict '
-            \ 'dictionary^=' . vimfiles . '/bundle/PHPDictionary/PHP.dict'
+execute 'setlocal dictionary-=' . g:vimfiles . '/bundle/PHPDictionary/PHP.dict'
+execute 'setlocal dictionary^=' . g:vimfiles . '/bundle/PHPDictionary/PHP.dict'
 "}}}
 
 " {{{ suffixesadd
