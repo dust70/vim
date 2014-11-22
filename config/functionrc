@@ -129,7 +129,6 @@ endfunction
 
 " {{{ LoadCTagsFile
 function! LoadCTagsFile(file)
-    let l:file = escape(expand(vimfiles . '/persistent-tags/' . a:file))
     execute 'silent setlocal tags-=' . l:file
     execute 'silent setlocal tags+=' . l:file
 endfunction
