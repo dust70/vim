@@ -16,8 +16,8 @@ endif
 " otherwise spaces are included in the file name. See |option-backslash| about
 " using backslashes. This has nothing to do with the |Dictionary| variable
 " type.
-execute 'setlocal dictionary-= ' . vimfiles . '/bundle/PHP-Dictionary/PHP.dict '
-            \ 'dictionary^=' . vimfiles . '/bundle/PHP-Dictionary/PHP.dict'
+execute 'setlocal dictionary-= ' . vimfiles . '/bundle/PHPDictionary/PHP.dict '
+            \ 'dictionary^=' . vimfiles . '/bundle/PHPDictionary/PHP.dict'
 "}}}
 
 " {{{ suffixesadd
