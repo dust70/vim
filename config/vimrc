@@ -1,8 +1,8 @@
 " {{{ set vimfiles path
 if has("unix")
-    let g:vimfiles = expand("~/.vim")
+    let g:vimfiles = escape(expand("~/.vim"), ' ')
 else
-    let g:vimfiles = expand("~/vimfiles")
+    let g:vimfiles = escape(expand("~/vimfiles"), ' ')
 endif
 
 " {{{ create cirectories
