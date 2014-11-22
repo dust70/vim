@@ -433,7 +433,7 @@ let g:vimfiler_as_default_explorer = 1
 " Specifies directories for configurations internally used in vimfiler itself or
 " its sources. If the directory doesn't exist the directory will be
 " automatically generated.
-let g:vimfiler_data_directory = vimfiles . "/tmp/files"
+let g:vimfiler_data_directory = escape(expand(g:vimfiles . "/tmp/files"), ' \')
 "}}}
 
 " {{{ vimfiler#custom#profile()
@@ -614,7 +614,7 @@ let g:neocomplete#sources#buffer#cache_limit_size = 50000000
 " NOTE: Global 'dictionary' file is not loaded automatically.
 let g:neocomplete#sources#dictionary#dictionaries = {
             \ 'default'  : '',
-            \ 'vimshell' : vimfiles . '/tmp/vimshell',
+            \ 'vimshell' : escape(expand(g:vimfiles . '/tmp/vimshell'), ' \'),
             \ }
 "}}}
 "}}}
@@ -638,9 +638,9 @@ endif
 " multiple values in comma-separated string or list. Non existing directories
 " are ignored.
 let g:neosnippet#snippets_directory = "" .
-            \ expand(vimfiles."/snippets").",".
-            \ expand(vimfiles."/bundle/NeoSnippet-Snippets/neosnippets").",".
-            \ expand(vimfiles."/bundle/Snippets/snippets")
+            \ escape(expand(g:vimfiles."/snippets"), ' \') . "," .
+            \ escape(expand(g:vimfiles."/bundle/NeoSnippet-Snippets/neosnippets"), ' \') . "," .
+            \ escape(expand(g:vimfiles."/bundle/Snippets/snippets"), ' \')
 "}}}
 
 " {{{ neosnippet#scope_aliases
@@ -657,7 +657,7 @@ let g:neosnippet#scope_aliases = {
 " {{{ neosnippet#data_directory
 " Specifies directory for neosnippet cache. If the directory doesn't exist the
 " directory will be automatically generated.
-let g:neosnippet#data_directory = expand(vimfiles."/tmp")
+let g:neosnippet#data_directory = escape(expand(g:vimfiles . "/tmp"), ' \')
 "}}}
 "}}}
 
@@ -1013,7 +1013,7 @@ let g:tagbar_type_tex = {
 " {{{ TagBar PHPCTags
 " {{{ tagbar_phpctags_bin
 " Location of phpctags.
-let g:tagbar_phpctags_bin = expand(vimfiles."/bundle/PHPCTags/bin/phpctags")
+let g:tagbar_phpctags_bin = escape(expand(g:vimfiles . "/bundle/PHPCTags/bin/phpctags"), ' \')
 "}}}
 
 " {{{ tagbar_phpctags_memory_limit
