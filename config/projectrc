@@ -2,8 +2,8 @@
 " {{{ Preisvergleich
 function! ConfigurePreisvergleich()
     call ConfigurePhpProject()
-    call LoadCTagsFile('php/zendframework1')
-    call LoadCTagsFile('php/phpunit')
+    call LoadCTagsFile(escape(expand(vimfiles . '/persistent-tags/php/zendframework1')))
+    call LoadCTagsFile(escape(expand(vimfiles . '/persistent-tags/php/phpunit')))
 
     call ConfigureProject(
                 \ '~/repositories/cbn/preisvergleich/',
@@ -22,8 +22,8 @@ augroup END
 " {{{ Shoprocket
 function! ConfigureShoprocket()
     call ConfigurePhpProject()
-    call LoadCTagsFile('php/zendframework1')
-    call LoadCTagsFile('php/phpunit')
+    call LoadCTagsFile(escape(expand(vimfiles . '/persistent-tags/php/zendframework1')))
+    call LoadCTagsFile(escape(expand(vimfiles . '/persistent-tags/php/phpunit')))
 
     call ConfigureProject(
                 \ '~/repositories/cbn/shoprocket/',
@@ -41,8 +41,8 @@ augroup END
 " {{{ Soap
 function! ConfigureSoap()
     call ConfigurePhpProject()
-    call LoadCTagsFile('php/zendframework1')
-    call LoadCTagsFile('php/phpunit')
+    call LoadCTagsFile(escape(expand(vimfiles . '/persistent-tags/php/zendframework1')))
+    call LoadCTagsFile(escape(expand(vimfiles . '/persistent-tags/php/phpunit')))
 
     call ConfigureProject(
                 \ '~/repositories/cbn/soap-backend/',
