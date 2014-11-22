@@ -251,6 +251,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Unite',
                 \ 'name'      : 'Unite',
                 \ }
+    NeoBundle 'tsukkee/unite-tag', {
+                \ 'dictionary' : 'UniteTag',
+                \ 'name'       : 'UniteTag',
+                \ }
     NeoBundle 'joonty/vdebug', {
                 \ 'directory' : 'VDebug',
                 \ 'name'      : 'VDebug',
@@ -1032,6 +1036,14 @@ nmap <silent> ,uj :Unite -buffer-name=tabs jump<cr>
 nmap <silent> ,us :Unite -buffer-name=session session<cr>
 nmap <silent> ,ut :Unite -buffer-name=tabs tab<cr>
 nmap <silent> ,uy :Unite -buffer-name=history history/yank<cr>
+"}}}
+"}}}
+
+" {{{ UniteTag
+" {{{ mappings
+nmap <silent> ,uTt :Unite -buffer-name=buffer -quick-match tag<cr>
+nmap <silent> ,uTf :Unite -buffer-name=buffer -quick-match tag/file<cr>
+nmap <silent> ,uTi :Unite -buffer-name=buffer -quick-match tag/include<cr>
 "}}}
 "}}}
 
