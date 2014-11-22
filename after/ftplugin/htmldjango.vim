@@ -1,6 +1,6 @@
 " {{{ load files
-if filereadable("$HOME/.vim/after/ftplugin/html.vim")
-    source $HOME/.vim/after/ftplugin/html.vim
+if filereadable(g:vimfiles . "/after/ftplugin/html.vim")
+    execute 'source ' . g:vimfiles . '/after/ftplugin/html.vim'
 endif
 "}}}
 
