@@ -7,12 +7,12 @@ endif
 
 " {{{ create cirectories
 "if !isdirectory(vimfiles) | call mkdir(vimfiles) | endif
-if !isdirectory(vimfiles."/backup")   | call mkdir(vimfiles."/backup")   | endif
-if !isdirectory(vimfiles."/bundle")   | call mkdir(vimfiles."/bundle")   | endif
-if !isdirectory(vimfiles."/snippets") | call mkdir(vimfiles."/snippets") | endif
-if !isdirectory(vimfiles."/tags")     | call mkdir(vimfiles."/tags")     | endif
-if !isdirectory(vimfiles."/tmp")      | call mkdir(vimfiles."/tmp")      | endif
-if !isdirectory(vimfiles."/undo")     | call mkdir(vimfiles."/undo")     | endif
+if !isdirectory(g:vimfiles."/backup")   | call mkdir(g:vimfiles."/backup")   | endif
+if !isdirectory(g:vimfiles."/bundle")   | call mkdir(g:vimfiles."/bundle")   | endif
+if !isdirectory(g:vimfiles."/snippets") | call mkdir(g:vimfiles."/snippets") | endif
+if !isdirectory(g:vimfiles."/tags")     | call mkdir(g:vimfiles."/tags")     | endif
+if !isdirectory(g:vimfiles."/tmp")      | call mkdir(g:vimfiles."/tmp")      | endif
+if !isdirectory(g:vimfiles."/undo")     | call mkdir(g:vimfiles."/undo")     | endif
 "}}}
 "}}}
 
@@ -174,7 +174,7 @@ set backup
 
 " {{{ backupdir
 " List of directories for the backup file, separated with commas.
-let &backupdir=vimfiles . "/backup"
+let &backupdir=g:vimfiles . "/backup"
 "}}}
 
 " {{{ browsedir
@@ -345,7 +345,7 @@ set diffopt=filler,context:3,vertical,foldcolumn:3
 
 " {{{ dir
 " List of directory names for the swap file, separated with commas.
-let &dir=vimfiles . "/tmp"
+let &dir=g:vimfiles . "/tmp"
 "}}}
 
 " {{{ display
@@ -850,7 +850,7 @@ set titlestring=VIm:\ %.25t\ %a%r%m
 " When reading all entries are tried to find an undo file. The first undo file
 " that exists is used. When it cannot be read an error is given, no further
 " entry is used.
-let &undodir=vimfiles . "/undo"
+let &undodir=g:vimfiles . "/undo"
 "}}}
 
 " {{{ visualbell
