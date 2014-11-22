@@ -1,6 +1,6 @@
 " {{{ load files
-if filereadable(vimfiles . "/after/ftplugin/git.vim")
-    execute "source " . vimfiles . "/after/ftplugin/git.vim"
+if filereadable(g:vimfiles . "/after/ftplugin/git.vim")
+    execute "source " . g:vimfiles . "/after/ftplugin/git.vim"
 endif
 "}}}
 
