@@ -38,10 +38,7 @@ set suffixesadd+=.php
 " files named "tags" below "/lib". The filename itself cannot contain
 " wildcards, it is used as-is. E.g., "/lib/**/tags?" will find files called
 " "tags?".
-execute 'setlocal tags-=' . vimfiles . '/persistent-tags/php/* '
-            \ 'tags-=./tags '
-            \ 'tags+=' . vimfiles . '/persistent-tags/php/* '
-            \ 'tags^=.tags'
+setlocal tags-=./tags tags^=./tags
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
