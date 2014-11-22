@@ -111,7 +111,7 @@ function! ConfigureProject(source, dest)
                 \ . ' --exclude=' . join(l:rsync_ignore, ' --exclude=')
                 \ . ' ' . l:source . ' ' . l:dest
 
-    nnoremap <silent> ,dr :silent execute "Dispatch! " . g:rsync_command<cr>
+    nnoremap <silent> ,ds :silent execute "Dispatch! " . g:rsync_command<cr>
 
     autocmd! BufWritePost,FileWritePost *
                 \ silent execute '!' . g:rsync_command . ' >> /dev/null 2>&1 &'
@@ -124,6 +124,14 @@ function! ConfigurePhpProject()
     nnoremap <silent> ,dt :Dispatch ./bin/phpunit --strict --verbose --filter %:t:r<cr>
 
     let g:vdebug_options['server'] = '192.168.56.1'
+endfunction
+"}}}
+
+" {{{ LoadCTagsFile
+function! LoadCTagsFile(file)
+    let l:file = escape(expand(vimfiles . '/persistent-tags/' . a:file))
+    execute 'silent setlocal tags-=' . l:file
+    execute 'silent setlocal tags+=' . l:file
 endfunction
 "}}}
 
