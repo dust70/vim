@@ -119,6 +119,9 @@ endfunction
 
 " {{{ ConfigurePhpProject
 function! ConfigurePhpProject()
+    call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/phpunit')
+    call LoadCTagsFile('./tags')
+
     compiler phpunit_local
     nnoremap <silent> ,dt :Dispatch ./bin/phpunit --strict --verbose --filter %:t:r<cr>
 
@@ -127,10 +130,9 @@ endfunction
 "}}}
 
 " {{{ LoadCTagsFile
-function! LoadCTagsFile(type, file)
-    autocmd! FileType a:type
-                \ execute 'silent setlocal tags-=' . a:file
-                \ execute 'silent setlocal tags+=' . a:file
+function! LoadCTagsFile(file)
+    execute 'setlocal tags-=' . a:file
+    execute 'setlocal tags^=' . a:file
 endfunction
 "}}}
 
