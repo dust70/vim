@@ -126,7 +126,7 @@ options head
 	 @dataProvider dataProviderFor${0:name}
 
 snippet ?=
-	<?=${1}?>${0}
+	<?php echo ${1}; ?>${0}
 
 snippet ?=h
 	<?=htmlspecialchars(${1})?>${0}
@@ -148,7 +148,10 @@ options word
 
 snippet pdump
 options word
-        <?php Zend_Debug::dump(${0:#:code}); die(); ?>
+        <?php
+        Zend_Debug::dump(${0:#:code});
+        die();
+        ?>
 
 snippet foreach
 alias foreachk foreach-hashmap
