@@ -193,6 +193,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'PHPRefactoring',
                 \ 'name'      : 'PHPRefactoring',
                 \ }
+    NeoBundle 'vimoutliner/vimoutliner', {
+                \ 'directory' : 'Outliner',
+                \ 'name'      : 'Outliner',
+                \ }
     NeoBundle 'rkitover/vimpager', {
                 \ 'directory' : 'Pager',
                 \ 'name'      : 'Pager',
@@ -212,10 +216,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'ciaranm/securemodelines', {
                 \ 'directory' : 'SecureModelines',
                 \ 'name'      : 'SecureModelines',
-                \ }
-    NeoBundle 'Shougo/unite-session', {
-                \ 'directory' : 'Session',
-                \ 'name'      : 'Session',
                 \ }
     NeoBundle 'ervandew/supertab', {
                 \ 'directory' : 'Supertab',
@@ -250,6 +250,34 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ ],
                 \ 'directory' : 'Unite',
                 \ 'name'      : 'Unite',
+                \ }
+    NeoBundle 'Shougo/neomru.vim', {
+                \ 'directory' : 'UniteMRU',
+                \ 'name'      : 'UniteMRU',
+                \ }
+    NeoBundle 'Shougo/unite-outline', {
+                \ 'directory' : 'UniteOutline',
+                \ 'name'      : 'UniteOutline',
+                \ }
+    NeoBundle 'Shougo/unite-session', {
+                \ 'directory' : 'UniteSession',
+                \ 'name'      : 'UniteSession',
+                \ }
+    NeoBundle 'Shougo/neossh.vim', {
+                \ 'depends'   : [
+                \    ['Shougo/vimproc.vim', {
+                \        'directory' : 'Proc',
+                \        'name'      : 'Proc',
+                \        'build' : {
+                \            'windows' : 'vimproc_updcmd',
+                \            'cygwin'  : 'make -f make_cygwin.mak',
+                \            'mac'     : 'make -f make_mac.mak',
+                \            'unix'    : 'make -f make_unix.mak',
+                \        },
+                \    }],
+                \ ],
+                \ 'directory' : 'UniteSSH',
+                \ 'name'      : 'UniteSSH',
                 \ }
     NeoBundle 'tsukkee/unite-tag', {
                 \ 'dictionary' : 'UniteTag',
@@ -1029,20 +1057,19 @@ let g:unite_source_history_yank_enable = 1
 
 " {{{ mappings
 nmap <silent> <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
+nmap <silent> ,u :Unite -buffer-name=unite<cr>
 nmap <silent> ,ub :Unite -buffer-name=buffer -quick-match buffer<cr>
+nmap <silent> ,ud :Unite -buffer-name=mru -quick-match neomru/directory<cr>
+nmap <silent> ,uf :Unite -buffer-name=mru -quick-match neomru/file<cr>
 nmap <silent> ,ug :Unite -buffer-name=grep -start-insert grep:.<cr>
 nmap <silent> ,uj :Unite -buffer-name=tabs jump<cr>
+nmap <silent> ,uo :Unite -buffer-name=outline -quick-match outline<cr>
 nmap <silent> ,us :Unite -buffer-name=session session<cr>
 nmap <silent> ,ut :Unite -buffer-name=tabs tab<cr>
+nmap <silent> ,uTf :Unite -buffer-name=tag-file -quick-match tag/file<cr>
+nmap <silent> ,uTi :Unite -buffer-name=tag-include -quick-match tag/include<cr>
+nmap <silent> ,uTt :Unite -buffer-name=tag -quick-match tag<cr>
 nmap <silent> ,uy :Unite -buffer-name=history history/yank<cr>
-"}}}
-"}}}
-
-" {{{ UniteTag
-" {{{ mappings
-nmap <silent> ,uTt :Unite -buffer-name=buffer -quick-match tag<cr>
-nmap <silent> ,uTf :Unite -buffer-name=buffer -quick-match tag/file<cr>
-nmap <silent> ,uTi :Unite -buffer-name=buffer -quick-match tag/include<cr>
 "}}}
 "}}}
 
@@ -1063,7 +1090,6 @@ let g:vdebug_options = {
             \ 'timeout'            : 60,
             \ 'watch_window_style' : 'expanded',
             \ }
-"}}}
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
