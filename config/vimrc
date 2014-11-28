@@ -994,12 +994,16 @@ set wrapmargin=5
 iabbrev 'e é
 "}}}
 
-" {{{ HighLight
+" {{{ highlight
 " {{{ highlight extra whitespace at the end of line
 if has("autocmd")
     highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
     match ExtraWhitespace /\s\+$\| \+\ze\t/
 endif
+"}}}
+
+" {{{ highlight for searching
+highlight Search term=underline ctermfg=white ctermbg=blue guifg=white guibg=blue
 "}}}
 
 " {{{ highlight for spell checking
@@ -1010,10 +1014,8 @@ highlight SpellLocal term=underline cterm=underline
 "}}}
 
 " {{{ nice color for menu
-highlight Pmenu ctermfg=lightgray ctermbg=black
-            \ guifg=lightgray guibg=black
-highlight PmenuSel ctermfg=lightcyan ctermbg=darkgrey
-            \ guifg=lightgray guibg=darkcyan gui=bold
+highlight Pmenu ctermfg=lightgray ctermbg=black guifg=lightgray guibg=black
+highlight PmenuSel ctermfg=lightcyan ctermbg=darkgrey guifg=lightgray guibg=darkcyan gui=bold
 "}}}
 "}}}
 
