@@ -106,6 +106,14 @@ options head
                 );
 	}
 
+snippet expects
+alias exp
+options head
+        ${1}->expects($this->${2:once()})
+        ->method('${3}')
+        ->with($this->equalTo(${4}))
+        ->will($this->returnValuf(${5}));${0}
+
 snippet t-
 abbr t-
 alias this
