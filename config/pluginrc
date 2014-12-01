@@ -143,6 +143,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \        'directory' : 'Shell',
                 \        'name'      : 'Shell',
                 \    }],
+                \    ['Shougo/context_filetype.vim', {
+                \        'directory' : 'ContextFileType',
+                \        'name'      : 'ContextFileType',
+                \    }],
                 \ ],
                 \ 'directory'   : 'NeoComplete',
                 \ 'name'        : 'NeoComplete',
@@ -313,11 +317,11 @@ unlet bundlePath
 
 " {{{ Bufexplorer disabled
 let g:bufexplorer_version = 1
-" }}}
+"}}}
 
 " {{{ MiniBufExpl disabled
 let g:loaded_minibufexplorer = 1
-" }}}
+"}}}
 
 " {{{ Airline
 " {{{ tabline
@@ -473,7 +477,7 @@ call vimfiler#custom#profile('default', 'context', {
             \ 'sort_type'   : 'filename',
             \ 'status'      : 1,
             \ })
-" }}}
+"}}}
 
 " {{{ mappings
 nmap <silent> ,fo :VimFiler<cr>
@@ -511,7 +515,7 @@ highlight IndentGuidesEven guibg=darkgrey ctermbg=darkgrey
 " {{{ indent_guides_enable_on_vim_startup
 " Use this option to control whether the plugin is enabled on Vim startup.
 let g:indent_guides_enable_on_vim_startup = 1
-" }}}
+"}}}
 "}}}
 
 " {{{ LaTeX
@@ -540,64 +544,63 @@ let g:tex_flavor = 'latex'
 " and here [ls_a_dF].
 let g:Tex_DefaultTargetFormat = 'pdf'
 "}}}
-
-" {{{ ViewRule
-" Here <format> refers to a format such as dvi, ps, etc. This variable defines
-" the program which will be called to display a file of that format.
-"
-" By default, LaTeX-Suite defines viewer programs for viewing DVI, PS and PDF
-" formats as follows:
-"                       Windows       Unix~
-" g:Tex_ViewRule_dvi    'yap -1'      'xdvi'
-" g:Tex_ViewRule_ps     'gsview32'    'ghostview'
-" g:Tex_ViewRule_pdf    'AcroRd32'    'xpdf'
-"
-" For Macintosh systems, these strings are left empty by default. This lets the
-" system pick the program for each format. If you define these variables for
-" Mac, the system choice will be over-ridden.
-"
-" LaTeX-Suite appends file.format to the above settings while calling the
-" external programs. For example, with
-"   let g:Tex_ViewRule_dvi = 'yap -1'
-" yap is called as
-"   !start yap -1 file.dvi
-" from within Vim. (The initial start is used on Windows platforms is to make
-" yap start as a separate process.) If you find the way LaTeX-Suite constructs
-" the command line too restrictive, you can use the Tex_ViewRuleComplete_format
-" [ls_a_dG] setting for more complete control on how the command line is
-" constructed while calling the external program for viewing.
-"
-" NOTE: For windows, you will need to set the $PATH variable to include the
-"       paths to yap, AcroRd32, gsview32 and any other programs. See your system
-"       documentation for how to do this.
-"
-" NOTE: Default Viewing Format
-"       ----------------------
-" To change the default format for viewing files, set the
-" g:Tex_DefaultTargetFormat [ls_a_dw] variable.
-let g:Tex_ViewRule_pdf = 'zathura'
-"}}}
 "}}}
 
 " {{{ NeoComplete
+" {{{ acp_enableAtStartup
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+"}}}
+
+" {{{ neocomplete#enable_at_startup
+" neocomplete gets started automatically when Vim starts if this value is 1.
+let g:neocomplete#enable_at_startup = 1
+"}}}
+
+" {{{ neocomplete#auto_completion_start_length
+" This variable controls the number of the input completion at the time of key
+" input automatically.
+let g:neocomplete#auto_completion_start_length = 3
+"}}}
+
 " {{{ neocomplete#enable_smart_case
 " When a capital letter is included in input, neocomplete does not ignore the
 " upper- and lowercase.
 let g:neocomplete#enable_smart_case = 1
-" }}}
+"}}}
+
+" {{{ neocomplete#data_directory
+" This variable appoints the directory that neocomplete begins to write a file
+" at one time. When there is not the directory which appointed here, it is made.
+" For example, buffer.vim stores cache of the keyword in this 'buffer_cache' sub
+"directory.
+let g:neocomplete#data_directory = g:vimfiles . '/tmpi/neocomplete'
+"}}}
+
+" {{{ neocomplete#keyword_patterns
+" This dictionary records keyword patterns to completion. This is appointed in
+" regular expression every file type. If the key is "_" or "default", it is used
+" for default pattern.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns = {
+            \'_' : '\h\w*',
+            \ }
+"}}}
 
 " {{{ neocomplete#delimiter_patterns
 " This variable appoints a delimiter pattern to smart complete a function. This
 " is appointed in string list every file type.
-" NOTE: This string is not regular expression.
 if !exists('g:neocomplete#delimiter_patterns')
     let g:neocomplete#delimiter_patterns = {}
 endif
 let g:neocomplete#delimiter_patterns = {
-            \ 'cpp'  : ['::'],
-            \ 'java' : ['.'],
-            \ 'php'  : ['->'],
-            \ 'vim'  : ['#'],
+            \ 'cpp'     : ['::'],
+            \ 'java'    : ['.'],
+            \ 'php'     : ['::', '->'],
+            \ 'python'  : ['.'],
+            \ 'vim'     : ['#'],
             \ }
 "}}}
 
@@ -606,17 +609,21 @@ let g:neocomplete#delimiter_patterns = {
 " value is source names list. If the key is "_", the value will be used for
 " default filetypes. For example, you can disable some sources in C++ filetype.
 " If the value is "_", it will load all sources.
+if !exists('g:neocomplete#sources')
+    let g:neocomplete#sources = {}
+endif
 let g:neocomplete#sources = {
-            \ '_'    : ['buffer', 'dictionary'],
-            \ 'cpp'  : ['buffer', 'dictionary', 'include'],
-            \ 'html' : ['buffer', 'dictionary'],
-            \ 'php'  : ['buffer', 'dictionary', 'include']
+            \ '_'      : ['buffer', 'dictionary', 'tag', 'neosnippet', 'omni'],
+            \ 'cpp'    : ['buffer', 'dictionary', 'include', 'tag', 'neosnippet', 'omni'],
+            \ 'html'   : ['buffer', 'dictionary', 'syntax', 'tag', 'neosnippet', 'omni'],
+            \ 'php'    : ['buffer', 'dictionary', 'include', 'tag', 'neosnippet', 'omni'],
+            \ 'python' : ['buffer', 'dictionary', 'include', 'tag', 'neosnippet', 'omni']
             \ }
 "}}}
 
 " {{{ neocomplete#release_cache_time
 " This variable defines time of automatic released cache by a second unit.
-let g:neocomplete#release_cache_time = 3600
+let g:neocomplete#release_cache_time = 10800
 "}}}
 
 " {{{ neocomplete#ignore_composite_filetypes
@@ -624,12 +631,6 @@ let g:neocomplete#release_cache_time = 3600
 " composite filetype and value is filetype.
 let g:neocomplete#ignore_composite_filetypes = {
             \ }
-"}}}
-
-" {{{ neocomplete#sources#buffer#cache_limit_size
-" This variable sets file size to make a cache of a file. If open file is bigger
-" than this size, neocomplete does not make a cache.
-let g:neocomplete#sources#buffer#cache_limit_size = 50000000
 "}}}
 
 " {{{ neocomplete#sources#dictionary#dictionaries
@@ -644,6 +645,18 @@ let g:neocomplete#sources#dictionary#dictionaries = {
             \ 'vimshell' : g:vimfiles . '/tmp/vimshell',
             \ }
 "}}}
+
+" {{{ neocomplete#sources#buffer#cache_limit_size
+" This variable sets file size to make a cache of a file. If open file is bigger
+" than this size, neocomplete does not make a cache.
+let g:neocomplete#sources#buffer#cache_limit_size = 5000000
+"}}}
+
+" {{{ neocomplete#sources#tags#cache_limit_size
+" This variable sets file size to make a cache of a file in tag source. If open
+" file is bigger than this size, neocomplete does not make a tags cache.
+let g:neocomplete#sources#tags#cache_limit_size = 5000000
+"}}}
 "}}}
 
 " {{{ NeoSnippet
@@ -651,7 +664,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 imap <silent> <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <silent> <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <silent> <C-k> <Plug>(neosnippet_expand_target)
-xmap <silent> <C-l> <Plug>(neosnippet_start_unite_snippet_target)
+xmap <silent> <C-u> <Plug>(neosnippet_start_unite_snippet_target)
 
 " For snippet_complete marker.
 if has('conceal')
@@ -684,7 +697,7 @@ let g:neosnippet#scope_aliases = {
 " {{{ neosnippet#data_directory
 " Specifies directory for neosnippet cache. If the directory doesn't exist the
 " directory will be automatically generated.
-let g:neosnippet#data_directory = g:vimfiles . '/tmp'
+let g:neosnippet#data_directory = g:vimfiles . '/tmp/neosnippet'
 "}}}
 "}}}
 
@@ -853,7 +866,7 @@ let g:tagbar_width = 60
 " If you set this option the cursor will move to the Tagbar window when it is
 " opened.
 let g:tagbar_autofocus = 1
-" }}}
+"}}}
 
 " {{{ tagbar_show_linenumbers
 " Whether line numbers should be shown in the Tagbar window.
@@ -958,7 +971,7 @@ let g:tagbar_type_php = {
             \     'j:javascript functions',
             \ ],
             \ }
-" }}}
+"}}}
 
 " {{{ tagbar_type_python
 let g:tagbar_type_python = {
@@ -972,7 +985,7 @@ let g:tagbar_type_python = {
             \     'v:Variables',
             \ ],
             \ }
-" }}}
+"}}}
 
 " {{{ tagbar_type_sh
 let g:tagbar_type_sh = {
@@ -1050,26 +1063,71 @@ let g:tagbar_phpctags_memory_limit = '1G'
 "}}}
 
 " {{{ Unite
+" {{{ unite_data_directory
+" Specify directories to store unite configurations. Used by both unite itself
+" and its sources. If the directory doesn't exist, the directory is
+" automatically created. For example source of file_mru saves the information of
+" the most recent used files into this directory.
+let g:unite_data_directory = g:vimfiles . '/tmp/unit/'
+"}}}
+
+" {{{ unite_source_buffer_time_format
+" Specify the output format of the last access time of unite-source-buffer. Uses
+" strftime() formatting.
+let g:unite_source_buffer_time_format = '%Y-%m-%d %H:%M'
+"}}}
+
 " {{{ unite_source_history_yank_enable
 " If defined and not 0, unite enables unite-source-history/yank.
 let g:unite_source_history_yank_enable = 1
 "}}}
 
+" {{{ unite_source_history_yank_file
+" Specify the file to write the information of yank history. If this variable is
+" empty, saving history is disabled.
+let g:unite_source_history_yank_file = g:vimfiles . '/tmp/yank'
+"}}}
+
+" {{{ unite#custom#profile()
+call unite#custom#profile(
+            \ 'default', 'context', {
+            \    'prompt'    : 'unite: ',
+            \    'winheight' : 15,
+            \ })
+"}}}
+
 " {{{ mappings
-nmap <silent> <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
 nmap <silent> ,u :Unite -buffer-name=unite<cr>
-nmap <silent> ,ub :Unite -buffer-name=buffer -quick-match buffer<cr>
-nmap <silent> ,ud :Unite -buffer-name=mru -quick-match neomru/directory<cr>
-nmap <silent> ,uf :Unite -buffer-name=mru -quick-match neomru/file<cr>
-nmap <silent> ,ug :Unite -buffer-name=grep -start-insert grep:.<cr>
-nmap <silent> ,uj :Unite -buffer-name=tabs jump<cr>
-nmap <silent> ,uo :Unite -buffer-name=outline -quick-match outline<cr>
-nmap <silent> ,us :Unite -buffer-name=session session<cr>
-nmap <silent> ,ut :Unite -buffer-name=tabs tab<cr>
+nmap <silent> ,uB :Unite -buffer-name=bookmark -quick-match bookmark<cr>
 nmap <silent> ,uTf :Unite -buffer-name=tag-file -quick-match tag/file<cr>
 nmap <silent> ,uTi :Unite -buffer-name=tag-include -quick-match tag/include<cr>
 nmap <silent> ,uTt :Unite -buffer-name=tag -quick-match tag<cr>
+nmap <silent> ,ub :Unite -buffer-name=buffer -quick-match buffer<cr>
+nmap <silent> ,ug :Unite -buffer-name=grep -start-insert grep:.<cr>
+nmap <silent> ,uj :Unite -buffer-name=tabs jump<cr>
+nmap <silent> ,um :Unite -buffer-name=menu -start-insert menu<cr>
+nmap <silent> ,umd :Unite -buffer-name=mru -quick-match neomru/directory<cr>
+nmap <silent> ,umf :Unite -buffer-name=mru -quick-match neomru/file<cr>
+nmap <silent> ,uo :Unite -buffer-name=outline -quick-match outline<cr>
+nmap <silent> ,us :Unite -buffer-name=session session<cr>
+nmap <silent> ,ut :Unite -buffer-name=tabs tab<cr>
 nmap <silent> ,uy :Unite -buffer-name=history history/yank<cr>
+
+nmap <silent> <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
+"}}}
+"}}}
+
+" {{{ UniteMRU
+" {{{ neomru#time_format
+" Specify the output format of the modified file in MRU sources. Uses strftime()
+" formatting.
+let g:neomru#time_format = '%y-%m-%d %H:%M'
+"}}}
+
+" {{{ neomru#file_mru_path
+" Specifies the file to write the information of most recent used files.
+let g:neomru#file_mru_path = g:vimfiles . '/tmp/mru/files'
+let g:neomru#file_mru_ignore_pattern = g:vimfiles . '/tmp/mru/directory'
 "}}}
 "}}}
 
