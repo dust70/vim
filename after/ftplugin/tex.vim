@@ -1,11 +1,7 @@
-" {{{ replace german umlauts
-imap ä ä
-imap Ä Ä
-imap ü ü
-imap Ü Ü
-imap ö ö
-imap Ö Ö
-imap ß ß
+" {{{ load files
+if filereadable(g:vimfiles . "/after/ftplugin/programming.vim")
+    execute "source " . g:vimfiles . "/after/ftplugin/programming.vim"
+endif
 "}}}
 
 " {{{ softtabstop
@@ -36,13 +32,17 @@ setlocal shiftwidth=2
 " 'wrapmargin' may be used. See also 'formatoptions' and |ins-textwidth|. When
 " 'formatexpr' is set it will be used to break the line.
 " NOTE: This option is set to 0 when 'compatible' is set.
-setlocal textwidth=115
+setlocal textwidth=120
 "}}}
 
-" {{{ diffopt
-" Option settings for diff mode. It can consist of the following items. All
-" are optional. Items must be separated by a comma.
-setlocal diffopt+=iwhite
+" {{{ replace german umlauts
+imap ä ä
+imap Ä Ä
+imap ü ü
+imap Ü Ü
+imap ö ö
+imap Ö Ö
+imap ß ß
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
