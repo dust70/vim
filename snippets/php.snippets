@@ -48,6 +48,7 @@ options head
 			parent::setUp();
                         $this->_pimple = new Pimple();
 			$this->_object = new ${3:ClassToTest}(${4});
+                        ${0}
 		}
 
 		/**
@@ -112,7 +113,8 @@ options head
         ${1}->expects($this->${2:once()})
         ->method('${3}')
         ->with($this->equalTo(${4}))
-        ->will($this->returnValue(${5}));${0}
+        ->will($this->returnValue(${5}));
+        ${0}
 
 snippet t-
 abbr t-
@@ -122,7 +124,8 @@ options word
 
 snippet const
 options head
-        const ${1:variableName} = ${2};${0}
+        const ${1:variableName} = ${2};
+        ${0}
 
 snippet pmd
 options word
@@ -137,7 +140,7 @@ snippet ?=
 	<?php echo ${1}; ?>${0}
 
 snippet ?=h
-	<?=htmlspecialchars(${1})?>${0}
+	<?echo htmlspecialchars(${1}); ?>${0}
 
 snippet try
 options head
@@ -185,7 +188,7 @@ options head
 
 snippet assertdispatch
 abbr dispatch
-alias td dispatch
+alias asd dispatch
 options head
         $this->dispatch(${1});
 
