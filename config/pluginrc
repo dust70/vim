@@ -560,13 +560,7 @@ let g:neocomplete#enable_at_startup = 1
 " {{{ neocomplete#auto_completion_start_length
 " This variable controls the number of the input completion at the time of key
 " input automatically.
-let g:neocomplete#auto_completion_start_length = 3
-"}}}
-
-" {{{ neocomplete#enable_smart_case
-" When a capital letter is included in input, neocomplete does not ignore the
-" upper- and lowercase.
-let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#auto_completion_start_length = 4
 "}}}
 
 " {{{ neocomplete#data_directory
@@ -574,7 +568,7 @@ let g:neocomplete#enable_smart_case = 1
 " at one time. When there is not the directory which appointed here, it is made.
 " For example, buffer.vim stores cache of the keyword in this 'buffer_cache' sub
 "directory.
-let g:neocomplete#data_directory = g:vimfiles . '/tmpi/neocomplete'
+let g:neocomplete#data_directory = g:vimfiles . '/tmp/neocomplete'
 "}}}
 
 " {{{ neocomplete#keyword_patterns
@@ -615,7 +609,7 @@ endif
 let g:neocomplete#sources = {
             \ '_'      : ['buffer', 'dictionary', 'tag', 'neosnippet', 'omni'],
             \ 'cpp'    : ['buffer', 'dictionary', 'include', 'tag', 'neosnippet', 'omni'],
-            \ 'html'   : ['buffer', 'dictionary', 'syntax', 'tag', 'neosnippet', 'omni'],
+            \ 'html'   : ['buffer', 'dictionary', 'syntax', 'tag', 'neosnippet'],
             \ 'php'    : ['buffer', 'dictionary', 'include', 'tag', 'neosnippet', 'omni'],
             \ 'python' : ['buffer', 'dictionary', 'include', 'tag', 'neosnippet', 'omni']
             \ }
