@@ -1,6 +1,4 @@
 snippet class
-abbr cl
-alias cl
 options head
 	<?php
 
@@ -140,7 +138,10 @@ snippet ?=
 	<?php echo ${1}; ?>${0}
 
 snippet ?=h
-	<?echo htmlspecialchars(${1}); ?>${0}
+	<?php echo htmlspecialchars(${1}); ?>${0}
+
+snippet pecho?
+        <?php echo (${1:condition} ? '${2:true}' : ${3:false}); ?>
 
 snippet try
 options head
@@ -178,14 +179,6 @@ options head
 		${0}
         <?php endforeach; ?>
 
-snippet doc_c
-abbr doc
-alias doc docc
-options head
-	/**
-	 * @author René Six <${0:info@renatius.de}>
-	 */
-
 snippet assertdispatch
 abbr dispatch
 alias asd dispatch
@@ -196,17 +189,10 @@ options head
         $this->assertController(${3});
         $this->assertAction(${4});
 
-snippet asm
+snippet assertredirect
+alias asr
 options head
-        $this->assertModule(${1});
-
-snippet asc
-options head
-        $this->assertController(${1});
-
-snippet asa
-options head
-        $this->assertAction(${1});
+        $this->assertRedirect(${1});
 
 snippet skip
 alias skiptest skipTest
@@ -217,4 +203,8 @@ snippet incomplete
 alias incompletetest
 options head
         $this->markTestIncomplete(${1});
+
+snippet php
+	<?php
+	${1:TARGET}
 
