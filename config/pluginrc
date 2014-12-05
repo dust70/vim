@@ -56,6 +56,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'AutoPairs',
                 \ 'name'      : 'AutoPairs',
                 \ }
+    NeoBundle 'veloce/vim-behat', {
+                \ 'directory' : 'Behat',
+                \ 'name'      : 'Behat',
+                \ }
     NeoBundle 'chrisbra/csv.vim', {
                 \ 'directory' : 'CSV',
                 \ 'name'      : 'CSV',
@@ -342,6 +346,20 @@ let g:formatprg_php = "astyle"
 let g:formatprg_args_expr_php = '"--mode=java --style=allman -pcHs" . &shiftwidth'
 
 nmap <silent> ,af :Autoformat<cr><cr>
+"}}}
+
+" {{{ Behat
+" {{{ feature_filetype
+" mandatory if you want the '*.feature' files to be set with behat filetype
+let g:feature_filetype = 'behat'
+"}}}
+
+" {{{ behat_executables
+" The plugin tries successively several behat executables to find the good one
+" (php behat.phar, bin/behat, etc). You can define a custom list that will
+" be prepended to the default path with g:behat_executables.
+let g:behat_executables = [ './bin/behat' ]"
+"}}}
 "}}}
 
 " {{{ Dispatch
@@ -645,6 +663,20 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 " than this size, neocomplete does not make a cache.
 let g:neocomplete#sources#buffer#cache_limit_size = 5000000
 "}}}
+
+" {{{ neocomplete#sources#omni#input_patterns
+" This dictionary records keyword patterns used in omni source. This is
+" appointed in regular expression every file type or 'omnifunc' name. If this
+" pattern is not defined or empty pattern, neocomplete does not call 'omnifunc'.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns = {
+            \ 'behat' : '\(When\|Then\|Given\|And\)\s.*$',
+            \ 'c'     : '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?',
+            \ 'php'   : '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?',
+            \ }
+" }}}
 
 " {{{ neocomplete#sources#tags#cache_limit_size
 " This variable sets file size to make a cache of a file in tag source. If open
