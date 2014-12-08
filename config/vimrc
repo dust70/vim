@@ -940,23 +940,6 @@ set winfixheight
 set winfixwidth
 "}}}
 
-" {{{ winminwidth
-" The minimal width of a window, when it's not the current window.
-" This is a hard minimum, windows will never become smaller.
-" When set to zero, windows may be "squashed" to zero columns (i.e. just a
-" vertical separator) if necessary. They will return to at least one line when
-" they become active (since the cursor has to have somewhere to go.)
-" Use 'winwidth' to set the minimal width of the current window.
-" This option is only checked when making a window smaller. Don't use a large
-" number, it will cause errors when opening more than a few windows. A value
-" of 0 to 12 is reasonable.
-if has("gui_running")
-    set winminwidth=20
-else
-    set winminwidth=10
-endif
-"}}}
-
 " {{{ wrapmargin
 " Number of characters from the right window border where wrapping starts.
 " When typing text beyond this limit, an <EOL> will be inserted and inserting
