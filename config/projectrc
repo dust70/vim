@@ -10,12 +10,6 @@ function! ConfigurePreisvergleich()
                 \ )
     augroup end
 endfunction
-
-augroup Preisvergleich
-    autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/preisvergleich/**
-                \ call ConfigurePreisvergleich()
-augroup END
 "}}}
 
 " {{{ Shoprocket
@@ -28,12 +22,6 @@ function! ConfigureShoprocket()
                 \ 'vagrant:/var/www/shoprocket'
                 \ )
 endfunction
-
-augroup ShopRocket
-    autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/shoprocket/**
-                \     call ConfigureShoprocket()
-augroup END
 "}}}
 
 " {{{ Soap
@@ -47,12 +35,6 @@ function! ConfigureSoap()
                 \ )
     augroup end
 endfunction
-
-augroup Soap
-    autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/soap/**
-                \ call ConfigureSoap()
-augroup END
 "}}}
 "}}}
 
@@ -67,12 +49,6 @@ function! ConfigureProjectInvoicing()
                 \ 'vagrant:/var/www/invoicing'
                 \ )
 endfunction
-
-augroup ProjectInvoicing
-    autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/projects/invoicing/**
-                \ call ConfigureProjectInvoicing()
-augroup END
 "}}}
 "}}}
 
