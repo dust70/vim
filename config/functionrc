@@ -94,7 +94,7 @@ function! ConfigureProject(source, dest)
                 \ '".git*"',
                 \ '".svn*"',
                 \ '"DS_Store"',
-                \ '"Readme.*"','
+                \ '"Readme.*"',
                 \ '"bin"',
                 \ '"build"',
                 \ '"cscope.out*"',
