@@ -42,7 +42,7 @@ function! ConfigureSoap()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/cbn/soap/',
+                \ '~/repositories/cbn/soap-backend/',
                 \ 'vagrant:/var/www/prvg'
                 \ )
     augroup end
@@ -50,7 +50,7 @@ endfunction
 
 augroup Soap
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/soap/**
+                \ ~/repositories/cbn/soap-backend/**
                 \ call ConfigureSoap()
 augroup END
 "}}}
