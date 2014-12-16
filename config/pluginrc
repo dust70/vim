@@ -70,7 +70,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ }
     NeoBundle 'tpope/vim-commentary', {
                 \ 'directory' : 'Commentary',
-                \ 'name'      : 'Commentary'
+                \ 'name'      : 'Commentary',
+                \ }
+    NeoBundle 'vim-scripts/DeleteTrailingWhitespace', {
+                \ 'directory' : 'DeleteTrailingWhitespace',
+                \ 'name'      : 'DeleteTrailingWhitespace',
                 \ }
     NeoBundle 'rking/vim-detailed', {
                 \ 'directory' : 'Detailed',
@@ -84,7 +88,7 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'depends'   : [
                 \    ['xolox/vim-misc.git', {
                 \        'directory' : 'Misc',
-                \        'name'      : 'Misc'
+                \        'name'      : 'Misc',
                 \    }],
                 \ ],
                 \ 'directory' : 'EasyTags',
