@@ -58,20 +58,20 @@ augroup END
 
 " {{{ Project
 " {{{ Invoicing
-function! ConfigureProjectInvoicing()
-    VirtualEnvActivate invoicing
-    set makeprg=./manage.py\ test\ --traceback\ --noinput
+function! ConfigureInvoicing()
+    call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
+    call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/projects/invoicing/',
+                \ '~/repositories/projects/invoicing',
                 \ 'vagrant:/var/www/invoicing'
                 \ )
 endfunction
 
-augroup ProjectInvoicing
+augroup ShopRocket
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/projects/invoicing/**
-                \ call ConfigureProjectInvoicing()
+                \ ~/repositories/projects/invoicing
+                \     call ConfigureInvoicing()
 augroup END
 "}}}
 "}}}
