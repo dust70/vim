@@ -81,6 +81,7 @@ function! ConfigureProject(source, dest)
     let l:rsync_options = [
                 \ '--archive',
                 \ '--chmod="ug=rwX,o=rX"',
+                \ '--chown="vagrant:www-data"',
                 \ '--cvs-exclude',
                 \ '--delete',
                 \ '--log-file=sync.log',
@@ -96,7 +97,7 @@ function! ConfigureProject(source, dest)
                 \ '"DS_Store"',
                 \ '"Readme.*"',
                 \ '"bin"',
-                \ '"build"',
+                \ '"build*"',
                 \ '"cscope.out*"',
                 \ '"debug.log"',
                 \ '"logs"',
