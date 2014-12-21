@@ -63,7 +63,7 @@ function! ConfigureInvoicing()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/projects/invoicing',
+                \ '~/repositories/projects/invoicing/',
                 \ 'vagrant:/var/www/invoicing'
                 \ )
 endfunction
