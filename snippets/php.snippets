@@ -16,8 +16,10 @@ alias ce classextends
 options head
 	<?php
 
-	class ${1:`vim_snippets#Filename()`}
-		extends ${2:Foo\Bar\Baz}
+	/**
+	 * @author René Six <${1:info@renatius.de}>
+	 */
+	class ${1:`vim_snippets#Filename()`} extends ${2:Foo\Bar\Baz}
 	{
 		${0}
 	}
@@ -31,8 +33,7 @@ options head
 	/**
 	 * @author René Six <${1:info@renatius.de}>
 	 */
-	class ${2:`vim_snippets#Filename()`}
-		extends ${3:PHPUnit_Framework_TestCase}
+	class ${2:`vim_snippets#Filename()`} extends ${3:PHPUnit_Framework_TestCase}
 	{
 		protected $_object = null;
 		protected $_pimple = null;
@@ -45,8 +46,46 @@ options head
 		{
 			parent::setUp();
                         $this->_pimple = new Pimple();
-			$this->_object = new ${3:ClassToTest}(${4});
-                        ${0}
+			$this->_object = new ${3:ClassToTest}(${4});${0}
+		}
+
+		/**
+		 * Remove the fixture, for example, closes a network connection.
+		 * This method is called after a test is executed.
+		 */
+                protected function tearDown()
+                {
+                        try {
+				// TODO: add try body
+			} catch(Exception $e) {
+				// TODO: add exception handling
+			} finally {
+				parent::tearDown();
+			}
+		}
+	}
+
+snippet class_test2
+abbr ct2
+alias classtest2 testclass2 tc2
+options head
+	<?php
+
+	/**
+	 * @author René Six <${1:info@renatius.de}>
+	 */
+	class ${2:`vim_snippets#Filename()`} extends ${3:PHPUnit_Framework_TestCase}
+	{
+		protected $_object = null;
+
+		/**
+		 * Sets up the fixture, for example, opens a network connection.
+		 * This method is called before a test is executed.
+		 */
+		protected function setUp()
+		{
+			parent::setUp();
+			$this->_object = new ${3:ClassToTest}(${4});${0}
 		}
 
 		/**
@@ -109,9 +148,9 @@ snippet expects
 alias exp
 options head
         ${1}->expects($this->${2:once()})
-        ->method('${3}')
-        ->with($this->equalTo(${4}))
-        ->will($this->returnValue(${5}));
+                ->method('${3}')
+                ->with($this->equalTo(${4}))
+                ->will($this->returnValue(${5}));
         ${0}
 
 snippet t-
@@ -144,7 +183,7 @@ snippet pecho
         <?php echo ${1}; ?>${0}
 
 snippet pecho?
-        <?php echo (${1:condition} ? '${2:true}' : ${3:false}); ?>
+        <?php echo (${1:condition} ? '${2:true}' : ${3:false}); ?>${0}
 
 snippet try
 options head
@@ -161,10 +200,22 @@ options word
 	Zend_Debug::dump(${0:#:code});
         die();
 
+snippet dump2
+options word
+	\Zend\Debug\Debug::dump(${0:#:code});
+        die();
+
 snippet pdump
 options word
         <?php
         Zend_Debug::dump(${0:#:code});
+        die();
+        ?>
+
+snippet pdump2
+options word
+        <?php
+        \Zend\Debug\Debug::dump(${0:#:code});
         die();
         ?>
 
@@ -208,6 +259,13 @@ options head
         $this->markTestIncomplete(${1});
 
 snippet php
+options head
 	<?php
+
 	${1:TARGET}
+
+snippet pphp
+options word
+	<?php ${1:TARGET} ?>
+
 
