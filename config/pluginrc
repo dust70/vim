@@ -60,6 +60,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Behat',
                 \ 'name'      : 'Behat',
                 \ }
+    NeoBundle 'ap/vim-css-color', {
+                \ 'directory' : 'CSSColor',
+                \ 'name'      : 'CSSColor',
+                \ }
     NeoBundle 'chrisbra/csv.vim', {
                 \ 'directory' : 'CSV',
                 \ 'name'      : 'CSV',
