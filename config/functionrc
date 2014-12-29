@@ -81,7 +81,6 @@ function! ConfigureProject(source, dest)
     let l:rsync_options = [
                 \ '--archive',
                 \ '--chmod="ug=rwX,o=rX"',
-                \ '--chown="vagrant:www-data"',
                 \ '--cvs-exclude',
                 \ '--delete',
                 \ '--log-file=sync.log',
