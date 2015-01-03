@@ -4,6 +4,14 @@ if filereadable(g:vimfiles . "/after/ftplugin/programming.vim")
 endif
 "}}}
 
+" {{{ equalprg
+" External program to use for "=" command. When this option is empty the
+" internal formatting functions are used; either 'lisp', 'cindent' or
+" 'indentexpr'. When Vim was compiled without internal formatting, the "indent"
+" program is used.
+setlocal equalprg=xmllint\ --format\ -
+" }}}
+
 " {{{ foldmethod
 " The kind of folding used for the current window.
 setlocal foldmethod=indent
