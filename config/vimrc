@@ -566,6 +566,24 @@ if has('gui_running')
 endif
 "}}}
 
+" {{{ nrformats
+" This defines what bases Vim will consider for numbers when using the CTRL-A
+" and CTRL-X commands for adding to and subtracting from a number respectively;
+" see |CTRL-A| for more info on these commands.
+"   alpha   If included, single alphabetical characters will be incremented or
+"           decremented. This is useful for a list with a letter index a), b),
+"           etc. *octal-nrformats*
+"   octal   If included, numbers that start with a zero will be considered to be
+"           octal. Example: Using CTRL-A on "007" results in "010".
+"   hex     If included, numbers starting with "0x" or "0X" will be considered
+"           to be hexadecimal. Example: Using CTRL-X on 0x100" results in
+"           0x0ff".
+" Numbers which simply begin with a digit in the range 1-9 are always considered
+" decimal. This also happens for numbers that are not recognized as octal or
+" hex.
+set nrformats="octal,hex"
+"}}}
+
 " {{{ number
 " Print the line number in front of each line. When the 'n' option is excluded
 " from 'cpoptions' a wrapped line will not use the column of line numbers
@@ -853,11 +871,6 @@ set titlestring=VIm:\ %.25t\ %a%r%m
 let &undodir=g:vimfiles . "/undo"
 "}}}
 
-" {{{ visualbell
-" Use visual bell instead of beeping.
-set visualbell
-"}}}
-
 " {{{ viminfo
 " When non-empty, the viminfo file is read upon startup and written when
 " exiting Vim (see |viminfo-file|). The string should be a comma separated
@@ -867,6 +880,11 @@ set visualbell
 " default value is used for that parameter. The following is a list of the
 " identifying characters and the effect of their value.
 set viminfo=!,'50,/100,:100,<1000,h,s1000
+"}}}
+
+" {{{ visualbell
+" Use visual bell instead of beeping.
+set visualbell
 "}}}
 
 " {{{ wildignore
