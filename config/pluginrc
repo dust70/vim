@@ -124,6 +124,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'GnuPG',
                 \ 'name'      : 'GnuPG',
                 \ }
+    NeoBundle 'tpope/vim-haml', {
+                \ 'directory' : 'Haml',
+                \ 'name'      : 'Haml',
+                \ }
     NeoBundle 'othree/html5.vim', {
                 \ 'directory' : 'HTML5',
                 \ 'name'      : 'HTML5',
@@ -229,9 +233,21 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory' : 'Rainbow_Parentheses_Improved',
                 \ 'name'      : 'Rainbow Parentheses Improved',
                 \ }
+    NeoBundle 'tpope/vim-repeat', {
+                \ 'directory' : 'Repeat',
+                \ 'name'      : 'Repeat',
+                \ }
     NeoBundle 'ciaranm/securemodelines', {
                 \ 'directory' : 'SecureModelines',
                 \ 'name'      : 'SecureModelines',
+                \ }
+    NeoBundle 'tpope/vim-speeddating', {
+                \ 'directory' : 'Speeddating',
+                \ 'name'      : 'Speeddating',
+                \ }
+    NeoBundle 'mhinz/vim-startify', {
+                \ 'directory' : 'Startify',
+                \ 'name'      : 'Startify',
                 \ }
     NeoBundle 'ervandew/supertab', {
                 \ 'directory' : 'Supertab',
