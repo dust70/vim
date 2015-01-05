@@ -71,8 +71,6 @@ runtime! macros/matchit.vim
 " Vim can detect the type of file that is edited. This is done by checking the
 " file name and sometimes by inspecting the contents of the file for specific
 " text.
-" NOTE: filetype should be loaded _bebore_ syntax to make all ftplugin settings
-"       working.
 if has("autocmd")
     filetype plugin indent on
 endif
@@ -367,8 +365,7 @@ set encoding=utf-8
 " if they start with an <Esc>. The advantage of this is that the single <Esc> is
 " recognized immediately, instead of after one second. Instead of resetting this
 " option, you might want to try changing the values for 'timeoutlen' and
-" 'ttimeoutlen'. Note that when 'esckeys' is off, you can still map anything,
-" but the cursor keys won't work by default.
+" 'ttimeoutlen'.
 set esckeys
 "}}}
 
@@ -468,18 +465,7 @@ set helplang=en,de
 " {{{ hlsearch
 " When there is a previous search pattern, highlight all its matches. The type
 " of highlighting used can be set with the 'l' occasion in the 'highlight'
-" option. This uses the "Search" highlight group by default. Note that only
-" the matching text is highlighted, any offsets are not applied.
-" See also: 'incsearch' and |:match|.
-" When you get bored looking at the highlighted matches, you can turn it off
-" with |:nohlsearch|. As soon as you use a search command, the highlighting
-" comes back.
-" 'redrawtime' specifies the maximum time spent on finding matches.
-" When the search pattern can match an end-of-line, Vim will try to highlight
-" all of the matched text. However, this depends on where the search starts.
-" This will be the first line in the window or the first line below a closed
-" fold. A match in a previous line which is not drawn may not continue in a
-" newly drawn line.
+" option. This uses the "Search" highlight group by default.
 if &t_Co > 2 || has("gui_running")
     set nohlsearch
 endif
@@ -570,17 +556,6 @@ endif
 " This defines what bases Vim will consider for numbers when using the CTRL-A
 " and CTRL-X commands for adding to and subtracting from a number respectively;
 " see |CTRL-A| for more info on these commands.
-"   alpha   If included, single alphabetical characters will be incremented or
-"           decremented. This is useful for a list with a letter index a), b),
-"           etc. *octal-nrformats*
-"   octal   If included, numbers that start with a zero will be considered to be
-"           octal. Example: Using CTRL-A on "007" results in "010".
-"   hex     If included, numbers starting with "0x" or "0X" will be considered
-"           to be hexadecimal. Example: Using CTRL-X on 0x100" results in
-"           0x0ff".
-" Numbers which simply begin with a digit in the range 1-9 are always considered
-" decimal. This also happens for numbers that are not recognized as octal or
-" hex.
 set nrformats="octal,hex"
 "}}}
 
@@ -977,19 +952,14 @@ iabbrev 'e é
 "}}}
 
 " {{{ highlight
-" {{{ highlight extra whitespace at the end of line
-if has("autocmd")
-    highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-    match ExtraWhitespace /\s\+$\| \+\ze\t/
-endif
-"}}}
-
 " {{{ highlight for searching
-highlight Search term=underline ctermfg=white ctermbg=blue guifg=white guibg=blue
+highlight Search term=underline ctermfg=white ctermbg=blue
+            \ guifg=white guibg=blue
 "}}}
 
 " {{{ highlight for spell checking
-highlight SpellBad term=standout ctermfg=white ctermbg=red term=underline cterm=underline
+highlight SpellBad term=standout ctermfg=white ctermbg=red cterm=underline
+            \ term=underline
 highlight SpellCap term=underline cterm=underline
 highlight SpellRare term=underline cterm=underline
 highlight SpellLocal term=underline cterm=underline
@@ -997,7 +967,8 @@ highlight SpellLocal term=underline cterm=underline
 
 " {{{ nice color for completion menu
 highlight Pmenu ctermfg=lightgray ctermbg=black guifg=lightgray guibg=black
-highlight PmenuSel ctermfg=lightcyan ctermbg=darkgrey guifg=lightgray guibg=darkcyan gui=bold
+highlight PmenuSel ctermfg=lightcyan ctermbg=darkgrey
+            \ guifg=lightgray guibg=darkcyan gui=bold
 "}}}
 "}}}
 
