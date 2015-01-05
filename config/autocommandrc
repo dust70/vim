@@ -1,90 +1,86 @@
-    " {{{ doJump
-    augroup doJump
-        autocmd!
-        " The following to have Vim jump to the last position when reopening a
-        " file
-        autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <=line("$")
-                    \ | execute "normal g'\"" | endif
-    augroup END
-    "}}}
+" {{{ doJump
+augroup doJump
+    autocmd!
+    " The following to have Vim jump to the last position when reopening a file
+    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | execute "normal g'\"" | endif
+augroup END
+"}}}
 
-    " {{{ loadDictionary
-    augroup loadDictionary
-        autocmd!
-        " automatically load dictionaries for known syntaxes
-        autocmd FileType * execute "setlocal dictionary+=" . $VIMRUNTIME . "/syntax/" . &filetype . ".vim"
-    augroup END
-    "}}}
+" {{{ loadDictionary
+augroup loadDictionary
+    autocmd!
+    " automatically load dictionaries for known syntaxes
+    autocmd FileType * execute "setlocal dictionary+=" . $VIMRUNTIME . "/syntax/" . &filetype . ".vim"
+augroup END
+"}}}
 
-    " {{{ loadOmniFunc
-    augroup loadOmniFunc
-        autocmd!
-        " This option specifies a function to be used for Insert mode omni
-        " completion with CTRL-X CTRL-O. |i_CTRL-X_CTRL-O|
-        " See |complete-functions| for an explanation of how the function is
-        " invoked and what it should return.
-        autocmd FileType * setlocal omnifunc=syntaxcomplete#Complete
-        autocmd FileType c setlocal omnifunc=ccomplete#Complete
-        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-        autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-        autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-        autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-        autocmd FileType sql setlocal omnifunc=sqlcomplete#Complete
-        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-    augroup END
-    "}}}
+" {{{ loadOmniFunc
+augroup loadOmniFunc
+    autocmd!
+    autocmd FileType * setlocal omnifunc=syntaxcomplete#Complete
+    autocmd FileType c setlocal omnifunc=ccomplete#Complete
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+    autocmd FileType sql setlocal omnifunc=sqlcomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup END
+"}}}
 
-    " {{{ loadFoldMethod
-    augroup loadFoldMethod
-        autocmd!
-        autocmd FileType c setlocal foldmethod=syntax
-        autocmd FileType javascript setlocal foldmethod=syntax
-        autocmd FileType python setlocal foldmethod=syntax
-        autocmd FileType ruby setlocal foldmethod=syntax
-        autocmd FileType sql setlocal foldmethod=syntax
-    augroup END
-    "}}}
+" {{{ loadFoldMethod
+augroup loadFoldMethod
+    autocmd!
+    autocmd FileType c setlocal foldmethod=syntax
+    autocmd FileType javascript setlocal foldmethod=syntax
+    autocmd FileType ruby setlocal foldmethod=syntax
+    autocmd FileType sql setlocal foldmethod=syntax
+augroup END
+"}}}
 
-    " {{{ extraWhitespace
-    augroup extraWhitespace
-        autocmd!
-        autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-        autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-        autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-    augroup END
-    "}}}
+" {{{ extraWhitespace
+augroup extraWhitespace
+    autocmd!
+    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
-    " {{{ pluginConf
-    " don't load certain plugins depending on filetype
-    augroup pluginConf
-        autocmd!
-        autocmd FileType mail let g:loaded_AutoClose=1
-    augroup END
-    "}}}
+    highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+    match ExtraWhitespace /\s\+$\| \+\ze\t/
+augroup END
+"}}}
 
-    " {{{ filetype specific autocommands
-    augroup filetypes
-        autocmd!
-        autocmd! BufRead,BufNewFile *.phtml     setlocal filetype=php.html.javascript
-        autocmd! BufRead,BufNewFile *.html      setlocal filetype=html.javascript
-        autocmd! BufRead,BufNewFile phpunit.*   setlocal filetype=xml
-        autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
+" {{{ pluginConf
+" don't load certain plugins depending on filetype
+augroup pluginConf
+    autocmd!
+    autocmd FileType mail let g:loaded_AutoClose=1
+augroup END
+"}}}
 
-        " simple filetypes
-        autocmd! FileType c,cpp,html,java,php,sh,tex,vim,xml
-                    \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines() |
-                    \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
+" {{{ filetype specific autocommands
+augroup filetypes
+    autocmd!
+    autocmd! BufRead,BufNewFile *.phtml     setlocal filetype=php.html.javascript
+    autocmd! BufRead,BufNewFile *.html      setlocal filetype=html.javascript
+    autocmd! BufRead,BufNewFile phpunit.*   setlocal filetype=xml
+    autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
 
-        autocmd! FileType python
-                    \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
+    " simple filetypes
+    autocmd! FileType c,cpp,html,java,php,sh,tex,vim,xml
+                \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
+                \ | autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
 
-        " combined filetype
-        autocmd! FileType html.javascript,php.html,php.html.javascript
-                    \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace() |
-                    \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
-    augroup END
-    "}}}
+    autocmd! FileType python
+                \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
+
+    " combined filetype
+    autocmd! FileType html.javascript,php.html,php.html.javascript
+                \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
+                \ | autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
+augroup END
+"}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
