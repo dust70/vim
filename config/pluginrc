@@ -813,6 +813,37 @@ let g:phpcomplete_parse_docblock_comments = 1
 "}}}
 "}}}
 
+" {{{ Startify
+" {{{ startify_bookmarks
+" A list of files to bookmark. Those files will always be shown at the bottom of
+" the start screen.
+let g:startify_bookmarks = [
+    '~/repositories/dotfiles/vim/config/autocommandrc',
+    '~/repositories/dotfiles/vim/config/ctags',
+    '~/repositories/dotfiles/vim/config/functionrc',
+    '~/repositories/dotfiles/vim/config/mappingsrc',
+    '~/repositories/dotfiles/vim/config/pluginrc',
+    '~/repositories/dotfiles/vim/config/projectrc',
+    '~/repositories/dotfiles/vim/config/syntaxrc',
+    '~/repositories/dotfiles/vim/config/vimoutlinerrc',
+    '~/repositories/dotfiles/vim/config/vimpagerrc',
+    '~/repositories/dotfiles/vim/config/vimrc'
+]
+"}}}
+
+" {{{ startify_files_number
+" The number of files to list.
+let g:startify_files_number = 30
+"}}}
+
+" {{{ startify_session_autoload
+" If you bookmark a directory that contains a Session.vim and this option is
+" enabled, that session will be loaded automatically when you open the
+" directory.
+let g:startify_session_autoload = 1
+"}}}
+"}}}
+
 " {{{ SuperTab
 " {{{ SuperTabDefaultCompletionType
 " Used to set the default completion type. There is no need to escape this value
