@@ -2,7 +2,8 @@
 augroup doJump
     autocmd!
     " The following to have Vim jump to the last position when reopening a file
-    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | execute "normal g'\"" | endif
+    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+                \ | execute "normal g'\"" | endif
 augroup END
 "}}}
 
@@ -10,7 +11,8 @@ augroup END
 augroup loadDictionary
     autocmd!
     " automatically load dictionaries for known syntaxes
-    autocmd FileType * execute "setlocal dictionary+=" . $VIMRUNTIME . "/syntax/" . &filetype . ".vim"
+    autocmd FileType * execute "setlocal dictionary+="
+                \ . $VIMRUNTIME . "/syntax/" . &filetype . ".vim"
 augroup END
 "}}}
 
@@ -20,13 +22,8 @@ augroup loadOmniFunc
     autocmd FileType * setlocal omnifunc=syntaxcomplete#Complete
     autocmd FileType c setlocal omnifunc=ccomplete#Complete
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-    autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
     autocmd FileType sql setlocal omnifunc=sqlcomplete#Complete
-    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup END
 "}}}
 
@@ -35,20 +32,7 @@ augroup loadFoldMethod
     autocmd!
     autocmd FileType c setlocal foldmethod=syntax
     autocmd FileType javascript setlocal foldmethod=syntax
-    autocmd FileType ruby setlocal foldmethod=syntax
     autocmd FileType sql setlocal foldmethod=syntax
-augroup END
-"}}}
-
-" {{{ extraWhitespace
-augroup extraWhitespace
-    autocmd!
-    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-
-    highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-    match ExtraWhitespace /\s\+$\| \+\ze\t/
 augroup END
 "}}}
 
@@ -60,26 +44,24 @@ augroup pluginConf
 augroup END
 "}}}
 
-" {{{ filetype specific autocommands
+" {{{ filetype specific autocommands       
 augroup filetypes
     autocmd!
-    autocmd! BufRead,BufNewFile *.phtml     setlocal filetype=php.html.javascript
-    autocmd! BufRead,BufNewFile *.html      setlocal filetype=html.javascript
-    autocmd! BufRead,BufNewFile phpunit.*   setlocal filetype=xml
+    autocmd! BufRead,BufNewFile *.phtml setlocal filetype=php.html.javascript
+    autocmd! BufRead,BufNewFile *.html setlocal filetype=html.javascript
+    autocmd! BufRead,BufNewFile *.xml.dist setlocal filetype=xml
     autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
+
+    autocmd! FileType c,cpp,html,html.javascript,java,php,php.html,php.html.javascript,python,sh,tex,vim,xml
+                \ let g:DeleteTrailingWhitespace = 1
 
     " simple filetypes
     autocmd! FileType c,cpp,html,java,php,sh,tex,vim,xml
                 \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
-                \ | autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
-
-    autocmd! FileType python
-                \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
 
     " combined filetype
     autocmd! FileType html.javascript,php.html,php.html.javascript
-                \ autocmd BufWritePre,FileWritePre * :call StripTrailingWhitespace()
-                \ | autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
+                \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
 augroup END
 "}}}
 
