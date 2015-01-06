@@ -8,7 +8,7 @@ endif
 " List of file names, separated by commas, that are used to lookup words for
 " keyword completion commands |i_CTRL-X_CTRL-K|. Each file should contain a
 " list of words. This can be one word per line, or several words per line,
-" separated by non-keyword characters (white space is preferred). Maximum line
+" separated by non-keyword characters (whitespace is preferred). Maximum line
 " length is 510 bytes.
 " When this option is empty, or an entry "spell" is present, spell checking is
 " enabled the currently active spelling is used. |spell| To include a comma in
@@ -18,6 +18,13 @@ endif
 " type.
 execute 'setlocal dictionary-=' . g:vimfiles . '/bundle/PHPDictionary/PHP.dict'
 execute 'setlocal dictionary^=' . g:vimfiles . '/bundle/PHPDictionary/PHP.dict'
+"}}}
+
+" {{{ omnifunc
+" This option specifies a function to be used for Insert mode omni completion
+" with CTRL-X CTRL-O. |i_CTRL-X_CTRL-O| See |complete-functions| for an
+" explanation of how the function is invoked and what it should return.
+setlocal omnifunc=phpcomplete#CompletePHP
 "}}}
 
 " {{{ suffixesadd
