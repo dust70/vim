@@ -276,7 +276,7 @@ if has("cscope")
     " databases within Vim, you will get a (hopefully) useful message should the
     " database fail to be added.
     set nocscopeverbose
-    " }}}
+    "}}}
 
     " {{{ add any database in current directory
     if filereadable("cscope.out")
@@ -295,7 +295,7 @@ endif
 " If you only want the highlighting in the current window you can use these
 " autocommands
 set cursorcolumn
-" }}}
+"}}}
 
 " {{{ cursorline
 " Highlight the screen line of the cursor with CursorLine |hl-CursorLine|.
@@ -309,7 +309,7 @@ set cursorline
 " List of file names, separated by commas, that are used to lookup words for
 " keyword completion commands |i_CTRL-X_CTRL-K|. Each file should contain a
 " list of words. This can be one word per line, or several words per line,
-" separated by non-keyword characters (white space is preferred). Maximum line
+" separated by non-keyword characters (whitespace is preferred). Maximum line
 " length is 510 bytes.
 set dictionary+=/usr/share/dict/words
 "}}}
@@ -327,11 +327,11 @@ set dictionary+=/usr/share/dict/words
 "	icase		Ignore changes in case of text. "a" and "A" are
 "			considered the same. Adds the "-i" flag to the "diff"
 "			command if 'diffexpr' is empty.
-"	iwhite		Ignore changes in amount of white space. Adds the "-b"
+"	iwhite		Ignore changes in amount of whitespace. Adds the "-b"
 "			flag to the "diff" command if 'diffexpr' is empty.
 "			Check the documentation of the "diff" command for what
 "			this does exactly. It should ignore adding trailing
-"			white space, but not leading white space.
+"			whitespace, but not leading whitespace.
 "	horizontal	Start diff mode with horizontal splits (unless
 "			explicitly specified otherwise).
 "	vertical	Start diff mode with vertical splits (unless
@@ -433,14 +433,6 @@ endif
 " used.
 if has("gui_running")
     set guioptions-=LrT guioptions+=g
-endif
-"}}}
-
-" {{{ guitablabel
-" When nonempty describes the text to use in a label of the GUI tab pages line.
-" When empty and when the result is empty Vim will use a default label.
-if has('gui_running')
-    set guitablabel=%{GuiTabLabel()}
 endif
 "}}}
 
@@ -619,7 +611,7 @@ set scrolloff=3
 " terminal set it to a large number or 0. When using a fast terminal use a small
 " number or 1. Not used for "zh" and "zl" commands.
 set sidescrolloff=5
-" }}}
+"}}}
 
 " {{{ sessionoptions
 " Changes the effect of the mksession command. It is a comma separated list of
@@ -644,7 +636,7 @@ set shiftwidth=4
 " This option helps to avoid all the |hit-enter| prompts caused by file
 " messages, for example with CTRL-G, and to avoid some other messages.
 set shortmess+=a
-" }}}
+"}}}
 
 " {{{ showmatch
 " When a bracket is inserted, briefly jump to the matching one. The jump is
@@ -784,7 +776,7 @@ set termencoding=utf-8
 " These two options together determine the behavior when part of a mapped key
 " sequence or keyboard code has been received.
 set ttimeout
-" }}}
+"}}}
 
 " {{{ ttimoutlen
 " The time in milliseconds that is waited for a key code or mapped key sequence
@@ -803,7 +795,7 @@ if &term =~ "rxvt" || &term =~ "screen" || &term =~ "term"
     endif
     set title
 endif
-" }}}
+"}}}
 
 " {{{ titlelen
 " Gives the percentage of 'columns' to use for the length of the window title.
@@ -814,7 +806,7 @@ endif
 " used and other things in the title bar.  When 'titlelen' is zero the full path
 " is used.  Otherwise, values from 1 to 30000 percent can be used.
 set titlelen=50
-" }}}
+"}}}
 
 " {{{ titleold
 " This option will be used for the window title when exiting Vim if the original
@@ -969,6 +961,15 @@ highlight SpellLocal term=underline cterm=underline
 highlight Pmenu ctermfg=lightgray ctermbg=black guifg=lightgray guibg=black
 highlight PmenuSel ctermfg=lightcyan ctermbg=darkgrey
             \ guifg=lightgray guibg=darkcyan gui=bold
+"}}}
+
+" {{{ ShowTrailingWhitespace
+highlight ShowTrailingWhitespace ctermbg=darkgreen guibg=darkgreen
+"}}}
+
+" {{{ IndentGuides
+highlight IndentGuidesOdd  guibg=black ctermbg=black
+highlight IndentGuidesEven guibg=darkgrey ctermbg=darkgrey
 "}}}
 "}}}
 
