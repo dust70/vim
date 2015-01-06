@@ -31,8 +31,7 @@ endfunction
 
 augroup ShopRocket
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/shoprocket/**
-                \     call ConfigureShoprocket()
+                \ ~/repositories/cbn/shoprocket/** call ConfigureShoprocket()
 augroup END
 "}}}
 
@@ -50,8 +49,7 @@ endfunction
 
 augroup Soap
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/soap/**
-                \ call ConfigureSoap()
+                \ ~/repositories/cbn/soap/** call ConfigureSoap()
 augroup END
 "}}}
 "}}}
@@ -70,8 +68,7 @@ endfunction
 
 augroup ShopRocket
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/projects/invoicing
-                \     call ConfigureInvoicing()
+                \ ~/repositories/projects/invoicing call ConfigureInvoicing()
 augroup END
 "}}}
 "}}}
