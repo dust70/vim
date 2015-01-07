@@ -944,23 +944,23 @@ iabbrev 'e é
 "}}}
 
 " {{{ highlight
-" {{{ highlight for searching
-highlight Search term=underline ctermfg=white ctermbg=blue
-            \ guifg=white guibg=blue
-"}}}
-
 " {{{ highlight for spell checking
-highlight SpellBad term=standout ctermfg=white ctermbg=red cterm=underline
-            \ term=underline
+highlight SpellBad term=standout ctermfg=white ctermbg=red
+            \ cterm=underline term=underline
 highlight SpellCap term=underline cterm=underline
 highlight SpellRare term=underline cterm=underline
 highlight SpellLocal term=underline cterm=underline
 "}}}
 
+" {{{ highlight for searching
+highlight Search ctermfg=black ctermbg=lightblue cterm=italic,underline 
+            \ guifg=white guibg=blue
+"}}}
+
 " {{{ nice color for completion menu
-highlight Pmenu ctermfg=lightgray ctermbg=black guifg=lightgray guibg=black
-highlight PmenuSel ctermfg=lightcyan ctermbg=darkgrey
-            \ guifg=lightgray guibg=darkcyan gui=bold
+highlight Pmenu ctermfg=white ctermbg=black guifg=lightgray guibg=black
+highlight PmenuSel ctermfg=black ctermbg=lightblue cterm=bold
+            \ guifg=black guibg=lightblue gui=bold
 "}}}
 
 " {{{ ShowTrailingWhitespace
@@ -968,8 +968,8 @@ highlight ShowTrailingWhitespace ctermbg=darkgreen guibg=darkgreen
 "}}}
 
 " {{{ IndentGuides
-highlight IndentGuidesOdd  guibg=black ctermbg=black
-highlight IndentGuidesEven guibg=darkgrey ctermbg=darkgrey
+highlight IndentGuidesOdd guibg=darkgrey ctermbg=darkgrey
+highlight IndentGuidesEven guibg=black ctermbg=black
 "}}}
 "}}}
 
