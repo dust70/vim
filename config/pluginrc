@@ -595,6 +595,8 @@ nmap <silent> ,fs :Unite -buffer-name=sort vimfiler/sort<cr>
 "}}}
 
 " {{{ FuGITive
+nmap <silent> ,ga :Gwrite<cr>
+nmap <silent> ,gb :Gblame<cr>
 nmap <silent> ,gc :Gcommit<cr>
 nmap <silent> ,gf :Gfetch<cr>
 nmap <silent> ,gg :Ggrep<space>
