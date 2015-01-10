@@ -595,9 +595,11 @@ nmap <silent> ,fs :Unite -buffer-name=sort vimfiler/sort<cr>
 "}}}
 
 " {{{ FuGITive
+" {{{ mappings
 nmap <silent> ,ga :Gwrite<cr>
 nmap <silent> ,gb :Gblame<cr>
 nmap <silent> ,gc :Gcommit<cr>
+nmap <silent> ,gd :Gdiff<cr>
 nmap <silent> ,gf :Gfetch<cr>
 nmap <silent> ,gg :Ggrep<space>
 nmap <silent> ,gm :Gmove<space>
@@ -605,6 +607,7 @@ nmap <silent> ,gp :Gpush<cr>
 nmap <silent> ,gr :Gremove<space>
 nmap <silent> ,gs :Gstatus<cr>
 nmap <silent> ,gv :Gdiff<cr>
+"}}}
 "}}}
 
 " {{{ GUndo
@@ -1300,10 +1303,15 @@ nmap <silent> <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
 let g:neomru#time_format = '%y-%m-%d %H:%M'
 "}}}
 
+" {{{ neomru#update_interval
+" Specify the update interval to save updated mru files/directories to disk.
+let g:neomru#update_interval = 3600
+"}}}
+
 " {{{ neomru#file_mru_path
 " Specifies the file to write the information of most recent used files.
 let g:neomru#file_mru_path = g:vimfiles . '/tmp/mru/files'
-let g:neomru#file_mru_ignore_pattern = g:vimfiles . '/tmp/mru/directory'
+let g:neomru#directory_mru_path = g:vimfiles . '/tmp/mru/directory'
 "}}}
 "}}}
 
