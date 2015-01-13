@@ -52,6 +52,24 @@ augroup Soap
                 \ ~/repositories/cbn/soap/** call ConfigureSoap()
 augroup END
 "}}}
+
+" {{{ Update
+function! ConfigureUpdate()
+    call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
+    call ConfigurePhpProject()
+
+    call ConfigureProject(
+                \ '~/repositories/cbn/update/',
+                \ 'vagrant:/home/vargrant/update'
+                \ )
+    augroup end
+endfunction
+
+augroup Update
+    autocmd! BufEnter,BufNewFile,BufRead
+                \ ~/repositories/cbn/update/** call ConfigureUpdate()
+augroup END
+"}}}
 "}}}
 
 " {{{ Project
