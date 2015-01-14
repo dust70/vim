@@ -1300,7 +1300,7 @@ nmap <silent> <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
 " {{{ neomru#time_format
 " Specify the output format of the modified file in MRU sources. Uses strftime()
 " formatting.
-let g:neomru#time_format = '%y-%m-%d %H:%M'
+let g:neomru#time_format = ' %Y-%m-%d %H:%M '
 "}}}
 
 " {{{ neomru#update_interval
