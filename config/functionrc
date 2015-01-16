@@ -79,7 +79,7 @@ function! ConfigurePhpProject()
     call LoadCTagsFile('./tags')
 
     compiler phpunit_local
-    nnoremap <silent> ,dt :Dispatch php -d "error_reporting=E_ALL|E_STRICT" ./bin/phpunit --strict --verbose --filter %:t:r<cr>
+    nnoremap <silent> ,dt :Dispatch php -d "error_reporting=E_ALL\|E_STRICT" ./bin/phpunit --strict --verbose --filter %:t:r<cr>
 
     let g:vdebug_options['server'] = '192.168.56.1'
 endfunction
