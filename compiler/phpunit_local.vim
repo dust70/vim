@@ -6,9 +6,5 @@ if exists("current_compiler")
 endif
 let current_compiler = "phpunit_local"
 
-if executable("./bin/phpunit")
-    CompilerSet makeprg=./bin/phpunit\ --strict\ --verbose
-else
-    CompilerSet makeprg=phpunit\ --strict\ --verbose
-endif
+CompilerSet makeprg=php\ -d\ "error_reporting=E_ALL|E_STRICT"\ ./bin/phpunit\ --strict\ --verbose
 "CompilerSet errorformat=%E%n)\ %.%#,%Z%f:%l,%C%m,%C,%-G%.%#
