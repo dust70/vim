@@ -233,6 +233,14 @@ options head
 		${0}
         <?php endforeach; ?>
 
+snippet mockbuilder
+alias mock
+options head
+        ${1} = $this
+                ->getMockBuilder(${2})
+                ->disableOriginalConstructor()
+                ->getMock();${0}
+
 snippet assertdispatch
 abbr dispatch
 alias asd dispatch
@@ -267,5 +275,4 @@ options head
 snippet pphp
 options word
 	<?php ${1:TARGET} ?>
-
 
