@@ -380,6 +380,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name' : 'VDebug'
                 \ }
 
+    NeoBundle 'dbakker/vim-lint', {
+                \ 'directory' : 'VimLint',
+                \ 'name' : 'VimLint'
+                \ }
+
     NeoBundle 'jmcantrell/vim-virtualenv', {
                 \ 'directory' : 'VirtualEnv',
                 \ 'name' : 'VirtualEnv'
@@ -953,6 +958,27 @@ augroup END
 "}}}
 
 " {{{ Syntastic
+" {{{ syntastic_check_on_open
+" If enabled, syntastic will do syntax checks when buffers are first loaded as
+" well as on saving
+let g:syntastic_check_on_open = 1
+"}}}
+
+" {{{ syntastic_check_on_wq
+" Normally syntastic runs syntax checks whenever buffers are written to disk. If
+" you want to skip these checks when you issue |:wq|, |:x|, and |:ZZ|, set this
+" variable to 0.
+let g:syntastic_check_on_wq = 0
+"}}}
+
+" {{{ syntastic_aggregate_errors
+" When enabled, syntastic runs all checkers that apply to the current filetype,
+" then aggregates errors found by all checkers and displays them. When disabled,
+" syntastic runs each checker in turn, and stops to display the results the
+" first time a checker finds any errors.
+let g:syntastic_aggregate_errors = 1
+"}}}
+
 " {{{ syntastic_auto_loc_list
 " Use this option to tell syntastic to automatically open and/or close the
 " location-list (see syntastic-error-window).
@@ -965,6 +991,32 @@ augroup END
 " detected, but not opened automatically.
 "     let g:syntastic_auto_loc_list = 2
 let g:syntastic_auto_loc_list = 1
+"}}}
+
+" {{{ syntastic_filetype_map
+" Use this option to map non-standard filetypes to standard ones. Corresponding
+" checkers are mapped accordingly, which allows syntastic to check files with
+" non-standard filetypes
+let g:syntastic_filetype_map = {
+            \ 'latex' : 'tex',
+            \ }
+"}}}
+
+" {{{ syntastic_mode_map
+" Use this option to fine tune when automatic syntax checking is done (or not
+" done).
+let g:syntastic_mode_map = {
+            \ 'mode'              : 'active',
+            \ 'active_filetypes'  : [
+            \    'php',
+            \    'python',
+            \    'ruby'
+            \ ],
+            \ 'passive_filetypes' : [
+            \    'html',
+            \    'puppet'
+            \ ]
+            \ }
 "}}}
 
 " {{{ Syntax Checker
@@ -991,9 +1043,19 @@ let g:syntastic_php_phpcs_args = "--standard=zend -n --tab-width=" . &tabstop
 
 let g:syntastic_php_checkers = [
             \ 'php',
+            \ 'phplint',
             \ 'phpmd',
-            \ 'phpcs',
+            \ 'phpcs'
             \ ]
+"}}}
+
+" {{{ Puppet
+" puppet check
+let g:syntastic_puppet_checkers = [
+            \ 'puppet',
+            \ 'puppetlint'
+            \ ]
+
 "}}}
 
 " {{{ Python
@@ -1004,6 +1066,30 @@ let g:syntastic_python_checkers = [
             \ 'pep8',
             \ 'pyflakes',
             \ 'pylint'
+            \ ]
+"}}}
+
+" {{{ Ruby
+" ruby checker
+let g:syntastic_ruby_checkers = [
+            \ 'mri',
+            \ 'rubylint'
+            \ ]
+"}}}
+
+" {{{ VIm
+" vim check
+let g:syntastic_vim_checkers = [
+            \ 'vim',
+            \ 'vimlint'
+            \ ]
+"}}}
+
+" {{{ XML
+" xml check
+let g:syntastic_xml_checkers = [
+            \ 'xmllint',
+            \ 'plutil'
             \ ]
 "}}}
 "}}}
