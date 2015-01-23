@@ -150,8 +150,7 @@ options head
         ${1}->expects($this->${2:once()})
                 ->method('${3}')
                 ->with($this->equalTo(${4}))
-                ->will($this->returnValue(${5}));
-        ${0}
+                ->will($this->returnValue(${5}));${0}
 
 snippet t-
 abbr t-
