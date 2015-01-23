@@ -47,8 +47,7 @@ augroup END
 " {{{ filetype specific autocommands       
 augroup filetypes
     autocmd!
-    autocmd! BufRead,BufNewFile *.phtml setlocal filetype=php.html.javascript
-    autocmd! BufRead,BufNewFile *.html setlocal filetype=html.javascript
+    autocmd! BufRead,BufNewFile *.phtml setlocal filetype=php.html
     autocmd! BufRead,BufNewFile *.xml.dist setlocal filetype=xml
     autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
 
