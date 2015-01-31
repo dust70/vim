@@ -65,14 +65,19 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Behat'
                 \ }
 
+    NeoBundle 'chrisbra/BufTimer', {
+                \ 'directory': 'BufTimer',
+                \ 'name': 'BufTimer'
+                \ }
+
     NeoBundle 'chrisbra/CheckAttach', {
                 \ 'directory': 'CheckAttach',
                 \ 'name': 'CheckAttach'
                 \ }
 
-    NeoBundle 'gorodinskiy/vim-coloresque', {
-                \ 'directory': 'Coloresque',
-                \ 'name': 'Coloresque'
+    NeoBundle 'chrisbra/Colorizer', {
+                \ 'directory': 'Colorizer',
+                \ 'name': 'Colorizer'
                 \ }
 
     NeoBundle 'flazz/vim-colorschemes', {
@@ -136,6 +141,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory': 'FuGITive',
                 \ 'name': 'FuGITive'
                 \ }
+    NeoBundle 'tpope/vim-git', {
+                \ 'directory': 'Git',
+                \ 'name': 'Git'
+                \ }
 
     NeoBundle 'gregsexton/gitv', {
                 \ 'directory': 'GitV',
@@ -187,6 +196,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'gregsexton/MatchTag', {
                 \ 'directory': 'MatchTag',
                 \ 'name': 'MatchTag'
+                \ }
+
+    NeoBundle 'chrisbra/NrrwRgn', {
+                \ 'directory': 'Narrowing',
+                \ 'name': 'Narrowing'
                 \ }
 
     NeoBundle 'Shougo/neocomplete', {
@@ -303,11 +317,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Speeddating'
                 \ }
 
-    NeoBundle 'mhinz/vim-startify', {
-                \ 'directory': 'Startify',
-                \ 'name': 'Startify'
-                \ }
-
     NeoBundle 'ervandew/supertab', {
                 \ 'directory': 'Supertab',
                 \ 'name': 'Supertab'
@@ -316,6 +325,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'tpope/vim-surround', {
                 \ 'directory': 'Surround',
                 \ 'name': 'Surround'
+                \ }
+
+    NeoBundle 'mjbrownie/swapit', {
+                \ 'directory': 'SwapIt',
+                \ 'name': 'SwapIt'
                 \ }
 
     NeoBundle 'scrooloose/syntastic', {
@@ -711,6 +725,19 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#auto_completion_start_length = 4
 "}}}
 
+" {{{ neocomplete#manual_completion_start_length
+" This variable controls the number of the input completion at the time of
+" manual completion. It is convenient when you reduce this value, but may get
+" heavy when you deleted a letter in <C-h> or <BS> at popup indication time.
+let g:neocomplete#manual_completion_start_length = 3
+"}}}
+
+" {{{ neocomplete#enable_smart_case
+" When a capital letter is included in input, neocomplete does not ignore the
+" upper- and lowercase.
+let g:neocomplete#enable_smart_case = 1
+" }}}
+
 " {{{ neocomplete#data_directory
 " This variable appoints the directory that neocomplete begins to write a file
 " at one time. When there is not the directory which appointed here, it is made.
@@ -756,10 +783,10 @@ if !exists('g:neocomplete#sources')
 endif
 let g:neocomplete#sources = {
             \ '_': [],
-            \ 'cpp': ['buffer', 'omni', 'tag', 'include'],
-            \ 'html': ['buffer', 'omni', 'tag', 'include'],
-            \ 'php': ['buffer', 'omni', 'tag', 'include'],
-            \ 'python': ['buffer', 'omni', 'tag', 'include']
+            \ 'cpp': ['omni', 'tag', 'include', 'buffer'],
+            \ 'html': ['omni', 'tag', 'include', 'buffer'],
+            \ 'php': ['omni', 'tag', 'include', 'buffer'],
+            \ 'python': ['omni', 'tag', 'include', 'buffer']
             \ }
 "}}}
 
@@ -771,7 +798,9 @@ let g:neocomplete#release_cache_time = 10800
 " {{{ neocomplete#ignore_composite_filetypes
 " It is a dictionary to ignore composite file type. The dictionary's key is
 " composite filetype and value is filetype.
-let g:neocomplete#ignore_composite_filetypes = {}
+let g:neocomplete#ignore_composite_filetypes = {
+            \ 'php.html': 'php'
+            \ }
 "}}}
 
 " {{{ neocomplete#sources#dictionary#dictionaries
@@ -918,30 +947,6 @@ let g:phpcomplete_parse_docblock_comments = 1
 "}}}
 "}}}
 
-" {{{ Startify
-" {{{ startify_files_number
-" The number of files to list.
-let g:startify_files_number = 30
-"}}}
-
-" {{{ startify_session_autoload
-" If you bookmark a directory that contains a Session.vim and this option is
-" enabled, that session will be loaded automatically when you open the
-" directory.
-let g:startify_session_autoload = 1
-"}}}
-
-" {{{ startify_skiplist
-" A list of Vim regular expressions that filters recently used files.
-let g:startify_skiplist = [
-            \ '^/etc',
-            \ '^/tmp',
-            \ '^/usr',
-            \ 'COMMIT_EDITMSG'
-            \ ]
-"}}}
-"}}}
-
 " {{{ SuperTab
 " {{{ SuperTabDefaultCompletionType
 " Used to set the default completion type. There is no need to escape this value
@@ -953,15 +958,6 @@ let g:SuperTabDefaultCompletionType = 'context'
 " When enabled, supertab will attempt to close vim's completion preview window
 " when the completion popup closes (completion is finished or canceled).
 let g:SuperTabClosePreviewOnPopupClose = 1
-"}}}
-
-" {{{ SuberTab autocommands
-augroup SuperTab
-    autocmd FileType *
-                \ if &omnifunc != '' |
-                \    call SuperTabChain(&omnifunc, "<c-p>") |
-                \ endif
-augroup END
 "}}}
 "}}}
 
