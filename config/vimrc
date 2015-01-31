@@ -587,13 +587,13 @@ set path+=.,~,~/repositories/**
 
 " {{{ previewheight
 " Default height for a preview window.
-set previewheight=11
+set previewheight=21
 "}}}
 
 " {{{ pumheight
 " Determines the maximum number of items to show in the popup menu for Insert
 " mode completion. When zero as much space as available is used.
-set pumheight=11
+set pumheight=21
 "}}}
 
 " {{{ scrolloff
