@@ -1,3 +1,18 @@
+include php.snip
+
+delete p
+delete var_dump
+
+snippet php
+options head
+	<?php
+
+	${1:TARGET}
+
+snippet pphp
+options word
+	<?php ${1:TARGET} ?>
+
 snippet class
 options head
 	<?php
@@ -11,7 +26,6 @@ options head
 	}
 
 snippet class_extends
-abbr ce
 alias ce classextends
 options head
 	<?php
@@ -22,86 +36,6 @@ options head
 	class ${1:`vim_snippets#Filename()`} extends ${2:Foo\Bar\Baz}
 	{
 		${0}
-	}
-
-snippet class_test
-abbr ct
-alias classtest testclass tc
-options head
-	<?php
-
-	/**
-	 * @author René Six <${1:info@renatius.de}>
-	 */
-	class ${2:`vim_snippets#Filename()`} extends ${3:PHPUnit_Framework_TestCase}
-	{
-		protected $_object = null;
-		protected $_pimple = null;
-
-		/**
-		 * Sets up the fixture, for example, opens a network connection.
-		 * This method is called before a test is executed.
-		 */
-		protected function setUp()
-		{
-			parent::setUp();
-                        $this->_pimple = new Pimple();
-			$this->_object = new ${3:ClassToTest}(${4});${0}
-		}
-
-		/**
-		 * Remove the fixture, for example, closes a network connection.
-		 * This method is called after a test is executed.
-		 */
-                protected function tearDown()
-                {
-                        try {
-				// TODO: add try body
-			} catch(Exception $e) {
-				// TODO: add exception handling
-			} finally {
-				parent::tearDown();
-			}
-		}
-	}
-
-snippet class_test2
-abbr ct2
-alias classtest2 testclass2 tc2
-options head
-	<?php
-
-	/**
-	 * @author René Six <${1:info@renatius.de}>
-	 */
-	class ${2:`vim_snippets#Filename()`} extends ${3:PHPUnit_Framework_TestCase}
-	{
-		protected $_object = null;
-
-		/**
-		 * Sets up the fixture, for example, opens a network connection.
-		 * This method is called before a test is executed.
-		 */
-		protected function setUp()
-		{
-			parent::setUp();
-			$this->_object = new ${3:ClassToTest}(${4});${0}
-		}
-
-		/**
-		 * Remove the fixture, for example, closes a network connection.
-		 * This method is called after a test is executed.
-		 */
-                protected function tearDown()
-                {
-                        try {
-				// TODO: add try body
-			} catch(Exception $e) {
-				// TODO: add exception handling
-			} finally {
-				parent::tearDown();
-			}
-		}
 	}
 
 snippet construct
@@ -122,36 +56,6 @@ options head
 		${4:#:code}
 		throw new Exception('Not implemented yet.');
 	}
-
-snippet function_test
-abbr function_test
-alias testfunction functiontest tf
-options head
-	public function test${1:#:FunctionName}()
-	{
-		${0:#:code}
-		$this->fail('Not implemented yet.');
-	}
-
-snippet function_dataprovider
-abbr function_dataprovider
-alias function_dataProvider dataprovider_function fd
-options head
-	public function dataProviderFor${1:#:FunctionName}()
-	{
-                return array(
-                        array(),
-                );
-	}
-
-snippet expects
-alias exp
-options head
-        ${1}->expects($this->${2:once()})
-                ->method('${3}')
-                ->with($this->equalTo(${4}))
-                ->will($this->returnValue(${5}));${0}
-
 snippet t-
 abbr t-
 alias this
@@ -166,11 +70,6 @@ options head
 snippet pmd
 options word
 	@SuppressWarnings(PHPMD.${0:Foo})
-
-snippet dataprovider
-alias dp
-options head
-	 @dataProvider dataProviderFor${0:name}
 
 snippet ?=
 	<?php echo ${1}; ?>${0}
@@ -218,60 +117,39 @@ options word
         die();
         ?>
 
+snippet for
+options head
+        for ($${1:i} = ${2:0}; $$1 < ${3}; $$1++) {
+                ${0:TARGET}
+        }
+
 snippet foreach
-alias foreachk foreach-hashmap
+options head
+	foreach ($${1:#:variable} as $${4:value}) {
+		${0}
+	}
+
+snippet foreach-hashmap
 options head
 	foreach ($${1:#:variable} as $${2:key}${3: =>} $${4:value}) {
 		${0}
 	}
 
 snippet pforeach
-alias pforeachk pforeach-hashmap
+options head
+	<?php foreach ($${1:#:variable} as ${4:value}) : ?>
+		${0}
+        <?php endforeach; ?>
+
+snippet pforeach-hashmap
 options head
 	<?php foreach ($${1:#:variable} as $${2:key}${3: =>} $${4:value}) : ?>
 		${0}
         <?php endforeach; ?>
 
-snippet mockbuilder
-alias mock
-options head
-        ${1} = $this
-                ->getMockBuilder(${2})
-                ->disableOriginalConstructor()
-                ->getMock();${0}
+snippet array
+        array(
+                '${1}' => ${2} ${0}
+        );
 
-snippet assertdispatch
-abbr dispatch
-alias asd dispatch
-options head
-        $this->dispatch(${1});
-
-        $this->assertModule(${2});
-        $this->assertController(${3});
-        $this->assertAction(${4});
-
-snippet assertredirect
-alias asr
-options head
-        $this->assertRedirect(${1});
-
-snippet skip
-alias skiptest skipTest
-options head
-        $this->markTestSkipped(${1});
-
-snippet incomplete
-alias incompletetest
-options head
-        $this->markTestIncomplete(${1});
-
-snippet php
-options head
-	<?php
-
-	${1:TARGET}
-
-snippet pphp
-options word
-	<?php ${1:TARGET} ?>
 
