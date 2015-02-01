@@ -960,6 +960,15 @@ let g:SuperTabDefaultCompletionType = 'context'
 " when the completion popup closes (completion is finished or canceled).
 let g:SuperTabClosePreviewOnPopupClose = 1
 "}}}
+
+" {{{ SuberTab autocommands
+augroup SuperTab
+    autocmd FileType *
+                \ if &omnifunc != '' |
+                \    call SuperTabChain(&completefunc, &omnifunc, "<c-n>") |
+                \ endif
+augroup END
+"}}}
 "}}}
 
 " {{{ Syntastic
