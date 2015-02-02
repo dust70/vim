@@ -172,6 +172,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'HTML5'
                 \ }
 
+    NeoBundle 'mjbrownie/vim-htmldjango_omnicomplete', {
+                \ 'directory': 'HTML_Django',
+                \ 'name': 'HTML_Django'
+                \ }
+
     NeoBundle 'nathanaelkane/vim-indent-guides.git', {
                 \ 'directory': 'IndentGuides',
                 \ 'name': 'IndentGuides'
