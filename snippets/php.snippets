@@ -128,11 +128,11 @@ options head
 
 snippet foreach
 options head
-	foreach ($${1:#:variable} as $${4:value}) {
+	foreach ($${1:#:variable} as $${2:value}) {
 		${0}
 	}
 
-snippet foreach-hashmap
+snippet foreachhashmap
 options head
 	foreach ($${1:#:variable} as $${2:key}${3: =>} $${4:value}) {
 		${0}
@@ -144,7 +144,7 @@ options head
 		${0}
         <?php endforeach; ?>
 
-snippet pforeach-hashmap
+snippet pforeachhashmap
 options head
 	<?php foreach ($${1:#:variable} as $${2:key}${3: =>} $${4:value}) : ?>
 		${0}
