@@ -51,7 +51,7 @@ augroup filetypes
     autocmd! BufRead,BufNewFile *.xml.dist setlocal filetype=xml
     autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
 
-    autocmd! FileType c,cpp,html,html.javascript,java,php,php.html,php.html.javascript,phpunit.php,python,sh,tex,vim,xml
+    autocmd! FileType c,cpp,html,html.javascript,java,php,php.html,php.html.javascript,python,sh,tex,vim,xml
                 \ let g:DeleteTrailingWhitespace = 1
 
     " simple filetypes
@@ -59,20 +59,9 @@ augroup filetypes
                 \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
 
     " combined filetype
-    autocmd! FileType html.javascript,php.html,php.html.javascript,phpunit.php
+    autocmd! FileType html.javascript,php.html,php.html.javascript
                 \ autocmd BufWritePre,FileWritePre * :call StripDoubleEmptyLines()
 augroup END
 "}}}
-
-" {{{ PHP Unit
-augroup phpunit
-    autocmd! BufRead,BufNewFile,BufWinEnter *Test.php
-                \ setfiletype phpunit.php
-    autocmd! BufRead,BufNewFile,BufWinEnter *OutputTest.php
-                \ setfiletype php_output_testcase.phpunit
-    autocmd! BufRead,BufNewFile,BufWinEnter *WebTest.php
-                \ setfiletype php_selenium_testcase.phpunit
-augroup END
-" }}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
