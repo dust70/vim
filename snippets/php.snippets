@@ -276,8 +276,8 @@ options head
                 ->with($this->equalTo(${4}))
                 ->will($this->returnValue(${5}));${6}
 
-snippet assertdispatch
-alias asd dispatch
+snippet aDispath
+alias dispatchAssert
 options head
         $this->dispatch(${1});
 
@@ -285,13 +285,26 @@ options head
         $this->assertController(${3});
         $this->assertAction(${4});
 
-snippet skip
-alias skiptest skipTest
+snippet aDispathParams
+alias dispatchAssert
+options head
+        $urlParams = $this->dispatchParams(
+                array(
+                        'module'     => '${1}',
+                        'controller' => '${2}',
+                        'action'     => '${3}'${4:,:addtional parameters}
+                )
+        );
+
+        $this->assertModule($urlParams['module']);
+        $this->assertController($urlParams['controller']);
+        $this->assertAction($urlParams['action']);
+
+snippet testSkipped
 options head
         $this->markTestSkipped(${1});
 
-snippet incomplete
-alias incompletetest
+snippet testIncomplete
 options head
         $this->markTestIncomplete(${1});
 
