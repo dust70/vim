@@ -59,16 +59,14 @@ options head
 		${4:#:code}
 		throw new Exception('Not implemented yet.');
 	}
+
 snippet t-
-abbr t-
-alias this
 options word
 	$this->
 
-snippet const
-options head
-        const ${1:variableName} = ${2};
-        ${0}
+snippet throw
+options word
+        throw new ${1:Exception}('${2:#:Exception message}');${3}
 
 snippet pmd
 options word
