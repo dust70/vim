@@ -853,7 +853,7 @@ let &undodir=g:vimfiles . "/undo"
 " value of that parameter. If a particular character is left out, then the
 " default value is used for that parameter. The following is a list of the
 " identifying characters and the effect of their value.
-set viminfo=!,'50,/100,:100,<1000,h,s1000
+set viminfo=!,'50,/100,:100,<1000,h,n~/.vim/.viminfo,s1000
 "}}}
 
 " {{{ visualbell
