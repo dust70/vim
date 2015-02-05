@@ -741,7 +741,7 @@ let g:neocomplete#manual_completion_start_length = 3
 " When a capital letter is included in input, neocomplete does not ignore the
 " upper- and lowercase.
 let g:neocomplete#enable_smart_case = 1
-" }}}
+"}}}
 
 " {{{ neocomplete#data_directory
 " This variable appoints the directory that neocomplete begins to write a file
@@ -1046,6 +1046,13 @@ let g:syntastic_mode_map = {
             \    'puppet'
             \ ]
             \ }
+"}}}
+
+" {{{ mappings
+nmap <silent> ,Sc :SyntasticCheck<cr>
+nmap <silent> ,Se :Errors<cr>
+nmap <silent> ,Si :SyntasticInfo<cr>
+nmap <silent> ,Sr :SyntasticReset<cr>
 "}}}
 
 " {{{ Syntax Checker
