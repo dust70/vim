@@ -274,7 +274,7 @@ options head
                 ->with($this->equalTo(${4}))
                 ->will($this->returnValue(${5}));${6}
 
-snippet aDispath
+snippet aDispatch
 alias dispatchAssert
 options head
         $this->dispatch(${1});
@@ -283,7 +283,7 @@ options head
         $this->assertController(${3});
         $this->assertAction(${4});
 
-snippet aDispathParams
+snippet aDispatchParams
 alias dispatchAssert
 options head
         $urlParams = $this->dispatchParams(
