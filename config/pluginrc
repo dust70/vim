@@ -991,14 +991,18 @@ augroup END
 " {{{ syntastic_check_on_open
 " If enabled, syntastic will do syntax checks when buffers are first loaded as
 " well as on saving
-let g:syntastic_check_on_open = 1
+if ! &diff
+    let g:syntastic_check_on_open = 1
+endif
 "}}}
 
 " {{{ syntastic_check_on_wq
 " Normally syntastic runs syntax checks whenever buffers are written to disk. If
 " you want to skip these checks when you issue |:wq|, |:x|, and |:ZZ|, set this
 " variable to 0.
-let g:syntastic_check_on_wq = 0
+if ! &diff
+    let g:syntastic_check_on_wq = 0
+endif
 "}}}
 
 " {{{ syntastic_aggregate_errors
