@@ -292,6 +292,16 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'PHPRefactoring'
                 \ }
 
+    NeoBundle 'jmcomets/vim-pony', {
+                \ 'directory': 'Pony',
+                \ 'nane': 'Pony'
+                \ }
+
+    NeoBundle 'tpope/vim-projectionist', {
+                \ 'directory': 'Projectionist',
+                \ 'name': 'Projectionist'
+                \ }
+
     NeoBundle 'rodjek/vim-puppet', {
                 \ 'directory': 'Puppet',
                 \ 'name': 'Puppet'
@@ -755,9 +765,6 @@ let g:neocomplete#data_directory = g:vimfiles . '/tmp/neocomplete'
 " This dictionary records keyword patterns to completion. This is appointed in
 " regular expression every file type. If the key is "_" or "default", it is used
 " for default pattern.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
 let g:neocomplete#keyword_patterns = {
             \'_': '\h\w*',
             \ }
@@ -766,9 +773,6 @@ let g:neocomplete#keyword_patterns = {
 " {{{ neocomplete#delimiter_patterns
 " This variable appoints a delimiter pattern to smart complete a function. This
 " is appointed in string list every file type.
-if !exists('g:neocomplete#delimiter_patterns')
-    let g:neocomplete#delimiter_patterns = {}
-endif
 let g:neocomplete#delimiter_patterns = {
             \ 'cpp': ['::'],
             \ 'java': ['.'],
@@ -783,9 +787,6 @@ let g:neocomplete#delimiter_patterns = {
 " value is source names list. If the key is "_", the value will be used for
 " default filetypes. For example, you can disable some sources in C++ filetype.
 " If the value is "_", it will load all sources.
-if !exists('g:neocomplete#sources')
-    let g:neocomplete#sources = {}
-endif
 let g:neocomplete#sources = {
             \ '_': [],
             \ 'cpp': ['neosnippet', 'omni', 'include', 'tag', 'buffer'],
