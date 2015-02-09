@@ -45,6 +45,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Abolish'
                 \ }
 
+    NeoBundle 'rking/ag.vim', {
+                \ 'directory': 'Ag',
+                \ 'name': 'Ag'
+                \ }
+
     NeoBundle 'bling/vim-airline', {
                 \ 'directory': 'Airline',
                 \ 'name': 'Airline'
