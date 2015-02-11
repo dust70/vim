@@ -43,6 +43,7 @@ function! ConfigureProject(source, dest)
     let l:rsync_ignore = [
                 \ '"*.pyc"',
                 \ '".*swp"',
+                \ '".DS_Store"',
                 \ '".fstemp.*"',
                 \ '".git*"',
                 \ '".svn*"',
@@ -51,7 +52,6 @@ function! ConfigureProject(source, dest)
                 \ '"composer.*"',
                 \ '"cscope.out*"',
                 \ '"debug.log"',
-                \ '"DS_Store"',
                 \ '"logs"',
                 \ '"phpunit*.dist"',
                 \ '"phpunit*.xml"',
