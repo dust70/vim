@@ -60,7 +60,7 @@ function! ConfigureUpdate()
 
     call ConfigureProject(
                 \ '~/repositories/cbn/update/',
-                \ 'vagrant:/home/vargrant/update'
+                \ 'vagrant:/home/vagrant/update'
                 \ )
     augroup end
 endfunction
