@@ -53,13 +53,14 @@ function! ConfigureProject(source, dest)
                 \ '"cscope.out*"',
                 \ '"debug.log"',
                 \ '"logs"',
+                \ '"node_modules"',
                 \ '"phpunit*.dist"',
                 \ '"phpunit*.xml"',
                 \ '"Readme.*"',
                 \ '"reports"',
                 \ '"sync.log"',
                 \ '"tests*"',
-                \ '"vagrant"',
+                \ '"vagrant"'
                 \ ]
 
     let g:rsync_command = 'rsync ' . join(l:rsync_options, ' ')
