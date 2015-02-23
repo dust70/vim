@@ -1,10 +1,3 @@
-" {{{ F1
-" remove this stupid mapping
-map  <F1> <nop>
-imap <F1> <nop>
-nmap <F1> <nop>
-"}}}
-
 " {{{ foldlevel
 nnoremap <silent> ,1 :setlocal foldlevel=0<cr>
 nnoremap <silent> ,2 :setlocal foldlevel=1<cr>
