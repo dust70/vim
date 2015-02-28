@@ -40,6 +40,7 @@ function! ConfigureProject(source, dest)
                 \ '--verbose',
                 \ '--whole-file',
                 \ ]
+
     let l:rsync_ignore = [
                 \ '"*.pyc"',
                 \ '".*swp"',
@@ -47,7 +48,6 @@ function! ConfigureProject(source, dest)
                 \ '".fstemp.*"',
                 \ '".git*"',
                 \ '".svn*"',
-                \ '"bin"',
                 \ '"build*"',
                 \ '"composer.*"',
                 \ '"cscope.out*"',
@@ -56,7 +56,8 @@ function! ConfigureProject(source, dest)
                 \ '"node_modules"',
                 \ '"phpunit*.dist"',
                 \ '"phpunit*.xml"',
-                \ '"Readme.*"',
+                \ '"README*"',
+                \ '"Readme*"',
                 \ '"reports"',
                 \ '"sync.log"',
                 \ '"tests*"',
