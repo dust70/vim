@@ -38,7 +38,7 @@ function! ConfigureProject(source, dest)
                 \ '--delete',
                 \ '--log-file=sync.log',
                 \ '--verbose',
-                \ '--whole-file',
+                \ '--whole-file'
                 \ ]
 
     let l:rsync_ignore = [
@@ -48,6 +48,7 @@ function! ConfigureProject(source, dest)
                 \ '".fstemp.*"',
                 \ '".git*"',
                 \ '".svn*"',
+                \ '"behat*"',
                 \ '"build*"',
                 \ '"composer.*"',
                 \ '"cscope.out*"',
