@@ -37,6 +37,7 @@ function! ConfigureProject(source, dest)
                 \ '--cvs-exclude',
                 \ '--delete',
                 \ '--log-file=sync.log',
+                \ '--rsh "ssh -F ./vagrant/.vagrant/ssh_config"'
                 \ '--verbose',
                 \ '--whole-file'
                 \ ]
@@ -69,7 +70,7 @@ function! ConfigureProject(source, dest)
                 \ . ' --exclude=' . join(l:rsync_ignore, ' --exclude=')
                 \ . ' ' . l:source . ' ' . l:dest
 
-    nnoremap <silent> ,ds :silent execute "Dispatch! " . g:rsync_command<cr>
+    nnoremap <silent> ,ds :silent execute "Start!" . g:rsync_command<cr>
 
     autocmd! BufWritePost,FileWritePost *
                 \ silent execute '!' . g:rsync_command . ' >> /dev/null 2>&1 &'
