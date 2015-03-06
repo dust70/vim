@@ -209,7 +209,7 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ }
 
     NeoBundle 'terryma/vim-multiple-cursors', {
-                \ 'directory': 'MultipleCursors'
+                \ 'directory': 'MultipleCursors',
                 \ 'name': 'MultipleCursors'
                 \ }
 
