@@ -208,6 +208,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'MatchTag'
                 \ }
 
+    NeoBundle 'terryma/vim-multiple-cursors', {
+                \ 'directory': 'MultipleCursors'
+                \ 'name': 'MultipleCursors'
+                \ }
+
     NeoBundle 'chrisbra/NrrwRgn', {
                 \ 'directory': 'Narrowing',
                 \ 'name': 'Narrowing'
