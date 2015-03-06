@@ -36,7 +36,6 @@ function! ConfigureProject(source, dest)
                 \ '--chmod="ug=rwX,o=rX"',
                 \ '--cvs-exclude',
                 \ '--delete',
-                \ '--log-file=sync.log',
                 \ '--rsh "ssh -F ./vagrant/.vagrant/ssh_config"',
                 \ '--verbose',
                 \ '--whole-file'
