@@ -292,11 +292,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'PHPDictionary'
                 \ }
 
-    NeoBundle 'docteurklein/php-getter-setter.vim', {
-                \ 'directory': 'PHPGetterSetter',
-                \ 'name': 'PHPGetterSetter'
-                \ }
-
     NeoBundle '2072/PHP-Indenting-for-VIm', {
                 \ 'directory': 'PHPIndention',
                 \ 'name': 'PHPIndention'
