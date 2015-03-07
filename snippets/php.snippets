@@ -179,32 +179,22 @@ options head
                         $this->_pimple = new Pimple();
 			$this->_object = new ${3:ClassToTest}(${4});${5}
 		}
-
-		/**
-		 * Remove the fixture, for example, closes a network connection.
-		 * This method is called after a test is executed.
-		 */
-                protected function tearDown()
-                {
-                        try {
-				// TODO: add try body
-			} catch(Exception $e) {
-				// TODO: add exception handling
-			} finally {
-				parent::tearDown();
-			}
-		}
 	}
         ${6}
 
 snippet classtest2
 options head
 	<?php
+        namespace ${1:Name_Space_To_Use}
+
+        use ${2:Class_To_Test};
+
+        use PHPUnit_Framework_TestCase;
 
 	/**
-	 * @author René Six <${1:info@renatius.de}>
+	 * @author René Six <${3:info@renatius.de}>
 	 */
-	class ${2:`vim_snippets#Filename()`} extends ${3:PHPUnit_Framework_TestCase}
+	class ${4:`vim_snippets#Filename()`} extends ${5:PHPUnit_Framework_TestCase}
 	{
 		protected $_object = null;
 
@@ -215,25 +205,10 @@ options head
 		protected function setUp()
 		{
 			parent::setUp();
-			$this->_object = new ${3:ClassToTest}(${4});${5}
-		}
-
-		/**
-		 * Remove the fixture, for example, closes a network connection.
-		 * This method is called after a test is executed.
-		 */
-                protected function tearDown()
-                {
-                        try {
-				// TODO: add try body
-			} catch(Exception $e) {
-				// TODO: add exception handling
-			} finally {
-				parent::tearDown();
-			}
+			$this->_object = new ${5:ClassToTest}(${6});${7}
 		}
 	}
-        ${6}
+        ${8}
 
 snippet functiontest
 alias funtest
