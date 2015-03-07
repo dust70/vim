@@ -95,7 +95,7 @@ endfunction
 
 augroup ShopRocket
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/projects/invoicing call ConfigureInvoicing()
+                \ ~/repositories/projects/invoicing/** call ConfigureInvoicing()
 augroup END
 "}}}
 "}}}
