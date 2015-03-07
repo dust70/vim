@@ -142,6 +142,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \    ]
                 \ }
 
+    NeoBundle 'cosminadrianpopescu/filesync', {
+                \ 'directory': 'FileSync',
+                \ 'name': 'FileSync'
+                \ }
+
     NeoBundle 'tpope/vim-fugitive', {
                 \ 'directory': 'FuGITive',
                 \ 'name': 'FuGITive'
@@ -198,7 +203,7 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'LaTeX'
                 \ }
 
-    NeoBundle 'groenewege/vim-less', {
+    NeoBundle 'luishdez/vim-less', {
                 \ 'directory': 'Less',
                 \ 'name': 'Less'
                 \ }
@@ -285,6 +290,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'nishigori/vim-php-dictionary', {
                 \ 'directory': 'PHPDictionary',
                 \ 'name': 'PHPDictionary'
+                \ }
+
+    NeoBundle 'docteurklein/php-getter-setter.vim', {
+                \ 'directory': 'PHPGetterSetter',
+                \ 'name': 'PHPGetterSetter'
                 \ }
 
     NeoBundle '2072/PHP-Indenting-for-VIm', {
