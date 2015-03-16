@@ -478,8 +478,8 @@ let g:airline#extensions#tabline#show_tab_nr = 1
 
 " {{{ AutoFormat
 " I need a better formatter for PHP scripts, preferable Zend Coding conform
-" let g:formatprg_php = "astyle"
-" let g:formatprg_args_expr_php = '"--mode=java --style=allman -pcHs" . &shiftwidth'
+let g:formatprg_php = "astyle"
+let g:formatprg_args_expr_php = '"-pcHs" . &shiftwidth'
 
 nmap <silent> ,af :Autoformat<cr><cr>
 "}}}
