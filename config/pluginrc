@@ -110,6 +110,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Detailed'
                 \ }
 
+    NeoBundle 'chrisbra/vim-diff-enhanced', {
+                \ 'directory': 'DiffEnhanced',
+                \ 'name': 'DiffEnhanced'
+                \ }
+
     NeoBundle 'tpope/vim-dispatch', {
                 \ 'directory': 'Dispatch',
                 \ 'name': 'Dispatch'
