@@ -669,7 +669,6 @@ nmap <silent> ,gm :Gmove<space>
 nmap <silent> ,gp :Gpush<cr>
 nmap <silent> ,gr :Gremove<space>
 nmap <silent> ,gs :Gstatus<cr>
-nmap <silent> ,gv :Gdiff<cr>
 "}}}
 "}}}
 
