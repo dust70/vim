@@ -102,4 +102,8 @@ nnoremap <silent> ,qo :cwindow<cr>
 nnoremap <silent> ,qc :close<cr>
 "}}}
 
+" {{{ diff
+nnoremap <silent> ,Du :diffupdate
+" }}}
+
 " vim: filetype=vim textwidth=80 foldmethod=marker
