@@ -51,7 +51,6 @@ options head
 	}
 
 snippet function
-abbr function
 alias fun
 options head
 	${1:public} function ${2:#:FunctionName}(${3})
@@ -60,6 +59,16 @@ options head
 		throw new Exception('Not implemented yet.');
 	}
 
+snippet functionclosure
+alias funclosure
+options head
+        function(${1}) {
+                ${2:#:code}
+        }
+
+snippet t
+options word
+	$this
 snippet t-
 options word
 	$this->
@@ -73,15 +82,19 @@ options word
 	@SuppressWarnings(PHPMD.${0:Foo})
 
 snippet ?=
+options word
 	<?php echo ${1}; ?>${0}
 
 snippet ?=h
+options word
 	<?php echo htmlspecialchars(${1}); ?>${0}
 
 snippet pecho
+options word
         <?php echo ${1}; ?>${0}
 
 snippet pecho?
+options word
         <?php echo (${1:condition} ? '${2:true}' : ${3:false}); ?>${0}
 
 snippet try
@@ -222,10 +235,11 @@ options head
 snippet fundataprovider
 alias fundata
 options head
-	public function dataProviderFor${1:#:FunctionName}()
+	public function dataProviderFor${1}()
 	{
                 return array(
-                        array(),
+                        array(${2:values}),
+                        array(${3})
                 );
 	}
 
@@ -284,7 +298,7 @@ options head
 snippet dataProvider
 alias @dataProvider
         /**
-         * @dataProvider dataProviderFor${1:name}
+         * @dataProvider dataProviderFor${1}
          */${0}
 
 snippet depends
