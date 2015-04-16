@@ -1,9 +1,14 @@
 " {{{ F1
 " remove this stupid mapping
-map  <F1> <nop>
-imap <F1> <nop>
-nmap <F1> <nop>
+noremap  <F1> <nop>
+inoremap <F1> <nop>
+nnoremap <F1> <nop>
 "}}}
+
+" {{{ C-p/C-n in command mode
+cnoremap <silent> <C-p> <Up>
+cnoremap <silent> <C-n> <Down>
+" }}}
 
 " {{{ foldlevel
 nnoremap <silent> ,1 :setlocal foldlevel=0<cr>
