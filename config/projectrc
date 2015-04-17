@@ -11,6 +11,18 @@ augroup Behat
 augroup END
 "}}}
 
+" {{{ Library
+function! ConfigureLibrary()
+    call ConfigurePhpProject()
+endfunction
+
+augroup Library
+    autocmd! BufEnter,BufNewFile,BufRead
+                \ ~/repositories/cbn/library/**
+                \ call ConfigureLibrary()
+augroup END
+"}}}
+
 " {{{ Preisvergleich
 function! ConfigurePreisvergleich()
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
