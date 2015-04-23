@@ -1356,7 +1356,7 @@ let g:vdebug_options = {
             \ 'port': '9000',
             \ 'server': '',
             \ 'timeout': 60,
-            \ 'watch_window_style': 'expanded',
+            \ 'watch_window_style': 'expanded'
             \ }
 "}}}
 
