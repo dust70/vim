@@ -1,3 +1,11 @@
+" {{{<Leader>/mapleader
+" To define a mapping which uses the 'mapleader' variable, the special string
+" '<Leader>' can be used. It is replaced with the string value of 'mapleader'.
+" If 'mapleader' is not set or empty, a backslash is used instead.
+let mapleader=","
+noremap \ ,
+"}}}
+
 " {{{ F1
 " remove this stupid mapping
 noremap  <F1> <nop>
@@ -11,24 +19,24 @@ cnoremap <silent> <C-n> <Down>
 " }}}
 
 " {{{ foldlevel
-nnoremap <silent> ,1 :setlocal foldlevel=0<cr>
-nnoremap <silent> ,2 :setlocal foldlevel=1<cr>
-nnoremap <silent> ,3 :setlocal foldlevel=2<cr>
-nnoremap <silent> ,4 :setlocal foldlevel=3<cr>
-nnoremap <silent> ,5 :setlocal foldlevel=4<cr>
-nnoremap <silent> ,6 :setlocal foldlevel=5<cr>
-nnoremap <silent> ,7 :setlocal foldlevel=6<cr>
-nnoremap <silent> ,8 :setlocal foldlevel=7<cr>
-nnoremap <silent> ,9 :setlocal foldlevel=8<cr>
-nnoremap <silent> ,0 :setlocal foldlevel=9<cr>
+nnoremap <silent> <Leader>1 :setlocal foldlevel=0<cr>
+nnoremap <silent> <Leader>2 :setlocal foldlevel=1<cr>
+nnoremap <silent> <Leader>3 :setlocal foldlevel=2<cr>
+nnoremap <silent> <Leader>4 :setlocal foldlevel=3<cr>
+nnoremap <silent> <Leader>5 :setlocal foldlevel=4<cr>
+nnoremap <silent> <Leader>6 :setlocal foldlevel=5<cr>
+nnoremap <silent> <Leader>7 :setlocal foldlevel=6<cr>
+nnoremap <silent> <Leader>8 :setlocal foldlevel=7<cr>
+nnoremap <silent> <Leader>9 :setlocal foldlevel=8<cr>
+nnoremap <silent> <Leader>0 :setlocal foldlevel=9<cr>
 "}}}
 
 " {{{ number
-nnoremap <silent> ,n :set nonumber!<cr>:set number?<cr>
+nnoremap <silent> <Leader>n :set nonumber!<cr>:set number?<cr>
 "}}}
 
 " {{{ spell
-noremap ,S :set spell!<cr>
+noremap <Leader>S :set spell!<cr>
 "}}}
 
 " {{{ format file
@@ -37,22 +45,22 @@ function! FormatFile()
     execute "normal gg=G"
     execute "normal 'tzt`s"
 endfunction
-nnoremap <silent> ,m :call FormatFile()<cr>
+nnoremap <silent> <Leader>m :call FormatFile()<cr>
 "}}}
 
 " {{{ hlsearch
 if &t_Co > 2 || has("gui_running")
-    nnoremap <silent> ,L :set nohlsearch!<cr>:set hlsearch?<cr>
+    nnoremap <silent> <Leader>L :set nohlsearch!<cr>:set hlsearch?<cr>
 endif
 "}}}
 
 " {{{ paste
-nnoremap <silent> ,P :set invpaste<cr>
+nnoremap <silent> <Leader>P :set invpaste<cr>
 "}}}
 
 " {{{ cscope
 if has("cscope")
-    nnoremap <silent> ,cf :cscope find s <C-R>=expand("<cword>")<cr><cr>
+    nnoremap <silent> <Leader>cf :cscope find s <C-R>=expand("<cword>")<cr><cr>
 endif
 "}}}
 
@@ -71,25 +79,25 @@ nnoremap <silent> gP P
 "}}}
 
 " {{{ buffers
-nnoremap <silent> ,bl :confirm buffers<cr>
-nnoremap <silent> ,bn :confirm bnext<cr>
-nnoremap <silent> ,bp :confirm bprevious<cr>
+nnoremap <silent> <Leader>bl :confirm buffers<cr>
+nnoremap <silent> <Leader>bn :confirm bnext<cr>
+nnoremap <silent> <Leader>bp :confirm bprevious<cr>
 "}}}
 
 " {{{ write/close buffers
-nnoremap <silent> ,bq :confirm bdelete<cr>
-nnoremap <silent> ,bQ :confirm quitall<cr>
-nnoremap <silent> ,bw :write<cr>
-nnoremap <silent> ,bW :wall<cr>
+nnoremap <silent> <Leader>bq :confirm bdelete<cr>
+nnoremap <silent> <Leader>bQ :confirm quitall<cr>
+nnoremap <silent> <Leader>bw :write<cr>
+nnoremap <silent> <Leader>bW :wall<cr>
 "}}}
 
 " {{{ tabs
-nnoremap <silent> ,t :tabnew<cr>
-nnoremap <silent> ,t$ :tabmove<cr>
-nnoremap <silent> ,t<left> :tabmove -1<cr>
-nnoremap <silent> ,t<right> :tabmove +1<cr>
-nnoremap <silent> ,t^ :tabmove 0<cr>
-nnoremap <silent> ,tl :tabs<cr>
+nnoremap <silent> <Leader>t :tabnew<cr>
+nnoremap <silent> <Leader>t$ :tabmove<cr>
+nnoremap <silent> <Leader>t<left> :tabmove -1<cr>
+nnoremap <silent> <Leader>t<right> :tabmove +1<cr>
+nnoremap <silent> <Leader>t^ :tabmove 0<cr>
+nnoremap <silent> <Leader>tl :tabs<cr>
 "}}}
 
 " {{{replace german umlauts
@@ -103,12 +111,12 @@ imap <silent> ü ue
 "}}}
 
 " {{{ quickfix
-nnoremap <silent> ,qo :cwindow<cr>
-nnoremap <silent> ,qc :close<cr>
+nnoremap <silent> <Leader>qo :cwindow<cr>
+nnoremap <silent> <Leader>qc :close<cr>
 "}}}
 
 " {{{ diff
-nnoremap <silent> ,Du :diffupdate
+nnoremap <silent> <Leader>Du :diffupdate
 " }}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
