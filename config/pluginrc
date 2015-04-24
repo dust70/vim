@@ -374,7 +374,7 @@ let g:airline#extensions#tabline#show_tab_nr = 1
 let g:formatprg_php = "astyle"
 let g:formatprg_args_expr_php = '"-pcHjJs" . &shiftwidth'
 
-nmap <silent> ,af :Autoformat<cr><cr>
+nmap <silent> <Leader>af :Autoformat<cr><cr>
 "}}}
 
 " {{{ Behat
@@ -402,10 +402,10 @@ let g:DeleteTrailingWhitespace = 0
 
 " {{{ Dispatch
 " {{{ key mappings
-nmap <silent> ,dt :Make %:t:r<cr>
-nmap <silent> ,dc :close<cr>
-nmap <silent> ,do :Copen<cr>
-nmap <silent> ,dT :Dispatch<cr>
+nmap <silent> <Leader>dt :Make %:t:r<cr>
+nmap <silent> <Leader>dc :close<cr>
+nmap <silent> <Leader>do :Copen<cr>
+nmap <silent> <Leader>dT :Dispatch<cr>
 "}}}
 "}}}
 
@@ -534,57 +534,29 @@ call vimfiler#custom#profile('default', 'context', {
 "}}}
 
 " {{{ mappings
-nmap <silent> ,fo :VimFiler<cr>
-nmap <silent> ,ft :VimFiler -tab<cr>
+nmap <silent> <Leader>fo :VimFiler<cr>
+nmap <silent> <Leader>ft :VimFiler -tab<cr>
 
-nmap <silent> ,fe :Unite -buffer-name=execute vimfiler/execute<cr>
-nmap <silent> ,fh :Unite -buffer-name=history vimfiler/history<cr>
-nmap <silent> ,fm :Unite -buffer-name=mask vimfiler/mask<cr>
-nmap <silent> ,fp :Unite -buffer-name=popd vimfiler/popd<cr>
-nmap <silent> ,fs :Unite -buffer-name=sort vimfiler/sort<cr>
+nmap <silent> <Leader>fe :Unite -buffer-name=execute vimfiler/execute<cr>
+nmap <silent> <Leader>fh :Unite -buffer-name=history vimfiler/history<cr>
+nmap <silent> <Leader>fm :Unite -buffer-name=mask vimfiler/mask<cr>
+nmap <silent> <Leader>fp :Unite -buffer-name=popd vimfiler/popd<cr>
+nmap <silent> <Leader>fs :Unite -buffer-name=sort vimfiler/sort<cr>
 "}}}
 "}}}
 
 " {{{ FuGITive
 " {{{ mappings
-nmap <silent> ,ga :Gwrite<cr>
-nmap <silent> ,gb :Gblame<cr>
-nmap <silent> ,gc :Gcommit<cr>
-nmap <silent> ,gd :Gdiff<cr>
-nmap <silent> ,gf :Gfetch<cr>
-nmap <silent> ,gg :Ggrep<space>
-nmap <silent> ,gm :Gmove<space>
-nmap <silent> ,gp :Gpush<cr>
-nmap <silent> ,gr :Gremove<space>
-nmap <silent> ,gs :Gstatus<cr>
-"}}}
-"}}}
-
-" {{{ GUndo
-" {{{ gundo_width
-" Set the horizontal width of the Gundo graph (and preview).
-let g:gundo_width = 60
-"}}}
-
-" {{{ gundo_preview_height
-" Set the vertical height of the Gundo preview.
-let g:gundo_preview_height = 45
-"}}}
-
-" {{{ gundo_preview_bottom
-" Force the preview window below current windows instead of below the graph.
-" This gives the preview window more space to show the unified diff.
-let g:gundo_preview_bottom = 1
-"}}}
-
-" {{{ gundo_right
-" Set this to 1 to make the Gundo graph (and preview) open on the right side
-" instead of the left.
-let g:gundo_right = 1
-"}}}
-
-" {{{ mappings
-nmap <silent> ,gu :GundoToggle<cr>
+nmap <silent> <Leader>ga :Gwrite<cr>
+nmap <silent> <Leader>gb :Gblame<cr>
+nmap <silent> <Leader>gc :Gcommit<cr>
+nmap <silent> <Leader>gd :Gdiff<cr>
+nmap <silent> <Leader>gf :Gfetch<cr>
+nmap <silent> <Leader>gg :Ggrep<space>
+nmap <silent> <Leader>gm :Gmove<space>
+nmap <silent> <Leader>gp :Gpush<cr>
+nmap <silent> <Leader>gr :Gremove<space>
+nmap <silent> <Leader>gs :Gstatus<cr>
 "}}}
 "}}}
 
@@ -673,7 +645,7 @@ let g:neocomplete#data_directory = g:vimfiles . '/tmp/neocomplete'
 " regular expression every file type. If the key is "_" or "default", it is used
 " for default pattern.
 let g:neocomplete#keyword_patterns = {
-            \'_': '\h\w*',
+            \'_': '\h\w*'
             \ }
 "}}}
 
@@ -685,7 +657,7 @@ let g:neocomplete#delimiter_patterns = {
             \ 'java': ['.'],
             \ 'php': ['::', '->'],
             \ 'python': ['.'],
-            \ 'vim': ['#'],
+            \ 'vim': ['#']
             \ }
 "}}}
 
@@ -725,7 +697,7 @@ let g:neocomplete#ignore_composite_filetypes = {
 " every filetype.
 let g:neocomplete#sources#dictionary#dictionaries = {
             \ 'default': '',
-            \ 'vimshell': g:vimfiles . '/tmp/vimshell',
+            \ 'vimshell': g:vimfiles . '/tmp/vimshell'
             \ }
 "}}}
 
@@ -745,7 +717,7 @@ endif
 let g:neocomplete#sources#omni#input_patterns = {
             \ 'behat': '\(When\|Then\|Given\|And\)\s.*$',
             \ 'c': '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?',
-            \ 'php': '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?',
+            \ 'php': '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
             \ }
 "}}}
 
@@ -787,7 +759,7 @@ let g:neosnippet#snippets_directory = '' .
 let g:neosnippet#scope_aliases = {
             \ 'html': 'xhtml, html, css, javascript',
             \ 'php': 'php, sql',
-            \ 'python': 'python',
+            \ 'python': 'python'
             \ }
 "}}}
 
@@ -953,17 +925,17 @@ let g:syntastic_mode_map = {
 "}}}
 
 " {{{ mappings
-nmap <silent> ,Sc :SyntasticCheck<cr>
-nmap <silent> ,Se :Errors<cr>
-nmap <silent> ,Si :SyntasticInfo<cr>
-nmap <silent> ,Sr :SyntasticReset<cr>
+nmap <silent> <Leader>Sc :SyntasticCheck<cr>
+nmap <silent> <Leader>Se :Errors<cr>
+nmap <silent> <Leader>Si :SyntasticInfo<cr>
+nmap <silent> <Leader>Sr :SyntasticReset<cr>
 "}}}
 
 " {{{ Syntax Checker
 " {{{ HTML
 let g:syntastic_html_checkers = [
             \ 'tidy',
-            \ 'jshint',
+            \ 'jshint'
             \ ]
 "}}}
 
@@ -1038,14 +1010,6 @@ let g:syntastic_xml_checkers = [
 " {{{ TagBar
 " {{{ toggle display/mappings
 nmap <silent> <C-w><C-t> :TagbarToggle<cr>
-"}}}
-
-" {{{ autoopen for specific filetypes
-"if has("autocmd")
-"    augroup AutoOpenTagBar
-"        autocmd FileType c,cpp,php,python.vim nested :TagbarOpen
-"    augroup END
-"endif
 "}}}
 
 " {{{ tagbar_width
@@ -1126,7 +1090,7 @@ let g:tagbar_type_html = {
             \ 'kinds': [
             \     'f:Javascript function',
             \     'a:named Anchor',
-            \ ],
+            \ ]
             \ }
 "}}}
 
@@ -1144,8 +1108,8 @@ let g:tagbar_type_javascript = {
             \     'r:Function',
             \     'r:Array',
             \     'r:String',
-            \     'r:String',
-            \ ],
+            \     'r:String'
+            \ ]
             \ }
 "}}}
 
@@ -1159,8 +1123,8 @@ let g:tagbar_type_php = {
             \     'd:constant definitions',
             \     'f:functions',
             \     'v:variables',
-            \     'j:javascript functions',
-            \ ],
+            \     'j:javascript functions'
+            \ ]
             \ }
 "}}}
 
@@ -1173,8 +1137,8 @@ let g:tagbar_type_python = {
             \     'm:Class:members',
             \     'c:Classes',
             \     'f:Functions',
-            \     'v:Variables',
-            \ ],
+            \     'v:Variables'
+            \ ]
             \ }
 "}}}
 
@@ -1185,8 +1149,8 @@ let g:tagbar_type_sh = {
             \     'f:Functions',
             \     'a:Alias',
             \     'v:Variable',
-            \     'o:Options',
-            \ ],
+            \     'o:Options'
+            \ ]
             \ }
 "}}}
 
@@ -1212,8 +1176,8 @@ let g:tagbar_type_sql = {
             \     'R:Services',
             \     'D:Domains',
             \     'V:Views',
-            \     'n:Synonyms',
-            \ ],
+            \     'n:Synonyms'
+            \ ]
             \ }
 "}}}
 
@@ -1221,8 +1185,8 @@ let g:tagbar_type_sql = {
 let g:tagbar_type_sshconfig = {
             \ 'ctagstype': 'sshconfig',
             \ 'kinds': [
-            \     'h:Host',
-            \ ],
+            \     'h:Host'
+            \ ]
             \ }
 "}}}
 
@@ -1235,7 +1199,7 @@ let g:tagbar_type_tex = {
             \     'l:Labels',
             \     'r:Refs:1:0',
             \     'p:Pagerefs:1:0'
-            \ ],
+            \ ]
             \ }
 "}}}
 "}}}
@@ -1296,27 +1260,27 @@ let g:unite_source_history_yank_file = g:vimfiles . '/tmp/yank'
 call unite#custom#profile(
             \ 'default', 'context', {
             \    'prompt': 'unite: ',
-            \    'winheight': 15,
+            \    'winheight': 15
             \ })
 "}}}
 
 " {{{ mappings
-nmap <silent> ,u :Unite -buffer-name=unite<cr>
-nmap <silent> ,uB :Unite -buffer-name=bookmark -quick-match bookmark<cr>
-nmap <silent> ,ub :Unite -buffer-name=buffer -quick-match buffer_tab<cr>
-nmap <silent> ,ug :Unite -buffer-name=grep -start-insert grep:.<cr>
-nmap <silent> ,uj :Unite -buffer-name=tabs jump<cr>
-nmap <silent> ,um :Unite -buffer-name=menu -start-insert menu<cr>
-nmap <silent> ,umd :Unite -buffer-name=mru -quick-match neomru/directory<cr>
-nmap <silent> ,umf :Unite -buffer-name=mru -quick-match neomru/file<cr>
-nmap <silent> ,uo :Unite -buffer-name=outline -quick-match outline<cr>
-nmap <silent> ,ur :Unite -buffer-name=register register<cr>
-nmap <silent> ,us :Unite -buffer-name=session session<cr>
-nmap <silent> ,ut :Unite -buffer-name=tabs -start-insert tab<cr>
-nmap <silent> ,uTf :Unite -buffer-name=tag-file -quick-match tag/file<cr>
-nmap <silent> ,uTi :Unite -buffer-name=tag-include -quick-match tag/include<cr>
-nmap <silent> ,uTt :Unite -buffer-name=tag -quick-match tag<cr>
-nmap <silent> ,uy :Unite -buffer-name=history history/yank<cr>
+nmap <silent> <Leader>u :Unite -buffer-name=unite<cr>
+nmap <silent> <Leader>uB :Unite -buffer-name=bookmark -quick-match bookmark<cr>
+nmap <silent> <Leader>ub :Unite -buffer-name=buffer -quick-match buffer_tab<cr>
+nmap <silent> <Leader>ug :Unite -buffer-name=grep -start-insert grep:.<cr>
+nmap <silent> <Leader>uj :Unite -buffer-name=tabs jump<cr>
+nmap <silent> <Leader>um :Unite -buffer-name=menu -start-insert menu<cr>
+nmap <silent> <Leader>umd :Unite -buffer-name=mru -quick-match neomru/directory<cr>
+nmap <silent> <Leader>umf :Unite -buffer-name=mru -quick-match neomru/file<cr>
+nmap <silent> <Leader>uo :Unite -buffer-name=outline -quick-match outline<cr>
+nmap <silent> <Leader>ur :Unite -buffer-name=register register<cr>
+nmap <silent> <Leader>us :Unite -buffer-name=session session<cr>
+nmap <silent> <Leader>ut :Unite -buffer-name=tabs -start-insert tab<cr>
+nmap <silent> <Leader>uTf :Unite -buffer-name=tag-file -quick-match tag/file<cr>
+nmap <silent> <Leader>uTi :Unite -buffer-name=tag-include -quick-match tag/include<cr>
+nmap <silent> <Leader>uTt :Unite -buffer-name=tag -quick-match tag<cr>
+nmap <silent> <Leader>uy :Unite -buffer-name=history history/yank<cr>
 
 nmap <silent> <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
 "}}}
