@@ -91,11 +91,11 @@ options word
 
 snippet pecho
 options word
-        <?php echo ${1}; ?>${0}
+        ${1}<?php echo ${2}; ?>${0}
 
 snippet pecho?
 options word
-        <?php echo (${1:condition} ? '${2:true}' : ${3:false}); ?>${0}
+        ${1}<?php echo (${2:condition} ? '${3:true}' : '${4:false}'); ?>${0}
 
 snippet try
 options head
@@ -145,25 +145,25 @@ options head
 
 snippet foreachhashmap
 options head
-	foreach ($${1:#:variable} as $${2:key}${3: =>} $${4:value}) {
+	foreach ($${1:#:variable} as $${2:key} => $${3:value}) {
 		${0}
 	}
 
 snippet pforeach
 options head
-	<?php foreach ($${1:#:variable} as ${2:value}) : ?>
+	<?php foreach ($${1:#:variable} as $${2:value}) : ?>
 		${0}
         <?php endforeach; ?>
 
 snippet pforeachhashmap
 options head
-	<?php foreach ($${1:#:variable} as $${2:key}${3: =>} $${4:value}) : ?>
+	<?php foreach ($${1:#:variable} as $${2:key} => $${3:value}) : ?>
 		${0}
         <?php endforeach; ?>
 
 snippet array
         array(
-                '${1}' => ${2} ${0}
+                '${1}' => ${2},${0}
         );
 #}}}
 
