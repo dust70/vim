@@ -141,11 +141,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Git'
                 \ }
 
-    NeoBundle 'gregsexton/gitv', {
-                \ 'directory': 'GitV',
-                \ 'name': 'GitV'
-                \ }
-
     NeoBundle 'jamessan/vim-gnupg', {
                 \ 'directory': 'GnuPG',
                 \ 'name': 'GnuPG'
@@ -254,11 +249,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'alvan/vim-php-manual', {
                 \ 'directory': 'PHPManual',
                 \ 'name': 'PHPManual'
-                \ }
-
-    NeoBundle 'jmcomets/vim-pony', {
-                \ 'directory': 'Pony',
-                \ 'nane': 'Pony'
                 \ }
 
     NeoBundle 'rodjek/vim-puppet', {
