@@ -25,6 +25,8 @@ augroup END
 
 " {{{ Preisvergleich
 function! ConfigurePreisvergleich()
+    let g:syntastic_php_phpcs_args = "--standard=~/repositories/cbn/preisvergleich/tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
+
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
     call ConfigurePhpProject()
 
@@ -43,6 +45,8 @@ augroup END
 
 " {{{ Shoprocket
 function! ConfigureShoprocket()
+    let g:syntastic_php_phpcs_args = "--standard=~/repositories/cbn/shoprocket/tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
+
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
     call ConfigurePhpProject()
 
