@@ -947,8 +947,8 @@ if executable('./bin/phpmd')
 endif
 "}}}
 
-" {{{ syntastic_<filetype>_<checker>_<option>
-let g:syntastic_php_phpcs_args = "--standard=zend -n --tab-width=" . &tabstop
+" {{{ syntastic_php_phpcs_args
+let g:syntastic_php_phpcs_args = "--standard=zend -l --extensions=php --tab-width=" . &tabstop
 "}}}
 
 let g:syntastic_php_checkers = [
