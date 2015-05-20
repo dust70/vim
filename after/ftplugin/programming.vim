@@ -50,7 +50,7 @@ setlocal formatoptions=cronb1j
 " is set to 0 when the 'paste' option is set. When 'textwidth' is zero,
 " 'wrapmargin' may be used. See also 'formatoptions' and |ins-textwidth|. When
 " 'formatexpr' is set it will be used to break the line.
-setlocal textwidth=80
+setlocal textwidth=120
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
