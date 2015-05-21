@@ -80,6 +80,16 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Commentary'
                 \ }
 
+    NeoBundle 'hail2u/vim-css3-syntax', {
+                \ 'directory': 'CSS',
+                \ 'name': 'CSS'
+                \ }
+
+    NeoBundle 'skammer/vim-css-color', {
+                \ 'directory': 'CSS-Color',
+                \ 'name': 'CSS-Color'
+                \ }
+
     NeoBundle 'chrisbra/csv.vim', {
                 \ 'directory': 'CSV',
                 \ 'name': 'CSV'
