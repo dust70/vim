@@ -1,6 +1,6 @@
-" {{{<Leader>/mapleader
+" {{{<leader>/mapleader
 " To define a mapping which uses the 'mapleader' variable, the special string
-" '<Leader>' can be used. It is replaced with the string value of 'mapleader'.
+" '<leader>' can be used. It is replaced with the string value of 'mapleader'.
 " If 'mapleader' is not set or empty, a backslash is used instead.
 let mapleader=","
 noremap \ ,
@@ -19,24 +19,24 @@ cnoremap <silent> <C-n> <Down>
 " }}}
 
 " {{{ foldlevel
-nnoremap <silent> <Leader>1 :setlocal foldlevel=0<cr>
-nnoremap <silent> <Leader>2 :setlocal foldlevel=1<cr>
-nnoremap <silent> <Leader>3 :setlocal foldlevel=2<cr>
-nnoremap <silent> <Leader>4 :setlocal foldlevel=3<cr>
-nnoremap <silent> <Leader>5 :setlocal foldlevel=4<cr>
-nnoremap <silent> <Leader>6 :setlocal foldlevel=5<cr>
-nnoremap <silent> <Leader>7 :setlocal foldlevel=6<cr>
-nnoremap <silent> <Leader>8 :setlocal foldlevel=7<cr>
-nnoremap <silent> <Leader>9 :setlocal foldlevel=8<cr>
-nnoremap <silent> <Leader>0 :setlocal foldlevel=9<cr>
+nnoremap <silent> <leader>1 :setlocal foldlevel=0<cr>
+nnoremap <silent> <leader>2 :setlocal foldlevel=1<cr>
+nnoremap <silent> <leader>3 :setlocal foldlevel=2<cr>
+nnoremap <silent> <leader>4 :setlocal foldlevel=3<cr>
+nnoremap <silent> <leader>5 :setlocal foldlevel=4<cr>
+nnoremap <silent> <leader>6 :setlocal foldlevel=5<cr>
+nnoremap <silent> <leader>7 :setlocal foldlevel=6<cr>
+nnoremap <silent> <leader>8 :setlocal foldlevel=7<cr>
+nnoremap <silent> <leader>9 :setlocal foldlevel=8<cr>
+nnoremap <silent> <leader>0 :setlocal foldlevel=9<cr>
 "}}}
 
 " {{{ number
-nnoremap <silent> <Leader>n :set nonumber!<cr>:set number?<cr>
+nnoremap <silent> <leader>n :set nonumber!<cr>:set number?<cr>
 "}}}
 
 " {{{ spell
-noremap <Leader>S :set spell!<cr>
+noremap <leader>S :set spell!<cr>
 "}}}
 
 " {{{ format file
@@ -45,22 +45,22 @@ function! FormatFile()
     execute "normal gg=G"
     execute "normal 'tzt`s"
 endfunction
-nnoremap <silent> <Leader>m :call FormatFile()<cr>
+nnoremap <silent> <leader>m :call FormatFile()<cr>
 "}}}
 
 " {{{ hlsearch
 if &t_Co > 2 || has("gui_running")
-    nnoremap <silent> <Leader>L :set nohlsearch!<cr>:set hlsearch?<cr>
+    nnoremap <silent> <leader>L :set nohlsearch!<cr>:set hlsearch?<cr>
 endif
 "}}}
 
 " {{{ paste
-nnoremap <silent> <Leader>P :set invpaste<cr>
+nnoremap <silent> <leader>P :set invpaste<cr>
 "}}}
 
 " {{{ cscope
 if has("cscope")
-    nnoremap <silent> <Leader>cf :cscope find s <C-R>=expand("<cword>")<cr><cr>
+    nnoremap <silent> <leader>cf :cscope find s <C-R>=expand("<cword>")<cr><cr>
 endif
 "}}}
 
@@ -79,25 +79,25 @@ nnoremap <silent> gP P
 "}}}
 
 " {{{ buffers
-nnoremap <silent> <Leader>bl :confirm buffers<cr>
-nnoremap <silent> <Leader>bn :confirm bnext<cr>
-nnoremap <silent> <Leader>bp :confirm bprevious<cr>
+nnoremap <silent> <leader>bl :confirm buffers<cr>
+nnoremap <silent> <leader>bn :confirm bnext<cr>
+nnoremap <silent> <leader>bp :confirm bprevious<cr>
 "}}}
 
 " {{{ write/close buffers
-nnoremap <silent> <Leader>bq :confirm bdelete<cr>
-nnoremap <silent> <Leader>bQ :confirm quitall<cr>
-nnoremap <silent> <Leader>bw :write<cr>
-nnoremap <silent> <Leader>bW :wall<cr>
+nnoremap <silent> <leader>bq :confirm bdelete<cr>
+nnoremap <silent> <leader>bQ :confirm quitall<cr>
+nnoremap <silent> <leader>bw :write<cr>
+nnoremap <silent> <leader>bW :wall<cr>
 "}}}
 
 " {{{ tabs
-nnoremap <silent> <Leader>t :tabnew<cr>
-nnoremap <silent> <Leader>t$ :tabmove<cr>
-nnoremap <silent> <Leader>t<left> :tabmove -1<cr>
-nnoremap <silent> <Leader>t<right> :tabmove +1<cr>
-nnoremap <silent> <Leader>t^ :tabmove 0<cr>
-nnoremap <silent> <Leader>tl :tabs<cr>
+nnoremap <silent> <leader>t :tabnew<cr>
+nnoremap <silent> <leader>t$ :tabmove<cr>
+nnoremap <silent> <leader>t<left> :tabmove -1<cr>
+nnoremap <silent> <leader>t<right> :tabmove +1<cr>
+nnoremap <silent> <leader>t^ :tabmove 0<cr>
+nnoremap <silent> <leader>tl :tabs<cr>
 "}}}
 
 " {{{replace german umlauts
@@ -111,12 +111,12 @@ imap <silent> ü ue
 "}}}
 
 " {{{ quickfix
-nnoremap <silent> <Leader>qo :cwindow<cr>
-nnoremap <silent> <Leader>qc :close<cr>
+nnoremap <silent> <leader>qo :cwindow<cr>
+nnoremap <silent> <leader>qc :close<cr>
 "}}}
 
 " {{{ diff
-nnoremap <silent> <Leader>Du :diffupdate
+nnoremap <silent> <leader>Du :diffupdate
 " }}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
