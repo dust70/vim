@@ -69,7 +69,8 @@ function! ConfigureProject(source, dest)
                 \ . ' --exclude=' . join(l:rsync_ignore, ' --exclude=')
                 \ . ' ' . l:source . ' ' . l:dest
 
-    nnoremap <silent> ,ds :silent execute "Start " . g:rsync_command<cr>
+    nnoremap <silent> <leader>ds :silent execute "Start " . g:rsync_command<cr>
+    nnoremap <silent> <leader>ll :write <bar> !lessc % %:t:r.css<cr>
 
     autocmd! BufWritePost,FileWritePost *
                 \ silent execute '!' . g:rsync_command . ' >> /dev/null 2>&1 &'
@@ -82,7 +83,8 @@ function! ConfigurePhpProject()
     call LoadCTagsFile('./tags')
 
     compiler phpunit_local
-    nnoremap <silent> ,dt :Dispatch php -d "error_reporting=E_ALL\|E_STRICT" ./bin/phpunit --strict --verbose --filter %:t:r<cr>
+    nnoremap <silent> <leader>dt :Dispatch php -d "error_reporting=E_ALL\|E_STRICT"
+                \ ./bin/phpunit --strict --verbose --filter %:t:r<cr>
 
     let g:vdebug_options['server'] = '192.168.56.1'
 endfunction
