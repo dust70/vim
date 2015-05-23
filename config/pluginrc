@@ -555,7 +555,6 @@ nmap <silent> <Leader>gf :Gfetch<cr>
 nmap <silent> <Leader>gg :Ggrep<space>
 nmap <silent> <Leader>gm :Gmove<space>
 nmap <silent> <Leader>gp :Gpush<cr>
-nmap <silent> <Leader>gr :Gremove<space>
 nmap <silent> <Leader>gs :Gstatus<cr>
 "}}}
 "}}}
