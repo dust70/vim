@@ -7,13 +7,13 @@ endif
 " {{{ shiftwidth
 " Number of spaces to use for each step of (auto)indent. Used for |'cindent'|,
 " |>>|, |<<|, etc.
-set shiftwidth=4
+setlocal shiftwidth=2
 "}}}
 
 " {{{ suffixesadd
 " Comma separated list of suffixes, which are used when searching for a file for
 " the "gf", "[I", etc. commands.
-set suffixesadd+=.css
+setlocal suffixesadd+=.css
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
