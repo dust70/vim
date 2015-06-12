@@ -371,10 +371,10 @@ let g:airline#extensions#tabline#show_tab_nr = 1
 
 " {{{ AutoFormat
 " I need a better formatter for PHP scripts, preferable Zend Coding conform
-let g:formatprg_php = "astyle"
-let g:formatprg_args_expr_php = '"-pcHjJs" . &shiftwidth'
+let g:formatdef_my_php = '"astyle -pcHjJs" . &shiftwidth'
+let g:formatters_php = ['my_php']
 
-nmap <silent> <Leader>af :Autoformat<cr><cr>
+nmap <silent> <Leader>af :Autoformat<cr>
 "}}}
 
 " {{{ Behat
