@@ -1,4 +1,24 @@
 " {{{ CBN
+" {{{ Admin
+function! ConfigureAdmin()
+    let g:syntastic_php_phpcs_args = "--standard=~/repositories/cbn/preisvergleich-admin/tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
+
+    call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework2')
+    call ConfigurePhpProject()
+
+    call ConfigureProject(
+                \ '~/repositories/cbn/preisvergleich-admin/',
+                \ 'vagrant:/var/www/prvg'
+                \ )
+endfunction
+
+augroup Admin
+    autocmd! BufEnter,BufNewFile,BufRead
+                \ ~/repositories/cbn/preisvergleich-admin/**
+                \ call ConfigureAdmin()
+augroup END
+"}}}
+
 " {{{ Behat
 function! ConfigureBehat()
     call ConfigurePhpProject()
@@ -8,6 +28,18 @@ augroup Behat
     autocmd! BufEnter,BufNewFile,BufRead
                 \ ~/repositories/cbn/behat/**
                 \ call ConfigureBehat()
+augroup END
+"}}}
+
+" {{{ Image
+function! ConfigureImage()
+    call ConfigurePhpProject()
+endfunction
+
+augroup Image
+    autocmd! BufEnter,BufNewFile,BufRead
+                \ ~/repositories/cbn/preisvergleich-image/**
+                \ call ConfigureImage()
 augroup END
 "}}}
 
