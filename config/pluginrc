@@ -336,6 +336,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory': 'VirtualEnv',
                 \ 'name': 'VirtualEnv'
                 \ }
+
+    NeoBundle 'bronson/vim-visual-star-search', {
+                \ 'directory': 'VisualStarSearch',
+                \ 'name': 'VisualStarSearch'
+                \ }
     "}}}
 
     call neobundle#end()
