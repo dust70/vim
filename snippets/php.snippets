@@ -77,14 +77,6 @@ snippet throw
 options word
         throw new ${1:Exception}('${2:#:Exception message}');${3}
 
-snippet phpcs
-options word
-        // @codingStandardsIgnore${0:Start}
-
-snippet pmd
-options word
-	@SuppressWarnings(PHPMD.${0:Foo})
-
 snippet ?=
 options word
 	<?php echo ${1}; ?>${0}
@@ -169,6 +161,11 @@ snippet array
         array(
                 '${1}' => ${2},${0}
         );
+
+snippet triggererror
+options head
+        trigger_error('${0:Deprecation warning }', ${1:E_USER_WARNING});
+
 #}}}
 
 ########################################################################
@@ -609,6 +606,18 @@ alias assertNotTag
 snippet aThat
 alias assertThat
         $this->assertThat(${1:value}, ${2:PHPUnit_Framework_Constraint constraint});
+#}}}
+
+########################################################################
+# {{{ coding style
+########################################################################
+snippet phpcs
+options word
+        // @codingStandardsIgnore${0:Start}
+
+snippet pmd
+options word
+	@SuppressWarnings(PHPMD.${0:Foo})
 #}}}
 
 # vim: foldmethod=marker
