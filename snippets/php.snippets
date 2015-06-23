@@ -611,6 +611,10 @@ alias assertNotTag
 snippet aThat
 alias assertThat
         $this->assertThat(${1:value}, ${2:PHPUnit_Framework_Constraint constraint});
+
+snippet aResponseCode
+alias assertResponseCode
+        $this->assertResponseCode(${1:value});
 #}}}
 
 ########################################################################
