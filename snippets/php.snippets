@@ -77,6 +77,10 @@ snippet throw
 options word
         throw new ${1:Exception}('${2:#:Exception message}');${3}
 
+snippet phpcs
+options word
+        // @codingStandardsIgnore${0:Start}
+
 snippet pmd
 options word
 	@SuppressWarnings(PHPMD.${0:Foo})
