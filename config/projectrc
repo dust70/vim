@@ -1,7 +1,7 @@
 " {{{ CBN
 " {{{ Admin
 function! ConfigureAdmin()
-    let g:syntastic_php_phpcs_args = "--standard=~/repositories/cbn/preisvergleich-admin/tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
+    let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework2')
     call ConfigurePhpProject()
@@ -57,7 +57,7 @@ augroup END
 
 " {{{ Preisvergleich
 function! ConfigurePreisvergleich()
-    let g:syntastic_php_phpcs_args = "--standard=~/repositories/cbn/preisvergleich/tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
+    let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
     call ConfigurePhpProject()
@@ -77,7 +77,7 @@ augroup END
 
 " {{{ Shoprocket
 function! ConfigureShoprocket()
-    let g:syntastic_php_phpcs_args = "--standard=~/repositories/cbn/shoprocket/tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
+    let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
     call ConfigurePhpProject()
@@ -96,7 +96,7 @@ augroup END
 
 " {{{ Soap
 function! ConfigureSoap()
-    let g:syntastic_php_phpcs_args = "--standard=~/repositories/cbn/soap/tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
+    let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
     call ConfigurePhpProject()
@@ -134,7 +134,7 @@ augroup END
 " {{{ Project
 " {{{ Invoicing
 function! ConfigureInvoicing()
-    let g:syntastic_php_phpcs_args = "--standard=~/repositories/projects/invoicing/coding/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
+    let g:syntastic_php_phpcs_args = "--standard=coding/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework2')
     call ConfigurePhpProject()
