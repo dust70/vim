@@ -165,7 +165,7 @@ snippet array
 snippet triggererror
 alias trigger_error
 options head
-        trigger_error('${1:Deprecation warning }', ${2:E_USER_WARNING});
+        trigger_error(${1:'Deprecation warning ' . __CLASS__}, ${2:E_USER_WARNING});
 
 #}}}
 
