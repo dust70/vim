@@ -45,6 +45,8 @@ augroup END
 
 " {{{ Library
 function! ConfigureLibrary()
+    let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
+
     call ConfigurePhpProject()
 endfunction
 
