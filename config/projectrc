@@ -26,7 +26,7 @@ endfunction
 
 augroup Behat
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/behat/**
+                \ ~/repositories/cbn/preisvergleich-behat/**
                 \ call ConfigureBehat()
 augroup END
 "}}}
@@ -52,7 +52,7 @@ endfunction
 
 augroup Library
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/library/**
+                \ ~/repositories/cbn/preisvergleich-library/**
                 \ call ConfigureLibrary()
 augroup END
 "}}}
@@ -65,14 +65,14 @@ function! ConfigurePreisvergleich()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/cbn/preisvergleich/',
+                \ '~/repositories/cbn/preisvergleich-frontend/',
                 \ 'vagrant:/var/www/prvg'
                 \ )
 endfunction
 
 augroup Preisvergleich
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/preisvergleich/**
+                \ ~/repositories/cbn/preisvergleich-frontend/**
                 \ call ConfigurePreisvergleich()
 augroup END
 "}}}
@@ -104,14 +104,14 @@ function! ConfigureSoap()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/cbn/soap/',
+                \ '~/repositories/cbn/preisvergleich-backend/',
                 \ 'vagrant:/var/www/prvg'
                 \ )
 endfunction
 
 augroup Soap
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/soap/** call ConfigureSoap()
+                \ ~/repositories/cbn/preisvergleich-backend/** call ConfigureSoap()
 augroup END
 "}}}
 
@@ -121,14 +121,14 @@ function! ConfigureUpdate()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/cbn/update/',
+                \ '~/repositories/cbn/preisvergleich-update/',
                 \ 'vagrant:/home/vagrant/update'
                 \ )
 endfunction
 
 augroup Update
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/update/** call ConfigureUpdate()
+                \ ~/repositories/cbn/preisvergleich-update/** call ConfigureUpdate()
 augroup END
 "}}}
 "}}}
