@@ -77,22 +77,22 @@ augroup Preisvergleich
 augroup END
 "}}}
 
-" {{{ Shoprocket
-function! ConfigureShoprocket()
+" {{{ ProfitMax
+function! ConfigureProfitMax()
     let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/cbn/shoprocket/',
-                \ 'vagrant:/var/www/shoprocket'
+                \ '~/repositories/cbn/profitmax/',
+                \ 'vagrant:/var/www/profitmax'
                 \ )
 endfunction
 
 augroup ShopRocket
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/shoprocket/** call ConfigureShoprocket()
+                \ ~/repositories/cbn/profitmax/** call ConfigureProfitMax()
 augroup END
 "}}}
 
