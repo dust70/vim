@@ -40,6 +40,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     "}}}
 
     " {{{ Plugins
+    NeoBundle "tpope/vim-abolish", {
+                \ 'director': 'Abolish',
+                \ 'name': 'Abolish'
+                \ }
+
     NeoBundle 'bling/vim-airline', {
                 \ 'directory': 'Airline',
                 \ 'name': 'Airline'
@@ -259,6 +264,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'alvan/vim-php-manual', {
                 \ 'directory': 'PHPManual',
                 \ 'name': 'PHPManual'
+                \ }
+
+    NeoBundle 'tpope/vim-projectionist', {
+                \ 'directory': 'Projectionist',
+                \ 'name': 'Projectionist'
                 \ }
 
     NeoBundle 'rodjek/vim-puppet', {
