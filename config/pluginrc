@@ -368,10 +368,6 @@ let g:bufexplorer_version = 1
 let g:loaded_minibufexplorer = 1
 "}}}
 
-" {{{ Abolish
-Abolish {un,}n{a,e}ccessary {}necessary
-" }}}
-
 " {{{ Airline
 " {{{ tabline
 " enable/disable enhanced tabline.
