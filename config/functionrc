@@ -1,26 +1,3 @@
-" {{{ StripDoubleEmptyLines
-function! StripDoubleEmptyLines()
-    if !&binary && &filetype != 'diff'
-        normal mz
-        normal Hmy
-        %s/\(^\s*$\n\)\{2,\}/\r/e
-        normal 'yz<CR>
-        normal `z
-    endif
-endfunction
-command! StripDoubleEmptyLines call StripDoubleEmptyLines()
-"}}}
-
-" {{{ ConvertToUnix
-function! DosToUnix()
-    execute "update"
-    execute "edit ++ff=dos"
-    execute "setlocal ff=unix"
-    execute "write"
-endfunction
-command! DosToUnix call DosToUnix()
-"}}}
-
 " {{{ ConfigureProject
 function! ConfigureProject(source, dest)
     let l:source = escape(expand(a:source), ' ')
@@ -92,11 +69,34 @@ function! ConfigurePhpProject()
 endfunction
 "}}}
 
+" {{{ ConvertToUnix
+function! DosToUnix()
+    execute "update"
+    execute "edit ++ff=dos"
+    execute "setlocal ff=unix"
+    execute "write"
+endfunction
+command! DosToUnix call DosToUnix()
+"}}}
+
 " {{{ LoadCTagsFile
 function! LoadCTagsFile(file)
     execute 'setlocal tags-=' . a:file
     execute 'setlocal tags^=' . a:file
 endfunction
+"}}}
+
+" {{{ StripDoubleEmptyLines
+function! StripDoubleEmptyLines()
+    if !&binary && &filetype != 'diff'
+        normal mz
+        normal Hmy
+        %s/\(^\s*$\n\)\{2,\}/\r/e
+        normal 'yz<CR>
+        normal `z
+    endif
+endfunction
+command! StripDoubleEmptyLines call StripDoubleEmptyLines()
 "}}}
 
 " {{{ UpdateNeoBundle()
