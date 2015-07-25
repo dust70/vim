@@ -368,6 +368,10 @@ let g:bufexplorer_version = 1
 let g:loaded_minibufexplorer = 1
 "}}}
 
+" {{{ Abolish
+let g:abolish_save_file = expand("~/.vim/config/plugin/abolish.vim")
+"}}}
+
 " {{{ Airline
 " {{{ tabline
 " enable/disable enhanced tabline.
