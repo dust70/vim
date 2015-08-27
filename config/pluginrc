@@ -398,7 +398,7 @@ let g:airline#extensions#tabline#show_tab_nr = 1
 let g:formatdef_my_php = '"astyle -pcHjJs" . &shiftwidth'
 let g:formatters_php = ['my_php']
 
-nmap <silent> <Leader>af :Autoformat<cr>:%s/\(\.\\|=\) =/\1=/ge<cr>:%s/<?php/<?php/ge<cr>:call StripDoubleEmptyLines()<cr>:call FormatFile()<cr>
+nmap <silent> <leader>af :Autoformat<cr>:%s/\(\.\\|=\) =/\1=/ge<cr>:%s/<?php/<?php/ge<cr>:call StripDoubleEmptyLines()<cr>:call FormatFile()<cr>
 "}}}
 
 " {{{ Behat
@@ -426,10 +426,10 @@ let g:DeleteTrailingWhitespace = 0
 
 " {{{ Dispatch
 " {{{ key mappings
-nmap <silent> <Leader>dt :Make %:t:r<cr>
-nmap <silent> <Leader>dc :close<cr>
-nmap <silent> <Leader>do :Copen<cr>
-nmap <silent> <Leader>dT :Dispatch<cr>
+nmap <silent> <leader>dt :Make %:t:r<cr>
+nmap <silent> <leader>dc :close<cr>
+nmap <silent> <leader>do :Copen<cr>
+nmap <silent> <leader>dT :Dispatch<cr>
 "}}}
 "}}}
 
@@ -554,25 +554,25 @@ call vimfiler#custom#profile('default', 'context', {
 "}}}
 
 " {{{ mappings
-nmap <silent> <Leader>fo :VimFiler<cr>
-nmap <silent> <Leader>ft :VimFiler -tab<cr>
+nmap <silent> <leader>fo :VimFiler<cr>
+nmap <silent> <leader>ft :VimFiler -tab<cr>
 
-nmap <silent> <Leader>fe :Unite -buffer-name=execute vimfiler/execute<cr>
-nmap <silent> <Leader>fh :Unite -buffer-name=history vimfiler/history<cr>
-nmap <silent> <Leader>fm :Unite -buffer-name=mask vimfiler/mask<cr>
-nmap <silent> <Leader>fp :Unite -buffer-name=popd vimfiler/popd<cr>
-nmap <silent> <Leader>fs :Unite -buffer-name=sort vimfiler/sort<cr>
+nmap <silent> <leader>fe :Unite -buffer-name=execute vimfiler/execute<cr>
+nmap <silent> <leader>fh :Unite -buffer-name=history vimfiler/history<cr>
+nmap <silent> <leader>fm :Unite -buffer-name=mask vimfiler/mask<cr>
+nmap <silent> <leader>fp :Unite -buffer-name=popd vimfiler/popd<cr>
+nmap <silent> <leader>fs :Unite -buffer-name=sort vimfiler/sort<cr>
 "}}}
 "}}}
 
 " {{{ FuGITive
 " {{{ mappings
-nmap <silent> <Leader>ga :Gwrite<cr>
-nmap <silent> <Leader>gb :Gblame<cr>
-nmap <silent> <Leader>gc :Gcommit<cr>
-nmap <silent> <Leader>gd :Gdiff<cr>
-nmap <silent> <Leader>gf :Gfetch<cr>
-nmap <silent> <Leader>gg :Ggrep<space>
+nmap <silent> <leader>ga :Gwrite<cr>
+nmap <silent> <leader>gb :Gblame<cr>
+nmap <silent> <leader>gc :Gcommit<cr>
+nmap <silent> <leader>gd :Gdiff<cr>
+nmap <silent> <leader>gf :Gfetch<cr>
+nmap <silent> <leader>gg :Ggrep<space>
 "}}}
 "}}}
 
@@ -942,10 +942,11 @@ let g:syntastic_mode_map = {
 "}}}
 
 " {{{ mappings
-nmap <silent> <Leader>Sc :SyntasticCheck<cr>
-nmap <silent> <Leader>Se :Errors<cr>
-nmap <silent> <Leader>Si :SyntasticInfo<cr>
-nmap <silent> <Leader>Sr :SyntasticReset<cr>
+nmap <silent> <leader>Sc :SyntasticCheck<cr>
+nmap <silent> <leader>Se :Errors<cr>
+nmap <silent> <leader>Si :SyntasticInfo<cr>
+nmap <silent> <leader>Sr :SyntasticReset<cr>
+nmap <silent> <leader>St :SyntasticToggleMode<cr>
 "}}}
 
 " {{{ Syntax Checker
@@ -1273,22 +1274,22 @@ call unite#custom#profile(
 "}}}
 
 " {{{ mappings
-nmap <silent> <Leader>u :Unite -buffer-name=unite<cr>
-nmap <silent> <Leader>uB :Unite -buffer-name=bookmark -quick-match bookmark<cr>
-nmap <silent> <Leader>ub :Unite -buffer-name=buffer -quick-match buffer_tab<cr>
-nmap <silent> <Leader>ug :Unite -buffer-name=grep -start-insert grep:.<cr>
-nmap <silent> <Leader>uj :Unite -buffer-name=tabs jump<cr>
-nmap <silent> <Leader>um :Unite -buffer-name=menu -start-insert menu<cr>
-nmap <silent> <Leader>umd :Unite -buffer-name=mru -quick-match neomru/directory<cr>
-nmap <silent> <Leader>umf :Unite -buffer-name=mru -quick-match neomru/file<cr>
-nmap <silent> <Leader>uo :Unite -buffer-name=outline -quick-match outline<cr>
-nmap <silent> <Leader>ur :Unite -buffer-name=register register<cr>
-nmap <silent> <Leader>us :Unite -buffer-name=session session<cr>
-nmap <silent> <Leader>ut :Unite -buffer-name=tabs -start-insert tab<cr>
-nmap <silent> <Leader>uTf :Unite -buffer-name=tag-file -quick-match tag/file<cr>
-nmap <silent> <Leader>uTi :Unite -buffer-name=tag-include -quick-match tag/include<cr>
-nmap <silent> <Leader>uTt :Unite -buffer-name=tag -quick-match tag<cr>
-nmap <silent> <Leader>uy :Unite -buffer-name=history history/yank<cr>
+nmap <silent> <leader>u :Unite -buffer-name=unite<cr>
+nmap <silent> <leader>uB :Unite -buffer-name=bookmark -quick-match bookmark<cr>
+nmap <silent> <leader>ub :Unite -buffer-name=buffer -quick-match buffer_tab<cr>
+nmap <silent> <leader>ug :Unite -buffer-name=grep -start-insert grep:.<cr>
+nmap <silent> <leader>uj :Unite -buffer-name=tabs jump<cr>
+nmap <silent> <leader>um :Unite -buffer-name=menu -start-insert menu<cr>
+nmap <silent> <leader>umd :Unite -buffer-name=mru -quick-match neomru/directory<cr>
+nmap <silent> <leader>umf :Unite -buffer-name=mru -quick-match neomru/file<cr>
+nmap <silent> <leader>uo :Unite -buffer-name=outline -quick-match outline<cr>
+nmap <silent> <leader>ur :Unite -buffer-name=register register<cr>
+nmap <silent> <leader>us :Unite -buffer-name=session session<cr>
+nmap <silent> <leader>ut :Unite -buffer-name=tabs -start-insert tab<cr>
+nmap <silent> <leader>uTf :Unite -buffer-name=tag-file -quick-match tag/file<cr>
+nmap <silent> <leader>uTi :Unite -buffer-name=tag-include -quick-match tag/include<cr>
+nmap <silent> <leader>uTt :Unite -buffer-name=tag -quick-match tag<cr>
+nmap <silent> <leader>uy :Unite -buffer-name=history history/yank<cr>
 
 nmap <silent> <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
 "}}}
