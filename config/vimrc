@@ -167,7 +167,7 @@ set backspace=indent,eol,start
 " the 'writebackup' option (this is the default). If you do not want a backup
 " file at all reset both options (use this if your file system is almost full).
 " See the |backup-table| for more explanations.
-set backup
+set nobackup
 "}}}
 
 " {{{ backupdir
