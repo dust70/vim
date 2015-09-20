@@ -423,7 +423,11 @@ set foldnestmax=10
 " specified, font names separated with commas.
 " The first valid font is used.
 if has("gui_running")
-    set guifont=Terminus\ 9
+   if has("mac") || has("win32")
+       set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
+   elseif has("unix")
+       set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
+   endif
 endif
 "}}}
 
@@ -831,19 +835,33 @@ set titleold=Shell
 set titlestring=VIm:\ %.25t\ %a%r%m
 "}}}
 
-" {{{ undodir
-" List of directory names for undo files, separated with commas. See 'backupdir'
-" for details of the format.
-" "." means using the directory of the file. The undo file name for "file.txt"
-" is ".file.txt.un~". For other directories the file name is the full path of
-" the edited file, with path separators replaced with "%".
-" When writing: The first directory that exists is used. "." always works, no
-" directories after "." will be used for writing.
-" When reading all entries are tried to find an undo file. The first undo file
-" that exists is used. When it cannot be read an error is given, no further
-" entry is used.
-let &undodir=g:vimfiles . "/undo"
-"}}}
+if has("persistent_undo")
+    " {{{ undodir
+    " List of directory names for undo files, separated with commas. See 'backupdir'
+    " for details of the format.
+    " "." means using the directory of the file. The undo file name for "file.txt"
+    " is ".file.txt.un~". For other directories the file name is the full path of
+    " the edited file, with path separators replaced with "%".
+    " When writing: The first directory that exists is used. "." always works, no
+    " directories after "." will be used for writing.
+    " When reading all entries are tried to find an undo file. The first undo file
+    " that exists is used. When it cannot be read an error is given, no further
+    " entry is used.
+    let &undodir=g:vimfiles . "/undo"
+    "}}}
+
+    " {{{ undofile
+    " When on, Vim automatically saves undo history to an undo file when writing
+    " a buffer to a file, and restores undo history from the same file on buffer
+    " read.
+    " The directory where the undo file is stored is specified by 'undodir'. For
+    " more information about this feature see |undo-persistence|. The undo file
+    " is not read when 'undoreload' causes the buffer from before a reload to be
+    " saved for undo.
+    " When 'undofile' is turned off the undo file is NOT deleted.
+    set undofile
+    "}}}
+endif
 
 " {{{ viminfo
 " When non-empty, the viminfo file is read upon startup and written when
