@@ -1,5 +1,5 @@
 " {{{ ConfigureProject
-function! ConfigureProject(source, dest)
+function! ConfigureProject(source, dest, ...)
     let l:source = escape(expand(a:source), ' ')
     let l:dest = escape(expand(a:dest), ' ')
 
@@ -13,18 +13,14 @@ function! ConfigureProject(source, dest)
                 \ '--chmod="ug=rwX,o=rX"',
                 \ '--cvs-exclude',
                 \ '--delete',
-                \ '--rsh "ssh -F ./vagrant/.vagrant/ssh_config"',
+                \ '--rsh "ssh -F ' . l:source . 'vagrant/.vagrant/ssh_config"',
                 \ '--verbose',
                 \ '--whole-file'
                 \ ]
 
     let l:rsync_ignore = [
                 \ '"*.pyc"',
-                \ '".*swp"',
-                \ '".DS_Store"',
-                \ '".fstemp.*"',
-                \ '".git*"',
-                \ '".svn*"',
+                \ '".*"',
                 \ '"README*"',
                 \ '"Readme*"',
                 \ '"behat*"',
@@ -42,8 +38,9 @@ function! ConfigureProject(source, dest)
                 \ '"sync.log"',
                 \ '"tests*"',
                 \ '"vagrant"'
-                \ ]
+                \ ] + a:000
 
+    let g:test = a:000
     let g:rsync_command = 'rsync ' . join(l:rsync_options, ' ')
                 \ . ' --exclude=' . join(l:rsync_ignore, ' --exclude=')
                 \ . ' ' . l:source . ' ' . l:dest
