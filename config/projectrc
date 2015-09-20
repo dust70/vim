@@ -66,7 +66,9 @@ function! ConfigurePreisvergleich()
 
     call ConfigureProject(
                 \ '~/repositories/cbn/preisvergleich-frontend/',
-                \ 'vagrant:/var/www/prvg'
+                \ 'vagrant:/var/www/prvg',
+                \ 'styles.css',
+                \ 'preisvergleich.compiled.css'
                 \ )
 endfunction
 
@@ -86,7 +88,7 @@ function! ConfigureProfitMax()
 
     call ConfigureProject(
                 \ '~/repositories/cbn/profitmax/',
-                \ 'vagrant:/var/www/profitmax'
+                \ 'vagrant:/var/www/profitmax',
                 \ )
 endfunction
 
