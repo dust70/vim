@@ -258,8 +258,8 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'Shougo/neosnippet', {
                 \ 'depends': [
                 \    ['Shougo/neosnippet-snippets', {
-                \        'directory': 'NeoSnippets',
-                \        'name': 'NeoSnippets'
+                \        'directory': 'NeoSnippet-Snippets',
+                \        'name': 'NeoSnippet-Snippets'
                 \        }],
                 \    ['honza/vim-snippets', {
                 \        'directory': 'Snippets',
@@ -847,9 +847,10 @@ endif
 " multiple values in comma-separated string or list. Non existing directories
 " are ignored.
 let g:neosnippet#snippets_directory = '' .
-            \ g:vimfiles.'/snippets' . ', ' .
-            \ g:vimfiles.'/bundle/NeoSnippet-Snippets/neosnippets' . ',' .
-            \ g:vimfiles.'/bundle/Snippets/snippets'
+            \ g:vimfiles . '/snippets' . ', ' .
+            \ g:vimfiles . '/bundle/NeoSnippet-Snippets/neosnippets,' .
+            \ g:vimfiles . '/bundle/Snippets/snippets,' .
+            \ g:vimfiles. '/bundle/Snipmate-Snippets/snippets'
 "}}}
 
 " {{{ neosnippet#scope_aliases
