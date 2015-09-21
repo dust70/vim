@@ -67,8 +67,11 @@ function! ConfigurePreisvergleich()
     call ConfigureProject(
                 \ '~/repositories/cbn/preisvergleich-frontend/',
                 \ 'vagrant:/var/www/prvg',
-                \ 'styles.css',
-                \ 'preisvergleich.compiled.css'
+                \ '"public/css/*.compiled.css"',
+                \ '"public/css/*.min.css"',
+                \ '"public/javascript/*.min.js"',
+                \ '"public/mobile/css"',
+                \ '"public/mobile/scripts/*.min.js"',
                 \ )
 endfunction
 
