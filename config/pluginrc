@@ -417,11 +417,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'VirtualEnv'
                 \ }
 
-    NeoBundle 'vim-scripts/visualMarks.vim', {
-                \ 'directory': 'VisualMark',
-                \ 'name': 'VisualMark'
-                \ }
-
     NeoBundle 'bronson/vim-visual-star-search', {
                 \ 'directory': 'VisualStarSearch',
                 \ 'name': 'VisualStarSearch'
