@@ -1,6 +1,6 @@
 " {{{ CBN
 " {{{ Admin
-function! ConfigureAdmin()
+function! ConfigureCBNAdmin()
     let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework2')
@@ -15,36 +15,36 @@ endfunction
 augroup Admin
     autocmd! BufEnter,BufNewFile,BufRead
                 \ ~/repositories/cbn/preisvergleich-admin/**
-                \ call ConfigureAdmin()
+                \ call ConfigureCBNAdmin()
 augroup END
 "}}}
 
 " {{{ Behat
-function! ConfigureBehat()
+function! ConfigureCBNBehat()
     call ConfigurePhpProject()
 endfunction
 
 augroup Behat
     autocmd! BufEnter,BufNewFile,BufRead
                 \ ~/repositories/cbn/preisvergleich-behat/**
-                \ call ConfigureBehat()
+                \ call ConfigureCBNBehat()
 augroup END
 "}}}
 
 " {{{ Image
-function! ConfigureImage()
+function! ConfigureCBNImage()
     call ConfigurePhpProject()
 endfunction
 
 augroup Image
     autocmd! BufEnter,BufNewFile,BufRead
                 \ ~/repositories/cbn/preisvergleich-image/**
-                \ call ConfigureImage()
+                \ call ConfigureCBNImage()
 augroup END
 "}}}
 
 " {{{ Library
-function! ConfigureLibrary()
+function! ConfigureCBNLibrary()
     let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
     call ConfigurePhpProject()
@@ -53,12 +53,12 @@ endfunction
 augroup Library
     autocmd! BufEnter,BufNewFile,BufRead
                 \ ~/repositories/cbn/preisvergleich-library/**
-                \ call ConfigureLibrary()
+                \ call ConfigureCBNLibrary()
 augroup END
 "}}}
 
 " {{{ Preisvergleich
-function! ConfigurePreisvergleich()
+function! ConfigureCBNFrontend()
     let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
@@ -78,12 +78,12 @@ endfunction
 augroup Preisvergleich
     autocmd! BufEnter,BufNewFile,BufRead
                 \ ~/repositories/cbn/preisvergleich-frontend/**
-                \ call ConfigurePreisvergleich()
+                \ call ConfigureCBNFrontend()
 augroup END
 "}}}
 
 " {{{ ProfitMax
-function! ConfigureProfitMax()
+function! ConfigureCBNProfitMax()
     let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
@@ -97,12 +97,12 @@ endfunction
 
 augroup ShopRocket
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/profitmax/** call ConfigureProfitMax()
+                \ ~/repositories/cbn/profitmax/** call ConfigureCBNProfitMax()
 augroup END
 "}}}
 
 " {{{ Soap
-function! ConfigureSoap()
+function! ConfigureCBNBackend()
     let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
@@ -116,12 +116,12 @@ endfunction
 
 augroup Soap
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/preisvergleich-backend/** call ConfigureSoap()
+                \ ~/repositories/cbn/preisvergleich-backend/** call ConfigureCBNBackend()
 augroup END
 "}}}
 
 " {{{ Update
-function! ConfigureUpdate()
+function! ConfigureCBNUpdate()
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
     call ConfigurePhpProject()
 
@@ -133,7 +133,7 @@ endfunction
 
 augroup Update
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/preisvergleich-update/** call ConfigureUpdate()
+                \ ~/repositories/cbn/preisvergleich-update/** call ConfigureCBNUpdate()
 augroup END
 "}}}
 "}}}
