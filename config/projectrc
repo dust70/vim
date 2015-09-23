@@ -82,8 +82,8 @@ augroup Preisvergleich
 augroup END
 "}}}
 
-" {{{ ProfitMax
-function! ConfigureCBNProfitMax()
+" {{{ Profitmax
+function! ConfigureCBNProfitmax()
     let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
@@ -97,7 +97,7 @@ endfunction
 
 augroup ShopRocket
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/profitmax/** call ConfigureCBNProfitMax()
+                \ ~/repositories/cbn/profitmax/** call ConfigureCBNProfitmax()
 augroup END
 "}}}
 
