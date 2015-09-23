@@ -144,6 +144,7 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ }
 
     NeoBundle 'tpope/vim-fugitive', {
+                \ 'augroup': 'fugitive',
                 \ 'directory': 'FuGITive',
                 \ 'name': 'FuGITive'
                 \ }
@@ -178,7 +179,7 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'LuaFtPlugin'
                 \ }
 
-    NeoBundle 'nathanaelkane/vim-indent-guides.git', {
+    NeoBundle 'nathanaelkane/vim-indent-guides', {
                 \ 'directory': 'IndentGuides',
                 \ 'name': 'IndentGuides'
                 \ }
@@ -426,12 +427,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory': 'Whitespace',
                 \ 'name': 'Whitespace'
                 \ }
-
-    " this plugin should be the last to be loaded
-    NeoBundle 'ryanoasis/vim-devicons', {
-                \ 'directory': 'Devicons',
-                \ 'name': 'Devicons'
-                \ }
     "}}}
 
     call neobundle#end()
@@ -622,10 +617,10 @@ let g:vimfiler_data_directory = g:vimfiles . "/tmp/files"
 " Set {profile-name} specialized {option-name} to {value}.
 call vimfiler#custom#profile('default', 'context', {
             \ 'buffer-name': 'VimFiler',
-            \ 'explorer': 1,
+            \ 'columns': 'type:size:time',
             \ 'safe': 0,
             \ 'sort_type': 'filename',
-            \ 'status': 1,
+            \ 'status': 1
             \ })
 "}}}
 
