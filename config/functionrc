@@ -20,7 +20,12 @@ function! ConfigureProject(source, dest, ...)
 
     let l:rsync_ignore = [
                 \ '"*.pyc"',
-                \ '".*"',
+                \ '".*swp"',
+                \ '".DS_Store"',
+                \ '".fstemp.*"',
+                \ '".git*"',
+                \ '".svn*"',
+                \ '".zf*"',
                 \ '"README*"',
                 \ '"Readme*"',
                 \ '"behat*"',
