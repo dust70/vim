@@ -52,7 +52,7 @@ augroup filetypes
     autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
 
     autocmd! FileType c,cpp,html,html.javascript,java,php,php.html,php.html.javascript,python,sh,tex,vim,xml
-                \ let g:DeleteTrailingWhitespace = 1
+                \ :StripWhitespace
 
     " simple filetypes
     autocmd! FileType c,cpp,html,java,php,sh,tex,vim,xml
