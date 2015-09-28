@@ -469,7 +469,7 @@ let g:airline#extensions#tabline#show_tab_nr = 1
 let g:formatdef_my_php = '"astyle -pcHjJs" . &shiftwidth'
 let g:formatters_php = ['my_php']
 
-nmap <silent> <leader>af :Autoformat<cr>:%s/\(\.\\|=\) =/\1=/ge<cr>:%s/<?php/<?php/ge<cr>:call StripDoubleEmptyLines()<cr>:call FormatFile()<cr>
+nmap <silent> <leader>af :Autoformat<cr>:%s/\(\.\\|=\) =/\1=/ge<cr>:%s/<?\s*php/<?php/ge<cr>:call StripDoubleEmptyLines()<cr>:call FormatFile()<cr>
 "}}}
 
 " {{{ Behat
