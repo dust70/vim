@@ -842,10 +842,10 @@ endif
 " multiple values in comma-separated string or list. Non existing directories
 " are ignored.
 let g:neosnippet#snippets_directory = '' .
-            \ g:vimfiles . '/snippets' . ', ' .
-            \ g:vimfiles . '/bundle/NeoSnippet-Snippets/neosnippets,' .
-            \ g:vimfiles . '/bundle/Snippets/snippets,' .
-            \ g:vimfiles. '/bundle/Snipmate-Snippets/snippets'
+            \ g:vimfiles . '/snippets' . ',' .
+            \ g:vimfiles . '/bundle/NeoSnippet-Snippets/neosnippets' . ',' .
+            \ g:vimfiles . '/bundle/Snippets/snippets' . ',' .
+            \ g:vimfiles . '/bundle/Snipmate-Snippets/snippets'
 "}}}
 
 " {{{ neosnippet#scope_aliases
