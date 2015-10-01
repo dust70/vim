@@ -51,6 +51,7 @@ function! ConfigureProject(source, dest, ...)
                 \ . ' ' . l:source . ' ' . l:dest
     let g:rsync_command_delete = 'rsync ' . join(l:rsync_options, ' ')
                 \ . ' --delete-excluded --delete-during --prune-empty-dirs'
+                \ . ' --ignore-errors --force '
                 \ . ' --exclude=' . join(l:rsync_ignore, ' --exclude=')
                 \ . ' ' . l:source . ' ' . l:dest
 
