@@ -49,9 +49,13 @@ function! ConfigureProject(source, dest, ...)
     let g:rsync_command = 'rsync ' . join(l:rsync_options, ' ')
                 \ . ' --exclude=' . join(l:rsync_ignore, ' --exclude=')
                 \ . ' ' . l:source . ' ' . l:dest
+    let g:rsync_command_delete = 'rsync ' . join(l:rsync_options, ' ')
+                \ . ' --delete-excluded --delete-during --prune-empty-dirs'
+                \ . ' --exclude=' . join(l:rsync_ignore, ' --exclude=')
+                \ . ' ' . l:source . ' ' . l:dest
 
     nnoremap <silent> <leader>ds :silent execute "Start " . g:rsync_command<cr>
-    nnoremap <silent> <leader>ll :write <bar> !lessc % %:t:r.css<cr>
+    nnoremap <silent> <leader>dS :silent execute "Start " . g:rsync_command_delete<cr>
 
     autocmd! BufWritePost,FileWritePost *
                 \ silent execute '!' . g:rsync_command . ' >> /dev/null 2>&1 &'
