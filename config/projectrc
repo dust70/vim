@@ -92,7 +92,9 @@ function! ConfigureCBNProfitmax()
     call ConfigureProject(
                 \ '~/repositories/cbn/profitmax/',
                 \ 'vagrant:/var/www/profitmax',
+                \ 'adminDevelop.min.js',
                 \ 'adminStyle.css',
+                \ 'frontendDevelop.min.js',
                 \ 'frontendStyle.css'
                 \ )
 endfunction
