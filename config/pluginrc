@@ -1429,4 +1429,13 @@ let g:vdebug_options = {
             \ }
 "}}}
 
+" {{{ Whitespace
+" {{{ mappings
+nnoremap ,Wd <silent> :DisableWhitespace<cr>
+nnoremap ,We <silent> :EnableWhitespace<cr>
+nnoremap ,Ws <silent> :StripWhitespace<cr>
+nnoremap ,Wt <silent> :ToogleWhitespace<cr>
+"}}}
+"}}}
+
 " vim: filetype=vim textwidth=80 foldmethod=marker
