@@ -148,9 +148,15 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory': 'FuGITive',
                 \ 'name': 'FuGITive'
                 \ }
+
     NeoBundle 'tpope/vim-git', {
                 \ 'directory': 'Git',
                 \ 'name': 'Git'
+                \ }
+
+    NeoBundle 'airblade/vim-gitgutter', {
+                \ 'direcotry': 'Gutter',
+                \ 'name': 'Gutter'
                 \ }
 
     NeoBundle 'jamessan/vim-gnupg', {
@@ -220,6 +226,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'luishdez/vim-less', {
                 \ 'directory': 'Less',
                 \ 'name': 'Less'
+                \ }
+
+    NeoBundle 'jreybert/vimagit', {
+                \ 'directory': 'Magit',
+                \ 'name': 'Magit'
                 \ }
 
     NeoBundle 'dbeniamine/vim-mail', {
@@ -644,6 +655,16 @@ nmap <silent> <leader>gc :Gcommit<cr>
 nmap <silent> <leader>gd :Gdiff<cr>
 nmap <silent> <leader>gf :Gfetch<cr>
 nmap <silent> <leader>gg :Ggrep<space>
+"}}}
+"}}}
+
+" {{{ Gutter
+" {{{ gitgutter_map_keys
+let g:gitgutter_map_keys = 0
+"}}}
+
+" {{{ gitgutter_realtime
+let g:gitgutter_realtime = 0
 "}}}
 "}}}
 
