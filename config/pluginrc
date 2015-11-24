@@ -218,7 +218,7 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Lastplace'
                 \ }
 
-    NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex', {
+    NeoBundle 'http://git.code.sf.net/p/vim-latex/vim-latex', {
                 \ 'directory': 'LaTeX',
                 \ 'name': 'LaTeX'
                 \ }
