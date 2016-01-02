@@ -155,7 +155,7 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ }
 
     NeoBundle 'airblade/vim-gitgutter', {
-                \ 'direcotry': 'Gutter',
+                \ 'directory': 'Gutter',
                 \ 'name': 'Gutter'
                 \ }
 
@@ -218,10 +218,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Lastplace'
                 \ }
 
-    NeoBundle 'http://git.code.sf.net/p/vim-latex/vim-latex', {
-                \ 'directory': 'LaTeX',
-                \ 'name': 'LaTeX'
-                \ }
+"    NeoBundle 'http://git.code.sf.net/p/vim-latex/vim-latex', {
+"                \ 'directory': 'LaTeX',
+"                \ 'name': 'LaTeX'
+"                \ }
 
     NeoBundle 'luishdez/vim-less', {
                 \ 'directory': 'Less',
