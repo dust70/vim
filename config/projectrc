@@ -8,7 +8,8 @@ function! ConfigureCBNAdmin()
 
     call ConfigureProject(
                 \ '~/repositories/cbn/preisvergleich-admin/',
-                \ 'vagrant:/var/www/prvg'
+                \ 'vagrant:/var/www/htdocs',
+                \ '"var"'
                 \ )
 endfunction
 
@@ -66,7 +67,7 @@ function! ConfigureCBNFrontend()
 
     call ConfigureProject(
                 \ '~/repositories/cbn/preisvergleich-frontend/',
-                \ 'vagrant:/var/www/prvg',
+                \ 'vagrant:/var/www/htdocs',
                 \ '"public/css/*.compiled.css"',
                 \ '"public/css/*.min.css"',
                 \ '"public/javascript/*.min.js"',
@@ -114,7 +115,7 @@ function! ConfigureCBNBackend()
 
     call ConfigureProject(
                 \ '~/repositories/cbn/preisvergleich-backend/',
-                \ 'vagrant:/var/www/prvg'
+                \ 'vagrant:/var/www/htdocs'
                 \ )
 endfunction
 
@@ -144,21 +145,23 @@ augroup END
 
 " {{{ Project
 " {{{ Invoicing
-function! ConfigureInvoicing()
+function! ConfigureInvoice()
     let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
-    call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework2')
+    call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/symfony')
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/projects/invoicing/',
-                \ 'vagrant:/var/www/invoicing'
+                \ '~/repositories/projects/invoice/',
+                \ 'vagrant:/var/www/htdocs',
+                \ '"var/cache"',
+                \ '"var/logs"'
                 \ )
 endfunction
 
 augroup Invoicing
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/projects/invoicing/** call ConfigureInvoicing()
+                \ ~/repositories/projects/invoice/** call ConfigureInvoice()
 augroup END
 "}}}
 "}}}
