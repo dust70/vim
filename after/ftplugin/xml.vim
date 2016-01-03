@@ -4,14 +4,6 @@ if filereadable(g:vimfiles . "/after/ftplugin/programming.vim")
 endif
 "}}}
 
-" {{{ equalprg
-" External program to use for "=" command. When this option is empty the
-" internal formatting functions are used; either 'lisp', 'cindent' or
-" 'indentexpr'. When Vim was compiled without internal formatting, the "indent"
-" program is used.
-setlocal equalprg=xmllint\ --format\ -
-"}}}
-
 " {{{ foldmethod
 " The kind of folding used for the current window.
 setlocal foldmethod=indent
@@ -32,13 +24,20 @@ setlocal matchpairs+=<:>
 setlocal omnifunc=xmlcomplete#CompleteTags
 "}}}
 
-" {{{ textwidth
-" Maximum width of text that is being inserted. A longer line will be broken
-" after whitespace to get this width. A zero value disables this. 'textwidth'
-" is set to 0 when the 'paste' option is set. When 'textwidth' is zero,
-" 'wrapmargin' may be used. See also 'formatoptions' and |ins-textwidth|. When
-" 'formatexpr' is set it will be used to break the line.
-setlocal textwidth=80
+" {{{ shiftwidth
+" Number of spaces to use for each step of (auto)indent. Used for |'cindent'|,
+" |>>|, |<<|, etc.
+set shiftwidth=2
+"}}}
+
+" {{{ softtabstop
+" Number of spaces that a <Tab> counts for while performing editing
+" operations, like inserting a <Tab> or using <BS>. It "feels" like <Tab>s are
+" being inserted, while in fact a mix of spaces and <Tab>s is used. This is
+" useful to keep the 'ts' setting at its standard value of 8, while being able
+" to edit like it is set to 'sts'. However, commands like "x" still work on
+" the actual characters.
+set softtabstop=2
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
