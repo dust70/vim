@@ -26,23 +26,10 @@ function! ConfigureProject(source, dest, ...)
                 \ '".fstemp.*"',
                 \ '".git*"',
                 \ '".svn*"',
-                \ '".zf*"',
-                \ '"README*"',
-                \ '"Readme*"',
-                \ '"behat*"',
-                \ '"build*"',
-                \ '"composer.*"',
                 \ '"cscope.out*"',
-                \ '"data"',
                 \ '"debug.log"',
-                \ '"logs"',
                 \ '"node_modules"',
-                \ '"phpunit*.dist"',
-                \ '"phpunit*.xml"',
-                \ '"public/dest"',
-                \ '"reports"',
                 \ '"sync.log"',
-                \ '"tests*"',
                 \ '"vagrant"'
                 \ ] + a:000
 
