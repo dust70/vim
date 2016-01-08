@@ -146,7 +146,7 @@ augroup END
 " {{{ Project
 " {{{ Invoicing
 function! ConfigureInvoice()
-    let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
+    let g:syntastic_php_phpcs_args = "--standard=build/phpcs.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/symfony')
     call ConfigurePhpProject()
