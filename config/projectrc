@@ -1,7 +1,7 @@
 " {{{ CBN
 " {{{ Admin
 function! ConfigureCBNAdmin()
-    let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
+    let g:syntastic_php_phpcs_args = "--standard=build/phpcs.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework2')
     call ConfigurePhpProject()
@@ -85,7 +85,7 @@ augroup END
 
 " {{{ Profitmax
 function! ConfigureCBNProfitmax()
-    let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
+    let g:syntastic_php_phpcs_args = "--standard=build/phpcs.xml -l --extensions=php --tab-width=" . &tabstop
 
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
     call ConfigurePhpProject()
