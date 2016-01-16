@@ -58,7 +58,7 @@ function! ConfigurePhpProject()
 
     compiler phpunit_local
     nnoremap <silent> <leader>dt :Dispatch php -d "error_reporting=E_ALL\|E_STRICT"
-                \ ./bin/phpunit --strict --verbose --filter %:t:r<cr>
+                \ ./bin/phpunit --verbose --filter %:t:r<cr>
 
     let g:vdebug_options['server'] = '192.168.56.1'
 endfunction
