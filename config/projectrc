@@ -127,7 +127,8 @@ augroup END
 
 " {{{ Update
 function! ConfigureCBNUpdate()
-    call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/zendframework1')
+    let g:syntastic_php_phpcs_args = "--standard=Zend -l --extensions=php --tab-width=" . &tabstop
+
     call ConfigurePhpProject()
 
     call ConfigureProject(
