@@ -388,11 +388,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Tagbar'
                 \ }
 
-    NeoBundle 'mbbill/undotree', {
-                \ 'directory': 'UndoTree',
-                \ 'name': 'UndoTree'
-                \ }
-
     NeoBundle 'Shougo/unite.vim', {
                 \ 'depends': [
                 \    ['Shougo/tabpagebuffer.vim', {
