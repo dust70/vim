@@ -76,11 +76,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Colorizer'
                 \ }
 
-    NeoBundle 'flazz/vim-colorschemes', {
-                \ 'directory': 'Colorschemes',
-                \ 'name': 'Colorschemes'
-                \ }
-
     NeoBundle 'hail2u/vim-css3-syntax', {
                 \ 'directory': 'CSS',
                 \ 'name': 'CSS'
@@ -94,11 +89,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'chrisbra/csv.vim', {
                 \ 'directory': 'CSV',
                 \ 'name': 'CSV'
-                \ }
-
-    NeoBundle 'rking/vim-detailed', {
-                \ 'directory': 'Detailed',
-                \ 'name': 'Detailed'
                 \ }
 
     NeoBundle 'chrisbra/vim-diff-enhanced', {
