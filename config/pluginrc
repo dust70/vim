@@ -228,11 +228,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Less'
                 \ }
 
-    NeoBundle 'jreybert/vimagit', {
-                \ 'directory': 'Magit',
-                \ 'name': 'Magit'
-                \ }
-
     NeoBundle 'dbeniamine/vim-mail', {
                 \ 'depends': [
                 \    ['chrisbra/CheckAttach', {
