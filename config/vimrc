@@ -92,10 +92,16 @@ endif
 " {{{ colorscheme
 " Output the name of the currently active color scheme.
 " This is basically the same as
-"       :echo g:colors_name
+"	:echo g:colors_name
 " In case g:colors_name has not been defined :colo will output "default". When
 " compiled without the |+eval| feature it will output "unknown".
-colorscheme evening
+if has("gui_running") && ! empty(globpath(&runtimepath, 'colors/vydark.vim'))
+    colorscheme vydark
+elseif ! empty(globpath(&runtimepath, 'colors/detailed.vim'))
+    colorscheme detailed
+else
+    colorscheme evening
+endif
 "}}}
 
 " {{{ options
@@ -146,11 +152,11 @@ endif
 " Influences the working of <BS>, <Del>, CTRL-W and CTRL-U in Insert mode.
 " This is a list of items, separated by commas. Each item allows a way to
 " backspace over something:
-"       value   effect
-"       indent  allow backspacing over autoindent
-"       eol     allow backspacing over line breaks (join lines)
-"       start   allow backspacing over the start of insert; CTRL-W and CTRL-U
-"               stop once at the start of insert.
+"	value	effect
+"	indent	allow backspacing over autoindent
+"	eol	allow backspacing over line breaks (join lines)
+"	start	allow backspacing over the start of insert; CTRL-W and CTRL-U
+"		stop once at the start of insert.
 set backspace=indent,eol,start
 "}}}
 
@@ -171,11 +177,11 @@ let &backupdir=g:vimfiles . "/backup"
 
 " {{{ browsedir
 " Which directory to use for the file browser:
-"       last    Use same directory as with last file browser, where a file was
-"               opened or saved.
-"       buffer  Use the directory of the related buffer.
-"       current Use the current directory.
-"       {path}  Use the specified directory
+"	last	Use same directory as with last file browser, where a file was
+"		opened or saved.
+"	buffer	Use the directory of the related buffer.
+"	current	Use the current directory.
+"	{path}	Use the specified directory
 if has("gui_running")
     set browsedir=current
 endif
@@ -203,9 +209,9 @@ set cmdwinheight=5
 " make screen redrawing slower. The screen column can be an absolute number,
 " or a number preceded with '+' or '-', which is added to or subtracted from
 " 'textwidth'.
-"       :set cc=+1              " highlight column after 'textwidth'
-"       :set cc=+1,+2,+3        " highlight three columns after 'textwidth'
-"       :hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+"	:set cc=+1		" highlight column after 'textwidth'
+"	:set cc=+1,+2,+3	" highlight three columns after 'textwidth'
+"	:hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 " When 'textwidth' is zero then the items with '-' and '+' are not used. A
 " maximum of 256 columns are highlighted.
 if v:version >= 703
@@ -224,7 +230,7 @@ endif
 " the display may be messed up. For the GUI it is always possible and Vim
 " limits the number of columns to what fits on the screen. You can use this
 " command to get the widest window possible:
-"       :set columns=9999
+"	:set columns=9999
 " Minimum value is 12, maximum value is 10000.
 if has("gui_running")
     set columns=185
@@ -311,27 +317,27 @@ set dictionary+=/usr/share/dict/words
 " {{{ diffopt
 " Option settings for diff mode. It can consist of the following items. All
 " are optional. Items must be separated by a comma.
-"       filler          Show filler lines, to keep the text synchronized with
-"                       a window that has inserted lines at the same position.
-"                       Mostly useful when windows are side-by-side and
-"                       'scrollbind' is set.
-"       context:{n}     Use a context of {n} lines between a change and a fold
-"                       that contains unchanged lines. When omitted a context
-"                       of six lines is used.
-"       icase           Ignore changes in case of text. "a" and "A" are
-"                       considered the same. Adds the "-i" flag to the "diff"
-"                       command if 'diffexpr' is empty.
-"       iwhite          Ignore changes in amount of whitespace. Adds the "-b"
-"                       flag to the "diff" command if 'diffexpr' is empty.
-"                       Check the documentation of the "diff" command for what
-"                       this does exactly. It should ignore adding trailing
-"                       whitespace, but not leading whitespace.
-"       horizontal      Start diff mode with horizontal splits (unless
-"                       explicitly specified otherwise).
-"       vertical        Start diff mode with vertical splits (unless
-"                       explicitly specified otherwise).
-"       foldcolumn:{n}  Set the 'foldcolumn' option to {n} when starting diff
-"                       mode. Without this 2 is used.
+"	filler		Show filler lines, to keep the text synchronized with
+"			a window that has inserted lines at the same position.
+"			Mostly useful when windows are side-by-side and
+"			'scrollbind' is set.
+"	context:{n}	Use a context of {n} lines between a change and a fold
+"			that contains unchanged lines. When omitted a context
+"			of six lines is used.
+"	icase		Ignore changes in case of text. "a" and "A" are
+"			considered the same. Adds the "-i" flag to the "diff"
+"			command if 'diffexpr' is empty.
+"	iwhite		Ignore changes in amount of whitespace. Adds the "-b"
+"			flag to the "diff" command if 'diffexpr' is empty.
+"			Check the documentation of the "diff" command for what
+"			this does exactly. It should ignore adding trailing
+"			whitespace, but not leading whitespace.
+"	horizontal	Start diff mode with horizontal splits (unless
+"			explicitly specified otherwise).
+"	vertical	Start diff mode with vertical splits (unless
+"			explicitly specified otherwise).
+"	foldcolumn:{n}	Set the 'foldcolumn' option to {n} when starting diff
+"			mode. Without this 2 is used.
 set diffopt=filler,context:3,vertical,foldcolumn:3
 "}}}
 
@@ -479,9 +485,9 @@ set nojoinspaces
 " {{{ laststatus
 " The value of this option influences when the last window will have a status
 " line:
-"       0:      never
-"       1:      only if there are at least two windows
-"       2:      always
+"	0:	never
+"	1:	only if there are at least two windows
+"	2:	always
 " The screen looks nicer with a status line if you have several windows, but
 " it takes another screen line. |status-line|
 set laststatus=2
@@ -513,7 +519,7 @@ set linebreak
 " GUI, put the command in your |gvimrc| file. Vim limits the number of lines
 " to what fits on the screen. You can use this command to get the tallest
 " window possible:
-"       :set lines=999
+"	:set lines=999
 " Minimum value is 2, maximum value is 1000. If you get less lines than
 " expected, check the 'guiheadroom' option. When you set this option and Vim
 " is unable to change the physical number of lines of the display, the display
@@ -532,18 +538,18 @@ set listchars="eol:$,tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+"
 " {{{ mousemodel
 " Sets the model to use for the mouse. The name mostly specifies what the
 " right mouse button is used for:
-"       extend          Right mouse button extends a selection. This works
-"                       like in an xterm.
-"       popup           Right mouse button pops up a menu. The shifted left
-"                       mouse button extends a selection. This works like with
-"                       Microsoft Windows.
-"       popup_setpos    Like "popup", but the cursor will be moved to the
-"                       position where the mouse was clicked, and thus the
-"                       selected operation will act upon the clicked object.
-"                       If clicking inside a selection, that selection will be
-"                       acted upon, i.e. no cursor move. This implies of
-"                       course, that right clicking outside a selection will
-"                       end Visual mode.
+"	extend		Right mouse button extends a selection. This works
+"			like in an xterm.
+"	popup		Right mouse button pops up a menu. The shifted left
+"			mouse button extends a selection. This works like with
+"			Microsoft Windows.
+"	popup_setpos	Like "popup", but the cursor will be moved to the
+"			position where the mouse was clicked, and thus the
+"			selected operation will act upon the clicked object.
+"			If clicking inside a selection, that selection will be
+"			acted upon, i.e. no cursor move. This implies of
+"			course, that right clicking outside a selection will
+"			end Visual mode.
 if has('gui_running')
     set mousemodel=popup
 endif
@@ -689,7 +695,7 @@ set softtabstop=4
 " {{{ spelllang
 " A comma separated list of word list names. When the 'spell' option is on
 " spellchecking will be done for these languages. Example:
-"       set spelllang=en_us,nl,medical
+"	set spelllang=en_us,nl,medical
 " This means US English, Dutch and medical words are recognized. Words that
 " are not recognized will be highlighted.
 " The word list name must not include a comma or dot. Using a dash is
@@ -737,8 +743,8 @@ set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.bak
 " not wanted for a specific buffer. For example, with confidential information
 " that even root must not be able to access. Careful: All text will be in
 " memory:
-"       - Don't use this for big files.
-"       - Recovery will be impossible!
+"	- Don't use this for big files.
+"	- Recovery will be impossible!
 " A swapfile will only be present when |'updatecount'| is non-zero and
 " 'swapfile' is set.
 " When 'swapfile' is reset, the swap file for the current buffer is
