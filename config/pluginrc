@@ -45,16 +45,16 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Abolish'
                 \ }
 
-    NeoBundle 'bling/vim-airline', {
-                \ 'depends': [
-                \    ['ntpeters/vim-airline-colornum', {
-                \        'directory': 'AirlineNum',
-                \        'name': 'AirlineNum'
-                \        }]
-                \    ],
-                \ 'directory': 'Airline',
-                \ 'name': 'Airline'
-                \ }
+    "NeoBundle 'bling/vim-airline', {
+                "\ 'depends': [
+                "\    ['ntpeters/vim-airline-colornum', {
+                "\        'directory': 'AirlineNum',
+                "\        'name': 'AirlineNum'
+                "\        }]
+                "\    ],
+                "\ 'directory': 'Airline',
+                "\ 'name': 'Airline'
+                "\ }
 
     NeoBundle 'Chiel92/vim-autoformat', {
                 \ 'directory': 'AutoFormat',
@@ -74,11 +74,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'chrisbra/Colorizer', {
                 \ 'directory': 'Colorizer',
                 \ 'name': 'Colorizer'
-                \ }
-
-    NeoBundle 'flazz/vim-colorschemes', {
-                \ 'directory': 'Colorschemes',
-                \ 'name': 'Colorschemes'
                 \ }
 
     NeoBundle 'hail2u/vim-css3-syntax', {
