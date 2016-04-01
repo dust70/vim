@@ -9,7 +9,7 @@ function! ConfigureCBNAdmin()
     call ConfigureProject(
                 \ '~/repositories/cbn/preisvergleich-admin/',
                 \ 'vagrant:/var/www/htdocs',
-                \ '"var"'
+                \ 'app/cache'
                 \ )
 endfunction
 
