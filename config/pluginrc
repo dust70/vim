@@ -122,6 +122,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Endwise'
                 \ }
 
+    NeoBundle 'Konfekt/FastFold', {
+                \ 'director': 'FastFold',
+                \ 'name': 'FastFold'
+                \ }
+
     NeoBundle 'Shougo/vimfiler.vim', {
                 \ 'depends': [
                 \    ['Shougo/tabpagebuffer.vim', {
