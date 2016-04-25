@@ -155,10 +155,12 @@ function! ConfigureInvoice()
     call ConfigureProject(
                 \ '~/repositories/projects/invoice/',
                 \ 'vagrant:/var/www/htdocs',
+                \ '"cache.properties"',
                 \ '"frontend.css"',
                 \ '"frontend.min.js"',
                 \ '"var/cache"',
-                \ '"var/logs"'
+                \ '"var/logs"',
+                \ '"var/sessions"'
                 \ )
 endfunction
 
