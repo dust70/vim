@@ -79,11 +79,11 @@ options word
 
 snippet ?=
 options word
-	<?php echo ${1}; ?>${0}
+	<?=${1}?>${0}
 
 snippet ?=h
 options word
-	<?php echo htmlspecialchars(${1}); ?>${0}
+	<?=htmlspecialchars(${1})?>${0}
 
 snippet pecho
 options word
@@ -103,24 +103,36 @@ options head
 		${2:#:code}
 	}
 
-snippet dump
+snippet sdump
+options word
+	dump(${0:#:code});
+        die();
+
+snippet psdump
+options word
+        <?php
+        dump(${0:#:code});
+        die();
+        ?>
+
+snippet zdump
 options word
 	Zend_Debug::dump(${0:#:code});
         die();
 
-snippet dump2
+snippet zdump2
 options word
 	\Zend\Debug\Debug::dump(${0:#:code});
         die();
 
-snippet pdump
+snippet pzdump
 options word
         <?php
         Zend_Debug::dump(${0:#:code});
         die();
         ?>
 
-snippet pdump2
+snippet pzdump2
 options word
         <?php
         \Zend\Debug\Debug::dump(${0:#:code});
@@ -157,11 +169,6 @@ options head
 		${0}
         <?php endforeach; ?>
 
-snippet array
-        array(
-                '${1}' => ${2},${0}
-        );
-
 snippet triggererror
 alias trigger_error
 options head
@@ -185,8 +192,7 @@ options head
 		protected $_pimple = null;
 
 		/**
-		 * Sets up the fixture, for example, opens a network connection.
-		 * This method is called before a test is executed.
+                 * {@inerhitdoc}
 		 */
 		protected function setUp()
 		{
@@ -214,8 +220,7 @@ options head
 		protected $_object = null;
 
 		/**
-		 * Sets up the fixture, for example, opens a network connection.
-		 * This method is called before a test is executed.
+                 * {@inheritdoc}
 		 */
 		protected function setUp()
 		{
@@ -247,7 +252,7 @@ options head
 
 snippet mockbuilder
 alias mock
-options head
+options word
         ${1} = $this
                 ->getMockBuilder('${2:String $originalClassName}')
                 ->disableOriginalConstructor()
@@ -259,7 +264,7 @@ snippet     getMockBuilder
 
 snippet expects
 alias exp
-options head
+options word
         ${1}->expects($this->${2:once()})
                 ->method('${3}')
                 ->with($this->equalTo(${4}))
@@ -274,26 +279,12 @@ options head
         $this->assertController(${3});
         $this->assertAction(${4});
 
-snippet aDispatchParams
-alias dispatchAssert
-options head
-        $urlParams = $this->dispatchParams(
-                array(
-                        'module'     => '${1}',
-                        'controller' => '${2}',
-                        'action'     => '${3}',${4:addtional parameters}
-                )
-        );
-
-        $this->assertModule($urlParams['module']);
-        $this->assertController($urlParams['controller']);
-        $this->assertAction($urlParams['action']);
-
 snippet testSkipped
 options head
         $this->markTestSkipped(${1});
 
 snippet testIncomplete
+alias mti
 options head
         $this->markTestIncomplete(${1});
 
