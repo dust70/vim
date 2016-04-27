@@ -268,13 +268,13 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \        'directory': 'NeoSnippet-Snippets',
                 \        'name': 'NeoSnippet-Snippets'
                 \        }],
-                \    ['honza/vim-snippets', {
-                \        'directory': 'Snippets',
-                \        'name': 'Snippets'
-                \        }],
                 \    ['spf13/snipmate-snippets', {
                 \        'directory': 'Snipmate-Snippets',
                 \        'name': 'Snipmate-Snippets'
+                \        }],
+                \    ['honza/vim-snippets', {
+                \        'directory': 'Snippets',
+                \        'name': 'Snippets'
                 \        }]
                 \    ],
                 \ 'directory': 'NeoSnippet',
@@ -853,9 +853,9 @@ endif
 " are ignored.
 let g:neosnippet#snippets_directory = '' .
             \ g:vimfiles . '/snippets' . ',' .
+            \ g:vimfiles . '/bundle/Snipmate-Snippets/snippets' . ',' .
             \ g:vimfiles . '/bundle/NeoSnippet-Snippets/neosnippets' . ',' .
-            \ g:vimfiles . '/bundle/Snippets/snippets' . ',' .
-            \ g:vimfiles . '/bundle/Snipmate-Snippets/snippets'
+            \ g:vimfiles . '/bundle/Snippets/snippets'
 "}}}
 
 " {{{ neosnippet#scope_aliases
