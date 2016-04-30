@@ -122,11 +122,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Endwise'
                 \ }
 
-    NeoBundle 'Konfekt/FastFold', {
-                \ 'director': 'FastFold',
-                \ 'name': 'FastFold'
-                \ }
-
     NeoBundle 'Shougo/vimfiler.vim', {
                 \ 'depends': [
                 \    ['Shougo/tabpagebuffer.vim', {
@@ -149,19 +144,9 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'FuGITive'
                 \ }
 
-    NeoBundle 'tpope/vim-git', {
-                \ 'directory': 'Git',
-                \ 'name': 'Git'
-                \ }
-
     NeoBundle 'airblade/vim-gitgutter', {
                 \ 'directory': 'Gutter',
                 \ 'name': 'Gutter'
-                \ }
-
-    NeoBundle 'jamessan/vim-gnupg', {
-                \ 'directory': 'GnuPG',
-                \ 'name': 'GnuPG'
                 \ }
 
     NeoBundle 'othree/html5.vim', {
@@ -174,26 +159,9 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'HTMLDjango'
                 \ }
 
-    NeoBundle 'xolox/vim-lua-ftplugin', {
-                \ 'depends': [
-                \    ['xolox/vim-misc', {
-                \        'directory': 'Misc',
-                \        'name': 'Misc'
-                \        }]
-                \    ],
-                \ 'directory': 'LuaFtPlugin',
-                \ 'name': 'LuaFtPlugin'
-                \ }
-
     NeoBundle 'nathanaelkane/vim-indent-guides', {
                 \ 'directory': 'IndentGuides',
                 \ 'name': 'IndentGuides'
-                \ }
-
-    NeoBundle 'artur-shaik/vim-javacomplete2', {
-                \ 'directory': 'Java',
-                \ 'disabled': !has('python'),
-                \ 'name': 'Java'
                 \ }
 
     NeoBundle 'davidhalter/jedi-vim', {
@@ -202,26 +170,15 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'disabled': !has('python')
                 \ }
 
-    NeoBundle 'xolox/vim-lua-inspect', {
-                \ 'depends': [
-                \    ['xolox/vim-misc', {
-                \        'directory': 'Misc',
-                \        'name': 'Misc'
-                \        }]
-                \    ],
-                \ 'directory': 'LuaInspect',
-                \ 'name': 'LuaInspect'
-                \ }
-
     NeoBundle 'dietsche/vim-lastplace', {
                 \ 'directory': 'Lastplace',
                 \ 'name': 'Lastplace'
                 \ }
 
-"    NeoBundle 'http://git.code.sf.net/p/vim-latex/vim-latex', {
-"                \ 'directory': 'LaTeX',
-"                \ 'name': 'LaTeX'
-"                \ }
+"NeoBundle 'http://git.code.sf.net/p/vim-latex/vim-latex', {
+                "\ 'directory': 'LaTeX',
+                "\ 'name': 'LaTeX'
+                "\ }
 
     NeoBundle 'luishdez/vim-less', {
                 \ 'directory': 'Less',
@@ -251,10 +208,13 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \        'directory': 'Shell',
                 \        'name': 'Shell'
                 \        }],
-                \    ['Shougo/context_filetype.vim',
-                \        {
+                \    ['Shougo/context_filetype.vim', {
                 \        'directory': 'ContextFileType',
                 \        'name': 'ContextFileType'
+                \        }],
+                \    ['Konfekt/FastFold', {
+                \        'director': 'FastFold',
+                \        'name': 'FastFold'
                 \        }]
                 \    ],
                 \ 'directory': 'NeoComplete',
@@ -284,16 +244,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'scrooloose/nerdcommenter', {
                 \ 'directory': 'Nerdcommenter',
                 \ 'name': 'Nerdcommenter'
-                \ }
-
-    NeoBundle 'vimoutliner/vimoutliner', {
-                \ 'directory': 'Outliner',
-                \ 'name': 'Outliner'
-                \ }
-
-    NeoBundle 'rkitover/vimpager', {
-                \ 'directory': 'Pager',
-                \ 'name': 'Pager'
                 \ }
 
     NeoBundle 'shawncplus/phpcomplete.vim', {
