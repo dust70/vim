@@ -378,6 +378,12 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory': 'Whitespace',
                 \ 'name': 'Whitespace'
                 \ }
+
+    "NeoBundle 'Valloric/YouCompleteMe', {
+                "\ 'build': './install.py --all',
+                "\ 'directory': 'YouCompleteMe',
+                "\ 'name': 'YouCompleteMe'
+                "\ }
     "}}}
 
     call neobundle#end()
@@ -671,17 +677,11 @@ let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 "}}}
 
-" {{{ neocomplete#auto_completion_start_length
-" This variable controls the number of the input completion at the time of key
-" input automatically.
-let g:neocomplete#auto_completion_start_length = 5
-"}}}
-
 " {{{ neocomplete#manual_completion_start_length
 " This variable controls the number of the input completion at the time of
 " manual completion. It is convenient when you reduce this value, but may get
 " heavy when you deleted a letter in <C-h> or <BS> at popup indication time.
-let g:neocomplete#manual_completion_start_length = 4
+let g:neocomplete#manual_completion_start_length = 3
 "}}}
 
 " {{{ neocomplete#enable_smart_case
