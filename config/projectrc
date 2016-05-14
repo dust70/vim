@@ -149,7 +149,26 @@ augroup END
 "}}}
 
 " {{{ Project
-" {{{ Invoicing
+" {{{ Etc
+function! ConfigureEtc()
+    call ConfigureProject(
+                \ '~/repositories/etc-puppet/',
+                \ 'vagrant:/etc/puppet',
+                \ 'auth.conf',
+                \ 'etckeeper-commit-post',
+                \ 'etckeeper-commit-pre',
+                \ 'fileserver.conf',
+                \ 'puppet.conf'
+                \ )
+endfunction
+
+augroup Etc
+    autocmd! BufEnter,BufNewFile,BufRead
+                \ ~/repositories/etc-puppet/** call ConfigureEtc()
+augroup END
+"}}}
+
+"{{{ Invoice
 function! ConfigureInvoice()
     let g:syntastic_php_phpcs_args = "--standard=build/phpcs.xml -l --extensions=php --tab-width=" . &tabstop
 
@@ -168,7 +187,7 @@ function! ConfigureInvoice()
                 \ )
 endfunction
 
-augroup Invoicing
+augroup Invoice
     autocmd! BufEnter,BufNewFile,BufRead
                 \ ~/repositories/projects/invoice/** call ConfigureInvoice()
 augroup END
