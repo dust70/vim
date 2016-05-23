@@ -62,7 +62,7 @@ augroup Library
 augroup END
 "}}}
 
-" {{{ Preisvergleich
+" {{{ Frontend
 function! ConfigureCBNFrontend()
     let g:syntastic_php_phpcs_args = "--standard=tests/ruleset.xml -l --extensions=php --tab-width=" . &tabstop
 
@@ -77,6 +77,8 @@ function! ConfigureCBNFrontend()
                 \ '"public/javascript/*.min.js"',
                 \ '"public/mobile/css"',
                 \ '"public/mobile/scripts/*.min.js"',
+                \ '"public/responsive/css"',
+                \ '"public/responsive/scripts/*.min.js"',
                 \ )
 endfunction
 
