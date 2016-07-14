@@ -174,6 +174,10 @@ alias trigger_error
 options head
         trigger_error(${1:'Deprecation warning ' . __CLASS__}, ${2:E_USER_WARNING});
 
+snippet deprecated
+alias depre
+options word
+        @deprecated
 #}}}
 
 ########################################################################
