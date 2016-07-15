@@ -28,6 +28,18 @@ options head
 		${0}
 	}
 
+snippet class
+options head
+	<?php
+
+	/**
+	 * @author René Six <${1:info@renatius.de}>
+	 */
+	class ${1:`vim_snippets#Filename()`}
+	{
+		${0}
+	}
+
 snippet class_extends
 alias ce classextends
 options head
