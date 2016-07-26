@@ -45,16 +45,17 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Abolish'
                 \ }
 
-    "NeoBundle 'bling/vim-airline', {
-                "\ 'depends': [
-                "\    ['ntpeters/vim-airline-colornum', {
-                "\        'directory': 'AirlineNum',
-                "\        'name': 'AirlineNum'
-                "\        }]
-                "\    ],
-                "\ 'directory': 'Airline',
-                "\ 'name': 'Airline'
-                "\ }
+    NeoBundle 'bling/vim-airline', {
+                \ 'depends': [
+                \    ['ntpeters/vim-airline-colornum', {
+                \        'directory': 'AirlineNum',
+                \        'name': 'AirlineNum'
+                \        }]
+                \    ],
+                \ 'directory': 'Airline',
+                \ 'disabled': has('mac'),
+                \ 'name': 'Airline'
+                \ }
 
     NeoBundle 'Chiel92/vim-autoformat', {
                 \ 'directory': 'AutoFormat',
@@ -138,11 +139,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Filer'
                 \ }
 
-    NeoBundle 'aserebryakov/filestyle', {
-                \ 'directory': 'Filestyle',
-                \ 'name': 'Filestyle'
-                \ }
-
     NeoBundle 'tpope/vim-fugitive', {
                 \ 'augroup': 'fugitive',
                 \ 'directory': 'FuGITive',
@@ -179,11 +175,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'directory': 'Lastplace',
                 \ 'name': 'Lastplace'
                 \ }
-
-    "NeoBundle 'http://git.code.sf.net/p/vim-latex/vim-latex', {
-                "\ 'directory': 'LaTeX',
-                "\ 'name': 'LaTeX'
-                "\ }
 
     NeoBundle 'luishdez/vim-less', {
                 \ 'directory': 'Less',
@@ -251,11 +242,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Nerdcommenter'
                 \ }
 
-    NeoBundle 'myusuf3/numbers.vim', {
-                \ 'directory': 'Numbers',
-                \ 'name': 'Number'
-                \ }
-
     NeoBundle 'tobyS/pdv', {
                 \ 'depends': [
                 \    ['tobyS/vmustache', {
@@ -265,11 +251,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \    ],
                 \ 'directory': 'PDV',
                 \ 'name': 'PDV'
-                \ }
-
-    NeoBundle 'spf13/PIV', {
-                \ 'directory': 'PIV',
-                \ 'name': 'PIV',
                 \ }
 
     NeoBundle 'shawncplus/phpcomplete.vim', {
@@ -306,11 +287,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'arnaud-lb/vim-php-namespace', {
                 \ 'directory': 'PHPNamespace',
                 \ 'name': 'PHPNamespace'
-                \ }
-
-    NeoBundle 'tpope/vim-projectionist', {
-                \ 'directory': 'Projectionist',
-                \ 'name': 'Projectionist'
                 \ }
 
     NeoBundle 'rodjek/vim-puppet', {
@@ -358,6 +334,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Tagbar'
                 \ }
 
+    NeoBundle 'lervag/vimtex', {
+                \ 'directory': 'Tex',
+                \ 'name': 'Tex'
+                \ }
+
     NeoBundle 'Shougo/unite.vim', {
                 \ 'depends': [
                 \    ['Shougo/tabpagebuffer.vim', {
@@ -372,6 +353,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'Shougo/neomru.vim', {
                 \ 'directory': 'UniteMRU',
                 \ 'name': 'UniteMRU'
+                \ }
+
+    NeoBundle 'Shougo/unite-session', {
+                \ 'directory': 'UniteSession',
+                \ 'name': 'UniteSession'
                 \ }
 
     NeoBundle 'tsukkee/unite-tag', {
@@ -851,19 +837,6 @@ let g:neosnippet#scope_aliases = {
 " directory will be automatically generated.
 let g:neosnippet#data_directory = g:vimfiles . '/tmp/neosnippet'
 "}}}
-"}}}
-
-" {{{ Numbers
-let g:numbers_exclude = [
-            \ 'gundo',
-            \ 'minibufexpl',
-            \ 'nerdtree',
-            \ 'startify',
-            \ 'tagbar',
-            \ 'unite',
-            \ 'vimshell',
-            \ 'w3m',
-            \ ]
 "}}}
 
 " {{{ Rainbow Parentheses Improved
