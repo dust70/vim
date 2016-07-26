@@ -66,6 +66,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'AutoPairs'
                 \ }
 
+    NeoBundle 'craigemery/vim-autotag', {
+                \ 'directory': 'AutoTag',
+                \ 'name': 'AutoTag'
+                \ }
+
     NeoBundle 'veloce/vim-behat', {
                 \ 'directory': 'Behat',
                 \ 'name': 'Behat'
@@ -175,7 +180,7 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Lastplace'
                 \ }
 
-"NeoBundle 'http://git.code.sf.net/p/vim-latex/vim-latex', {
+    "NeoBundle 'http://git.code.sf.net/p/vim-latex/vim-latex', {
                 "\ 'directory': 'LaTeX',
                 "\ 'name': 'LaTeX'
                 "\ }
@@ -213,7 +218,7 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \        'name': 'ContextFileType'
                 \        }],
                 \    ['Konfekt/FastFold', {
-                \        'director': 'FastFold',
+                \        'directory': 'FastFold',
                 \        'name': 'FastFold'
                 \        }]
                 \    ],
@@ -246,6 +251,27 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Nerdcommenter'
                 \ }
 
+    NeoBundle 'myusuf3/numbers.vim', {
+                \ 'directory': 'Numbers',
+                \ 'name': 'Number'
+                \ }
+
+    NeoBundle 'tobyS/pdv', {
+                \ 'depends': [
+                \    ['tobyS/vmustache', {
+                \        'directory': 'VMustache',
+                \        'name': 'VMustache'
+                \        }]
+                \    ],
+                \ 'directory': 'PDV',
+                \ 'name': 'PDV'
+                \ }
+
+    NeoBundle 'spf13/PIV', {
+                \ 'directory': 'PIV',
+                \ 'name': 'PIV',
+                \ }
+
     NeoBundle 'shawncplus/phpcomplete.vim', {
                 \ 'directory': 'PHPComplete',
                 \ 'name': 'PHPComplete'
@@ -262,17 +288,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'PHPCTags'
                 \ }
 
-    NeoBundle 'tobyS/pdv', {
-                \ 'depends': [
-                \    ['tobyS/vmustache', {
-                \        'directory': 'VMustache',
-                \        'name': 'VMustache'
-                \        }]
-                \    ],
-                \ 'directory': 'PDV',
-                \ 'name': 'PDV'
-                \ }
-
     NeoBundle 'nishigori/vim-php-dictionary', {
                 \ 'directory': 'PHPDictionary',
                 \ 'name': 'PHPDictionary'
@@ -286,6 +301,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'alvan/vim-php-manual', {
                 \ 'directory': 'PHPManual',
                 \ 'name': 'PHPManual'
+                \ }
+
+    NeoBundle 'arnaud-lb/vim-php-namespace', {
+                \ 'directory': 'PHPNamespace',
+                \ 'name': 'PHPNamespace'
                 \ }
 
     NeoBundle 'tpope/vim-projectionist', {
@@ -385,6 +405,10 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
 endif
 unlet pathToNeoBundle
 unlet bundlePath
+"}}}
+
+" {{{ AutoTag
+let g:autotagTagsFile=".tags"
 "}}}
 
 " {{{ Bufexplorer disabled
@@ -827,6 +851,19 @@ let g:neosnippet#scope_aliases = {
 " directory will be automatically generated.
 let g:neosnippet#data_directory = g:vimfiles . '/tmp/neosnippet'
 "}}}
+"}}}
+
+" {{{ Numbers
+let g:numbers_exclude = [
+            \ 'gundo',
+            \ 'minibufexpl',
+            \ 'nerdtree',
+            \ 'startify',
+            \ 'tagbar',
+            \ 'unite',
+            \ 'vimshell',
+            \ 'w3m',
+            \ ]
 "}}}
 
 " {{{ Rainbow Parentheses Improved
