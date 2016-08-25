@@ -13,7 +13,8 @@ function! ConfigureCBNAdmin()
                 \ '"*.min.js"',
                 \ '"app/cache"',
                 \ '"app/logs"',
-                \ '"app/sessions"'
+                \ '"app/sessions"',
+                \ '"web/assets"'
                 \ )
 endfunction
 
