@@ -334,6 +334,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Tagbar'
                 \ }
 
+    NeoBundle 'nelsyeung/twig.vim', {
+                \ 'directory': 'Twig',
+                \ 'name': 'Twig',
+                \ }
+
     NeoBundle 'lervag/vimtex', {
                 \ 'directory': 'Tex',
                 \ 'name': 'Tex'
@@ -818,7 +823,8 @@ let g:neosnippet#snippets_directory = '' .
             \ g:vimfiles . '/snippets' . ',' .
             \ g:vimfiles . '/bundle/Snipmate-Snippets/snippets' . ',' .
             \ g:vimfiles . '/bundle/NeoSnippet-Snippets/neosnippets' . ',' .
-            \ g:vimfiles . '/bundle/Snippets/snippets'
+            \ g:vimfiles . '/bundle/Snippets/snippets' . ',' .
+            \ g:vimfiles . 'bundle/Twig/neosnippets'
 "}}}
 
 " {{{ neosnippet#scope_aliases
