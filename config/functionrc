@@ -26,6 +26,7 @@ function! ConfigureProject(source, dest, ...)
                 \ '".fstemp.*"',
                 \ '".git*"',
                 \ '".svn*"',
+                \ '"cache.properties"',
                 \ '"cscope.out*"',
                 \ '"debug.log"',
                 \ '"node_modules"',
