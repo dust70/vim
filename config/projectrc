@@ -129,7 +129,7 @@ augroup END
 
 " {{{ Update
 function! ConfigureCBNUpdate()
-    let g:syntastic_php_phpcs_args = "--standard=Zend -l --extensions=php --tab-width=" . &tabstop
+    let g:syntastic_php_phpcs_args = "--standard=build/phpcs.xml -l --extensions=php --tab-width=" . &tabstop
 
     call ConfigurePhpProject()
 
