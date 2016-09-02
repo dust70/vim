@@ -73,8 +73,8 @@ function! ConfigureCBNFrontend()
     call ConfigureProject(
                 \ '~/repositories/cbn/preisvergleich-frontend/',
                 \ 'vagrant:/var/www/htdocs',
-                \ '"public/css/*.min.css"',
-                \ '"public/javascript/*.min.js"',
+                \ '"public/css/*"',
+                \ '"public/javascript/*.min*.js"',
                 \ )
 endfunction
 
