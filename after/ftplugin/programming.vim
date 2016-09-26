@@ -41,7 +41,10 @@ setlocal foldmethod=syntax
 " done (like 'formatoptions' is empty). Commas can be inserted for
 " readability. To avoid problems with flags that are added in the future, use
 " the "+=" and "-=" feature of ":set" |add-option-flags|.
-setlocal formatoptions=cronb1j
+setlocal formatoptions=cronb1
+if v:version >= 704 
+    setlocal formatoptions+=j
+endif
 "}}}
 
 " {{{ textwidth
