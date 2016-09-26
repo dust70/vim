@@ -46,12 +46,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ }
 
     NeoBundle 'bling/vim-airline', {
-                \ 'depends': [
-                \    ['ntpeters/vim-airline-colornum', {
-                \        'directory': 'AirlineNum',
-                \        'name': 'AirlineNum'
-                \        }]
-                \    ],
                 \ 'directory': 'Airline',
                 \ 'disabled': has('mac'),
                 \ 'name': 'Airline'
@@ -104,7 +98,8 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
 
     NeoBundle 'chrisbra/vim-diff-enhanced', {
                 \ 'directory': 'DiffEnhanced',
-                \ 'name': 'DiffEnhanced'
+                \ 'name': 'DiffEnhanced',
+                \ 'vim_version': '7.4.0'
                 \ }
 
     NeoBundle 'tpope/vim-dispatch', {
@@ -167,8 +162,8 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
 
     NeoBundle 'davidhalter/jedi-vim', {
                 \ 'directory': 'Jedi',
-                \ 'name': 'Jedi',
-                \ 'disabled': !has('python')
+                \ 'disabled': !has('python'),
+                \ 'name': 'Jedi'
                 \ }
 
     NeoBundle 'dietsche/vim-lastplace', {
@@ -198,7 +193,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ }
 
     NeoBundle 'Shougo/neocomplete', {
-                \ 'vim_version': '7.3.885',
                 \ 'depends': [
                 \    ['Shougo/vimshell.vim', {
                 \        'directory': 'Shell',
@@ -215,7 +209,8 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \    ],
                 \ 'directory': 'NeoComplete',
                 \ 'disabled': !has('lua'),
-                \ 'name': 'NeoComplete'
+                \ 'name': 'NeoComplete',
+                \ 'vim_version': '7.3.885'
                 \ }
 
     NeoBundle 'Shougo/neosnippet', {
