@@ -226,8 +226,8 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \    ['honza/vim-snippets', {
                 \        'directory': 'Snippets',
                 \        'name': 'Snippets'
-                \        }]
-                \    ],
+                \        }],
+                \ ],
                 \ 'directory': 'NeoSnippet',
                 \ 'name': 'NeoSnippet'
                 \ }
@@ -815,11 +815,11 @@ endif
 " multiple values in comma-separated string or list. Non existing directories
 " are ignored.
 let g:neosnippet#snippets_directory = '' .
-            \ g:vimfiles . '/snippets' . ',' .
-            \ g:vimfiles . '/bundle/Snipmate-Snippets/snippets' . ',' .
-            \ g:vimfiles . '/bundle/NeoSnippet-Snippets/neosnippets' . ',' .
-            \ g:vimfiles . '/bundle/Snippets/snippets' . ',' .
-            \ g:vimfiles . 'bundle/Twig/neosnippets'
+            \ g:vimfiles . '/snippets,' .
+            \ g:vimfiles . '/bundle/NeoSnippet-Snippets/neosnippets,' .
+            \ g:vimfiles . '/bundle/Snippets/snippets,' .
+            \ g:vimfiles . '/bundle/Snipmate-Snippets/snippets,' .
+            \ g:vimfiles . '/bundle/Twig/neosnippets'
 "}}}
 
 " {{{ neosnippet#scope_aliases
