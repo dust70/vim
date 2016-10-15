@@ -229,11 +229,16 @@ options head
         use PHPUnit_Framework_TestCase;
 
 	/**
+         * Test class
+         *
 	 * @author René Six <${3:info@renatius.de}>
 	 */
 	class ${4:`vim_snippets#Filename()`} extends ${5:PHPUnit_Framework_TestCase}
 	{
-		private $_object = null;
+                /**
+                 * @var ${9:Class_To_Test}
+                 */
+		private $object = null;
 
 		/**
                  * {@inheritdoc}
@@ -250,6 +255,20 @@ snippet functiontest
 alias funtest
 options head
 	public function test${1:#:FunctionName}()
+	{
+		${0:#:code}
+		$this->fail('Not implemented yet.');
+	}
+
+snippet functiontest2
+alias funtest2
+options head
+        /**
+         * Test method
+         *
+         * @test
+         /
+	public function ${1:#:FunctionName}()
 	{
 		${0:#:code}
 		$this->fail('Not implemented yet.');
