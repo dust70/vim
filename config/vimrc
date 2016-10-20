@@ -682,6 +682,13 @@ set smartindent
 set smarttab
 "}}}
 
+" {{{ shell
+" Name of the shell to use for ! and :! commands. When changing the value also
+" check these options: 'shelltype', 'shellpipe', 'shellslash' 'shellredir',
+" 'shellquote', 'shellxquote' and 'shellcmdflag'.
+set shell=/bin/sh
+"}}}
+
 " {{{ softtabstop
 " Number of spaces that a <Tab> counts for while performing editing
 " operations, like inserting a <Tab> or using <BS>. It "feels" like <Tab>s are
