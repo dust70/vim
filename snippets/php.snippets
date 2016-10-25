@@ -204,7 +204,14 @@ options head
 	 */
 	class ${2:`vim_snippets#Filename()`} extends ${3:PHPUnit_Framework_TestCase}
 	{
+                /**
+                 * @var ${7:ClassToTest}
+                 */
 		private $_object = null;
+
+                /**
+                 * @var Pimple
+                 */
 		private $_pimple = null;
 
 		/**
@@ -213,6 +220,7 @@ options head
 		public function setUp()
 		{
 			parent::setUp();
+
                         $this->_pimple = new Pimple();
 			$this->_object = new ${3:ClassToTest}(${4});${5}
 		}
