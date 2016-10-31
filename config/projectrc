@@ -7,7 +7,7 @@ function! ConfigureCBNAdmin()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/cbn/preisvergleich-admin/',
+                \ '~/git/cbn/preisvergleich-admin/',
                 \ 'vagrant:/var/www/htdocs',
                 \ '"*.min.css"',
                 \ '"*.min.js"',
@@ -20,7 +20,7 @@ endfunction
 
 augroup Admin
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/preisvergleich-admin/**
+                \ ~/git/cbn/preisvergleich-admin/**
                 \ call ConfigureCBNAdmin()
 augroup END
 "}}}
@@ -33,14 +33,14 @@ function! ConfigureCBNBackend()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/cbn/preisvergleich-backend/',
+                \ '~/git/cbn/preisvergleich-backend/',
                 \ 'vagrant:/var/www/htdocs'
                 \ )
 endfunction
 
 augroup Soap
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/preisvergleich-backend/** call ConfigureCBNBackend()
+                \ ~/git/cbn/preisvergleich-backend/** call ConfigureCBNBackend()
 augroup END
 "}}}
 
@@ -51,7 +51,7 @@ endfunction
 
 augroup Behat
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/preisvergleich-behat/**
+                \ ~/git/cbn/preisvergleich-behat/**
                 \ call ConfigureCBNBehat()
 augroup END
 "}}}
@@ -63,7 +63,7 @@ endfunction
 
 augroup Image
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/preisvergleich-image/**
+                \ ~/git/cbn/preisvergleich-image/**
                 \ call ConfigureCBNImage()
 augroup END
 "}}}
@@ -77,7 +77,7 @@ endfunction
 
 augroup Library
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/preisvergleich-library/**
+                \ ~/git/cbn/preisvergleich-library/**
                 \ call ConfigureCBNLibrary()
 augroup END
 "}}}
@@ -90,7 +90,7 @@ function! ConfigureCBNFrontend()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/cbn/preisvergleich-frontend/',
+                \ '~/git/cbn/preisvergleich-frontend/',
                 \ 'vagrant:/var/www/htdocs',
                 \ '"public/css/*"',
                 \ '"public/javascript/*.min*.js"',
@@ -99,7 +99,7 @@ endfunction
 
 augroup Preisvergleich
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/preisvergleich-frontend/**
+                \ ~/git/cbn/preisvergleich-frontend/**
                 \ call ConfigureCBNFrontend()
 augroup END
 "}}}
@@ -112,7 +112,7 @@ function! ConfigureCBNProfitmax()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/cbn/profitmax/',
+                \ '~/git/cbn/profitmax/',
                 \ 'vagrant:/var/www/profitmax',
                 \ 'adminDevelop.min.js',
                 \ 'adminStyle.css',
@@ -123,7 +123,7 @@ endfunction
 
 augroup ShopRocket
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/profitmax/** call ConfigureCBNProfitmax()
+                \ ~/git/cbn/profitmax/** call ConfigureCBNProfitmax()
 augroup END
 "}}}
 
@@ -134,38 +134,19 @@ function! ConfigureCBNUpdate()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/cbn/preisvergleich-update/',
+                \ '~/git/cbn/preisvergleich-update/',
                 \ 'vagrant:/home/vagrant/update'
                 \ )
 endfunction
 
 augroup Update
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/cbn/preisvergleich-update/** call ConfigureCBNUpdate()
+                \ ~/git/cbn/preisvergleich-update/** call ConfigureCBNUpdate()
 augroup END
 "}}}
 "}}}
 
 " {{{ Project
-" {{{ Etc
-function! ConfigureEtc()
-    call ConfigureProject(
-                \ '~/repositories/etc-puppet/',
-                \ 'vagrant:/etc/puppet',
-                \ 'auth.conf',
-                \ 'etckeeper-commit-post',
-                \ 'etckeeper-commit-pre',
-                \ 'fileserver.conf',
-                \ 'puppet.conf'
-                \ )
-endfunction
-
-augroup Etc
-    autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/etc-puppet/** call ConfigureEtc()
-augroup END
-"}}}
-
 "{{{ Invoice
 function! ConfigureInvoice()
     let g:syntastic_php_phpcs_args = "--standard=build/phpcs.xml -l --extensions=php --tab-width=" . &tabstop
@@ -174,7 +155,7 @@ function! ConfigureInvoice()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/repositories/projects/invoice/',
+                \ '~/git/projects/invoice/',
                 \ 'vagrant:/var/www/htdocs',
                 \ '"cache.properties"',
                 \ '"frontend.css"',
@@ -187,7 +168,7 @@ endfunction
 
 augroup Invoice
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/repositories/projects/invoice/** call ConfigureInvoice()
+                \ ~/git/projects/invoice/** call ConfigureInvoice()
 augroup END
 "}}}
 "}}}

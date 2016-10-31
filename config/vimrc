@@ -593,7 +593,7 @@ set numberwidth=5
 " [f, ]f, ^Wf, |:find|, |:sfind|, |:tabfind| and other commands, provided that
 " the file being searched for has a relative path (not starting with "/", "./"
 " or "../"). The directories in the 'path' option may be relative or absolute.
-set path+=.,~,~/repositories/**
+set path+=.,~,~/git/**,~/repositories/**
 "}}}
 
 " {{{ previewheight
