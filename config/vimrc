@@ -279,8 +279,8 @@ if has("cscope")
     "}}}
 
     " {{{ add any database in current directory
-    if filereadable("./.git/cscope.out.po")
-        cscope add ./.git/cscope.out.po
+    if filereadable("./.git/cscope.out")
+        cscope add ./.git/cscope.out
         " else add database pointed to by environment
     elseif $CSCOPE_DB != ""
         cscope add $CSCOPE_DB
