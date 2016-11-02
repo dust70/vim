@@ -56,7 +56,7 @@ endfunction
 " {{{ ConfigurePhpProject
 function! ConfigurePhpProject()
     call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/phpunit')
-    call LoadCTagsFile('./tags')
+    call LoadCTagsFile('./.git/tags')
 
     compiler phpunit_local
     nnoremap <silent> <leader>dt :Dispatch php -d "error_reporting=E_ALL\|E_STRICT"
