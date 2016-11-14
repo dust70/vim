@@ -291,10 +291,10 @@ alias fundata
 options head
 	public function dataProviderFor${1}()
 	{
-                return array(
-                        array(${2:values}),
-                        array(${3})
-                );
+                return [
+                        [${2:values}],
+                        [${3}]],
+                ];
 	}
 
 snippet mockbuilder
