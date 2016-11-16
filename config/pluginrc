@@ -107,17 +107,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Dispatch'
                 \ }
 
-    NeoBundle 'xolox/vim-easytags', {
-                \ 'depends': [
-                \    ['xolox/vim-misc', {
-                \        'directory': 'Misc',
-                \        'name': 'Misc'
-                \        }]
-                \    ],
-                \ 'directory': 'EasyTags',
-                \ 'name': 'EasyTags'
-                \ }
-
     NeoBundle 'tpope/vim-endwise', {
                 \ 'directory': 'Endwise',
                 \ 'name': 'Endwise'
@@ -462,97 +451,6 @@ nmap <silent> <leader>dt :Make %:t:r<cr>
 nmap <silent> <leader>dc :close<cr>
 nmap <silent> <leader>do :Copen<cr>
 nmap <silent> <leader>dT :Dispatch<cr>
-"}}}
-"}}}
-
-" {{{ EasyTags
-" {{{ easytags_async
-" By default vim-easytags runs Exuberant Ctags and updates your tags file in the
-" foreground, blocking Vim in the process. As your tags files get larger this
-" becomes more annoying. It has been the number one complaint about vim-easytags
-" since I published the first release online.
-let g:easytags_async = 1
-"}}}
-
-" {{{ easytags_languages
-" Exuberant Ctags supports many languages and can be extended via regular
-" expression patterns, but for some languages separate tools with
-" ctags-compatible output exist (e.g. jsctags for Javascript). To use these, the
-" executable and its arguments must be configured:
-let g:easytags_languages = {}
-"}}}
-
-" {{{ easytags_file
-" As mentioned above the plug-in will store your tags in ~/.vimtags on UNIX and
-" ~/_vimtags on Windows. To change the location of this file, set the global
-" variable g:easytags_file.
-let g:easytags_file = './tags'
-"}}}
-
-" {{{ easytags_dynamic_files
-" By default :UpdateTags only writes to the global tags file, but it can be
-" configured to look for project specific tags files by adding the following
-" lines to your vimrc script:
-let g:easytags_dynamic_files = 1
-"}}}
-
-" {{{ easytags_by_filetype
-" By default all tags are stored in a global tags file. When the tags file grows
-" beyond a certain size Vim will be slowed down by the easytags plug-in because
-" it has to read and process a large number of tags very frequently.
-" To avoid this problem you can set g:easytags_by_filetype to the path of an
-" existing directory. The easytags plug-in will create separate tags files for
-" each file type in the configured directory. These tags files are automatically
-" registered by the easytags plug-in when the file type of a buffer is set.
-let g:easytags_by_filetype = 1
-"}}}
-
-" {{{ easytags_events
-" This option can be used to customize the events that trigger the automatic
-" updating and highlighting performed by the easytags plug-in. The
-" g:easytags_always_enabled and g:easytags_on_cursorhold options are more user
-" friendly but limited ways to accomplish the same thing.
-let g:easytags_events = ['BufWritePost', 'FileWritePost', 'FilterWritePost']
-"}}}
-
-" {{{ easytags_on_cursorhold
-" As I explained above the plug-in by default doesn't update or highlight your
-" tags until you stop typing for a moment. The plug-in tries hard to do the
-" least amount of work possible in this break but it might still interrupt your
-" workflow.
-let g:easytags_on_cursorhold = 0
-"}}}
-
-" {{{ easytags_updatetime_min
-" Vim's 'updatetime' option controls how often the easytags plug-in is
-" automatically executed. A lot of popular Vim plug-ins manipulate this option
-" to control how often they are called. Unfortunately some of those plug-ins set
-" 'updatetime' to a very low value (less than a second) and this can break the
-" easytags plug-in. Because of this the easytags plug-in compensates by keeping
-" track of when it was last executed.
-let g:easytags_updatetime_min = 600000
-"}}}
-
-" {{{ easytags_auto_update
-" By default the plug-in automatically updates and highlights your tags when you
-" stop typing for a moment. If you want to disable automatic updating while
-" keeping automatic highlighting enabled you can set this option to false:
-let g:easytags_auto_update = 0
-"}}}
-
-" {{{ easytags_auto_highlight
-" By default the plug-in automatically updates and highlights your tags when you
-" stop typing for a moment. If you want to disable automatic highlighting while
-" keeping automatic updating enabled you can set this option to false:
-let g:easytags_auto_highlight = 0
-"}}}
-
-"{{{ easytags_autorecurse
-" When the :UpdateTags command is executed automatically or without arguments,
-" it defaults to updating just the tags for the current file. If you'd rather
-" have it recursively scan everything below the directory of the current file
-" then set this option to true (1):
-let g:easytags_autorecurse = 1
 "}}}
 "}}}
 
