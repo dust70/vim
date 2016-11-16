@@ -40,11 +40,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     "}}}
 
     " {{{ Plugins
-    NeoBundle "tpope/vim-abolish", {
-                \ 'directory': 'Abolish',
-                \ 'name': 'Abolish'
-                \ }
-
     NeoBundle 'bling/vim-airline', {
                 \ 'directory': 'Airline',
                 \ 'disabled': has('mac'),
@@ -392,10 +387,6 @@ let g:bufexplorer_version = 1
 
 " {{{ MiniBufExpl disabled
 let g:loaded_minibufexplorer = 1
-"}}}
-
-" {{{ Abolish
-let g:abolish_save_file = expand("~/.vim/config/plugin/abolish.vim")
 "}}}
 
 " {{{ Airline
