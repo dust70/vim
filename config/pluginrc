@@ -492,10 +492,7 @@ nmap <silent> <leader>ga :Gwrite<cr>
 nmap <silent> <leader>gb :Gblame<cr>
 nmap <silent> <leader>gc :Gcommit<cr>
 nmap <silent> <leader>gd :Gdiff<cr>
-nmap <silent> <leader>gl :Glog<cr>
-nmap <silent> <leader>gp :Gpush<cr>
 nmap <silent> <leader>gq :Gwq<cr>
-nmap <silent> <leader>gs :Gstatus<cr>
 "}}}
 "}}}
 
