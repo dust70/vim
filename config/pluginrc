@@ -171,6 +171,11 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Mail'
                 \ }
 
+    NeoBundle 'tpope/vim-markdown', {
+                \ 'directory': 'MarkDown',
+                \ 'name': 'MarkDown',
+                \ }
+
     NeoBundle 'gregsexton/MatchTag', {
                 \ 'directory': 'MatchTag',
                 \ 'name': 'MatchTag'
@@ -725,6 +730,11 @@ let g:neosnippet#scope_aliases = {
 " directory will be automatically generated.
 let g:neosnippet#data_directory = g:vimfiles . '/tmp/neosnippet'
 "}}}
+"}}}
+
+" {{{ MarkDown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = [ 'bash=sh', 'java', 'php', 'sql' ]
 "}}}
 
 " {{{ Rainbow Parentheses Improved
