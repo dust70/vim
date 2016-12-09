@@ -7,7 +7,7 @@ function! ConfigureCBNAdmin()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/git/cbn/preisvergleich-admin/',
+                \ '~/git/cbn/admin/',
                 \ 'vagrant:/var/www/htdocs',
                 \ '"*.min.css"',
                 \ '"*.min.js"',
@@ -20,7 +20,7 @@ endfunction
 
 augroup Admin
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/git/cbn/preisvergleich-admin/**
+                \ ~/git/cbn/admin/**
                 \ call ConfigureCBNAdmin()
 augroup END
 "}}}
@@ -33,14 +33,14 @@ function! ConfigureCBNBackend()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/git/cbn/preisvergleich-backend/',
+                \ '~/git/cbn/backend/',
                 \ 'vagrant:/var/www/htdocs'
                 \ )
 endfunction
 
 augroup Soap
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/git/cbn/preisvergleich-backend/** call ConfigureCBNBackend()
+                \ ~/git/cbn/backend/** call ConfigureCBNBackend()
 augroup END
 "}}}
 
@@ -51,7 +51,7 @@ endfunction
 
 augroup Behat
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/git/cbn/preisvergleich-behat/**
+                \ ~/git/cbn/behat/**
                 \ call ConfigureCBNBehat()
 augroup END
 "}}}
@@ -63,7 +63,7 @@ endfunction
 
 augroup Image
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/git/cbn/preisvergleich-image/**
+                \ ~/git/cbn/image/**
                 \ call ConfigureCBNImage()
 augroup END
 "}}}
@@ -77,7 +77,7 @@ endfunction
 
 augroup Library
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/git/cbn/preisvergleich-library/**
+                \ ~/git/cbn/library/**
                 \ call ConfigureCBNLibrary()
 augroup END
 "}}}
@@ -90,7 +90,7 @@ function! ConfigureCBNFrontend()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/git/cbn/preisvergleich-frontend/',
+                \ '~/git/cbn/frontend/',
                 \ 'vagrant:/var/www/htdocs',
                 \ '"public/css/*"',
                 \ '"public/javascript/*.min*.js"',
@@ -99,7 +99,7 @@ endfunction
 
 augroup Preisvergleich
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/git/cbn/preisvergleich-frontend/**
+                \ ~/git/cbn/frontend/**
                 \ call ConfigureCBNFrontend()
 augroup END
 "}}}
@@ -134,14 +134,14 @@ function! ConfigureCBNUpdate()
     call ConfigurePhpProject()
 
     call ConfigureProject(
-                \ '~/git/cbn/preisvergleich-update/',
+                \ '~/git/cbn/update/',
                 \ 'vagrant:/home/vagrant/update'
                 \ )
 endfunction
 
 augroup Update
     autocmd! BufEnter,BufNewFile,BufRead
-                \ ~/git/cbn/preisvergleich-update/** call ConfigureCBNUpdate()
+                \ ~/git/cbn/update/** call ConfigureCBNUpdate()
 augroup END
 "}}}
 "}}}
