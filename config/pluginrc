@@ -46,41 +46,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Airline'
                 \ }
 
-    NeoBundle 'Chiel92/vim-autoformat', {
-                \ 'directory': 'AutoFormat',
-                \ 'name': 'AutoFormat'
-                \ }
-
-    NeoBundle 'jiangmiao/auto-pairs', {
-                \ 'directory': 'AutoPairs',
-                \ 'name': 'AutoPairs'
-                \ }
-
-    NeoBundle 'craigemery/vim-autotag', {
-                \ 'directory': 'AutoTag',
-                \ 'name': 'AutoTag'
-                \ }
-
-    NeoBundle 'veloce/vim-behat', {
-                \ 'directory': 'Behat',
-                \ 'name': 'Behat'
-                \ }
-
-    NeoBundle 'chrisbra/Colorizer', {
-                \ 'directory': 'Colorizer',
-                \ 'name': 'Colorizer'
-                \ }
-
-    NeoBundle 'hail2u/vim-css3-syntax', {
-                \ 'directory': 'CSS',
-                \ 'name': 'CSS'
-                \ }
-
-    NeoBundle 'skammer/vim-css-color', {
-                \ 'directory': 'CSS-Color',
-                \ 'name': 'CSS-Color'
-                \ }
-
     NeoBundle 'chrisbra/csv.vim', {
                 \ 'directory': 'CSV',
                 \ 'name': 'CSV'
@@ -89,22 +54,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     NeoBundle 'rking/vim-detailed', {
                 \ 'directory': 'Detailed',
                 \ 'name': 'Detailed'
-                \ }
-
-    NeoBundle 'chrisbra/vim-diff-enhanced', {
-                \ 'directory': 'DiffEnhanced',
-                \ 'name': 'DiffEnhanced',
-                \ 'vim_version': '7.4.0'
-                \ }
-
-    NeoBundle 'tpope/vim-dispatch', {
-                \ 'directory': 'Dispatch',
-                \ 'name': 'Dispatch'
-                \ }
-
-    NeoBundle 'tpope/vim-endwise', {
-                \ 'directory': 'Endwise',
-                \ 'name': 'Endwise'
                 \ }
 
     NeoBundle 'Shougo/vimfiler.vim', {
@@ -118,48 +67,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Filer'
                 \ }
 
-    NeoBundle 'tpope/vim-fugitive', {
-                \ 'augroup': 'fugitive',
-                \ 'directory': 'FuGITive',
-                \ 'name': 'FuGITive'
-                \ }
-
-    NeoBundle 'airblade/vim-gitgutter', {
-                \ 'directory': 'Gutter',
-                \ 'name': 'Gutter'
-                \ }
-
-    NeoBundle 'othree/html5.vim', {
-                \ 'directory': 'HTML5',
-                \ 'name': 'HTML5'
-                \ }
-
-    NeoBundle 'mjbrownie/vim-htmldjango_omnicomplete', {
-                \ 'directory': 'HTMLDjango',
-                \ 'name': 'HTMLDjango'
-                \ }
-
-    NeoBundle 'nathanaelkane/vim-indent-guides', {
-                \ 'directory': 'IndentGuides',
-                \ 'name': 'IndentGuides'
-                \ }
-
-    NeoBundle 'davidhalter/jedi-vim', {
-                \ 'directory': 'Jedi',
-                \ 'disabled': !has('python'),
-                \ 'name': 'Jedi'
-                \ }
-
-    NeoBundle 'dietsche/vim-lastplace', {
-                \ 'directory': 'Lastplace',
-                \ 'name': 'Lastplace'
-                \ }
-
-    NeoBundle 'luishdez/vim-less', {
-                \ 'directory': 'Less',
-                \ 'name': 'Less'
-                \ }
-
     NeoBundle 'dbeniamine/vim-mail', {
                 \ 'depends': [
                 \    ['chrisbra/CheckAttach', {
@@ -171,116 +78,9 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Mail'
                 \ }
 
-    NeoBundle 'tpope/vim-markdown', {
-                \ 'directory': 'MarkDown',
-                \ 'name': 'MarkDown',
-                \ }
-
-    NeoBundle 'gregsexton/MatchTag', {
-                \ 'directory': 'MatchTag',
-                \ 'name': 'MatchTag'
-                \ }
-
-    NeoBundle 'Shougo/neocomplete', {
-                \ 'depends': [
-                \    ['Shougo/vimshell.vim', {
-                \        'directory': 'Shell',
-                \        'name': 'Shell'
-                \        }],
-                \    ['Shougo/context_filetype.vim', {
-                \        'directory': 'ContextFileType',
-                \        'name': 'ContextFileType'
-                \        }],
-                \    ['Konfekt/FastFold', {
-                \        'directory': 'FastFold',
-                \        'name': 'FastFold'
-                \        }]
-                \    ],
-                \ 'directory': 'NeoComplete',
-                \ 'disabled': !has('lua'),
-                \ 'name': 'NeoComplete',
-                \ 'vim_version': '7.3.885'
-                \ }
-
-    NeoBundle 'Shougo/neosnippet', {
-                \ 'depends': [
-                \    ['Shougo/neosnippet-snippets', {
-                \        'directory': 'NeoSnippet-Snippets',
-                \        'name': 'NeoSnippet-Snippets'
-                \        }],
-                \    ['spf13/snipmate-snippets', {
-                \        'directory': 'Snipmate-Snippets',
-                \        'name': 'Snipmate-Snippets'
-                \        }],
-                \    ['honza/vim-snippets', {
-                \        'directory': 'Snippets',
-                \        'name': 'Snippets'
-                \        }],
-                \ ],
-                \ 'directory': 'NeoSnippet',
-                \ 'name': 'NeoSnippet'
-                \ }
-
-    NeoBundle 'scrooloose/nerdcommenter', {
-                \ 'directory': 'Nerdcommenter',
-                \ 'name': 'Nerdcommenter'
-                \ }
-
-    NeoBundle 'tobyS/pdv', {
-                \ 'depends': [
-                \    ['tobyS/vmustache', {
-                \        'directory': 'VMustache',
-                \        'name': 'VMustache'
-                \        }]
-                \    ],
-                \ 'directory': 'PDV',
-                \ 'name': 'PDV'
-                \ }
-
-    NeoBundle 'shawncplus/phpcomplete.vim', {
-                \ 'directory': 'PHPComplete',
-                \ 'name': 'PHPComplete'
-                \ }
-
-    NeoBundle 'vim-php/tagbar-phpctags.vim', {
-                \ 'build': {
-                \    'cygwin': 'make',
-                \    'mac': 'make',
-                \    'unix': 'make',
-                \    'windows': 'make'
-                \    },
-                \ 'directory': 'PHPCTags',
-                \ 'name': 'PHPCTags'
-                \ }
-
-    NeoBundle 'nishigori/vim-php-dictionary', {
-                \ 'directory': 'PHPDictionary',
-                \ 'name': 'PHPDictionary'
-                \ }
-
-    NeoBundle '2072/PHP-Indenting-for-VIm', {
-                \ 'directory': 'PHPIndention',
-                \ 'name': 'PHPIndention'
-                \ }
-
-    NeoBundle 'alvan/vim-php-manual', {
-                \ 'directory': 'PHPManual',
-                \ 'name': 'PHPManual'
-                \ }
-
-    NeoBundle 'arnaud-lb/vim-php-namespace', {
-                \ 'directory': 'PHPNamespace',
-                \ 'name': 'PHPNamespace'
-                \ }
-
     NeoBundle 'rodjek/vim-puppet', {
                 \ 'directory': 'Puppet',
                 \ 'name': 'Puppet'
-                \ }
-
-    NeoBundle 'luochen1990/rainbow', {
-                \ 'directory': 'Rainbow_Parentheses_Improved',
-                \ 'name': 'Rainbow Parentheses Improved'
                 \ }
 
     NeoBundle 'ciaranm/securemodelines', {
@@ -288,44 +88,9 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'SecureModelines'
                 \ }
 
-    NeoBundle 'ervandew/supertab', {
-                \ 'directory': 'Supertab',
-                \ 'name': 'Supertab'
-                \ }
-
-    NeoBundle 'tpope/vim-surround', {
-                \ 'directory': 'Surround',
-                \ 'name': 'Surround'
-                \ }
-
-    NeoBundle 'mjbrownie/swapit', {
-                \ 'directory': 'SwapIt',
-                \ 'name': 'SwapIt'
-                \ }
-
-    NeoBundle 'scrooloose/syntastic', {
-                \ 'directory': 'Syntastic',
-                \ 'name': 'Syntastic'
-                \ }
-
     NeoBundle 'godlygeek/tabular', {
                 \ 'directory': 'Tabular',
                 \ 'name': 'Tabular'
-                \ }
-
-    NeoBundle 'majutsushi/tagbar', {
-                \ 'directory': 'Tagbar',
-                \ 'name': 'Tagbar'
-                \ }
-
-    NeoBundle 'nelsyeung/twig.vim', {
-                \ 'directory': 'Twig',
-                \ 'name': 'Twig',
-                \ }
-
-    NeoBundle 'lervag/vimtex', {
-                \ 'directory': 'Tex',
-                \ 'name': 'Tex'
                 \ }
 
     NeoBundle 'Shougo/unite.vim', {
@@ -337,36 +102,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \    ],
                 \ 'directory': 'Unite',
                 \ 'name': 'Unite'
-                \ }
-
-    NeoBundle 'Shougo/neomru.vim', {
-                \ 'directory': 'UniteMRU',
-                \ 'name': 'UniteMRU'
-                \ }
-
-    NeoBundle 'Shougo/unite-session', {
-                \ 'directory': 'UniteSession',
-                \ 'name': 'UniteSession'
-                \ }
-
-    NeoBundle 'tsukkee/unite-tag', {
-                \ 'dictionary': 'UniteTag',
-                \ 'name': 'UniteTag'
-                \ }
-
-    NeoBundle 'joonty/vdebug', {
-                \ 'directory': 'VDebug',
-                \ 'name': 'VDebug'
-                \ }
-
-    NeoBundle 'jmcantrell/vim-virtualenv', {
-                \ 'directory': 'VirtualEnv',
-                \ 'name': 'VirtualEnv'
-                \ }
-
-    NeoBundle 'bronson/vim-visual-star-search', {
-                \ 'directory': 'VisualStarSearch',
-                \ 'name': 'VisualStarSearch'
                 \ }
 
     NeoBundle 'ntpeters/vim-better-whitespace', {
