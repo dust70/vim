@@ -1,70 +1,3 @@
-" {{{ ConfigureProject
-function! ConfigureProject(source, dest, ...)
-    let l:source = escape(expand(a:source), ' ')
-    let l:dest = escape(expand(a:dest), ' ')
-
-    execute "chdir " . l:source
-    let g:vdebug_options['path_maps'] = {
-                \    substitute(l:dest, '.*:', '', 'g') : l:source,
-                \ }
-
-    let l:rsync_options = [
-                \ '--archive',
-                \ '--chmod="ug=rwX,o=rX"',
-                \ '--chown=vagrant:www-data',
-                \ '--cvs-exclude',
-                \ '--delete',
-                \ '--rsh "ssh -F ' . l:source . 'vagrant/.vagrant/ssh_config"',
-                \ '--verbose',
-                \ '--whole-file'
-                \ ]
-
-    let l:rsync_ignore = [
-                \ '"*.pyc"',
-                \ '".*swp"',
-                \ '".DS_Store"',
-                \ '".fstemp.*"',
-                \ '".git*"',
-                \ '".svn*"',
-                \ '"cache.properties"',
-                \ '"cscope.out*"',
-                \ '"debug.log"',
-                \ '"node_modules"',
-                \ '"sync.log"',
-                \ '"tests"',
-                \ '"vagrant"'
-                \ ] + a:000
-
-    let g:test = a:000
-    let g:rsync_command = 'rsync ' . join(l:rsync_options, ' ')
-                \ . ' --exclude=' . join(l:rsync_ignore, ' --exclude=')
-                \ . ' ' . l:source . ' ' . l:dest
-    let g:rsync_command_delete = 'rsync ' . join(l:rsync_options, ' ')
-                \ . ' --delete-excluded --delete-during --prune-empty-dirs'
-                \ . ' --ignore-errors --force '
-                \ . ' --exclude=' . join(l:rsync_ignore, ' --exclude=')
-                \ . ' ' . l:source . ' ' . l:dest
-
-    nnoremap <silent> <leader>ds :silent execute "Start " . g:rsync_command<cr>
-    nnoremap <silent> <leader>dS :silent execute "Start " . g:rsync_command_delete<cr>
-
-    autocmd! BufWritePost,FileWritePost *
-                \ silent execute '!' . g:rsync_command . ' >> /dev/null 2>&1 &'
-endfunction
-"}}}
-
-" {{{ ConfigurePhpProject
-function! ConfigurePhpProject()
-    call LoadCTagsFile(g:vimfiles . '/persistent-tags/php/phpunit')
-    call LoadCTagsFile('./.git/tags')
-
-    nnoremap <silent> <leader>dt :Dispatch php -d "error_reporting=E_ALL\|E_STRICT"
-                \ ./bin/phpunit --verbose --filter %:t:r<cr>
-
-    let g:vdebug_options['server'] = '192.168.56.1'
-endfunction
-"}}}
-
 " {{{ ConvertToUnix
 function! DosToUnix()
     execute "update"
@@ -73,13 +6,6 @@ function! DosToUnix()
     execute "write"
 endfunction
 command! DosToUnix call DosToUnix()
-"}}}
-
-" {{{ LoadCTagsFile
-function! LoadCTagsFile(file)
-    execute 'setlocal tags-=' . a:file
-    execute 'setlocal tags^=' . a:file
-endfunction
 "}}}
 
 " {{{ StripDoubleEmptyLines
