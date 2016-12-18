@@ -56,17 +56,6 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
                 \ 'name': 'Detailed'
                 \ }
 
-    NeoBundle 'Shougo/vimfiler.vim', {
-                \ 'depends': [
-                \    ['Shougo/tabpagebuffer.vim', {
-                \        'directory': 'TabpageBuffer',
-                \        'name': 'TabpageBuffer'
-                \        }]
-                \    ],
-                \ 'directory': 'Filer',
-                \ 'name': 'Filer'
-                \ }
-
     NeoBundle 'dbeniamine/vim-mail', {
                 \ 'depends': [
                 \    ['chrisbra/CheckAttach', {
@@ -179,16 +168,6 @@ nmap <silent> <leader>fh :Unite -buffer-name=history vimfiler/history<cr>
 nmap <silent> <leader>fm :Unite -buffer-name=mask vimfiler/mask<cr>
 nmap <silent> <leader>fp :Unite -buffer-name=popd vimfiler/popd<cr>
 nmap <silent> <leader>fs :Unite -buffer-name=sort vimfiler/sort<cr>
-"}}}
-"}}}
-
-" {{{ FuGITive
-" {{{ mappings
-nmap <silent> <leader>ga :Gwrite<cr>
-nmap <silent> <leader>gb :Gblame<cr>
-nmap <silent> <leader>gc :Gcommit<cr>
-nmap <silent> <leader>gd :Gdiff<cr>
-nmap <silent> <leader>gq :Gwq<cr>
 "}}}
 "}}}
 
@@ -426,31 +405,6 @@ nmap <silent> <leader>uTt :Unite -buffer-name=tag -quick-match tag<cr>
 nmap <silent> <leader>uy :Unite -buffer-name=history history/yank<cr>
 
 nmap <silent> <C-p> :Unite -buffer-name=files -start-insert file_rec/git<cr>
-"}}}
-"}}}
-
-" {{{ UniteMRU
-" {{{ neomru#time_format
-" Specify the output format of the modified file in MRU sources. Uses strftime()
-" formatting.
-let g:neomru#time_format = ' %Y-%m-%d %H:%M '
-"}}}
-
-" {{{ neomru#update_interval
-" Specify the update interval to save updated mru files/directories to disk.
-let g:neomru#update_interval = 3600
-"}}}
-
-" {{{ neomru#file_mru_path
-" Specifies the file to write the information of most recent used files.
-let g:neomru#file_mru_path = g:vimfiles . '/tmp/mru/files'
-let g:neomru#directory_mru_path = g:vimfiles . '/tmp/mru/directory'
-"}}}
-"}}}
-
-" {{{ Whitespace
-" {{{ mappings
-nnoremap ,Ws <silent> :StripWhitespace<cr>
 "}}}
 "}}}
 
