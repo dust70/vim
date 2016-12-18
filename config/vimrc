@@ -7,12 +7,7 @@ endif
 
 " {{{ create cirectories
 "if !isdirectory(vimfiles) | call mkdir(vimfiles) | endif
-if !isdirectory(g:vimfiles."/backup")   | call mkdir(g:vimfiles."/backup")   | endif
 if !isdirectory(g:vimfiles."/bundle")   | call mkdir(g:vimfiles."/bundle")   | endif
-if !isdirectory(g:vimfiles."/snippets") | call mkdir(g:vimfiles."/snippets") | endif
-if !isdirectory(g:vimfiles."/tags")     | call mkdir(g:vimfiles."/tags")     | endif
-if !isdirectory(g:vimfiles."/tmp")      | call mkdir(g:vimfiles."/tmp")      | endif
-if !isdirectory(g:vimfiles."/undo")     | call mkdir(g:vimfiles."/undo")     | endif
 "}}}
 "}}}
 
@@ -43,22 +38,6 @@ let g:pathToRc=split(&runtimepath, ",")[0] . "/config/autocommandrc"
 if has("autocmd") && filereadable(pathToRc)
     execute "source " . pathToRc
 endif
-"}}}
-
-" {{{ global options for syntax
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/syntaxrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-" {{{ global options for different projects
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/projectrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-unlet pathToRc
 "}}}
 
 " {{{ macros
@@ -770,16 +749,6 @@ set switchbuf+=usetab
 " Maximum number of tab pages to be opened by the |-p| command line argument or
 " the ":tab all" command.
 set tabpagemax=20
-"}}}
-
-" {{{ tags
-" Filenames for the tag command, separated by spaces or commas. To include a
-" space or comma in a file name, precede it with a backslash (see
-" |option-backslash| about including spaces and backslashes). When a file name
-" starts with "./", the '.' is replaced with the path of the current file. But
-" only when the 'd' flag is not included in 'cpoptions'. Environment variables
-" are expanded |:set_env|.
-setglobal tags-=./tags tags^=./tags;
 "}}}
 
 " {{{ termencoding

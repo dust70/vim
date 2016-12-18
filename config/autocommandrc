@@ -16,26 +16,6 @@ augroup loadDictionary
 augroup END
 "}}}
 
-" {{{ loadOmniFunc
-augroup loadOmniFunc
-    autocmd!
-    autocmd FileType * setlocal omnifunc=syntaxcomplete#Complete
-    autocmd FileType c setlocal omnifunc=ccomplete#Complete
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType sql setlocal omnifunc=sqlcomplete#Complete
-augroup END
-"}}}
-
-" {{{ loadFoldMethod
-augroup loadFoldMethod
-    autocmd!
-    autocmd FileType c setlocal foldmethod=syntax
-    autocmd FileType javascript setlocal foldmethod=syntax
-    autocmd FileType sql setlocal foldmethod=syntax
-augroup END
-"}}}
-
 " {{{ pluginConf
 " don't load certain plugins depending on filetype
 augroup pluginConf
@@ -47,7 +27,6 @@ augroup END
 " {{{ filetype specific autocommands
 augroup filetypes
     autocmd!
-    autocmd! BufRead,BufNewFile *.phtml setlocal filetype=php.html
     autocmd! BufRead,BufNewFile *.xml.dist setlocal filetype=xml
     autocmd! BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
 

@@ -58,12 +58,6 @@ endif
 nnoremap <silent> <leader>P :set invpaste<cr>
 "}}}
 
-" {{{ cscope
-if has("cscope")
-    nnoremap <silent> <leader>cf :cscope find s <C-R>=expand("<cword>")<cr><cr>
-endif
-"}}}
-
 " {{{ don't use Ex mode, use Q for formatting
 nnoremap <silent> Q gq
 "}}}
@@ -79,7 +73,6 @@ nnoremap <silent> gP P
 "}}}
 
 " {{{ buffers
-nnoremap <silent> <leader>bl :confirm buffers<cr>
 nnoremap <silent> <leader>bn :confirm bnext<cr>
 nnoremap <silent> <leader>bp :confirm bprevious<cr>
 "}}}
@@ -93,11 +86,8 @@ nnoremap <silent> <leader>bW :wall<cr>
 
 " {{{ tabs
 nnoremap <silent> <leader>t :tabnew<cr>
-nnoremap <silent> <leader>t$ :tabmove<cr>
 nnoremap <silent> <leader>t<left> :tabmove -1<cr>
 nnoremap <silent> <leader>t<right> :tabmove +1<cr>
-nnoremap <silent> <leader>t^ :tabmove 0<cr>
-nnoremap <silent> <leader>tl :tabs<cr>
 "}}}
 
 " {{{replace german umlauts
@@ -109,14 +99,5 @@ imap <silent> ä ae
 imap <silent> ö oe
 imap <silent> ü ue
 "}}}
-
-" {{{ quickfix
-nnoremap <silent> <leader>qo :cwindow<cr>
-nnoremap <silent> <leader>qc :close<cr>
-"}}}
-
-" {{{ diff
-nnoremap <silent> <leader>Du :diffupdate
-" }}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
