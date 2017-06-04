@@ -140,6 +140,57 @@ let g:airline#extensions#tabline#show_tab_nr = 1
 "}}}
 "}}}
 
+" {{{ Filer
+" {{{ vimfiler_as_default_explorer
+" If this variable is true, Vim use vimfiler as file manager instead of netrw.
+let g:vimfiler_as_default_explorer = 1
+"}}}
+
+" {{{ g:vimfiler_define_wrapper_commands
+" If this variable is true, vimfiler will define wrappercommands(|:Edit|, |:Write|, |:Source|, |:Read|).
+let g:vimfiler_execute_file_list = 1
+"}}}
+
+" {{{ vimfiler_data_directory
+" Specifies directories for configurations internally used in vimfiler itself or
+" its sources. If the directory doesn't exist the directory will be
+" automatically generated.
+let g:vimfiler_data_directory = g:vimfiles . "/tmp/files"
+"}}}
+
+" {{{ vimfiler#custom#profile()
+" Set {profile-name} specialized {option-name} to {value}.
+call vimfiler#custom#profile('default', 'context', {
+            \ 'buffer-name': 'VimFiler',
+            \ 'columns': 'type:size:time',
+            \ 'safe': 0,
+            \ 'sort_type': 'filename',
+            \ 'status': 1
+            \ })
+"}}}
+
+" {{{ mappings
+nmap <silent> <leader>fe :VimFilerExplorer<cr>
+nmap <silent> <leader>fo :VimFiler<cr>
+nmap <silent> <leader>ft :VimFiler -tab<cr>
+
+nmap <silent> <leader>fh :Unite -buffer-name=history vimfiler/history<cr>
+nmap <silent> <leader>fm :Unite -buffer-name=mask vimfiler/mask<cr>
+nmap <silent> <leader>fp :Unite -buffer-name=popd vimfiler/popd<cr>
+nmap <silent> <leader>fs :Unite -buffer-name=sort vimfiler/sort<cr>
+"}}}
+"}}}
+
+" {{{ FuGITive
+" {{{ mappings
+nmap <silent> <leader>ga :Gwrite<cr>
+nmap <silent> <leader>gb :Gblame<cr>
+nmap <silent> <leader>gc :Gcommit<cr>
+nmap <silent> <leader>gd :Gdiff<cr>
+nmap <silent> <leader>gq :Gwq<cr>
+"}}}
+"}}}
+
 " {{{ LaTeX
 " {{{ tex_flavor
 " If the first line of a *.tex file has the form
