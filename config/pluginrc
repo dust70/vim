@@ -42,13 +42,44 @@ if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
     " {{{ Plugins
     NeoBundle 'bling/vim-airline', {
                 \ 'directory': 'Airline',
-                \ 'disabled': has('mac'),
                 \ 'name': 'Airline'
                 \ }
+
+    NeoBundle 'rking/vim-detailed', {
+                \ 'directory': 'Detailed',
+                \ 'name': 'Colorscheme'
+                \}
 
     NeoBundle 'chrisbra/csv.vim', {
                 \ 'directory': 'CSV',
                 \ 'name': 'CSV'
+                \ }
+
+    NeoBundle 'editorconfig/editorconfig-vim', {
+                \ 'directory': 'Editorconfig',
+                \ 'name': 'Editorconfig'
+                \ }
+
+    NeoBundle 'Shougo/vimfiler.vim', {
+                \ 'depends': [
+                \   ['Shougo/unite.vim', {
+                \       'depends': [
+                \           ['Shougo/tabpagebuffer.vim', {
+                \               'directory': 'TabpageBuffer',
+                \               'name': 'TabpageBuffer'
+                \           }]
+                \       ],
+                \       'directory': 'Unite',
+                \       'name': 'Unite'
+                \   }]
+                \ ],
+                \ 'directory': 'Filer',
+                \ 'name': 'VimFiler'
+                \}
+
+    NeoBundle 'tpope/vim-fugitive', {
+                \ 'directory': 'Fugitive',
+                \ 'name': 'FuGITive'
                 \ }
 
     NeoBundle 'rodjek/vim-puppet', {
