@@ -114,17 +114,6 @@ set autoindent
 set autoread
 "}}}
 
-" {{{ background
-" When set to "dark", Vim will try to use colors that look good on a dark
-" background. When set to "light", Vim will try to use colors that look good
-" on a light background. Any other value is illegal.
-" Vim tries to set the default value according to the terminal used. This will
-" not always be correct.
-if &t_Co > 2 || has("gui_running")
-    set background=dark
-endif
-"}}}
-
 " {{{ backspace
 " Influences the working of <BS>, <Del>, CTRL-W and CTRL-U in Insert mode.
 " This is a list of items, separated by commas. Each item allows a way to
@@ -145,23 +134,6 @@ set backspace=indent,eol,start
 " file at all reset both options (use this if your file system is almost full).
 " See the |backup-table| for more explanations.
 set nobackup
-"}}}
-
-" {{{ backupdir
-" List of directories for the backup file, separated with commas.
-let &backupdir=g:vimfiles . "/backup"
-"}}}
-
-" {{{ browsedir
-" Which directory to use for the file browser:
-"	last	Use same directory as with last file browser, where a file was
-"		opened or saved.
-"	buffer	Use the directory of the related buffer.
-"	current	Use the current directory.
-"	{path}	Use the specified directory
-if has("gui_running")
-    set browsedir=current
-endif
 "}}}
 
 " {{{ cindent
@@ -193,24 +165,6 @@ set cmdwinheight=5
 " maximum of 256 columns are highlighted.
 if v:version >= 703
     set colorcolumn=+1
-endif
-"}}}
-
-" {{{ columns
-" Number of columns of the screen. Normally this is set by the terminal
-" initialization and does not have to be set by hand. Also see
-" |posix-screen-size|.
-" When Vim is running in the GUI or in a resizable window, setting this option
-" will cause the window size to be changed. When you only want to use the size
-" for the GUI, put the command in your |gvimrc| file. When you set this option
-" and Vim is unable to change the physical number of columns of the display,
-" the display may be messed up. For the GUI it is always possible and Vim
-" limits the number of columns to what fits on the screen. You can use this
-" command to get the widest window possible:
-"	:set columns=9999
-" Minimum value is 12, maximum value is 10000.
-if has("gui_running")
-    set columns=185
 endif
 "}}}
 
@@ -393,30 +347,6 @@ set foldmethod=syntax
 set foldnestmax=10
 "}}}
 
-" {{{ guifont
-" This is a list of fonts which will be used for the GUI version of Vim. In
-" its simplest form the value is just one font name. When the font cannot be
-" found you will get an error message. To try other font names a list can be
-" specified, font names separated with commas.
-" The first valid font is used.
-if has("gui_running")
-   if has("mac") || has("win32")
-       set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
-   elseif has("unix")
-       set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
-   endif
-endif
-"}}}
-
-" {{{ guioptions
-" This option only has an effect in the GUI version of Vim. It is a sequence
-" of letters which describes what components and options of the GUI should be
-" used.
-if has("gui_running")
-    set guioptions-=LrT guioptions+=g
-endif
-"}}}
-
 " {{{ helpheight
 " Minimal initial height of the help window when it is opened with the ":help"
 " command. The initial height of the help window is half of the current
@@ -439,7 +369,7 @@ set helplang=en,de
 " When there is a previous search pattern, highlight all its matches. The type
 " of highlighting used can be set with the 'l' occasion in the 'highlight'
 " option. This uses the "Search" highlight group by default.
-if &t_Co > 2 || has("gui_running")
+if &t_Co > 2
     set nohlsearch
 endif
 "}}}
@@ -487,49 +417,10 @@ set lazyredraw
 set linebreak
 "}}}
 
-" {{{ lines
-" Number of lines of the Vim window.
-" Normally you don't need to set this. It is done automatically by the
-" terminal initialization code. Also see |posix-screen-size|. When Vim is
-" running in the GUI or in a resizable window, setting this option will cause
-" the window size to be changed. When you only want to use the size for the
-" GUI, put the command in your |gvimrc| file. Vim limits the number of lines
-" to what fits on the screen. You can use this command to get the tallest
-" window possible:
-"	:set lines=999
-" Minimum value is 2, maximum value is 1000. If you get less lines than
-" expected, check the 'guiheadroom' option. When you set this option and Vim
-" is unable to change the physical number of lines of the display, the display
-" may be messed up.
-if has("gui_running")
-    set lines=55
-endif
-"}}}
-
 " {{{ listchars
 " Strings to use in 'list' mode and for the |:list| command. It is a comma
 " separated list of string settings.
 set listchars="eol:$,tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+"
-"}}}
-
-" {{{ mousemodel
-" Sets the model to use for the mouse. The name mostly specifies what the
-" right mouse button is used for:
-"	extend		Right mouse button extends a selection. This works
-"			like in an xterm.
-"	popup		Right mouse button pops up a menu. The shifted left
-"			mouse button extends a selection. This works like with
-"			Microsoft Windows.
-"	popup_setpos	Like "popup", but the cursor will be moved to the
-"			position where the mouse was clicked, and thus the
-"			selected operation will act upon the clicked object.
-"			If clicking inside a selection, that selection will be
-"			acted upon, i.e. no cursor move. This implies of
-"			course, that right clicking outside a selection will
-"			end Visual mode.
-if has('gui_running')
-    set mousemodel=popup
-endif
 "}}}
 
 " {{{ nrformats
@@ -900,9 +791,7 @@ set wildmode="list:longest"
 " Vim will use fewer lines if there is not enough room. If the focus goes to a
 " window that is smaller, its size is increased, at the cost of the height of
 " other windows.
-if has("gui_running")
-    set winheight=5
-elseif &diff
+if &diff
     set winheight=15
 else
     set winheight=3
