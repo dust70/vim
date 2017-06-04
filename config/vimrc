@@ -74,9 +74,7 @@ endif
 "	:echo g:colors_name
 " In case g:colors_name has not been defined :colo will output "default". When
 " compiled without the |+eval| feature it will output "unknown".
-if has("gui_running") && ! empty(globpath(&runtimepath, 'colors/vydark.vim'))
-    colorscheme vydark
-elseif ! empty(globpath(&runtimepath, 'colors/detailed.vim'))
+if ! empty(globpath(&runtimepath, 'colors/detailed.vim'))
     colorscheme detailed
 else
     colorscheme evening
