@@ -1,4 +1,0 @@
-[submodule "DeIn"]
-    branch = master
-    path = bundle/DeIn
-    url = https://github.com/Shougo/dein.vim
