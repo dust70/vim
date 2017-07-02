@@ -1,4 +1,0 @@
-[submodule "NeoBundle"]
-	path = bundle/NeoBundle
-	url = https://github.com/Shougo/neobundle.vim.git
-	branch = master
