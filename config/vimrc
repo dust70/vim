@@ -1,17 +1,26 @@
 " {{{ set vimfiles path
 if has("unix")
-    let g:vimfiles = escape(expand("~/.vim"), ' ')
+    let g:vimfiles=escape(expand("~/.vim"), ' ')
 else
-    let g:vimfiles = escape(expand("~/vimfiles"), ' ')
+    let g:vimfiles=escape(expand("~/vimfiles"), ' ')
 endif
-
-" {{{ create cirectories
-"if !isdirectory(vimfiles) | call mkdir(vimfiles) | endif
-if !isdirectory(g:vimfiles."/bundle")   | call mkdir(g:vimfiles."/bundle")   | endif
-"}}}
 "}}}
 
 " {{{ configuration files
+" {{{ global options for autocommands
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/autocommandrc"
+if has("autocmd") && filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
+" {{{ global options for functions
+let g:pathToRc=split(&runtimepath, ",")[0] . "/config/functionrc"
+if filereadable(pathToRc)
+    execute "source " . pathToRc
+endif
+"}}}
+
 " {{{ global keyboard mappings
 let g:pathToRc=split(&runtimepath, ",")[0] . "/config/mappingsrc"
 if filereadable(pathToRc)
@@ -22,20 +31,6 @@ endif
 " {{{ global options for plugins
 let g:pathToRc=split(&runtimepath, ",")[0] . "/config/pluginrc"
 if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-" {{{ global options for plugins
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/functionrc"
-if filereadable(pathToRc)
-    execute "source " . pathToRc
-endif
-"}}}
-
-" {{{ global options for autocommands
-let g:pathToRc=split(&runtimepath, ",")[0] . "/config/autocommandrc"
-if has("autocmd") && filereadable(pathToRc)
     execute "source " . pathToRc
 endif
 "}}}
@@ -664,8 +659,8 @@ set ttimeoutlen=100
 " {{{ title
 " When on, the title of the window will be set to the value of 'titlestring' (if
 " it is not empty)
-if &term =~ "rxvt" || &term =~ "screen" || &term =~ "term"
-    if &term =~ "screen"
+if &term=~ "rxvt" || &term=~ "screen" || &term=~ "term"
+    if &term=~ "screen"
         set t_ts=k
         set t_fs=\
     endif
@@ -833,22 +828,19 @@ iabbrev 'e é
 
 " {{{ highlight
 " {{{ highlight for spell checking
-highlight SpellBad term=standout ctermfg=white ctermbg=red
-            \ cterm=underline term=underline
+highlight SpellBad term=standout ctermfg=white ctermbg=red cterm=underline term=underline
 highlight SpellCap term=underline cterm=underline
 highlight SpellRare term=underline cterm=underline
 highlight SpellLocal term=underline cterm=underline
 "}}}
 
 " {{{ highlight for searching
-highlight Search ctermfg=black ctermbg=lightblue cterm=italic,underline
-            \ guifg=white guibg=blue
+highlight Search ctermfg=black ctermbg=lightblue cterm=italic,underline guifg=white guibg=blue
 "}}}
 
 " {{{ nice color for completion menu
 highlight Pmenu ctermfg=white ctermbg=black guifg=lightgray guibg=black
-highlight PmenuSel ctermfg=black ctermbg=lightblue cterm=bold
-            \ guifg=black guibg=lightblue gui=bold
+highlight PmenuSel ctermfg=black ctermbg=lightblue cterm=bold guifg=black guibg=lightblue gui=bold
 "}}}
 
 " {{{ ShowTrailingWhitespace
