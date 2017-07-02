@@ -2,118 +2,118 @@
 " {{{ g:neobundle#install_max_processes
 " The max number of processes used for neobundle/install source asynchronous
 " update.
-let g:neobundle#install_max_processes = 1
+"let g:neobundle#install_max_processes = 1
 "}}}
 
-let g:bundlePath=split(&runtimepath, ',')[0] . '/bundle'
-let g:pathToNeoBundle=expand(bundlePath).'/NeoBundle'
-if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
-    " {{{ initialize
-    if has('vim_starting')
-        set nocompatible
-        let &runtimepath.=','.expand(pathToNeoBundle)
-    endif
-    "}}}
-
-    " {{{ bundle path and call NeoBundle
-    call neobundle#begin(expand(bundlePath))
-    "}}}
-
-    " {{{ Bundles
-    " {{{ NeoBundle
-    NeoBundleFetch 'Shougo/neobundle.vim', {
-                \ 'depends': [
-                \    ['Shougo/vimproc.vim', {
-                \        'directory': 'Proc',
-                \        'name': 'Proc',
-                \        'build': {
-                \            'windows': 'vimproc_updcmd',
-                \            'cygwin': 'make -f make_cygwin.mak',
-                \            'mac': 'make -f make_mac.mak',
-                \            'unix': 'make -f make_unix.mak',
-                \        },
-                \    }],
-                \ ],
-                \ 'directory': 'NeoBundle',
-                \ 'name': 'NeoBundle',
-                \ }
-    "}}}
-
-    " {{{ Plugins
-    NeoBundle 'bling/vim-airline', {
-                \ 'directory': 'Airline',
-                \ 'name': 'Airline'
-                \ }
-
-    NeoBundle 'rking/vim-detailed', {
-                \ 'directory': 'Detailed',
-                \ 'name': 'Colorscheme'
-                \}
-
-    NeoBundle 'chrisbra/csv.vim', {
-                \ 'directory': 'CSV',
-                \ 'name': 'CSV'
-                \ }
-
-    NeoBundle 'editorconfig/editorconfig-vim', {
-                \ 'directory': 'Editorconfig',
-                \ 'name': 'Editorconfig'
-                \ }
-
-    NeoBundle 'Shougo/vimfiler.vim', {
-                \ 'depends': [
-                \   ['Shougo/unite.vim', {
-                \       'depends': [
-                \           ['Shougo/tabpagebuffer.vim', {
-                \               'directory': 'TabpageBuffer',
-                \               'name': 'TabpageBuffer'
-                \           }]
-                \       ],
-                \       'directory': 'Unite',
-                \       'name': 'Unite'
-                \   }]
-                \ ],
-                \ 'directory': 'Filer',
-                \ 'name': 'VimFiler'
-                \}
-
-    NeoBundle 'tpope/vim-fugitive', {
-                \ 'directory': 'Fugitive',
-                \ 'name': 'FuGITive'
-                \ }
-
-    NeoBundle 'rodjek/vim-puppet', {
-                \ 'directory': 'Puppet',
-                \ 'name': 'Puppet'
-                \ }
-
-    NeoBundle 'godlygeek/tabular', {
-                \ 'directory': 'Tabular',
-                \ 'name': 'Tabular'
-                \ }
-
-    NeoBundle 'Shougo/unite.vim', {
-                \ 'depends': [
-                \    ['Shougo/tabpagebuffer.vim', {
-                \        'directory': 'TabpageBuffer',
-                \        'name': 'TabpageBuffer'
-                \        }]
-                \    ],
-                \ 'directory': 'Unite',
-                \ 'name': 'Unite'
-                \ }
-
-    NeoBundle 'ntpeters/vim-better-whitespace', {
-                \ 'directory': 'Whitespace',
-                \ 'name': 'Whitespace'
-                \ }
-    "}}}
-
-    call neobundle#end()
-    "}}}
-endif
-unlet pathToNeoBundle
-unlet bundlePath
+"let g:bundlePath=split(&runtimepath, ',')[0] . '/bundle'
+"let g:pathToNeoBundle=expand(bundlePath).'/NeoBundle'
+"if filereadable(pathToNeoBundle.'/plugin/neobundle.vim')
+"    " {{{ initialize
+"    if has('vim_starting')
+"        set nocompatible
+"        let &runtimepath.=','.expand(pathToNeoBundle)
+"    endif
+"    "}}}
+"
+"    " {{{ bundle path and call NeoBundle
+"    call neobundle#begin(expand(bundlePath))
+"    "}}}
+"
+"    " {{{ Bundles
+"    " {{{ NeoBundle
+"    NeoBundleFetch 'Shougo/neobundle.vim', {
+"                \ 'depends': [
+"                \    ['Shougo/vimproc.vim', {
+"                \        'directory': 'Proc',
+"                \        'name': 'Proc',
+"                \        'build': {
+"                \            'windows': 'vimproc_updcmd',
+"                \            'cygwin': 'make -f make_cygwin.mak',
+"                \            'mac': 'make -f make_mac.mak',
+"                \            'unix': 'make -f make_unix.mak',
+"                \        },
+"                \    }],
+"                \ ],
+"                \ 'directory': 'NeoBundle',
+"                \ 'name': 'NeoBundle',
+"                \ }
+"    "}}}
+"
+"    " {{{ Plugins
+"    NeoBundle 'bling/vim-airline', {
+"                \ 'directory': 'Airline',
+"                \ 'name': 'Airline'
+"                \ }
+"
+"    NeoBundle 'rking/vim-detailed', {
+"                \ 'directory': 'Detailed',
+"                \ 'name': 'Colorscheme'
+"                \}
+"
+"    NeoBundle 'chrisbra/csv.vim', {
+"                \ 'directory': 'CSV',
+"                \ 'name': 'CSV'
+"                \ }
+"
+"    NeoBundle 'editorconfig/editorconfig-vim', {
+"                \ 'directory': 'Editorconfig',
+"                \ 'name': 'Editorconfig'
+"                \ }
+"
+"    NeoBundle 'Shougo/vimfiler.vim', {
+"                \ 'depends': [
+"                \   ['Shougo/unite.vim', {
+"                \       'depends': [
+"                \           ['Shougo/tabpagebuffer.vim', {
+"                \               'directory': 'TabpageBuffer',
+"                \               'name': 'TabpageBuffer'
+"                \           }]
+"                \       ],
+"                \       'directory': 'Unite',
+"                \       'name': 'Unite'
+"                \   }]
+"                \ ],
+"                \ 'directory': 'Filer',
+"                \ 'name': 'VimFiler'
+"                \}
+"
+"    NeoBundle 'tpope/vim-fugitive', {
+"                \ 'directory': 'Fugitive',
+"                \ 'name': 'FuGITive'
+"                \ }
+"
+"    NeoBundle 'rodjek/vim-puppet', {
+"                \ 'directory': 'Puppet',
+"                \ 'name': 'Puppet'
+"                \ }
+"
+"    NeoBundle 'godlygeek/tabular', {
+"                \ 'directory': 'Tabular',
+"                \ 'name': 'Tabular'
+"                \ }
+"
+"    NeoBundle 'Shougo/unite.vim', {
+"                \ 'depends': [
+"                \    ['Shougo/tabpagebuffer.vim', {
+"                \        'directory': 'TabpageBuffer',
+"                \        'name': 'TabpageBuffer'
+"                \        }]
+"                \    ],
+"                \ 'directory': 'Unite',
+"                \ 'name': 'Unite'
+"                \ }
+"
+"    NeoBundle 'ntpeters/vim-better-whitespace', {
+"                \ 'directory': 'Whitespace',
+"                \ 'name': 'Whitespace'
+"                \ }
+"    "}}}
+"
+"    call neobundle#end()
+"    "}}}
+"endif
+"unlet pathToNeoBundle
+"unlet bundlePath
 "}}}
 
 " {{{ Bufexplorer disabled
