@@ -1,4 +1,4 @@
-"{{{ dein.vim
+" {{{ dein.vim
 " install:
 " curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 " sh ./installer.sh ~/.cache/dein
@@ -77,10 +77,6 @@ nnoremap <silent> <C-p> :<C-u>Denite file_rec<CR>
 " {{{ FuGITive
 " {{{ mappings
 nmap <silent> <leader>ga :Gwrite<cr>
-nmap <silent> <leader>gb :Gblame<cr>
-nmap <silent> <leader>gc :Gcommit<cr>
-nmap <silent> <leader>gd :Gdiff<cr>
-nmap <silent> <leader>gq :Gwq<cr>
 "}}}
 "}}}
 
@@ -101,7 +97,7 @@ let g:tex_flavor='latex'
 "}}}
 "}}}
 
-"{{{ LaTeX-Suite
+" {{{ LaTeX-Suite
 " {{{ Tex_DefaultTargetFormat
 " Use this setting to choose the default target format. For example, setting
 " this to pdf makes LaTeX-Suite compile a pdf file when you press \ll and fire
@@ -113,14 +109,6 @@ let g:Tex_DefaultTargetFormat='pdf'
 "}}}
 
 " {{{ Syntastic
-" {{{ syntastic_check_on_open
-" If enabled, syntastic will do syntax checks when buffers are first loaded as
-" well as on saving
-if ! &diff
-    let g:syntastic_check_on_open=1
-endif
-"}}}
-
 " {{{ syntastic_check_on_wq
 " Normally syntastic runs syntax checks whenever buffers are written to disk. If
 " you want to skip these checks when you issue |:wq|, |:x|, and |:ZZ|, set this
@@ -177,14 +165,6 @@ let g:syntastic_mode_map={
 	    \ ]}
 "}}}
 
-" {{{ mappings
-nmap <silent> <leader>Sc :SyntasticCheck<cr>
-nmap <silent> <leader>Se :Errors<cr>
-nmap <silent> <leader>Si :SyntasticInfo<cr>
-nmap <silent> <leader>Sr :SyntasticReset<cr>
-nmap <silent> <leader>St :SyntasticToggleMode<cr>
-"}}}
-
 " {{{ Syntax Checker
 " {{{ HTML
 let g:syntastic_html_checkers=[
@@ -235,27 +215,11 @@ let g:syntastic_python_checkers=[
 	    \ ]
 "}}}
 
-" {{{ Ruby
-" ruby checker
-let g:syntastic_ruby_checkers=[
-	    \ 'mri',
-	    \ 'rubylint'
-	    \ ]
-"}}}
-
 " {{{ VIm
 " vim check
 let g:syntastic_vim_checkers=[
 	    \ 'vim',
 	    \ 'vimlint'
-	    \ ]
-"}}}
-
-" {{{ XML
-" xml check
-let g:syntastic_xml_checkers=[
-	    \ 'xmllint',
-	    \ 'plutil'
 	    \ ]
 "}}}
 "}}}
