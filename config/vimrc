@@ -77,14 +77,6 @@ endif
 "}}}
 
 " {{{ options
-" {{{ antialias
-" This option only has an effect in the GUI version of Vim on Mac OS X v10.2 or
-" later. When on, Vim will use smooth ("antialiased") fonts, which can be easier
-" to read at certain sizes on certain displays. Setting this option can
-" sometimes cause problems if 'guifont' is set to its default (empty string).
-set antialias
-"}}}
-
 " {{{ autoindent
 " Copy indent from current line when starting a new line (typing <CR> in
 " Insert mode or when using the "o" or "O" command). If you do not type
