@@ -2,7 +2,7 @@
 " install:
 " curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 " sh ./installer.sh ~/.cache/dein
-let g:deinpath=escape(expand("~/.cache/dein"), " ")
+let g:deinpath=escape(expand("~/.local/share/dein"), " ")
 let g:deinvimpath=escape(expand(deinpath . "/repos/github.com/Shougo/dein.vim"), " ")
 
 if &compatible
