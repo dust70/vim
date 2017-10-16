@@ -34,6 +34,7 @@ if filereadable(pathToRc)
     execute "source " . pathToRc
 endif
 "}}}
+"}}}
 
 " {{{ macros
 " {{{ MatchIt plugin
@@ -275,16 +276,6 @@ set display+=lastline
 " etc. It sets the kind of characters which Vim can work with. See
 " |encoding-names| for the possible values.
 set encoding=utf-8
-"}}}
-
-" {{{ esckeys
-" Function keys that start with an <Esc> are recognized in Insert mode. When
-" this option is off, the cursor and function keys cannot be used in Insert mode
-" if they start with an <Esc>. The advantage of this is that the single <Esc> is
-" recognized immediately, instead of after one second. Instead of resetting this
-" option, you might want to try changing the values for 'timeoutlen' and
-" 'ttimeoutlen'.
-set esckeys
 "}}}
 
 " {{{ expandtab
