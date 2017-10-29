@@ -22,15 +22,4 @@ endfunction
 command! StripDoubleEmptyLines call StripDoubleEmptyLines()
 "}}}
 
-" {{{ UpdateNeoBundle()
-function! UpdateNeoBundle()
-    NeoBundleCheck
-    NeoBundleCheckUpdate
-    NeoBundleClean
-    NeoBundleGC
-    NeoBundleDocs
-endfunction
-command! UpdateNeoBundle call UpdateNeoBundle()
-"}}}
-
 " vim: filetype=vim textwidth=80 foldmethod=marker
