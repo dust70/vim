@@ -18,20 +18,15 @@ if dein#load_state(deinpath)
     call dein#add(deinvimpath)
 
     " Add or remove your plugins here:
-    call dein#add("c0r73x/neotags.nvim")
-    call dein#add("janko-m/vim-test")
     call dein#add("mhinz/vim-signify")
-    call dein#add("neomake/neomake")
     call dein#add("rking/vim-detailed")
     call dein#add("Shougo/denite.nvim")
-    call dein#add("Shougo/deoplete.nvim")
     call dein#add("Shougo/neoinclude.vim")
     call dein#add("tpope/vim-commentary")
     call dein#add("tpope/vim-fugitive")
     call dein#add("tpope/vim-sensible")
     call dein#add("tpope/vim-surround")
     call dein#add("vim-airline/vim-airline")
-    call dein#add("vim-syntastic/syntastic")
 
     call dein#end()
 
@@ -72,8 +67,13 @@ let g:airline#extensions#tabline#show_tab_nr=1
 "}}}
 
 " {{{ denite
+" Define alias
+call denite#custom#alias('source', 'file_rec/git', 'file_rec')
+call denite#custom#var('file_rec/git', 'command', ['git', 'ls-files', '-co', '--exclude-standard'])
+
 " ctrlp
 nnoremap <silent> <C-p> :<C-u>Denite file_rec<CR>
+nnoremap <silent> <C-S-p> :<C-u>Denite file_ref/git<CR>
 "}}}
 
 " {{{ FuGITive
@@ -107,123 +107,6 @@ let g:tex_flavor='latex'
 " viewing have been defined for this target format as described here [ls_a_dx]
 " and here [ls_a_dF].
 let g:Tex_DefaultTargetFormat='pdf'
-"}}}
-"}}}
-
-" {{{ Syntastic
-" {{{ syntastic_check_on_wq
-" Normally syntastic runs syntax checks whenever buffers are written to disk. If
-" you want to skip these checks when you issue |:wq|, |:x|, and |:ZZ|, set this
-" variable to 0.
-if ! &diff
-    let g:syntastic_check_on_wq=0
-endif
-"}}}
-
-" {{{ syntastic_aggregate_errors
-" When enabled, syntastic runs all checkers that apply to the current filetype,
-" then aggregates errors found by all checkers and displays them. When disabled,
-" syntastic runs each checker in turn, and stops to display the results the
-" first time a checker finds any errors.
-let g:syntastic_aggregate_errors=1
-"}}}
-
-" {{{ syntastic_auto_loc_list
-" Use this option to tell syntastic to automatically open and/or close the
-" location-list (see syntastic-error-window).
-" When set to 0 the error window will not be opened or closed automatically. >
-"     let g:syntastic_auto_loc_list=0
-" When set to 1 the error window will be automatically opened when errors are
-" detected, and closed when none are detected.
-"     let g:syntastic_auto_loc_list=1
-" When set to 2 the error window will be automatically closed when no errors are
-" detected, but not opened automatically.
-"     let g:syntastic_auto_loc_list=2
-let g:syntastic_auto_loc_list=1
-"}}}
-
-" {{{ syntastic_filetype_map
-" Use this option to map non-standard filetypes to standard ones. Corresponding
-" checkers are mapped accordingly, which allows syntastic to check files with
-" non-standard filetypes
-let g:syntastic_filetype_map={
-	    \ 'latex': 'tex',
-	    \ }
-"}}}
-
-" {{{ syntastic_mode_map
-" Use this option to fine tune when automatic syntax checking is done (or not
-" done).
-let g:syntastic_mode_map={
-	    \ 'mode': 'active',
-	    \ 'active_filetypes': [
-	    \    'php',
-	    \    'python',
-	    \    'ruby'
-	    \ ],
-	    \ 'passive_filetypes': [
-	    \    'html',
-	    \    'puppet'
-	    \ ]}
-"}}}
-
-" {{{ Syntax Checker
-" {{{ HTML
-let g:syntastic_html_checkers=[
-	    \ 'tidy',
-	    \ 'jshint'
-	    \ ]
-"}}}
-
-" {{{ PHP
-" {{{ syntastic_<filetype>_<checker>_exec
-if executable('./bin/phpcs')
-    let g:syntastic_php_phpcs_exec='./bin/phpcs'
-endif
-if executable('./bin/phpmd')
-    let g:syntastic_php_phpmd_exec='./bin/phpmd'
-endif
-"}}}
-
-" {{{ syntastic_php_phpcs_args
-let g:syntastic_php_phpcs_args="--standard=zend -l --extensions=php --tab-width=" . &tabstop
-"}}}
-
-let g:syntastic_php_checkers=[
-	    \ 'php',
-	    \ 'phplint',
-	    \ 'phpmd',
-	    \ 'phpcs'
-	    \ ]
-"}}}
-
-" {{{ Puppet
-" puppet check
-let g:syntastic_puppet_checkers=[
-	    \ 'puppet',
-	    \ 'puppetlint'
-	    \ ]
-
-"}}}
-
-" {{{ Python
-" python check
-let g:syntastic_python_checkers=[
-	    \ 'python',
-	    \ 'flake8',
-	    \ 'pep8',
-	    \ 'pyflakes',
-	    \ 'pylint'
-	    \ ]
-"}}}
-
-" {{{ VIm
-" vim check
-let g:syntastic_vim_checkers=[
-	    \ 'vim',
-	    \ 'vimlint'
-	    \ ]
-"}}}
 "}}}
 "}}}
 
