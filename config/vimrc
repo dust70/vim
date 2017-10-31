@@ -690,7 +690,11 @@ if has("persistent_undo")
     " When reading all entries are tried to find an undo file. The first undo file
     " that exists is used. When it cannot be read an error is given, no further
     " entry is used.
-    let &undodir=g:vimfiles . "/undo"
+    if has('nvim')
+        let &undodir = escape(expand("~/.local/share/nvim/undo"), " ")
+    else
+        let &undodir = escape(expand("~/.local/share/vim/undo"), " ")
+    endif
     "}}}
 
     " {{{ undofile
