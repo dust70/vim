@@ -59,7 +59,7 @@ endif
 " calls it syntax highlighting we'll stick with that. Vim supports syntax
 " highlighting on all terminals. But since most ordinary terminals have very
 " limited highlighting possibilities, it works best in the GUI version, gvim.
-if has('syntax') && !exists('g:syntax_on')
+if has("syntax") && !exists("g:syntax_on")
     syntax enable
 endif
 "}}}
@@ -70,7 +70,11 @@ endif
 "	:echo g:colors_name
 " In case g:colors_name has not been defined :colo will output "default". When
 " compiled without the |+eval| feature it will output "unknown".
-if ! empty(globpath(&runtimepath, 'colors/detailed.vim'))
+if ! empty(globpath(&runtimepath, "colors/primary.vim"))
+    colorscheme primary
+elseif ! empty(globpath(&runtimepath, "colors/OceanicNext.vim"))
+    colorscheme OceanicNext
+elseif ! empty(globpath(&runtimepath, "colors/detailed.vim"))
     colorscheme detailed
 else
     colorscheme evening
@@ -83,12 +87,12 @@ endif
 " Insert mode or when using the "o" or "O" command). If you do not type
 " anything on the new line except <BS> or CTRL-D and then type <Esc>, CTRL-O
 " or <CR>, the indent is deleted again. Moving the cursor to another line has
-" the same effect, unless the 'I' flag is included in 'cpoptions'.
+" the same effect, unless the "I" flag is included in "cpoptions".
 " When autoindent is on, formatting (with the "gq" command or when you reach
-" 'textwidth' in Insert mode) uses the indentation of the first line.
-" When 'smartindent' or 'cindent' is on the indent is changed in a different
+" "textwidth" in Insert mode) uses the indentation of the first line.
+" When "smartindent" or "cindent" is on the indent is changed in a different
 " way.
-" The 'autoindent' option is reset when the 'paste' option is set. {small
+" The "autoindent" option is reset when the "paste" option is set. {small
 " difference from Vi: After the indent is deleted when typing <Esc> or <CR>,
 " the cursor position when moving up or down is after the deleted indent; Vi
 " puts the cursor somewhere in the deleted indent}.
@@ -100,6 +104,14 @@ set autoindent
 " not been changed inside of Vim, automatically read it again. When the file
 " has been deleted this is not done.
 set autoread
+"}}}
+
+" {{{ background
+" When set to "dark", Vim will try to use colors that look good on a dark
+" background.  When set to "light", Vim will try to use colors that look good on
+" a light background.  Any other value is illegal. Vim tries to set the default
+" value according to the terminal used. This will not always be correct.
+set background=dark
 "}}}
 
 " {{{ backspace
@@ -118,18 +130,18 @@ set backspace=indent,eol,start
 " Make a backup before overwriting a file. Leave it around after the file has
 " been successfully written. If you do not want to keep the backup file, but you
 " do want a backup while the file is being written, reset this option and set
-" the 'writebackup' option (this is the default). If you do not want a backup
+" the "writebackup" option (this is the default). If you do not want a backup
 " file at all reset both options (use this if your file system is almost full).
 " See the |backup-table| for more explanations.
 set nobackup
 "}}}
 
 " {{{ cindent
-" Enables automatic C program indenting. See 'cinkeys' to set the keys that
-" trigger reindenting in insert mode and 'cinoptions' to set your preferred
+" Enables automatic C program indenting. See "cinkeys" to set the keys that
+" trigger reindenting in insert mode and "cinoptions" to set your preferred
 " indent style.
-" If 'indentexpr' is not empty, it overrules 'cindent'.
-" If 'lisp' is not on and both 'indentexpr' and 'equalprg' are empty, the "="
+" If "indentexpr" is not empty, it overrules "cindent".
+" If "lisp" is not on and both "indentexpr" and "equalprg" are empty, the "="
 " operator indents using this algorithm rather than calling an external
 " program.
 set cindent
@@ -141,15 +153,15 @@ set cmdwinheight=5
 "}}}
 
 " {{{ colorcolumn
-" 'colorcolumn' is a comma separated list of screen columns that are
+" "colorcolumn" is a comma separated list of screen columns that are
 " highlighted with ColorColumn |hl-ColorColumn|. Useful to align text. Will
 " make screen redrawing slower. The screen column can be an absolute number,
-" or a number preceded with '+' or '-', which is added to or subtracted from
-" 'textwidth'.
-"	:set cc=+1		" highlight column after 'textwidth'
-"	:set cc=+1,+2,+3	" highlight three columns after 'textwidth'
+" or a number preceded with '+' or "-", which is added to or subtracted from
+" "textwidth".
+"	:set cc=+1		" highlight column after "textwidth"
+"	:set cc=+1,+2,+3	" highlight three columns after "textwidth"
 "	:hi ColorColumn ctermbg=lightgrey guibg=lightgrey
-" When 'textwidth' is zero then the items with '-' and '+' are not used. A
+" When "textwidth" is zero then the items with "-" and '+' are not used. A
 " maximum of 256 columns are highlighted.
 if v:version >= 703
     set colorcolumn=+1
@@ -170,7 +182,7 @@ set completeopt=menuone,longest,preview
 "}}}
 
 " {{{ confirm
-" When 'confirm' is on, certain operations that would normally fail because of
+" When "confirm" is on, certain operations that would normally fail because of
 " unsaved changes to a buffer, e.g. ":q" and ":e", instead raise a |dialog|
 " asking if you wish to save the current file(s). You can still use a ! to
 " unconditionally |abandon| a buffer.
@@ -180,15 +192,15 @@ set confirm
 " {{{ cscope
 if has("cscope")
     " {{{ cscopetag
-    " If 'cscopetag' is set, the commands ":tag" and CTRL-] as well as "vim -t"
+    " If "cscopetag" is set, the commands ":tag" and CTRL-] as well as "vim -t"
     " will always use |:cstag| instead of the default :tag behavior.
-    " Effectively, by setting 'cst', you will always search your cscope
+    " Effectively, by setting "cst", you will always search your cscope
     " databases as well as your tag files. The default is off.
     set cscopetag
     "}}}}
 
     " {{{ cscopeverbose
-    " If 'cscopeverbose' is not set (the default), messages will not be printed
+    " If "cscopeverbose" is not set (the default), messages will not be printed
     " indicating success or failure when adding a cscope database. Ideally, you
     " should reset this option in your |.vimrc| before adding any cscope
     " databases, and after adding them, set it. From then on, when you add more
@@ -239,15 +251,15 @@ set dictionary+=/usr/share/dict/words
 "	filler		Show filler lines, to keep the text synchronized with
 "			a window that has inserted lines at the same position.
 "			Mostly useful when windows are side-by-side and
-"			'scrollbind' is set.
+"			"scrollbind" is set.
 "	context:{n}	Use a context of {n} lines between a change and a fold
 "			that contains unchanged lines. When omitted a context
 "			of six lines is used.
 "	icase		Ignore changes in case of text. "a" and "A" are
 "			considered the same. Adds the "-i" flag to the "diff"
-"			command if 'diffexpr' is empty.
+"			command if "diffexpr" is empty.
 "	iwhite		Ignore changes in amount of whitespace. Adds the "-b"
-"			flag to the "diff" command if 'diffexpr' is empty.
+"			flag to the "diff" command if "diffexpr" is empty.
 "			Check the documentation of the "diff" command for what
 "			this does exactly. It should ignore adding trailing
 "			whitespace, but not leading whitespace.
@@ -255,7 +267,7 @@ set dictionary+=/usr/share/dict/words
 "			explicitly specified otherwise).
 "	vertical	Start diff mode with vertical splits (unless
 "			explicitly specified otherwise).
-"	foldcolumn:{n}	Set the 'foldcolumn' option to {n} when starting diff
+"	foldcolumn:{n}	Set the "foldcolumn" option to {n} when starting diff
 "			mode. Without this 2 is used.
 set diffopt=filler,context:3,vertical,foldcolumn:3
 "}}}
@@ -280,8 +292,8 @@ set encoding=utf-8
 
 " {{{ expandtab
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
-" Spaces are used in indents with the '>' and '<' commands and when
-" 'autoindent' is on. To insert a real tab when 'expandtab' is on, use
+" Spaces are used in indents with the ">" and "<" commands and when
+" "autoindent" is on. To insert a real tab when "expandtab" is on, use
 " CTRL-V<Tab>. See also |:retab| and |ins-expandtab|.
 set expandtab
 "}}}
@@ -301,14 +313,14 @@ set foldlevel=0
 "}}}
 
 " {{{ foldlevelstart
-" Sets 'foldlevel' when starting to edit another buffer in a window. Useful to
+" Sets "foldlevel" when starting to edit another buffer in a window. Useful to
 " always start editing with all folds closed (value zero), some folds closed
 " (one) or no folds closed (99).
 " This is done before reading any modeline, thus a setting in a modeline
 " overrules this option. Starting to edit a file for |diff-mode| also ignores
 " this option and closes all folds.
 " It is also done before BufReadPre autocommands, to allow an autocmd to
-" overrule the 'foldlevel' value for specific files.
+" overrule the "foldlevel" value for specific files.
 " When the value is negative, it is not used.
 set foldlevelstart=0
 "}}}
@@ -328,8 +340,8 @@ set foldnestmax=10
 " {{{ helpheight
 " Minimal initial height of the help window when it is opened with the ":help"
 " command. The initial height of the help window is half of the current
-" window, or (when the 'ea' option is on) the same as other windows. When the
-" height is less than 'helpheight', the height is set to 'helpheight'. Set to
+" window, or (when the "ea" option is on) the same as other windows. When the
+" height is less than "helpheight", the height is set to "helpheight". Set to
 " zero to disable.
 set helpheight=0
 "}}}
@@ -345,7 +357,7 @@ set helplang=en,de
 
 " {{{ hlsearch
 " When there is a previous search pattern, highlight all its matches. The type
-" of highlighting used can be set with the 'l' occasion in the 'highlight'
+" of highlighting used can be set with the "l" occasion in the "highlight"
 " option. This uses the "Search" highlight group by default.
 if &t_Co > 2
     set nohlsearch
@@ -362,7 +374,7 @@ set incsearch
 
 " {{{ joinspaces
 " Insert two spaces after a '.', '?' and '!' with a join command. When
-" 'cpoptions' includes the 'j' flag, only do this after a '.'. Otherwise only
+" "cpoptions" includes the "j" flag, only do this after a '.'. Otherwise only
 " one space is inserted.
 set nojoinspaces
 "}}}
@@ -386,17 +398,17 @@ set lazyredraw
 "}}}
 
 " {{{ linebreak
-" If on Vim will wrap long lines at a character in 'breakat' rather than at
-" the last character that fits on the screen. Unlike 'wrapmargin' and
-" 'textwidth', this does not insert <EOL>s in the file, it only affects the
-" way the file is displayed, not its contents. The value of 'showbreak' is
+" If on Vim will wrap long lines at a character in "breakat" rather than at
+" the last character that fits on the screen. Unlike "wrapmargin" and
+" "textwidth", this does not insert <EOL>s in the file, it only affects the
+" way the file is displayed, not its contents. The value of "showbreak" is
 " used to put in front of wrapped lines.
-" This option is not used when the 'wrap' option is off or 'list' is on.
+" This option is not used when the "wrap" option is off or "list" is on.
 set linebreak
 "}}}
 
 " {{{ listchars
-" Strings to use in 'list' mode and for the |:list| command. It is a comma
+" Strings to use in "list" mode and for the |:list| command. It is a comma
 " separated list of string settings.
 set listchars="eol:$,tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+"
 "}}}
@@ -409,25 +421,25 @@ set nrformats="octal,hex"
 "}}}
 
 " {{{ number
-" Print the line number in front of each line. When the 'n' option is excluded
-" from 'cpoptions' a wrapped line will not use the column of line numbers
-" (this is the default when 'compatible' isn't set). The 'numberwidth' option
+" Print the line number in front of each line. When the "n" option is excluded
+" from "cpoptions" a wrapped line will not use the column of line numbers
+" (this is the default when "compatible" isn't set). The "numberwidth" option
 " can be used to set the room used for the line number.
-" When a long, wrapped line doesn't start with the first character, '-'
+" When a long, wrapped line doesn't start with the first character, "-"
 " characters are put before the number.
 " See |hl-LineNr| for the highlighting used for the number.
-" When setting this option, 'relativenumber' is reset.
+" When setting this option, "relativenumber" is reset.
 set number
 "}}}
 
 " {{{ numberwidth
 " Minimal number of columns to use for the line number. Only relevant when the
-" 'number' or 'relativenumber' option is set or printing lines with a line
+" "number" or "relativenumber" option is set or printing lines with a line
 " number. Since one space is always between the number and the text, there is
 " one less character for the number itself.
 " The value is the minimum width. A bigger width is used when needed to fit
 " the highest line number in the buffer respectively the number of rows in the
-" window, depending on whether 'number' or 'relativenumber' is set. Thus with
+" window, depending on whether "number" or "relativenumber" is set. Thus with
 " the Vim default of 4 there is room for a line number up to 999. When the
 " buffer has 1000 lines five columns will be used. The minimum value is 1, the
 " maximum value is 10.
@@ -438,7 +450,7 @@ set numberwidth=5
 " This is a list of directories which will be searched when using the |gf|,
 " [f, ]f, ^Wf, |:find|, |:sfind|, |:tabfind| and other commands, provided that
 " the file being searched for has a relative path (not starting with "/", "./"
-" or "../"). The directories in the 'path' option may be relative or absolute.
+" or "../"). The directories in the "path" option may be relative or absolute.
 set path+=.,~,~/git/**,~/repositories/**
 "}}}
 
@@ -463,7 +475,7 @@ set scrolloff=3
 
 " {{{ sidescrolloff
 " The minimal number of columns to scroll horizontally. Used only when the
-" 'wrap' option is off and the cursor is moved off of the screen. When it is
+" "wrap" option is off and the cursor is moved off of the screen. When it is
 " zero the cursor will be put in the middle of the screen. When using a slow
 " terminal set it to a large number or 0. When using a fast terminal use a small
 " number or 1. Not used for "zh" and "zl" commands.
@@ -477,14 +489,14 @@ set sessionoptions-=folds,help,options sessionoptions+=localoptions,resize
 "}}}
 
 " {{{ shiftround
-" Round indent to multiple of 'shiftwidth'. Applies to > and < commands. CTRL-T
+" Round indent to multiple of "shiftwidth". Applies to > and < commands. CTRL-T
 " and CTRL-D in Insert mode always round the indent to a multiple of
-" 'shiftwidth' (this is Vi compatible).
+" "shiftwidth" (this is Vi compatible).
 set shiftround
 "}}}
 
 " {{{ shiftwidth
-" Number of spaces to use for each step of (auto)indent. Used for |'cindent'|,
+" Number of spaces to use for each step of (auto)indent. Used for |"cindent"|,
 " |>>|, |<<|, etc.
 set shiftwidth=4
 "}}}
@@ -498,7 +510,7 @@ set shortmess+=a
 " {{{ showmatch
 " When a bracket is inserted, briefly jump to the matching one. The jump is
 " only done if the match can be seen on the screen. The time to show the match
-" can be set with 'matchtime'.
+" can be set with "matchtime".
 set showmatch
 "}}}
 
@@ -514,24 +526,24 @@ set showtabline=2
 
 " {{{ smartindent
 " Do smart autoindenting when starting a new line. Works for C-like programs,
-" but can also be used for other languages. 'cindent' does something like
+" but can also be used for other languages. "cindent" does something like
 " this, works better in most cases, but is more strict, see |C-indenting|.
-" When 'cindent' is on or 'indentexpr' is set, setting 'si' has no effect.
-" 'indentexpr' is a more advanced alternative.
+" When "cindent" is on or "indentexpr" is set, setting "si" has no effect.
+" "indentexpr" is a more advanced alternative.
 set smartindent
 "}}}
 
 " {{{ smarttab
 " When on, a <Tab> in front of a line inserts blanks according to
-" 'shiftwidth'. 'tabstop' or 'softtabstop' is used in other places. A <BS>
-" will delete a 'shiftwidth' worth of space at the start of the line.
+" "shiftwidth". "tabstop" or "softtabstop" is used in other places. A <BS>
+" will delete a "shiftwidth" worth of space at the start of the line.
 set smarttab
 "}}}
 
 " {{{ shell
 " Name of the shell to use for ! and :! commands. When changing the value also
-" check these options: 'shelltype', 'shellpipe', 'shellslash' 'shellredir',
-" 'shellquote', 'shellxquote' and 'shellcmdflag'.
+" check these options: "shelltype", "shellpipe", "shellslash" "shellredir",
+" "shellquote", "shellxquote" and "shellcmdflag".
 set shell=/bin/sh
 "}}}
 
@@ -539,14 +551,14 @@ set shell=/bin/sh
 " Number of spaces that a <Tab> counts for while performing editing
 " operations, like inserting a <Tab> or using <BS>. It "feels" like <Tab>s are
 " being inserted, while in fact a mix of spaces and <Tab>s is used. This is
-" useful to keep the 'ts' setting at its standard value of 8, while being able
-" to edit like it is set to 'sts'. However, commands like "x" still work on
+" useful to keep the "ts" setting at its standard value of 8, while being able
+" to edit like it is set to "sts". However, commands like "x" still work on
 " the actual characters.
 set softtabstop=4
 "}}}
 
 " {{{ spelllang
-" A comma separated list of word list names. When the 'spell' option is on
+" A comma separated list of word list names. When the "spell" option is on
 " spellchecking will be done for these languages. Example:
 "	set spelllang=en_us,nl,medical
 " This means US English, Dutch and medical words are recognized. Words that
@@ -585,7 +597,7 @@ set splitright
 " suffix. To avoid a dot or comma being recognized as a separator, precede it
 " with a backslash (see |option-backslash| about including spaces and
 " backslashes).
-" See 'wildignore' for completely ignoring files. The use of |:set+=| and
+" See "wildignore" for completely ignoring files. The use of |:set+=| and
 " |:set-=| is preferred when adding or removing suffixes from the list. This
 " avoids problems when a future version uses another default.
 set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.bak
@@ -598,12 +610,12 @@ set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.bak
 " memory:
 "	- Don't use this for big files.
 "	- Recovery will be impossible!
-" A swapfile will only be present when |'updatecount'| is non-zero and
-" 'swapfile' is set.
-" When 'swapfile' is reset, the swap file for the current buffer is
-" immediately deleted. When 'swapfile' is set, and 'updatecount' is non-zero,
+" A swapfile will only be present when |"updatecount"| is non-zero and
+" "swapfile" is set.
+" When "swapfile" is reset, the swap file for the current buffer is
+" immediately deleted. When "swapfile" is set, and "updatecount" is non-zero,
 " a swap file is immediately created.
-" Also see |swap-file| and |'swapsync'|.
+" Also see |swap-file| and |"swapsync"|.
 set noswapfile
 "}}}
 
@@ -621,8 +633,8 @@ set tabpagemax=20
 " {{{ termencoding
 " Encoding used for the terminal. This specifies what character encoding the
 " keyboard produces and the display will understand. For the GUI it only
-" applies to the keyboard ('encoding' is used for the display). Except for the
-" Mac when 'macatsui' is off, then 'termencoding' should be "macroman".
+" applies to the keyboard ("encoding" is used for the display). Except for the
+" Mac when "macatsui" is off, then "termencoding" should be "macroman".
 set termencoding=utf-8
 "}}}
 
@@ -640,7 +652,7 @@ set ttimeoutlen=100
 "}}}
 
 " {{{ title
-" When on, the title of the window will be set to the value of 'titlestring' (if
+" When on, the title of the window will be set to the value of "titlestring" (if
 " it is not empty)
 if &term=~ "rxvt" || &term=~ "screen" || &term=~ "term"
     if &term=~ "screen"
@@ -652,35 +664,35 @@ endif
 "}}}
 
 " {{{ titlelen
-" Gives the percentage of 'columns' to use for the length of the window title.
-" When the title is longer, only the end of the path name is shown.  A '<'
+" Gives the percentage of "columns" to use for the length of the window title.
+" When the title is longer, only the end of the path name is shown.  A "<"
 " character before the path name is used to indicate this. Using a percentage
 " makes this adapt to the width of the window.  But it won't work perfectly,
 " because the actual number of characters available also depends on the font
-" used and other things in the title bar.  When 'titlelen' is zero the full path
+" used and other things in the title bar.  When "titlelen" is zero the full path
 " is used.  Otherwise, values from 1 to 30000 percent can be used.
 set titlelen=50
 "}}}
 
 " {{{ titleold
 " This option will be used for the window title when exiting Vim if the original
-" title cannot be restored. Only happens if 'title' is on or 'titlestring' is
+" title cannot be restored. Only happens if "title" is on or "titlestring" is
 " not empty.
 set titleold=Shell
 "}}}
 
 " {{{ titlestring
 " When this option is not empty, it will be used for the title of the window.
-" This happens only when the 'title' option is on. Only works if the terminal
+" This happens only when the "title" option is on. Only works if the terminal
 " supports setting window titles (currently Amiga console, Win32 console, all
-" GUI versions and terminals with a non-empty 't_ts' option).
+" GUI versions and terminals with a non-empty "t_ts" option).
 " let &titlestring="vim: (" . expand("%:t") . ")"
 set titlestring=VIm:\ %.25t\ %a%r%m
 "}}}
 
 if has("persistent_undo")
     " {{{ undodir
-    " List of directory names for undo files, separated with commas. See 'backupdir'
+    " List of directory names for undo files, separated with commas. See "backupdir"
     " for details of the format.
     " "." means using the directory of the file. The undo file name for "file.txt"
     " is ".file.txt.un~". For other directories the file name is the full path of
@@ -690,7 +702,7 @@ if has("persistent_undo")
     " When reading all entries are tried to find an undo file. The first undo file
     " that exists is used. When it cannot be read an error is given, no further
     " entry is used.
-    if has('nvim')
+    if has("nvim")
         let &undodir = escape(expand("~/.local/share/nvim/undo"), " ")
     else
         let &undodir = escape(expand("~/.local/share/vim/undo"), " ")
@@ -701,11 +713,11 @@ if has("persistent_undo")
     " When on, Vim automatically saves undo history to an undo file when writing
     " a buffer to a file, and restores undo history from the same file on buffer
     " read.
-    " The directory where the undo file is stored is specified by 'undodir'. For
+    " The directory where the undo file is stored is specified by "undodir". For
     " more information about this feature see |undo-persistence|. The undo file
-    " is not read when 'undoreload' causes the buffer from before a reload to be
+    " is not read when "undoreload" causes the buffer from before a reload to be
     " saved for undo.
-    " When 'undofile' is turned off the undo file is NOT deleted.
+    " When "undofile" is turned off the undo file is NOT deleted.
     set undofile
     "}}}
 endif
@@ -718,7 +730,7 @@ endif
 " value of that parameter. If a particular character is left out, then the
 " default value is used for that parameter. The following is a list of the
 " identifying characters and the effect of their value.
-if has('nvim')
+if has("nvim")
     set shada=!,'50,/100,:100,<1000,h,s1000,n~/.local/share/nvim/shada
 else
     set viminfo=!,'50,/100,:100,<1000,h,s1000,n~/.local/share/vim/viminfo
@@ -750,12 +762,12 @@ endif
 "}}}
 
 " {{{ wildmenu
-" When 'wildmenu' is on, command-line completion operates in an enhanced mode.
-" On pressing 'wildchar' (usually <Tab>) to invoke completion, the possible
+" When "wildmenu" is on, command-line completion operates in an enhanced mode.
+" On pressing "wildchar" (usually <Tab>) to invoke completion, the possible
 " matches are shown just above the command line, with the first match
 " highlighted (overwriting the status line, if there is one). Keys that show
 " the previous/next match, such as <Tab> or CTRL-P/CTRL-N, cause the highlight
-" to move to the appropriate match. When 'wildmode' is used, "wildmenu" mode
+" to move to the appropriate match. When "wildmode" is used, "wildmenu" mode
 " is used where "full" is specified. "longest" and "list" do not start
 " "wildmenu" mode. If there are more matches than can fit in the line, a ">"
 " is shown on the right and/or a "<" is shown on the left. The status line
@@ -764,10 +776,10 @@ set wildmenu
 "}}}
 
 " {{{ wildmode
-" Completion mode that is used for the character specified with 'wildchar'. It
+" Completion mode that is used for the character specified with "wildchar". It
 " is a comma separated list of up to four parts. Each part specifies what to
-" do for each consecutive use of 'wildchar'. The first part specifies the
-" behavior for the first use of 'wildchar', The second part for the second
+" do for each consecutive use of "wildchar". The first part specifies the
+" behavior for the first use of "wildchar", The second part for the second
 " use, etc.
 set wildmode="list:longest"
 "}}}
@@ -785,7 +797,7 @@ endif
 "}}}
 
 "{{{ winfixheight
-" Keep the window height when windows are opened or closed and 'equalalways'
+" Keep the window height when windows are opened or closed and "equalalways"
 " is set. Also for |CTRL-W_=|. Set by default for the |preview-window| and
 " |quickfix-window|.
 " The height may be changed anyway when running out of room.
@@ -793,7 +805,7 @@ set winfixheight
 "}}}
 
 " {{{ winfixwidth
-" Keep the window width when windows are opened or closed and 'equalalways' is
+" Keep the window width when windows are opened or closed and "equalalways" is
 " set. Also for |CTRL-W_=|.
 " The width may be changed anyway when running out of room.
 set winfixwidth
@@ -803,10 +815,10 @@ set winfixwidth
 " Number of characters from the right window border where wrapping starts.
 " When typing text beyond this limit, an <EOL> will be inserted and inserting
 " continues on the next line.
-" Options that add a margin, such as 'number' and 'foldcolumn', cause the text
-" width to be further reduced. This is Vi compatible. When 'textwidth' is
+" Options that add a margin, such as "number" and "foldcolumn", cause the text
+" width to be further reduced. This is Vi compatible. When "textwidth" is
 " non-zero, this option is not used.
-" See also 'formatoptions' and |ins-textwidth|. {Vi: works differently and
+" See also "formatoptions" and |ins-textwidth|. {Vi: works differently and
 " less usefully}
 set wrapmargin=5
 "}}}
