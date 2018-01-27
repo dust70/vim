@@ -43,4 +43,13 @@ augroup filetypes
 augroup END
 "}}}
 
+" {{{ autocommands for diff mode
+augroup diff
+    autocmd!
+
+    autocmd! BufEnter,BufNew,FilterWritePre *
+                \ if &diff | colorscheme detailed | syntax off | endif
+augroup END
+"}}}
+
 " vim: filetype=vim textwidth=80 foldmethod=marker
