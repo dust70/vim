@@ -8,7 +8,6 @@ let g:vo_modules_load = "checkbox:hoist"
 
 " {{{ User Preferences ***************************************************
 " {{{ VIMOutliner local settings
-setlocal background=dark
 setlocal ignorecase
 setlocal wrap
 setlocal shiftwidth=4

@@ -7,9 +7,6 @@ set cmdheight=1
 set nomodifiable
 set readonly
 
-" My xterms have a navy-blue background, so I need this line too.
-set background=dark
-
 " Turn syntax on
 syntax enable
 filetype plugin indent on
