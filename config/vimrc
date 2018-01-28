@@ -731,9 +731,9 @@ endif
 " default value is used for that parameter. The following is a list of the
 " identifying characters and the effect of their value.
 if has("nvim")
-    set shada=!,'50,/100,:100,<1000,h,s1000,n~/.local/share/nvim/shada
+    set shada=!,'50,/100,:100,<1000,h,s1000,n~/.cache/nvim/shada
 else
-    set viminfo=!,'50,/100,:100,<1000,h,s1000,n~/.local/share/vim/viminfo
+    set viminfo=!,'50,/100,:100,<1000,h,s1000,n~/.cache/vim/info
 endif
 "}}}
 

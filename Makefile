@@ -1,5 +1,5 @@
-SHARE = ${HOME}/.local/share
 SOURCE = ${HOME}/.dotfiles/vim
+SHARE = ${HOME}/.local/share
 
 ${SHARE}/dein.nvim: dein
 
@@ -13,6 +13,8 @@ clean:
 	rm -f ${HOME}/.vimoutlinerrc
 	rm -f ${HOME}/.vimpagerrc
 	rm -f ${HOME}/.vimrc
+	rm -fr ${HOME}/.cache/nvim
+	rm -fr ${HOME}/.cache/vim
 	rm -fr ${SHARE}/dein.nvim
 	rm -fr ${SHARE}/dein.vim
 	rm -fr ${SHARE}/nvim
@@ -30,6 +32,8 @@ dein:
 	rm -f install.sh
 
 install: ${SHARE}/dein.nvim ${SHARE}/dein.vim
+	mkdir -p ${HOME}/.cache/nvim
+	mkdir -p ${HOME}/.cache/vim
 	ln -snf ${SOURCE} ${HOME}/.vim
 	ln -snf ${SOURCE}/config/ctags ${HOME}/.ctags
 	ln -snf ${SOURCE}/config/vimoutlinerrc ${HOME}/.vimoutlinerrc
