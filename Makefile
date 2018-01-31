@@ -13,6 +13,7 @@ clean:
 	rm -fr ${CACHE}/nvim
 	rm -fr ${CACHE}/vim
 	rm -fr ${NVIM}
+	rm -fr ${NVIM}/after
 	rm -fr ${SHARE}/dein.nvim
 	rm -fr ${SHARE}/dein.vim
 	rm -fr ${SHARE}/nvim
@@ -37,3 +38,4 @@ install: dein
 	ln -snf ${SOURCE}/config/vimpagerrc ${HOME}/.vimpagerrc
 	ln -snf ${SOURCE}/config/vimrc ${HOME}/.vimrc
 	ln -snf ${SOURCE}/config/vimrc ${NVIM}/init.vim
+	ln -snf ${SOURCE}/after ${NVIM}/after
