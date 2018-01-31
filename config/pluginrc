@@ -1,9 +1,4 @@
 " {{{ dein.vim
-" install:
-" curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/installer.sh
-" sh /tmp/installer.sh ~/.local/share/dein.vim
-" and
-" sh /tmp/installer.sh ~/.local/share/dein.nvim
 if has("nvim")
     let g:deinpath=escape(expand("~/.local/share/dein.nvim"), " ")
 else
