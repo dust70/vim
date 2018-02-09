@@ -1,11 +1,10 @@
 CACHE = ${HOME}/.cache
 NVIM = ${HOME}/.config/nvim
+ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 SHARE = ${HOME}/.local/share
-SOURCE = ${HOME}/.dotfiles/vim
 
 clean:
 	rm -f ${HOME}/.ctags
-	rm -f ${HOME}/.vim
 	rm -f ${HOME}/.viminfo
 	rm -f ${HOME}/.vimoutlinerrc
 	rm -f ${HOME}/.vimpagerrc
@@ -32,10 +31,9 @@ install: dein
 	mkdir -p ${CACHE}/nvim
 	mkdir -p ${CACHE}/vim
 	mkdir -p ${NVIM}
-	ln -snf ${SOURCE} ${HOME}/.vim
-	ln -snf ${SOURCE}/config/ctags ${HOME}/.ctags
-	ln -snf ${SOURCE}/config/vimoutlinerrc ${HOME}/.vimoutlinerrc
-	ln -snf ${SOURCE}/config/vimpagerrc ${HOME}/.vimpagerrc
-	ln -snf ${SOURCE}/config/vimrc ${HOME}/.vimrc
-	ln -snf ${SOURCE}/config/vimrc ${NVIM}/init.vim
-	ln -snf ${SOURCE}/after ${NVIM}/after
+	ln -snf ${ROOT_DIR}/config/ctags ${HOME}/.ctags
+	ln -snf ${ROOT_DIR}/config/vimoutlinerrc ${HOME}/.vimoutlinerrc
+	ln -snf ${ROOT_DIR}/config/vimpagerrc ${HOME}/.vimpagerrc
+	ln -snf ${ROOT_DIR}/config/vimrc ${HOME}/.vimrc
+	ln -snf ${ROOT_DIR}/config/vimrc ${NVIM}/init.vim
+	ln -snf ${ROOT_DIR}/after ${NVIM}/after
