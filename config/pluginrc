@@ -15,6 +15,7 @@ if dein#load_state(deinpath)
 
     " Add or remove your plugins here:
     call dein#add("chrisbra/csv.vim")
+    call dein#add("ciaranm/securemodelines")
     call dein#add("godlygeek/tabular")
     call dein#add("google/vim-colorscheme-primary")
     call dein#add("mhartington/oceanic-next")
