@@ -6,12 +6,13 @@ endif
 
 " {{{ spell
 " When on spell checking will be done.
+setloal spelllang=en_us,en_gb,en
 setlocal spell
 "}}}
 
 " {{{ splitbelow
 " When on, splitting a window will put the new window below the current one.
-set splitbelow
+setlocal splitbelow
 "}}}
 
 " vim: filetype=vim textwidth=80 foldmethod=marker
