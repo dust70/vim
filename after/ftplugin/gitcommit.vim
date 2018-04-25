@@ -6,7 +6,7 @@ endif
 
 " {{{ spell
 " When on spell checking will be done.
-setloal spelllang=en_us,en_gb,en
+setlocal spelllang=en_us,en_gb,en
 setlocal spell
 "}}}
 
