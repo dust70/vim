@@ -42,7 +42,7 @@ setlocal foldmethod=syntax
 " readability. To avoid problems with flags that are added in the future, use
 " the "+=" and "-=" feature of ":set" |add-option-flags|.
 setlocal formatoptions=cronb1
-if v:version >= 704 
+if v:version >= 704
     setlocal formatoptions+=j
 endif
 "}}}
