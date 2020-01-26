@@ -26,7 +26,10 @@ dein:
 	if [ ! -d ${SHARE}/dein.vim ]; then sh install.sh ${SHARE}/dein.vim; fi
 	rm -f install.sh
 
-install: dein
+${HOME}/.vim:
+	ln -snf $(ROOT_DIR) ${HOME}/.vim
+
+install: | dein ${HOME}/.vim
 	mkdir -p ${CACHE}/nvim
 	mkdir -p ${CACHE}/vim
 	ln -snf ${ROOT_DIR}/config/ctags ${HOME}/.ctags
