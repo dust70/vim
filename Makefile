@@ -17,6 +17,24 @@ clean:
 	rm -fr ${SHARE}/dein.vim
 	rm -fr ${SHARE}/nvim
 	rm -fr ${SHARE}/vim
+	#
+	gem uninstall --all --user-install neovim || true
+	#
+	pip uninstall pynvim || true
+	pip3 uninstall pynvim || true
+
+install: | ${HOME}/.vim dein
+	mkdir -p ${CACHE}/nvim
+	mkdir -p ${CACHE}/vim
+	#
+	ln -snf ${ROOT_DIR}/after ${NVIM}/after
+	ln -snf ${ROOT_DIR}/config/ctags ${HOME}/.ctags
+	ln -snf ${ROOT_DIR}/config/vimoutlinerrc ${HOME}/.vimoutlinerrc
+	ln -snf ${ROOT_DIR}/config/vimpagerrc ${HOME}/.vimpagerrc
+	ln -snf ${ROOT_DIR}/config/vimrc ${HOME}/.vimrc
+
+${HOME}/.vim:
+	ln -snf $(ROOT_DIR) ${HOME}/.vim
 
 dein:
 	mkdir -p ${SHARE}
@@ -30,15 +48,9 @@ dein:
 	#
 	rm -f install.sh
 
-${HOME}/.vim:
-	ln -snf $(ROOT_DIR) ${HOME}/.vim
+ruby:
+	gem install --user-install neovim
 
-install: | ${HOME}/.vim dein
-	mkdir -p ${CACHE}/nvim
-	mkdir -p ${CACHE}/vim
-	#
-	ln -snf ${ROOT_DIR}/after ${NVIM}/after
-	ln -snf ${ROOT_DIR}/config/ctags ${HOME}/.ctags
-	ln -snf ${ROOT_DIR}/config/vimoutlinerrc ${HOME}/.vimoutlinerrc
-	ln -snf ${ROOT_DIR}/config/vimpagerrc ${HOME}/.vimpagerrc
-	ln -snf ${ROOT_DIR}/config/vimrc ${HOME}/.vimrc
+python:
+	pip install pynvim
+	pip3 install pynvim
