@@ -12,7 +12,7 @@ clean:
 	rm -f ${HOME}/.vimoutlinerrc
 	rm -f ${HOME}/.vimpagerrc
 	rm -f ${HOME}/.vimrc
-	rm -f ${NVIM}/after
+	rm -fr ${NVIM}
 	rm -fr ${SHARE}/dein.nvim
 	rm -fr ${SHARE}/dein.vim
 	rm -fr ${SHARE}/nvim
@@ -30,6 +30,7 @@ install: | ${HOME}/.vim dein
 	#
 	ln -snf ${ROOT_DIR}/after ${NVIM}/after
 	ln -snf ${ROOT_DIR}/config/ctags ${HOME}/.ctags
+	ln -snf ${ROOT_DIR}/config/nvimrc ${NVIM}/init.vim
 	ln -snf ${ROOT_DIR}/config/vimoutlinerrc ${HOME}/.vimoutlinerrc
 	ln -snf ${ROOT_DIR}/config/vimpagerrc ${HOME}/.vimpagerrc
 	ln -snf ${ROOT_DIR}/config/vimrc ${HOME}/.vimrc
