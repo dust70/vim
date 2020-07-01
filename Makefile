@@ -26,6 +26,7 @@ clean:
 install: | ${HOME}/.vim dein
 	mkdir -p ${CACHE}/nvim
 	mkdir -p ${CACHE}/vim
+	mkdir -p ${NVIM}
 	#
 	ln -snf ${ROOT_DIR}/after ${NVIM}/after
 	ln -snf ${ROOT_DIR}/config/ctags ${HOME}/.ctags
