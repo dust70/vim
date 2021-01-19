@@ -19,11 +19,9 @@ clean:
 	rm -fr ${SHARE}/vim
 	#
 	gem uninstall --all --user-install neovim || true
-	#
-	pip uninstall pynvim || true
-	pip3 uninstall pynvim || true
+	gem uninstall --all --user-install puppet-lint || true
 
-install: | ${HOME}/.vim dein
+install: | ${HOME}/.vim dein ruby
 	mkdir -p ${CACHE}/nvim
 	mkdir -p ${CACHE}/vim
 	mkdir -p ${NVIM}
@@ -50,9 +48,13 @@ dein:
 	#
 	rm -f install.sh
 
-ruby:
-	gem install --user-install neovim
+${HOME}/.rvm:
+	gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+	curl -sSL https://get.rvm.io | bash -s -- stable --ignore-dotfiles
+	#
+	rvm install ruby-3
+	rvm --default use ruby-3
 
-python:
-	pip install pynvim
-	pip3 install pynvim
+ruby: | ${HOME}/.rvm
+	gem install --user-install neovim
+	gem install --user-install puppet-lint
